@@ -124,3 +124,4 @@ This ensures compatibility with real-world data where `SeriesDescription` may or
   "series_id": "..."
 }
 ```
+![Series Type Detection Flowchart](../images/series_prediction_flow.png)
