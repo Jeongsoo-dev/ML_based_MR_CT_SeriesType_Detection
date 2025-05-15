@@ -79,3 +79,48 @@ Pipeline([
   ])),
   ("model", HistGradientBoostingClassifier(...))
 ])
+```
+## 🔁 Series Type Prediction Logic
+
+When a new folder is passed to the system for prediction, the logic flows as follows:
+
+### 📥 Step 1: Input
+- Accept a **single folder path** containing DICOM images of a 3D series.
+
+### 🩻 Step 2: Modality Check
+- Automatically determines whether the input belongs to **MR** or **CT** by checking DICOM tags (e.g., `Modality` field).
+  
+### 🧬 Step 3: Feature Extraction
+- Depending on modality:
+  - For MR: run `MRFeatureExtractor`
+  - For CT: run `CTFeatureExtractor`
+- Extract only **header-based metadata**, no pixel data needed.
+
+### ⚙️ Step 4: Choose Model Variant
+- The system takes a boolean argument (e.g., `use_series_description`)
+- Based on this, it selects one of the 4 trained models:
+
+| Modality | With SD | Without SD |
+|----------|---------|------------|
+| **MR**   | ✅ `MR-Model-SD.pkl` | ✅ `MR-Model-noSD.pkl` |
+| **CT**   | ✅ `CT-Model-SD.pkl` | ✅ `CT-Model-noSD.pkl` |
+
+This ensures compatibility with real-world data where `SeriesDescription` may or may not be present.
+
+### 🔮 Step 5: Prediction
+- Selected model runs `predict()` and `predict_proba()` on the extracted feature vector.
+- Returns:
+```json
+{
+  "modality": "mr",
+  "prediction": "t1_contrast",
+  "score": {
+    "t1_contrast": 0.87,
+    "t2": 0.06,
+    "t1": 0.04
+  },
+  "patient_id": "XYZ",
+  "study_id": "...",
+  "series_id": "..."
+}
+```
