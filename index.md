@@ -1,24 +1,17 @@
-# 🧠 Advanced ML Pipeline for MR/CT Series Type Detection Using DICOM Headers
+# Advanced ML Pipeline for MR/CT Series Type Detection Using DICOM Headers
+Author : Jeongsoo Pang
 
-## 🌍 Overview
+## Abstract
 
-Modern radiology workflows involve parsing thousands of DICOM series from MR and CT modalities. Determining the exact **series type** (e.g., SWI, T2 FLAIR, CT Angiography) is essential for accurate processing, post-analysis, and visualization. This post introduces a robust, production-ready ML pipeline that automatically classifies series type based solely on metadata extracted from DICOM headers.
+Modern radiology workflows involve parsing different DICOM series from MR and CT modalities for further image processing or operation. Determining the exact **series type** (e.g., PWI, DWI, SWI, T2 FLAIR, CT Angiography) is essential for accurate processing, post-analysis, and visualization. However, due to vendor specific DICOM formatting, DICOM This post introduces a robust, production-ready ML pipeline that automatically classifies series type based solely on metadata extracted from DICOM headers.
 
 ---
-
-## 🔍 Problem Statement
-
-Historically, systems used static rule-based logic trees to infer modality and series types. These logic trees were:
-
-- ❌ Brittle and hard to scale  
-- ❌ Dependent on vendor-specific `SeriesDescription`  
-- ❌ Prone to errors from inconsistent metadata  
-
-### ✅ Our Goals
-
-- Build a **vendor-agnostic ML classifier**  
-- Base predictions on robust DICOM header features  
-- Achieve >95% classification accuracy  
+### Goal
+- Access and extract vendor specific private values located under nested structure from DICOM-meta-data
+    Vendors : GM, Siemens, Philips
+- Build ML model that **Training Data and Features are able to be Expanded in the future** 
+- Achieve >90% classification accuracy
+- Considering cases where some important headers (Series-Description, b-value, etc...) does not exist
 
 ---
 
