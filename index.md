@@ -1,15 +1,26 @@
 # Machine Learning Based MR\&CT Series Type Detection
+Author : Jeongsoo Pang
+
+## Abstract
+
+Modern radiology workflows involve parsing different DICOM series from MR and CT modalities for further image processing or operation. Determining the exact **series type** (e.g., PWI, DWI, SWI, T2 FLAIR, CT Angiography) is essential for accurate processing, post-analysis, and visualization. However, due to vendor specific DICOM formatting, DICOM This post introduces a robust, production-ready ML pipeline that automatically classifies series type based solely on metadata extracted from DICOM headers.
 
 ## DATA
 
 All Train and Test data is stored in Blackbox remote server.
+Preprocessing of Train/Test Data was required to only use unique data for training and testing. 
 
-**Train Data Size**:
-**Test Data Size**:
+**MR Train Data Size**: 171 Unique Data
 
-### Train Features
+**MR Test Data Size**: 185 Unique Data
 
-**12 specific DICOM headers for MR**
+**CT Train Data Size**: 271 Unique Data
+
+**CT Test Data Size**: 407 Unique Data
+          
+### Train/Test Features
+
+**12 MR Train/Test Features from DICOM header**
 
 | NumberTemporalPositions | PhaseEncodingDirection |
 | ----------------------- | ---------------------- |
@@ -19,7 +30,7 @@ All Train and Test data is stored in Blackbox remote server.
 | PulseSequenceName       | SequenceVariant        |
 | Bvalue                  | ScanOptions            |
 
-**10 specific DICOM headers for CT**
+**10 CT Train/Test Features from DICOM header**
 
 | ContrastBolusAgent     | ContrastBolusVolume |
 | ---------------------- | ------------------- |
@@ -33,7 +44,6 @@ All Train and Test data is stored in Blackbox remote server.
 **MR**
 
 | PWI\_DSC | T2           |
-| -------- | ------------ |
 | PWI\_DCE | T2\_Flair    |
 | SWI      | T1           |
 | DWI      | T1\_Contrast |
@@ -41,7 +51,6 @@ All Train and Test data is stored in Blackbox remote server.
 **CT**
 
 | CT\_Angiography | CT\_Perfusion | CT\_Noncontrast |
-| --------------- | ------------- | --------------- |
 
 ---
 
@@ -238,6 +247,27 @@ def fit(self, features: pd.DataFrame, targets: pd.Series) -> None:
 * Try `l2_regularization = 0.1`
 * Add `max_depth` tuning for better generalization
 * Extend SHAP visualizations:
-
   * `shap.waterfall_plot()`
   * `shap.dependence_plot()`
+## DATA 
+**MR Train Data Size**: 171 Unique Data
+**MR Test Data Size**: 185 Unique Data
+
+| Dataset_Name | Train_Data_Count | Test_Data_Count |
+| ------------ | -----------------| ----------------|
+| t1           | 39               | 84              |
+| t1_contrast  | 30               | 38              |
+| t2flair      | 25               | 21              |
+| dwi          | 21               | 6               |
+| pwi_dsc      | 7                | 21              |
+| t2           | 5                | 3               |
+| swi          | 5                | 10              |
+
+**CT Train Data Size**: 271 Unique Data
+**CT Test Data Size**: 407 Unique Data
+
+| Dataset_Name    | Train_Data_Count | Test_Data_Count |
+| --------------- | ---------------- |---------------- |
+| ct_noncontrast  | 178              | 231             |
+| ct_perfusion    | 65               | 133             |
+| ct_angiography  | 28               | 43              |
