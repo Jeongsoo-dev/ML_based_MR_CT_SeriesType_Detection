@@ -3,16 +3,19 @@ Author : Jeongsoo Pang
 
 ## Abstract
 
-Modern radiology workflows involve parsing different DICOM series from MR and CT modalities for further image processing or operation. Determining the exact **series type** (e.g., PWI, DWI, SWI, T2 FLAIR, CT Angiography) is essential for accurate processing, post-analysis, and visualization. However, due to vendor specific DICOM formatting, DICOM This post introduces a robust, production-ready ML pipeline that automatically classifies series type based solely on metadata extracted from DICOM headers.
+Modern radiology workflows involve parsing different DICOM series from MR and CT modalities for further image processing or operation. Determining the exact **series type** (e.g., PWI, DWI, SWI, T2 FLAIR, CT Angiography) is essential for accurate processing, post-analysis, and visualization. 
+
+However, due to vendor specific DICOM formatting, DICOM This post introduces a robust, production-ready ML pipeline that automatically classifies series type based solely on metadata extracted from DICOM headers.
 
 ## DATA
 
 All Train and Test data is stored in Blackbox remote server.
+
 Preprocessing of Train/Test Data was required to only use unique data for training and testing. 
 
 ### MR
           MR Train Data Size: 171 Unique Data
-          **MR Test Data Size: 185 Unique Data
+          MR Test Data Size: 185 Unique Data
 
 ### CT
           CT Train Data Size: 271 Unique Data
@@ -60,14 +63,11 @@ mr_stroke_aarhus/PWI/001_0001.dcm
 
 ### Train Data Preprocessing
 
-Extracted headers and features are saved in `data_class`.
+Extracted headers and features are saved in `data_class` format.
 
 1. Header extraction from DICOM and saved as list of lists:
-
-   * 12 headers for MR
-   * 10 headers for CT
 2. Feature extraction from headers → list of lists
-3. Grouped by study case folder → saved as JSON
+3. Grouped by study case folder → saved as grouped_JSON
 
 **Example Train Data**:
 
