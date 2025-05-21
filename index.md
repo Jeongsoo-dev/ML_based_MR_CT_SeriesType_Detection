@@ -22,22 +22,14 @@ Preprocessing of Train/Test Data was required to only use unique data for traini
 
 **12 MR Train/Test Features from DICOM header**
 
-| NumberTemporalPositions | PhaseEncodingDirection |
-| ----------------------- | ---------------------- |
-| RepetitionTime          | FlipAngle              |
-| InversionTime           | EchoTrainLength        |
-| MagneticFieldStrength   | EchoSpacing            |
-| PulseSequenceName       | SequenceVariant        |
-| Bvalue                  | ScanOptions            |
+| NumberTemporalPositions | PhaseEncodingDirection | RepetitionTime          | FlipAngle              |
+| InversionTime           | EchoTrainLength        | MagneticFieldStrength   | EchoSpacing            |
+| PulseSequenceName       | SequenceVariant        | Bvalue                  | ScanOptions            |
 
 **10 CT Train/Test Features from DICOM header**
 
-| ContrastBolusAgent     | ContrastBolusVolume |
-| ---------------------- | ------------------- |
-| ExposureTime           | ScanOptions         |
-| ReconstructionDiameter | TableSpeed          |
-| KVP                    | Modality            |
-| SeriesTime             | ConvolutionKernel   |
+| ContrastBolusAgent     | ContrastBolusVolume | ExposureTime           | ScanOptions         | ReconstructionDiameter |
+| TableSpeed             | KVP                 | Modality               | SeriesTime          | ConvolutionKernel      |
 
 ### Target Series Types
 
