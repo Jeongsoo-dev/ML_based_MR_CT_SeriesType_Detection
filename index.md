@@ -11,12 +11,12 @@ All Train and Test data is stored in Blackbox remote server.
 Preprocessing of Train/Test Data was required to only use unique data for training and testing. 
 
 ### MR
-          **MR Train Data Size**: 171 Unique Data
-          **MR Test Data Size**: 185 Unique Data
-### CT
-          **CT Train Data Size**: 271 Unique Data
+          MR Train Data Size: 171 Unique Data
+          **MR Test Data Size: 185 Unique Data
 
-          **CT Test Data Size**: 407 Unique Data
+### CT
+          CT Train Data Size: 271 Unique Data
+          CT Test Data Size: 407 Unique Data
           
 ### Train/Test Features
 
