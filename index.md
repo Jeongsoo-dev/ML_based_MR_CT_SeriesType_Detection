@@ -14,6 +14,7 @@ This project delivers a **production-ready ML pipeline** that automatically clas
 Externally validated on partner-hospital datasets, the model achieved **96.69% MR** and **99.25% CT** accuracy, replacing the legacy C++ detector in production. The design emphasizes **maintainability**, **future retraining**, and **clinical safety**.
 
 All works and codes belongs to Cercare-Medical Comapany.
+
 ---
 
 ## Project Goal
