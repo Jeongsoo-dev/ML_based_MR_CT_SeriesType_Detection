@@ -1,8 +1,32 @@
 ---
 title: "Machine-Learning–Based MR & CT Series-Type Detection"
 hide:
-  - title    # hide the big page title bar (the blue hyperlink)
+  - title   
 ---
+
+<!-- 보이지 않는 H1: 파일명 fallback을 막기 위한 메타 타이틀용 -->
+<h1 style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;">
+  Machine-Learning–Based MR &amp; CT Series-Type Detection
+</h1>
+
+<!-- 2-컬럼 레이아웃: 왼쪽 프로필 / 오른쪽 본문 -->
+<div style="display:grid;grid-template-columns:240px 1fr;gap:24px;align-items:start;">
+
+  <!-- LEFT: 프로필 카드 -->
+  <aside>
+    <img src="images/profile.jpg" alt="Jeongsoo Pang" style="width:100%;border-radius:8px;box-shadow:0 1px 3px rgba(0,0,0,.15);margin-bottom:12px;">
+    <div style="font-weight:700;font-size:1.05rem;">Jeongsoo Pang</div>
+    <div>UM–SJTU Joint Institute</div>
+    <div>Electrical &amp; Computer Engineering</div>
+    <hr style="margin:16px 0;">
+    <!-- 원하면 링크 버튼들 추가
+    <div><a href="https://github.com/..." target="_blank">GitHub</a></div>
+    <div><a href="https://scholar.google.com/..." target="_blank">Google Scholar</a></div>
+    -->
+  </aside>
+
+  <!-- RIGHT: 본문 -->
+  <section>
 
 ## Abstract
 Radiology workflows depend on correctly identifying **series types** (e.g., MR: DWI, SWI, T1, T2 FLAIR; CT: Angio/Perfusion/Noncontrast) before reconstruction, analysis, or visualization. Vendor-specific DICOM conventions, private tags, nested data, multilingual fields, and missing metadata make rule-based detectors unreliable.  
@@ -131,13 +155,16 @@ Validated on external partner-hospital datasets:
 
 ---
 
-<div style="display: flex; justify-content: space-between; align-items: center;">
-  <img src="images/cercare_1.jpg" alt="Cercare Image 1" style="width:48%; border-radius:8px;">
-  <img src="images/cercare_2.jpg" alt="Cercare Image 2" style="width:48%; border-radius:8px;">
+<!-- 두 장의 결과 이미지를 가로로 배치 -->
+<div style="display:flex;justify-content:space-between;align-items:center;gap:2%;">
+  <img src="images/cercare_1.jpg" alt="Cercare Image 1" style="width:49%;border-radius:8px;">
+  <img src="images/cercare_2.jpg" alt="Cercare Image 2" style="width:49%;border-radius:8px;">
 </div>
+
+---
 
 
 ## Acknowledgment
-This project was conducted under **Cercare-Medical, Denmark (2024)** with direct collaboration with the **CTO**, **CEO**, and **partner hospitals**, resulting in a successful production deployment and recommendation from the executive team.
+This project was conducted under **Cercare-Medical, Denmark (2024)** with direct collaboration with the **Lead AI Developer**, **Senior Software Developers**, and **Operation Team**, resulting in a successful production deployment and recommendation Letter from the **CTO**.
 
 ---
