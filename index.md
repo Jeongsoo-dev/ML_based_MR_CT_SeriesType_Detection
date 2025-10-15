@@ -1,6 +1,7 @@
-# Machine-Learning–Based MR & CT Series-Type Detection
+---
+title: Machine-Learning–Based MR & CT Series-Type Detection
+---
 **Author:** Jeongsoo Pang  
-
 ---
 
 ## Abstract
@@ -129,6 +130,12 @@ Validated on external partner-hospital datasets:
 - Supports safe, extensible retraining and transparent human-in-the-loop decision flow.
 
 ---
+
+<div style="display: flex; justify-content: space-between; align-items: center;">
+  <img src="images/cercare_1.jpg" alt="Cercare Image 1" style="width:48%; border-radius:8px;">
+  <img src="images/cercare_2.jpg" alt="Cercare Image 2" style="width:48%; border-radius:8px;">
+</div>
+
 
 ## Acknowledgment
 This project was conducted under **Cercare-Medical, Denmark (2024)** with direct collaboration with the **CTO**, **CEO**, and **partner hospitals**, resulting in a successful production deployment and recommendation from the executive team.
