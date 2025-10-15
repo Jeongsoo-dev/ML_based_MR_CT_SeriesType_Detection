@@ -3,13 +3,15 @@ theme:
   name: material
   features:
     - navigation.instant
-    - toc.integrate
-markdown_extensions:
-  - tables
-  - attr_list
-  - md_in_html
-nav:
-  - "Machine Learning Based Advanced MR and CT Series Type Detection": index.md
+    - toc.integrate         # ToC moves to the LEFT sidebar
 
 extra_css:
   - stylesheets/extra.css
+
+markdown_extensions:
+  - tables
+  - attr_list
+  - md_in_html             # <<< REQUIRED for Markdown inside HTML
+
+nav:
+  - "Machine Learning Based Advanced MR and CT Series Type Detection": index.md
