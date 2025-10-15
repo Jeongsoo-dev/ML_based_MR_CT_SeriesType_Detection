@@ -1,21 +1,11 @@
-/* Keep the site wide */
+/* Keep the site nice and wide */
 .md-grid { max-width: 1440px; }
 
-/* Two-column layout */
-.jp-layout {
-  display: grid;
-  grid-template-columns: 260px minmax(0, 1fr);
-  gap: 28px;
-  align-items: start;
-}
-
-/* Smaller photo + slight left nudge */
-.jp-profile { margin-left: -10px; }
-.jp-profile img {
-  width: 150px;                /* adjust 140–170 to taste */
-  max-width: 100%;
+/* Float the headshot to the left, shrink it */
+.md-typeset .headshot {
+  float: left;
+  width: 150px;          /* tweak 140–170 to taste */
+  margin: 0 24px 16px -10px;  /* nudge a bit into the left gutter */
   border-radius: 10px;
   box-shadow: 0 1px 3px rgba(0,0,0,.15);
 }
-
-.jp-content { max-width: none; }   /* keep main text wide */
