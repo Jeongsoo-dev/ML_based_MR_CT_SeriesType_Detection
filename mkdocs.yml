@@ -1,0 +1,13 @@
+site_name: Jeongsoo Pang — Portfolio
+theme:
+  name: material
+  features:
+    - navigation.instant
+
+markdown_extensions:
+  - tables
+  - attr_list
+  - md_in_html
+
+nav:
+  - "Machine-Learning–Based MR & CT Series-Type Detection": index.md
