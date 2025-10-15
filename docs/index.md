@@ -17,9 +17,7 @@ hide:
     </p>
   </aside>
 
-  <!-- RIGHT COLUMN — keep markdown="1" -->
   <section class="jp-content" markdown="1">
-
 
 ## Abstract
 Radiology workflows depend on correctly identifying **series types** (e.g., MR: DWI, SWI, T1, T2 FLAIR; CT: Angio/Perfusion/Noncontrast) before reconstruction, analysis, or visualization. Vendor-specific DICOM conventions, private tags, nested data, multilingual fields, and missing metadata make rule-based detectors unreliable.  
