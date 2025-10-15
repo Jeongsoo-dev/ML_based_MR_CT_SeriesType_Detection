@@ -1,6 +1,9 @@
 site_name: Jeongsoo Pang — Portfolio
 theme:
   name: material
+  features:
+    - navigation.instant
+    - toc.integrate
 markdown_extensions:
   - tables
   - attr_list
