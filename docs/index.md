@@ -3,13 +3,11 @@ title: "Machine Learning Based Advanced MR and CT Series Type Detection"
 hide:
   - title
 ---
-
 <div class="page-hero">
   Machine Learning Based Advanced MR and CT Series Type Detection
 </div>
 
 <div class="jp-layout">
-
   <aside class="jp-profile">
     <img src="images/profile.jpg" alt="Jeongsoo Pang">
     <p class="caption">
@@ -19,7 +17,7 @@ hide:
     </p>
   </aside>
 
-  <!-- IMPORTANT: give the right column a class so CSS applies -->
+  <!-- RIGHT COLUMN — keep markdown="1" -->
   <section class="jp-content" markdown="1">
 
 
@@ -131,6 +129,5 @@ Deployed to production; supports safe retraining and human-in-the-loop.
 ## Acknowledgment
 This project was conducted under **Cercare-Medical, Denmark (2024)** with direct collaboration with the **Lead AI Developer**, **Senior Software Developers**, and **Operation Team**, resulting in a successful production deployment and recommendation Letter from the **CTO**.
 
-</section>
-</div>  <!-- closes .jp-layout -->
-
+  </section>
+</div>
