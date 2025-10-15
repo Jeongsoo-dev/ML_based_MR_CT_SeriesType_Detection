@@ -1,18 +1,13 @@
 site_name: Jeongsoo Pang — Portfolio
-
 theme:
   name: material
   features:
     - navigation.instant
-    - toc.integrate        # ToC shows on the LEFT under the nav title
-
+    - toc.integrate           # ToC in the LEFT nav
 extra_css:
-  - stylesheets/extra.css  # path is relative to docs/
-
+  - stylesheets/extra.css     # path is relative to docs/
 markdown_extensions:
   - tables
-  - attr_list
-  - md_in_html            # <<< REQUIRED so Markdown inside <section markdown="1"> parses
-
+  - attr_list                 # needed for {.headshot}
 nav:
   - "Machine Learning Based Advanced MR and CT Series Type Detection": index.md
