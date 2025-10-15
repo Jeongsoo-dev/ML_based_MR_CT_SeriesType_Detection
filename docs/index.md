@@ -9,23 +9,19 @@ hide:
 
 **Jeongsoo Pang**  
 UM–SJTU Joint Institute  
-Electrical &amp; Computer Engineering
+Electrical & Computer Engineering
 
 ---
 
-  <section class="jp-content" markdown="1">
-
 ## Abstract
-Radiology workflows depend on correctly identifying **series types** (e.g., MR: DWI, SWI, T1, T2 FLAIR; CT: Angio/Perfusion/Noncontrast) before reconstruction, analysis, or visualization. Vendor-specific DICOM conventions, private tags, nested data, multilingual fields, and missing metadata make rule-based detectors unreliable.  
+Radiology workflows depend on correctly identifying **series types** (e.g., MR: DWI, SWI, T1, T2 FLAIR; CT: Angio/Perfusion/Noncontrast) before reconstruction, analysis, or visualization. Vendor-specific DICOM conventions, private tags, nested data, multilingual fields, and missing metadata make rule-based detectors unreliable.
 
 This project delivers a **production-ready ML pipeline** that automatically classifies **8 MR** and **3 CT** series using only DICOM header metadata. It features:  
 1. A robust **feature-extraction module** handling private/nested tags and multilingual headers.  
 2. Two **HistGradientBoosting (HGBC)** models—trained **with** and **without** `SeriesDescription`—to remain robust when textual labels are missing or inconsistent.  
-3. A **self-inspection mechanism** that flags low-confidence predictions to radiologists for review.  
+3. A **self-inspection mechanism** that flags low-confidence predictions to radiologists for review.
 
 Externally validated on partner-hospital datasets, the model achieved **96.69% MR** and **99.25% CT** accuracy, replacing the legacy C++ detector in production. The design emphasizes **maintainability**, **future retraining**, and **clinical safety**.
-
-_All works and codes belong to Cercare-Medical Company._
 
 ---
 
@@ -36,7 +32,7 @@ _All works and codes belong to Cercare-Medical Company._
 ---
 
 ## My Contributions
-- **Engineered DICOM Header Extractor** robust to vendor/private/nested/multilingual tags.  
+- **Engineered DICOM Header Extractor** … *(keep the rest of your sections here as normal Markdown, always with a blank line before each `##`)*  
 - **Data De-biasing**: one representative DICOM per 3D study.  
 - **Feature Preprocessing** for numeric + categorical + missing/string values.  
 - **Dual-Model Training**: HGBC with/without `SeriesDescription`.  
