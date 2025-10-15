@@ -1,7 +1,7 @@
 ---
-title: Machine-Learning–Based MR & CT Series-Type Detection
----
-**Author:** Jeongsoo Pang  
+title: "Machine-Learning–Based MR & CT Series-Type Detection"
+hide:
+  - title    # hide the big page title bar (the blue hyperlink)
 ---
 
 ## Abstract
