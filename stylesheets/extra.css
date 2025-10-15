@@ -1,11 +1,16 @@
-/* Keep the site nice and wide */
+/* Wider canvas */
 .md-grid { max-width: 1440px; }
 
-/* Float the headshot to the left, shrink it */
+/* Float the headshot on the left */
 .md-typeset .headshot {
   float: left;
-  width: 150px;          /* tweak 140–170 to taste */
-  margin: 0 24px 16px -10px;  /* nudge a bit into the left gutter */
+  width: 150px;                   /* adjust 140–170 if you want */
+  margin: 0 24px 16px -10px;      /* small left nudge */
   border-radius: 10px;
   box-shadow: 0 1px 3px rgba(0,0,0,.15);
+}
+
+/* Ensure paragraphs clear properly on small screens */
+@media (max-width: 900px) {
+  .md-typeset .headshot { float: none; display: block; margin: 0 auto 12px; }
 }
