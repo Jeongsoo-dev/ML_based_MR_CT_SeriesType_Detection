@@ -3,11 +3,11 @@ theme:
   name: material
   features:
     - navigation.instant
-    - toc.integrate           # ToC in the LEFT nav
+    - toc.integrate      # ToC on the LEFT
 extra_css:
-  - stylesheets/extra.css     # path is relative to docs/
+  - stylesheets/extra.css   # relative to docs/
 markdown_extensions:
   - tables
-  - attr_list                 # needed for {.headshot}
+  - attr_list              # needed for {.headshot}
 nav:
   - "Machine Learning Based Advanced MR and CT Series Type Detection": index.md
