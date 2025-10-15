@@ -1,52 +1,55 @@
-/* 1) Make the site wider */
+/* 1) Site width (keeps your wide content) */
 .md-grid {
-  max-width: 1440px;     /* increase overall width (try 1500 if you want even wider) */
+  max-width: 1440px;
 }
 
-/* 2) Page title at top (you already have .page-hero in HTML) */
+/* 2) Hero title */
 .page-hero {
-  margin: 12px 0 24px 0;
-  text-align: left;      /* change to center if you want */
+  margin: 12px 0 20px 0;
+  text-align: left;
   font-size: 1.8rem;
   font-weight: 700;
   letter-spacing: .2px;
 }
 
-/* 3) Two-column layout: LEFT profile (wider), RIGHT content (fills the rest) */
+/* 3) Two-column layout: LEFT (profile), RIGHT (content) */
 .jp-layout {
   display: grid;
-  grid-template-columns: 360px minmax(0, 1fr); /* <-- wider left column */
+  grid-template-columns: 300px minmax(0, 1fr);  /* left column ~nav width */
   gap: 28px;
   align-items: start;
 }
 
-/* Nudge the photo into the left gutter so the text can grow */
+/* 4) Photo size & position
+   - Fixed width close to the nav link column
+   - Small nudge to the left (tune -10 ~ -40px if you like) */
 .jp-profile {
-  margin-left: -80px;    /* move photo further left; tweak -60 ~ -120px to taste */
+  margin-left: -20px;
 }
-
 .jp-profile img {
-  width: 100%;
+  width: 220px;            /* photo size — adjust 200~240 to taste */
+  max-width: 100%;
   border-radius: 10px;
   box-shadow: 0 1px 3px rgba(0,0,0,.15);
 }
-
 .jp-profile .caption {
   margin-top: 10px;
   line-height: 1.35;
 }
 
-/* Let the right content breathe — no artificial max-width */
+/* 5) Main text should use all remaining width */
 .jp-content {
   max-width: none;
 }
 
-/* Keep ToC visible on desktop; stack on mobile */
+/* 6) Make sure the right ToC is visible on desktop */
+.md-sidebar--secondary {
+  display: block !important;
+}
+
+/* 7) Mobile stacking */
 @media (max-width: 1100px) {
-  .jp-layout {
-    grid-template-columns: 1fr;
-  }
-  .jp-profile {
-    margin-left: 0;
-  }
+  .jp-layout { grid-template-columns: 1fr; }
+  .jp-profile { margin-left: 0; }
+  .jp-profile img { width: 200px; }
 }
