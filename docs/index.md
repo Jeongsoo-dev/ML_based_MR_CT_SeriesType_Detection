@@ -3,19 +3,15 @@ title: "Machine Learning Based Advanced MR and CT Series Type Detection"
 hide:
   - title
 ---
-<div class="page-hero">
-  Machine Learning Based Advanced MR and CT Series Type Detection
-</div>
+# Machine Learning Based Advanced MR and CT Series Type Detection
 
-<div class="jp-layout">
-  <aside class="jp-profile">
-    <img src="images/profile.jpg" alt="Jeongsoo Pang">
-    <p class="caption">
-      <strong>Jeongsoo Pang</strong><br>
-      UM–SJTU Joint Institute<br>
-      Electrical &amp; Computer Engineering
-    </p>
-  </aside>
+![Jeongsoo Pang](images/profile.jpg){.headshot}
+
+**Jeongsoo Pang**  
+UM–SJTU Joint Institute  
+Electrical &amp; Computer Engineering
+
+---
 
   <section class="jp-content" markdown="1">
 
