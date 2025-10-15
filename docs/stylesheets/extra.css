@@ -15,7 +15,7 @@
 /* 3) Two-column layout: LEFT (profile), RIGHT (content) */
 .jp-layout {
   display: grid;
-  grid-template-columns: 300px minmax(0, 1fr);  /* left column ~nav width */
+  grid-template-columns: 260px minmax(0, 1fr);
   gap: 28px;
   align-items: start;
 }
@@ -23,11 +23,9 @@
 /* 4) Photo size & position
    - Fixed width close to the nav link column
    - Small nudge to the left (tune -10 ~ -40px if you like) */
-.jp-profile {
-  margin-left: -20px;
-}
+.jp-profile { margin-left: -10px; } 
 .jp-profile img {
-  width: 220px;            /* photo size — adjust 200~240 to taste */
+  width: 170px;          /* photo size — adjust 200~240 to taste */
   max-width: 100%;
   border-radius: 10px;
   box-shadow: 0 1px 3px rgba(0,0,0,.15);
@@ -38,9 +36,7 @@
 }
 
 /* 5) Main text should use all remaining width */
-.jp-content {
-  max-width: none;
-}
+.jp-content { max-width: none; }
 
 /* 6) Make sure the right ToC is visible on desktop */
 .md-sidebar--secondary {
