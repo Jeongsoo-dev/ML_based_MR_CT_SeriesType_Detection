@@ -1,18 +1,15 @@
 ---
 title: "Machine Learning Based Advanced MR and CT Series Type Detection"
 hide:
-  - title   # 상단 기본 타이틀 바
+  - title
 ---
 
-<!-- 페이지 최상단 큰 제목 (왼쪽 정렬; 중앙 원하면 class에 text-align:center 주면 됨) -->
 <div class="page-hero">
   Machine Learning Based Advanced MR and CT Series Type Detection
 </div>
 
-<!-- 좌측 프로필 / 우측 본문 -->
 <div class="jp-layout">
 
-  <!-- LEFT: 프로필 -->
   <aside class="jp-profile">
     <img src="images/profile.jpg" alt="Jeongsoo Pang">
     <p class="caption">
@@ -22,8 +19,9 @@ hide:
     </p>
   </aside>
 
-  <!-- RIGHT: 본문 -->
-  <section markdown="1">
+  <!-- IMPORTANT: give the right column a class so CSS applies -->
+  <section class="jp-content" markdown="1">
+
 
 ## Abstract
 Radiology workflows depend on correctly identifying **series types** (e.g., MR: DWI, SWI, T1, T2 FLAIR; CT: Angio/Perfusion/Noncontrast) before reconstruction, analysis, or visualization. Vendor-specific DICOM conventions, private tags, nested data, multilingual fields, and missing metadata make rule-based detectors unreliable.  
