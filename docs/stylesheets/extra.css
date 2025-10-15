@@ -1,40 +1,21 @@
-/* wide canvas */
+/* Keep the site wide */
 .md-grid { max-width: 1440px; }
 
-/* page title */
-.page-hero {
-  margin: 12px 0 20px 0;
-  text-align: left;
-  font-size: 1.8rem;
-  font-weight: 700;
-}
-
-/* two-column page layout */
+/* Two-column layout */
 .jp-layout {
   display: grid;
-  grid-template-columns: 260px minmax(0, 1fr); /* left col + flexible main */
+  grid-template-columns: 260px minmax(0, 1fr);
   gap: 28px;
   align-items: start;
 }
 
-/* smaller photo, slight left nudge */
+/* Smaller photo + slight left nudge */
 .jp-profile { margin-left: -10px; }
 .jp-profile img {
-  width: 170px;            /* tweak 160–190 to taste */
+  width: 150px;                /* adjust 140–170 to taste */
   max-width: 100%;
   border-radius: 10px;
   box-shadow: 0 1px 3px rgba(0,0,0,.15);
 }
-.jp-profile .caption { margin-top: 10px; line-height: 1.35; }
 
-/* main text uses full remaining width */
-.jp-content { max-width: none; }
-
-/* make sure RIGHT ToC isn't hidden if you ever switch off toc.integrate */
-.md-sidebar--secondary { display: block !important; }
-
-@media (max-width: 1100px) {
-  .jp-layout { grid-template-columns: 1fr; }
-  .jp-profile { margin-left: 0; }
-  .jp-profile img { width: 200px; }
-}
+.jp-content { max-width: none; }   /* keep main text wide */
