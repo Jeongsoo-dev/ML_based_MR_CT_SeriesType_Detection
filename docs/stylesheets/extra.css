@@ -1,0 +1,45 @@
+/* 전체 그리드 폭 넓히기 */
+.md-grid {
+  max-width: 1280px;           /* 필요하면 1400px까지 가능 */
+}
+
+/* 이 페이지 전용 레이아웃 */
+.page-hero {
+  margin: 8px 0 24px 0;
+  text-align: left;            /* center 로 바꾸면 중앙 정렬 제목 */
+  font-size: 1.9rem;
+  font-weight: 700;
+  letter-spacing: 0.2px;
+}
+
+/* 좌측 프로필 / 우측 본문 2-컬럼 */
+.jp-layout {
+  display: grid;
+  grid-template-columns: 320px minmax(0, 1fr); /* 왼쪽 더 넓게 */
+  gap: 28px;
+  align-items: start;
+}
+
+/* 모바일에서 1컬럼 */
+@media (max-width: 900px) {
+  .jp-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* 프로필 카드 */
+.jp-profile img {
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 1px 3px rgba(0,0,0,.15);
+}
+
+.jp-profile .caption {
+  margin-top: 10px;
+  line-height: 1.35;
+}
+
+/* 이 페이지에서 오른쪽 ToC 숨김 (사이트 전역 영향 X) */
+.md-sidebar--secondary {
+  display: none;
+}
