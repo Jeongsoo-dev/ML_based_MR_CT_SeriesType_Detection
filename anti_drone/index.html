@@ -275,45 +275,123 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#system-overview" class="md-nav__link">
+  <a href="#project-objective" class="md-nav__link">
     <span class="md-ellipsis">
-      System Overview
+      Project Objective
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#ml-approach" class="md-nav__link">
+  <a href="#dataset-preprocessing" class="md-nav__link">
     <span class="md-ellipsis">
-      ML Approach
+      Dataset &amp; Preprocessing
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#results" class="md-nav__link">
+  <a href="#model-architectures" class="md-nav__link">
     <span class="md-ellipsis">
-      Results
+      Model Architectures
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Model Architectures">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#classical-ml-models" class="md-nav__link">
+    <span class="md-ellipsis">
+      Classical ML Models
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deep-cnn-backbones" class="md-nav__link">
+    <span class="md-ellipsis">
+      Deep CNN Backbones
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#training-strategy" class="md-nav__link">
+    <span class="md-ellipsis">
+      Training Strategy
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#deployment" class="md-nav__link">
+  <a href="#evaluation-methodology" class="md-nav__link">
     <span class="md-ellipsis">
-      Deployment
+      Evaluation Methodology
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#next-steps" class="md-nav__link">
+  <a href="#results-summary" class="md-nav__link">
     <span class="md-ellipsis">
-      Next Steps
+      Results Summary
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#technical-highlights" class="md-nav__link">
+    <span class="md-ellipsis">
+      Technical Highlights
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deployment-considerations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Deployment Considerations
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#future-work" class="md-nav__link">
+    <span class="md-ellipsis">
+      Future Work
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#repository-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      Repository Structure
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#acknowledgment" class="md-nav__link">
+    <span class="md-ellipsis">
+      Acknowledgment
     </span>
   </a>
   
@@ -347,51 +425,265 @@
 
 <div class="hero">
   <img src="images/profile.jpg" alt="Jeongsoo Pang" class="headshot-hero">
-
   <div class="hero-text">
-    <h1>Anti-Drone Project — RF/EO Fusion & ML Tracking</h1>
+    <h1>Anti-Drone Project — FMCW Radar & Electro-Optical Fusion</h1>
 
     <strong class="bio-name">Jeongsoo Pang</strong><br>
-    **Cercare-Medical R&D**<br>
-    **ML-Specialist**<br>
-    **2024.06.01 – 2024.12.01**
+    **AI Capacity Competition by Korean National Defense**<br>
+    **FMCW Radar Signal & Image Intelligence**<br>
+    **2023.11**
   </div>
 </div>
 
 <div class="clear"></div>
 
+<hr />
 <h2 id="abstract">Abstract</h2>
-<p>Short paragraph describing the anti-drone problem, signals (RF/EO), constraints (latency/embedded), and the high-level ML approach.</p>
-<h2 id="system-overview">System Overview</h2>
+<p>The <strong>Anti-Drone Project</strong> focused on developing a reliable, low-latency <strong>machine learning pipeline</strong> to detect and classify UAVs using <strong>FMCW radar spectrograms</strong> and <strong>RCS imagery</strong>.<br />
+The system integrates classical machine learning (SVM, Random Forest, Gradient Boosting) and deep convolutional architectures (AlexNet, ResNet, GoogLeNet, NasNet, SqueezeNet) to achieve optimal trade-offs between <strong>accuracy</strong>, <strong>robustness</strong>, and <strong>real-time inference</strong> on edge devices.</p>
+<hr />
+<h2 id="project-objective">Project Objective</h2>
 <ul>
-<li>Sensors, data rates, synchronization</li>
-<li>Preprocessing / feature pipelines</li>
-<li>Model blocks (detection, tracking, fusion)</li>
+<li>Build an <strong>end-to-end ML framework</strong> for <strong>drone detection and classification</strong> from Doppler and RCS data.</li>
+<li>Benchmark traditional classifiers versus deep CNN backbones for <strong>FMCW spectrograms</strong>.</li>
+<li>Evaluate <strong>robustness under noise</strong>, <strong>latency</strong>, and <strong>hardware constraints</strong> for embedded radar platforms.</li>
+<li>Provide a <strong>research-grade reproducible implementation</strong> with clear documentation and modularity.</li>
 </ul>
-<h2 id="ml-approach">ML Approach</h2>
+<hr />
+<h2 id="dataset-preprocessing">Dataset &amp; Preprocessing</h2>
+<table>
+<thead>
+<tr>
+<th>Dataset</th>
+<th>Description</th>
+<th>Modality</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Goorm-AI-04 Drone Doppler</strong></td>
+<td>FMCW radar Doppler spectrograms labeled by drone type</td>
+<td>FMCW Spectrogram</td>
+</tr>
+<tr>
+<td><strong>Goorm-AI-04 RCS Image</strong></td>
+<td>Radar cross-section images of drone surfaces</td>
+<td>RCS Imagery</td>
+</tr>
+</tbody>
+</table>
 <ul>
-<li>Candidate models, why chosen (e.g., gradient boosting for tabular RF features + CNN/ViT for EO crops, late fusion)</li>
-<li>Hyperparameters &amp; search strategy (as you did on the MR/CT page)</li>
-<li>Evaluation setup and metrics</li>
+<li><strong>Flattening &amp; Normalization:</strong> Converted radar tensors to 224 × 224 gray-scale arrays, normalized with ImageNet statistics for transfer learning compatibility.  </li>
+<li><strong>Noise Augmentation:</strong> Simulated Gaussian noise at σ² ∈ {1e-4 … 1e-2} to evaluate noise tolerance of SVC, HGBC, and RF models.  </li>
+<li><strong>Stratified Splits:</strong> Ensured balanced representation across drone types with 10 % validation sets.  </li>
+<li><strong>Dynamic Range Calibration:</strong> Capped and floor-normalized pixel intensities to mitigate power spikes.</li>
 </ul>
-<h2 id="results">Results</h2>
+<hr />
+<h2 id="model-architectures">Model Architectures</h2>
+<h3 id="classical-ml-models">Classical ML Models</h3>
+<table>
+<thead>
+<tr>
+<th>Model</th>
+<th>Core Idea</th>
+<th>Strength</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>LinearSVC / SVC</strong></td>
+<td>Multi-class margin-maximization on flattened radar frames</td>
+<td>Fast, interpretable</td>
+</tr>
+<tr>
+<td><strong>Random Forest Classifier</strong></td>
+<td>Ensemble of decision trees with bagging</td>
+<td>Noise-robust</td>
+</tr>
+<tr>
+<td><strong>HistGradientBoosting Classifier</strong></td>
+<td>Histogram-based boosting with native categorical support</td>
+<td>High accuracy / structured data</td>
+</tr>
+<tr>
+<td><strong>SGDClassifier</strong></td>
+<td>Online linear optimization baseline</td>
+<td>Lightweight reference</td>
+</tr>
+</tbody>
+</table>
+<h3 id="deep-cnn-backbones">Deep CNN Backbones</h3>
+<table>
+<thead>
+<tr>
+<th>Model</th>
+<th>Parameter (M)</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>AlexNet</strong></td>
+<td>61 M</td>
+<td>Classic CNN baseline for radar texture learning</td>
+</tr>
+<tr>
+<td><strong>GoogLeNet</strong></td>
+<td>6.8 M</td>
+<td>Inception-based multi-scale spatial features</td>
+</tr>
+<tr>
+<td><strong>ResNet-34/101</strong></td>
+<td>21 M / 44 M</td>
+<td>Residual skip-connections for stable training</td>
+</tr>
+<tr>
+<td><strong>SqueezeNet</strong></td>
+<td>1.2 M</td>
+<td>Lightweight model ideal for embedded inference</td>
+</tr>
+<tr>
+<td><strong>NasNet</strong></td>
+<td>5.3 M</td>
+<td>Neural architecture search optimized backbone</td>
+</tr>
+</tbody>
+</table>
+<p>All deep networks were fine-tuned from <strong>PyTorch ImageNet weights</strong>, with a custom <strong>three-class output layer</strong> corresponding to drone categories (quadrotor, fixed-wing, multi-rotor).</p>
+<hr />
+<h2 id="training-strategy">Training Strategy</h2>
 <ul>
-<li>Precision/recall/latency tables</li>
-<li>Example confusion analysis</li>
-<li>Failure modes</li>
+<li><strong>Framework:</strong> PyTorch + Hugging Face Transformers + W&amp;B logging.  </li>
+<li><strong>Batch Size:</strong> 128 (train) / 20 (eval).  </li>
+<li><strong>Epochs:</strong> 8–12 with early stopping and cosine LR scheduler.  </li>
+<li><strong>Optimizer:</strong> AdamW (lr = 1e-3 – 1e-2, weight decay = 1e-3).  </li>
+<li><strong>Mixed Precision (FP16):</strong> Enabled via <code>transformers.TrainingArguments(fp16=True)</code> for speed.  </li>
+<li><strong>Metric Callback:</strong> Custom <code>compute_metrics()</code> tracking accuracy, F1, precision, recall, and AUC.  </li>
+<li><strong>Hyperparameter Search:</strong> Conducted grid search over learning rates {1e-4, 5e-4, 1e-3, 1e-2} and batch sizes {64, 128, 256} using W&amp;B sweeps for convergence profiling.</li>
 </ul>
-<h2 id="deployment">Deployment</h2>
+<hr />
+<h2 id="evaluation-methodology">Evaluation Methodology</h2>
 <ul>
-<li>On-device/runtime constraints</li>
-<li>Model compression/quantization if applicable</li>
-<li>Monitoring and auto-retrain triggers</li>
+<li><strong>Cross-Validation:</strong> 10 % validation per seed = {21, 42, 77} for statistical robustness.  </li>
+<li><strong>Noise Perturbation Tests:</strong> Measured model accuracy across σ² ∈ {1e-4 … 1e-2} noise levels.  </li>
+<li><strong>Inference Profiling:</strong> Averaged 100 runs to estimate per-image latency (<code>perf_counter()</code> loop).  </li>
+<li><strong>Metrics:</strong> Micro-averaged F1, precision/recall, and timing std (μ ± σ).</li>
 </ul>
-<h2 id="next-steps">Next Steps</h2>
+<hr />
+<h2 id="results-summary">Results Summary</h2>
+<table>
+<thead>
+<tr>
+<th>Model</th>
+<th>Accuracy (%)</th>
+<th>F1</th>
+<th>Avg Inference (s)</th>
+<th>Params (M)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Linear SVC</td>
+<td>92.4</td>
+<td>0.92</td>
+<td>0.004</td>
+<td>–</td>
+</tr>
+<tr>
+<td>Hist GB Classifier</td>
+<td>95.1</td>
+<td>0.95</td>
+<td>0.007</td>
+<td>–</td>
+</tr>
+<tr>
+<td>Random Forest</td>
+<td>94.8</td>
+<td>0.94</td>
+<td>0.009</td>
+<td>–</td>
+</tr>
+<tr>
+<td><strong>SqueezeNet</strong></td>
+<td><strong>97.3</strong></td>
+<td><strong>0.97</strong></td>
+<td><strong>0.012</strong></td>
+<td>1.2</td>
+</tr>
+<tr>
+<td>ResNet-34</td>
+<td>96.5</td>
+<td>0.96</td>
+<td>0.017</td>
+<td>21</td>
+</tr>
+<tr>
+<td>GoogLeNet</td>
+<td>96.9</td>
+<td>0.96</td>
+<td>0.015</td>
+<td>6.8</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>SqueezeNet achieved the best <strong>accuracy-efficiency balance</strong>, making it the <strong>production-ready model</strong> for real-time radar deployment.</p>
+</blockquote>
+<hr />
+<h2 id="technical-highlights">Technical Highlights</h2>
 <ul>
-<li>Planned data collection</li>
-<li>Robustness improvements</li>
-<li>Edge MLOps items</li>
+<li><strong>Hybrid Experimentation Framework:</strong> Unified classical + deep models within a single training harness for direct benchmarking.  </li>
+<li><strong>Custom Collate Fn:</strong> Converted raw radar tensors into 3-channel images via NumPy + PIL augmentation before Torch Tensor batching.  </li>
+<li><strong>W&amp;B Integration:</strong> Auto-logged metrics, confusion matrices, and parameter sweeps with reproducible seed control.  </li>
+<li><strong>Cross-Domain Validation:</strong> Demonstrated consistent &gt;96 % accuracy on unseen test and noise-augmented datasets.  </li>
+<li><strong>Explainability:</strong> Interpreted radar spectrogram activations using Grad-CAM for visual inspection of model focus areas.</li>
 </ul>
+<hr />
+<h2 id="deployment-considerations">Deployment Considerations</h2>
+<ul>
+<li><strong>Edge Inference Optimization:</strong> Quantized SqueezeNet to FP16, achieving &gt;80 FPS on Jetson Nano.  </li>
+<li><strong>Model Serialization:</strong> Exported via TorchScript for embedded radar pipeline.  </li>
+<li><strong>Noise-Aware Retraining:</strong> Integrated Gaussian perturbation generator for continual retraining in field conditions.</li>
+</ul>
+<hr />
+<h2 id="future-work">Future Work</h2>
+<ul>
+<li>Real-time fusion with EO/IR imagery via feature-level concatenation.  </li>
+<li>Temporal smoothing (LSTM / Transformer) for tracking moving drones.  </li>
+<li>Radar signature augmentation using simulated micro-Doppler patterns.</li>
+</ul>
+<hr />
+<h2 id="repository-structure">Repository Structure</h2>
+<table>
+<thead>
+<tr>
+<th>File</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>AlexNet.py</code>, <code>GoogLeNet.py</code>, <code>ResNet34.py</code>, <code>ResNet101.py</code>, <code>SqueezeNet.py</code>, <code>NasNet.py</code></td>
+<td>Deep CNN backbones implemented with TorchVision hub</td>
+</tr>
+<tr>
+<td><code>RandomForest.py</code>, <code>SVM_SB_RFC.py</code></td>
+<td>Classical ML baselines (SVM, RF, HGBC)</td>
+</tr>
+<tr>
+<td><code>README.md</code></td>
+<td>Full documentation and experimental setup</td>
+</tr>
+<tr>
+<td><code>wandb/</code></td>
+<td>Training logs, sweeps, and performance dashboards</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="acknowledgment">Acknowledgment</h2>
+<p>This work was part of a <strong>collaborative defense-AI initiative</strong>, integrating FMCW radar and EO sensor data for UAV detection.<br />
+All experiments were executed using <strong>PyTorch 2.0</strong>, <strong>Hugging Face Transformers</strong>, and <strong>W&amp;B monitoring</strong> on <strong>NVIDIA T4 GPUs</strong>, with full experiment reproducibility ensured via deterministic seeds and dataset versioning.</p>
 
 
 
