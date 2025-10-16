@@ -9,18 +9,16 @@ hide:
 
 ![Jeongsoo Pang](images/profile.jpg){.headshot}
 
-**Jeongsoo Pang**  
-Cercare-Medical R&D
-ML-Specialist
+<strong class="bio-name">Jeongsoo Pang</strong> 
+** Cercare-Medical R&D** 
+** ML-Specialist** 
 
 <div class="clear"></div>
 
 ---
 
 ## Abstract
-Radiology workflows depend on correctly identifying **series types** (e.g., MR: DWI, SWI, T1, T2 FLAIR; CT: Angio/Perfusion/Noncontrast) before reconstruction, analysis, or visualization. Vendor-specific DICOM conventions, private tags, nested data, multilingual fields, and missing metadata make rule-based detectors unreliable.
-
-This project delivers a **production-ready ML pipeline** that automatically classifies **8 MR** and **3 CT** series using only DICOM header metadata. 
+Radiology workflows depend on correctly identifying **series types** (e.g., MR: DWI, SWI, T1, T2 FLAIR; CT: Angio/Perfusion/Noncontrast) before reconstruction, analysis, or visualization. Vendor-specific DICOM conventions, private tags, nested data, multilingual fields, and missing metadata make rule-based detectors unreliable. This project delivers a **production-ready ML pipeline** that automatically classifies **8 MR** and **3 CT** series using only DICOM header metadata. 
 
 It features:  
 1. A robust **feature-extraction module** handling private/nested tags and multilingual headers.  
@@ -30,13 +28,11 @@ It features:
 Externally validated on partner-hospital datasets, the model achieved **96.69% MR** and **99.25% CT** accuracy, replacing the legacy C++ detector in production. The design emphasizes **maintainability**, **future retraining**, and **clinical safety**.
 
 ---
-
 ## Project Goal
 - Build an ML model to classify **8 MR** and **3 CT** series, replacing the company’s rule-based detector.  
 - Ensure the model is **easy to retrain** for new series and **safe to deploy** through confidence-based self-inspection.  
 
 ---
-
 ## My Contributions
 - **Engineered DICOM Header Extractor**
 - **Data De-biasing**: one representative DICOM per 3D study.  
@@ -47,7 +43,6 @@ Externally validated on partner-hospital datasets, the model achieved **96.69% M
 - **Explainability** with SHAP; reproducible JSON/serialized pipelines.
 
 ---
-
 ## Dataset Summary
 
 | Modality | Train | Test |
@@ -59,7 +54,6 @@ Externally validated on partner-hospital datasets, the model achieved **96.69% M
 **CT (3):** `ct_angiography`, `ct_perfusion`, `ct_noncontrast`
 
 ---
-
 ## Feature Overview
 
 **MR:** `NumberTemporalPositions`, `PhaseEncodingDirection`, `RepetitionTime`, `FlipAngle`, `InversionTime`, `EchoTrainLength`, `MagneticFieldStrength`, `EchoSpacing`, `PulseSequenceName`, `SequenceVariant`, `Bvalue`, `ScanOptions`  
@@ -67,7 +61,6 @@ Externally validated on partner-hospital datasets, the model achieved **96.69% M
 **CT:** `ContrastBolusAgent`, `ExposureTime`, `KVP`, `ScanOptions`, `ReconstructionDiameter`, `ConvolutionKernel`, `TableSpeed`, `SeriesTime`, `Modality`
 
 ---
-
 ## Pipeline Overview
 1. **Ingestion**: select one DICOM per 3D series from Blackbox server.  
 2. **Feature Extraction** → normalized, grouped JSON.  
@@ -79,7 +72,6 @@ Externally validated on partner-hospital datasets, the model achieved **96.69% M
 ![Pipeline workflow](images/workflow.png){ width="900" }
 
 ---
-
 ## Training & Hyperparameter Tuning
 
 I treated tuning as an engineering task, not guesswork.
@@ -110,13 +102,10 @@ early_stopping='auto',
 validation_fraction=0.1
 )
 
-
 **Why not plain GBC?**  
 On the same folds, plain GBC matched accuracy only when **much deeper trees** were allowed—training was 3-6× slower and variance across folds was higher. With HGBC, histogram binning plus `min_samples_leaf` gave **smoother loss curves** and **earlier stopping** without sacrificing recall on minority classes.
 
-
 ---
-
 ## Model Choice & Rationale — HistGradientBoosting (HGBC)
 
 I compared tree-based learners (RandomForest, GradientBoostingClassifier), linear baselines, and HGBC. HGBC won for this use-case:
@@ -131,7 +120,6 @@ I compared tree-based learners (RandomForest, GradientBoostingClassifier), linea
 
 
 ---
-
 ## Explainability, Robustness & Model Safety
 
 - **SHAP-based attributions** shipped with predictions for audit-readiness; top contributors were TR/TE/FA and sequence-family tags, matching domain intuition.
@@ -144,7 +132,6 @@ I compared tree-based learners (RandomForest, GradientBoostingClassifier), linea
 
 
 ---
-
 ## Deployment & Reproducibility
 
 - **Single Sklearn Pipeline**: `preprocess → model → calibration → selective gate`; versioned with semantic tags.
@@ -155,7 +142,6 @@ I compared tree-based learners (RandomForest, GradientBoostingClassifier), linea
 
 
 ---
-
 ## Evaluation Protocol & Metrics
 
 - **Splits:** patient-level train/val/test; external partner hospitals held-out for final reporting.
@@ -170,13 +156,11 @@ I compared tree-based learners (RandomForest, GradientBoostingClassifier), linea
  ![ROC_curve](images/ROC_curve.png){ width="900" }
 
 ---
-
 ## Results Summary
 External partner-hospital validation: **MR 96.69%**, **CT 99.25%**.  
 Deployed to production; supports safe retraining and human-in-the-loop.
 
 ---
-
 ## Limitations & Next Steps
 - **Cross-vendor generalization:** performance is strong but varies on rare protocol variants; plan targeted augmentation and vendor-specific priors.
 - **Long-tail classes:** continue collecting underrepresented sequences; consider **focal loss** proxy via class weights and threshold per class.
@@ -184,7 +168,6 @@ Deployed to production; supports safe retraining and human-in-the-loop.
 - **Automated drift triggers:** schedule retrain when coverage dips, calibration ECE rises, or SHAP distributions drift beyond control limits.
 
 ---
-
 ## Acknowledgment
 This project was conducted under **Cercare-Medical, Denmark (2024)** with direct collaboration with the **Lead AI Developer**, **Senior Software Developers**, and **Operation Team**, resulting in a successful production deployment and recommendation Letter from the **CTO**.
 
