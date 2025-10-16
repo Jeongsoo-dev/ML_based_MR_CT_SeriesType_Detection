@@ -1,5 +1,5 @@
 ---
-title: "Machine Learning Based Advanced MR and CT Series Type Detection"
+title: "Cercare-Medical ML Project"
 hide:
   - title
 ---
@@ -8,8 +8,8 @@ hide:
 ![Jeongsoo Pang](images/profile.jpg){.headshot}
 
 **Jeongsoo Pang**  
-UM–SJTU Joint Institute  
-Electrical & Computer Engineering
+Cercare-Meical R&D 
+ML-Specialist
 
 ## Abstract
 Radiology workflows depend on correctly identifying **series types** (e.g., MR: DWI, SWI, T1, T2 FLAIR; CT: Angio/Perfusion/Noncontrast) before reconstruction, analysis, or visualization. Vendor-specific DICOM conventions, private tags, nested data, multilingual fields, and missing metadata make rule-based detectors unreliable.
@@ -90,14 +90,14 @@ Externally validated on partner-hospital datasets, the model achieved **96.69% M
 External partner-hospital validation: **MR 96.69%**, **CT 99.25%**.  
 Deployed to production; supports safe retraining and human-in-the-loop.
 
+## Acknowledgment
+This project was conducted under **Cercare-Medical, Denmark (2024)** with direct collaboration with the **Lead AI Developer**, **Senior Software Developers**, and **Operation Team**, resulting in a successful production deployment and recommendation Letter from the **CTO**.
+
 <!-- 두 이미지를 가로로 -->
 <div style="display:flex;justify-content:space-between;align-items:center;gap:2%;margin-top:12px;">
   <img src="images/cercare_1.jpg" alt="Cercare Image 1" style="width:49%;border-radius:8px;">
   <img src="images/cercare_2.jpg" alt="Cercare Image 2" style="width:49%;border-radius:8px;">
 </div>
-
-## Acknowledgment
-This project was conducted under **Cercare-Medical, Denmark (2024)** with direct collaboration with the **Lead AI Developer**, **Senior Software Developers**, and **Operation Team**, resulting in a successful production deployment and recommendation Letter from the **CTO**.
 
   </section>
 </div>
