@@ -10,8 +10,10 @@ hide:
 ![Jeongsoo Pang](images/profile.jpg){.headshot}
 
 **Jeongsoo Pang**  
-Cercare-Meical R&D 
-ML-Specialist
+**Cercare-Medical R&D**  
+**ML-Specialist**
+
+<div class="clear"></div>
 
 ---
 
@@ -125,9 +127,5 @@ This project was conducted under **Cercare-Medical, Denmark (2024)** with direct
 
 ---
 
-## Acknowledgment
-This project was conducted under **Cercare-Medical, Denmark (2024)** with direct collaboration with the **Lead AI Developer**, **Senior Software Developers**, and **Operation Team**, resulting in a successful production deployment and recommendation Letter from the **CTO**.
-
->>>>>>> 3e8b6ff (update)
   </section>
 </div>
