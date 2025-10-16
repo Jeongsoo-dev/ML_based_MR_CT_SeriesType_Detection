@@ -5,14 +5,14 @@ hide:
 ---
 
 <div class="hero">
-  <img src="images/profile.jpg" alt="Jeongsoo Pang" class="headshot-hero">
+  ![Jeongsoo Pang](../images/profile.jpg){.headshot-hero}
+
   <div class="hero-text">
     <h1>Anti-Drone Project — FMCW Radar & Electro-Optical Fusion</h1>
-
     <strong class="bio-name">Jeongsoo Pang</strong><br>
-    **AI Capacity Competition by Korean National Defense**<br>
-    **FMCW Radar Signal & Image Intelligence**<br>
-    **2023.11**
+    AI Capacity Competition by Korean National Defense<br>
+    FMCW Radar Signal & Image Intelligence<br>
+    2023.11
   </div>
 </div>
 
