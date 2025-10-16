@@ -5,12 +5,11 @@ hide:
 ---
 
 <div class="hero">
-  <img src="{{ base_url }}/images/army.jpg" alt="Jeongsoo Pang" class="headshot-hero">
+  <img src="../images/army.jpg" alt="Jeongsoo Pang" class="headshot-hero">
 
   <div class="hero-text">
     <h1>Anti-Drone Project — FMCW Radar & Electro-Optical Fusion</h1>
     <strong class="bio-name">Jeongsoo Pang</strong><br>
-    
     AI Capacity Competition by Korean National Defense<br>
     FMCW Radar Signal & Image Intelligence<br>
     2023.11
@@ -18,8 +17,6 @@ hide:
 </div>
 
 <div class="clear"></div>
-
-
 
 ---
 ## Abstract
