@@ -5,7 +5,7 @@ hide:
 ---
 
 <div class="hero">
-  <img src="images/profile.jpg" alt="Jeongsoo Pang" class="headshot-hero">
+  <img src="images/army.jpg" alt="Jeongsoo Pang" class="headshot-hero">
 
   <div class="hero-text">
     <h1>Anti-Drone Project — FMCW Radar & Electro-Optical Fusion</h1>
