@@ -2,17 +2,20 @@
 title: "Cercare-Medical ML Project"
 hide:
   - title
-
 ---
 
-# Machine Learning Based Advanced MR and CT Series Type Detection
+<div class="hero">
+  <img src="images/profile.jpg" alt="Jeongsoo Pang" class="headshot-hero">
 
-![Jeongsoo Pang](images/profile.jpg){.headshot}
+  <div class="hero-text">
+    <h1>Machine Learning Based Advanced MR and CT Series Type Detection</h1>
 
-<strong class="bio-name">Jeongsoo Pang</strong>  
-**Cercare-Medical R&D**  
-**ML-Specialist**  
-**2024.06.01 - 2024.12.01**  
+    <strong class="bio-name">Jeongsoo Pang</strong><br>
+    **Cercare-Medical R&D**<br>
+    **ML-Specialist**<br>
+    **2024.06.01 - 2024.12.01**
+  </div>
+</div>
 
 <div class="clear"></div>
 
