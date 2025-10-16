@@ -5,8 +5,7 @@ hide:
 ---
 
 <div class="hero">
-  ![Jeongsoo Pang](../images/profile.jpg){.headshot-hero}
-
+  <img src="{{ base_url }}/images/profile.jpg" alt="Jeongsoo Pang" class="headshot-hero">
   <div class="hero-text">
     <h1>Anti-Drone Project — FMCW Radar & Electro-Optical Fusion</h1>
     <strong class="bio-name">Jeongsoo Pang</strong><br>
