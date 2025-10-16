@@ -10,6 +10,14 @@
   box-shadow: 0 1px 3px rgba(0,0,0,.15);
 }
 
+.md-typeset .bio-name {
+  font-size: 1.2rem;     /* tweak: 1.1–1.25rem to taste */
+  font-weight: 700;
+  letter-spacing: 0.1px;
+  display: inline-block;
+  margin-bottom: 2px;
+}
+
 /* Ensure paragraphs clear properly on small screens */
 @media (max-width: 900px) {
   .md-typeset .headshot { float: none; display: block; margin: 0 auto 12px; }
