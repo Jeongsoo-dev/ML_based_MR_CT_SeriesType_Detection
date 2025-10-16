@@ -399,15 +399,14 @@
 
 <h1 id="machine-learning-based-advanced-mr-and-ct-series-type-detection">Machine Learning Based Advanced MR and CT Series Type Detection</h1>
 <p><img alt="Jeongsoo Pang" class="headshot" src="images/profile.jpg" /></p>
-<p><strong>Jeongsoo Pang</strong><br />
-Cercare-Medical R&amp;D
-ML-Specialist</p>
+<p><strong class="bio-name">Jeongsoo Pang</strong> 
+** Cercare-Medical R&amp;D<strong> 
+** ML-Specialist</strong> </p>
 <div class="clear"></div>
 
 <hr />
 <h2 id="abstract">Abstract</h2>
-<p>Radiology workflows depend on correctly identifying <strong>series types</strong> (e.g., MR: DWI, SWI, T1, T2 FLAIR; CT: Angio/Perfusion/Noncontrast) before reconstruction, analysis, or visualization. Vendor-specific DICOM conventions, private tags, nested data, multilingual fields, and missing metadata make rule-based detectors unreliable.</p>
-<p>This project delivers a <strong>production-ready ML pipeline</strong> that automatically classifies <strong>8 MR</strong> and <strong>3 CT</strong> series using only DICOM header metadata. </p>
+<p>Radiology workflows depend on correctly identifying <strong>series types</strong> (e.g., MR: DWI, SWI, T1, T2 FLAIR; CT: Angio/Perfusion/Noncontrast) before reconstruction, analysis, or visualization. Vendor-specific DICOM conventions, private tags, nested data, multilingual fields, and missing metadata make rule-based detectors unreliable. This project delivers a <strong>production-ready ML pipeline</strong> that automatically classifies <strong>8 MR</strong> and <strong>3 CT</strong> series using only DICOM header metadata. </p>
 <p>It features:<br />
 1. A robust <strong>feature-extraction module</strong> handling private/nested tags and multilingual headers.<br />
 2. Two <strong>HistGradientBoosting (HGBC)</strong> models—trained <strong>with</strong> and <strong>without</strong> <code>SeriesDescription</code>—to remain robust when textual labels are missing or inconsistent.<br />
