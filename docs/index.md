@@ -10,8 +10,9 @@ hide:
 ![Jeongsoo Pang](images/profile.jpg){.headshot}
 
 <strong class="bio-name">Jeongsoo Pang</strong> 
-** Cercare-Medical R&D** 
-** ML-Specialist** 
+**Cercare-Medical R&D** 
+**ML-Specialist** 
+**2024.06.01 - 2024.12.01**
 
 <div class="clear"></div>
 
