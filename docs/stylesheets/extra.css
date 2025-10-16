@@ -10,6 +10,47 @@
   box-shadow: 0 1px 3px rgba(0,0,0,.15);
 }
 
+/* Title + headshot inline row */
+.md-typeset .hero {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  margin: 8px 0 16px;
+}
+
+/* Photo in the hero row */
+.md-typeset .headshot-hero {
+  width: 150px;                  /* tweak 140–170 if you want */
+  border-radius: 10px;
+  box-shadow: 0 1px 3px rgba(0,0,0,.15);
+}
+
+/* Tighten the title spacing when inside hero */
+.md-typeset .hero-text h1 {
+  margin: 0 0 6px 0;
+}
+
+/* Make the name pop a bit */
+.md-typeset .bio-name {
+  display: inline-block;
+  font-size: 1.2rem;
+  font-weight: 700;
+  letter-spacing: .1px;
+  margin-bottom: 2px;
+}
+
+/* Mobile: stack vertically */
+@media (max-width: 900px) {
+  .md-typeset .hero {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+/* utility */
+.md-typeset .clear { clear: both; }
+
+
 .md-typeset .bio-name {
   font-size: 1.2rem;     /* tweak: 1.1–1.25rem to taste */
   font-weight: 700;
