@@ -5,7 +5,7 @@ hide:
 ---
 
 <div class="hero">
-  <img src="images/army.jpg" alt="Jeongsoo Pang" class="headshot-hero">
+  ![Jeongsoo Pang](../images/army.jpg){.headshot-hero}
 
   <div class="hero-text">
     <h1>Anti-Drone Project — FMCW Radar & Electro-Optical Fusion</h1>
@@ -19,13 +19,11 @@ hide:
 <div class="clear"></div>
 
 ---
-
 ## Abstract
 The **Anti-Drone Project** focused on developing a reliable, low-latency **machine learning pipeline** to detect and classify UAVs using **FMCW radar spectrograms** and **RCS imagery**.  
 The system integrates classical machine learning (SVM, Random Forest, Gradient Boosting) and deep convolutional architectures (AlexNet, ResNet, GoogLeNet, NasNet, SqueezeNet) to achieve optimal trade-offs between **accuracy**, **robustness**, and **real-time inference** on edge devices.
 
 ---
-
 ## Project Objective
 - Build an **end-to-end ML framework** for **drone detection and classification** from Doppler and RCS data.
 - Benchmark traditional classifiers versus deep CNN backbones for **FMCW spectrograms**.
