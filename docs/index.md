@@ -60,6 +60,8 @@ Externally validated on partner-hospital datasets, the model achieved **96.69% M
 5. **Selective Prediction**: abstain on low confidence or tight top-2.  
 6. **Validation/Deployment**: external datasets; production replacement.
 
+![Pipeline workflow](images/workflow.png){ width="900" }
+
 ## Why HistGradientBoosting
 
 | Property               | Advantage                                                                 |
@@ -75,6 +77,9 @@ Externally validated on partner-hospital datasets, the model achieved **96.69% M
 - **SHAP** for per-feature importance.  
 - **Self-inspection thresholds** to prevent silent misclassification.  
 - **Audit-ready** JSON and serialized pipelines.
+
+![Test map](images/test_map.png){ width="900" }
+
 
 ## Deployment Readiness
 
