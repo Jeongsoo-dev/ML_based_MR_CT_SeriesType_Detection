@@ -10,4 +10,4 @@ markdown_extensions:
   - tables
   - attr_list              # needed for {.headshot}
 nav:
-  - "Machine Learning Based Advanced MR and CT Series Type Detection": index.md
+  - "Cercare-Medical ML Project": index.md
