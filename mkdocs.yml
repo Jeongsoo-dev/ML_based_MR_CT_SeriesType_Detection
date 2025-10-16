@@ -11,3 +11,5 @@ markdown_extensions:
   - attr_list              # needed for {.headshot}
 nav:
   - "Cercare-Medical ML Project": index.md
+  - "Anti-Drone Project": anti_drone.md
+
