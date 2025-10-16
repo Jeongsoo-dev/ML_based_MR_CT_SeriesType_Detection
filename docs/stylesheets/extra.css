@@ -14,3 +14,5 @@
 @media (max-width: 900px) {
   .md-typeset .headshot { float: none; display: block; margin: 0 auto 12px; }
 }
+
+.md-typeset .clear { clear: both; }
