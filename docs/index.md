@@ -1,5 +1,5 @@
 ---
-title: "Machine Learning Based Advanced MR and CT Series Type Detection"
+title: "Cercare-Medical ML Project"
 hide:
   - title
 
@@ -10,11 +10,16 @@ hide:
 ![Jeongsoo Pang](images/profile.jpg){.headshot}
 
 **Jeongsoo Pang**  
+<<<<<<< HEAD
+Cercare-Meical R&D 
+ML-Specialist
+=======
 UM–SJTU Joint Institute  
 Electrical & Computer Engineering
 
 
 ---
+>>>>>>> 3e8b6ff (update)
 
 
 
@@ -28,8 +33,11 @@ This project delivers a **production-ready ML pipeline** that automatically clas
 
 Externally validated on partner-hospital datasets, the model achieved **96.69% MR** and **99.25% CT** accuracy, replacing the legacy C++ detector in production. The design emphasizes **maintainability**, **future retraining**, and **clinical safety**.
 
+<<<<<<< HEAD
+=======
 
 ---
+>>>>>>> 3e8b6ff (update)
 
 
 
@@ -37,8 +45,11 @@ Externally validated on partner-hospital datasets, the model achieved **96.69% M
 - Build an ML model to classify **8 MR** and **3 CT** series, replacing the company’s rule-based detector.  
 - Ensure the model is **easy to retrain** for new series and **safe to deploy** through confidence-based self-inspection.  
 
+<<<<<<< HEAD
+=======
 
 ---
+>>>>>>> 3e8b6ff (update)
 
 
 
@@ -51,11 +62,14 @@ Externally validated on partner-hospital datasets, the model achieved **96.69% M
 - **External Validation & Deployment** with hospitals; production replacement.  
 - **Explainability** with SHAP; reproducible JSON/serialized pipelines.
 
+<<<<<<< HEAD
+=======
 
 ---
 
 
 
+>>>>>>> 3e8b6ff (update)
 ## Dataset Summary
 
 | Modality | Train | Test |
@@ -66,22 +80,28 @@ Externally validated on partner-hospital datasets, the model achieved **96.69% M
 **MR (8):** `pwi_dsc`, `pwi_dce`, `swi`, `dwi`, `t2`, `t2_flair`, `t1`, `t1_contrast`  
 **CT (3):** `ct_angiography`, `ct_perfusion`, `ct_noncontrast`
 
+<<<<<<< HEAD
+=======
 
 ---
 
 
 
+>>>>>>> 3e8b6ff (update)
 ## Feature Overview
 
 **MR:** `NumberTemporalPositions`, `PhaseEncodingDirection`, `RepetitionTime`, `FlipAngle`, `InversionTime`, `EchoTrainLength`, `MagneticFieldStrength`, `EchoSpacing`, `PulseSequenceName`, `SequenceVariant`, `Bvalue`, `ScanOptions`  
 
 **CT:** `ContrastBolusAgent`, `ExposureTime`, `KVP`, `ScanOptions`, `ReconstructionDiameter`, `ConvolutionKernel`, `TableSpeed`, `SeriesTime`, `Modality`
 
+<<<<<<< HEAD
+=======
 
 ---
 
 
 
+>>>>>>> 3e8b6ff (update)
 ## Pipeline Overview
 1. **Ingestion**: select one DICOM per 3D series from Blackbox server.  
 2. **Feature Extraction** → normalized, grouped JSON.  
@@ -90,8 +110,12 @@ Externally validated on partner-hospital datasets, the model achieved **96.69% M
 5. **Selective Prediction**: abstain on low confidence or tight top-2.  
 6. **Validation/Deployment**: external datasets; production replacement.
 
+<<<<<<< HEAD
+![Pipeline workflow](images/workflow.png){ width="900" }
+=======
 
 ---
+>>>>>>> 3e8b6ff (update)
 
 
 
@@ -106,18 +130,26 @@ Externally validated on partner-hospital datasets, the model achieved **96.69% M
 | Regularization control | Fine-grained tuning                                                       |
 | Early stopping         | Validation-based overfitting control                                      |
 
+<<<<<<< HEAD
+=======
 
 ---
 
 
 
+>>>>>>> 3e8b6ff (update)
 ## Explainability & Model Safety
 - **SHAP** for per-feature importance.  
 - **Self-inspection thresholds** to prevent silent misclassification.  
 - **Audit-ready** JSON and serialized pipelines.
 
+<<<<<<< HEAD
+![Test map](images/test_map.png){ width="900" }
+
+=======
 
 ---
+>>>>>>> 3e8b6ff (update)
 
 
 
@@ -131,14 +163,20 @@ Externally validated on partner-hospital datasets, the model achieved **96.69% M
 | `inference.py`                    | Self-inspection + prediction interface                               |
 | `utils.py`                        | Helpers (I/O, validation, preprocessing)                             |
 
+<<<<<<< HEAD
+=======
 
 ---
 
 
 
+>>>>>>> 3e8b6ff (update)
 ## Results Summary
 External partner-hospital validation: **MR 96.69%**, **CT 99.25%**.  
 Deployed to production; supports safe retraining and human-in-the-loop.
+
+## Acknowledgment
+This project was conducted under **Cercare-Medical, Denmark (2024)** with direct collaboration with the **Lead AI Developer**, **Senior Software Developers**, and **Operation Team**, resulting in a successful production deployment and recommendation Letter from the **CTO**.
 
 <!-- 두 이미지를 가로로 -->
 <div style="display:flex;justify-content:space-between;align-items:center;gap:2%;margin-top:12px;">
@@ -146,6 +184,8 @@ Deployed to production; supports safe retraining and human-in-the-loop.
   <img src="images/cercare_2.jpg" alt="Cercare Image 2" style="width:49%;border-radius:8px;">
 </div>
 
+<<<<<<< HEAD
+=======
 
 ---
 
@@ -154,5 +194,6 @@ Deployed to production; supports safe retraining and human-in-the-loop.
 ## Acknowledgment
 This project was conducted under **Cercare-Medical, Denmark (2024)** with direct collaboration with the **Lead AI Developer**, **Senior Software Developers**, and **Operation Team**, resulting in a successful production deployment and recommendation Letter from the **CTO**.
 
+>>>>>>> 3e8b6ff (update)
   </section>
 </div>
