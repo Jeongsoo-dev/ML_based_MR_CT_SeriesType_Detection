@@ -300,27 +300,45 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#why-histgradientboosting" class="md-nav__link">
+  <a href="#training-hyperparameter-tuning" class="md-nav__link">
     <span class="md-ellipsis">
-      Why HistGradientBoosting
+      Training &amp; Hyperparameter Tuning
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#explainability-model-safety" class="md-nav__link">
+  <a href="#model-choice-rationale-histgradientboosting-hgbc" class="md-nav__link">
     <span class="md-ellipsis">
-      Explainability &amp; Model Safety
+      Model Choice &amp; Rationale — HistGradientBoosting (HGBC)
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#deployment-readiness" class="md-nav__link">
+  <a href="#explainability-robustness-model-safety" class="md-nav__link">
     <span class="md-ellipsis">
-      Deployment Readiness
+      Explainability, Robustness &amp; Model Safety
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deployment-reproducibility" class="md-nav__link">
+    <span class="md-ellipsis">
+      Deployment &amp; Reproducibility
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#evaluation-protocol-metrics" class="md-nav__link">
+    <span class="md-ellipsis">
+      Evaluation Protocol &amp; Metrics
     </span>
   </a>
   
@@ -330,6 +348,15 @@
   <a href="#results-summary" class="md-nav__link">
     <span class="md-ellipsis">
       Results Summary
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#limitations-next-steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      Limitations &amp; Next Steps
     </span>
   </a>
   
@@ -373,14 +400,15 @@
 <h1 id="machine-learning-based-advanced-mr-and-ct-series-type-detection">Machine Learning Based Advanced MR and CT Series Type Detection</h1>
 <p><img alt="Jeongsoo Pang" class="headshot" src="images/profile.jpg" /></p>
 <p><strong>Jeongsoo Pang</strong><br />
-<strong>Cercare-Medical R&amp;D</strong><br />
-<strong>ML-Specialist</strong></p>
+Cercare-Medical R&amp;D
+ML-Specialist</p>
 <div class="clear"></div>
 
 <hr />
 <h2 id="abstract">Abstract</h2>
 <p>Radiology workflows depend on correctly identifying <strong>series types</strong> (e.g., MR: DWI, SWI, T1, T2 FLAIR; CT: Angio/Perfusion/Noncontrast) before reconstruction, analysis, or visualization. Vendor-specific DICOM conventions, private tags, nested data, multilingual fields, and missing metadata make rule-based detectors unreliable.</p>
-<p>This project delivers a <strong>production-ready ML pipeline</strong> that automatically classifies <strong>8 MR</strong> and <strong>3 CT</strong> series using only DICOM header metadata. It features:<br />
+<p>This project delivers a <strong>production-ready ML pipeline</strong> that automatically classifies <strong>8 MR</strong> and <strong>3 CT</strong> series using only DICOM header metadata. </p>
+<p>It features:<br />
 1. A robust <strong>feature-extraction module</strong> handling private/nested tags and multilingual headers.<br />
 2. Two <strong>HistGradientBoosting (HGBC)</strong> models—trained <strong>with</strong> and <strong>without</strong> <code>SeriesDescription</code>—to remain robust when textual labels are missing or inconsistent.<br />
 3. A <strong>self-inspection mechanism</strong> that flags low-confidence predictions to radiologists for review.</p>
@@ -443,85 +471,123 @@
 </ol>
 <p><img alt="Pipeline workflow" src="images/workflow.png" width="900" /></p>
 <hr />
-<h2 id="why-histgradientboosting">Why HistGradientBoosting</h2>
+<h2 id="training-hyperparameter-tuning">Training &amp; Hyperparameter Tuning</h2>
+<p>I treated tuning as an engineering task, not guesswork.</p>
+<p><strong>Search space (HGBC):</strong>
+- <code>learning_rate ∈ {0.03, 0.05, 0.07, 0.1}</code>
+- <code>max_iter ∈ {200, 400, 800}</code> (with early stopping)
+- <code>max_leaf_nodes ∈ {15, 31, 63}</code>
+- <code>min_samples_leaf ∈ {10, 20, 40}</code>
+- <code>l2_regularization ∈ {0.0, 0.01, 0.05, 0.1}</code>
+- <code>early_stopping='auto'</code>, <code>validation_fraction=0.1</code>, <code>n_iter_no_change=20</code></p>
+<p><strong>Protocol:</strong>
+1. <strong>Stratified 5-fold CV</strong> on training (patient-level split) to avoid leakage.
+2. <strong>Random search (200 trials)</strong> → <strong>Bayesian refinement (20 trials)</strong> on top 10% configs.
+3. <strong>Class-imbalance control:</strong> per-class weighting from inverse frequency; verified no single class dominated loss.
+4. <strong>Feature pipelines locked</strong> (scalers/encoders fit only on train folds) to guarantee reproducibility.
+5. <strong>Model selection objective:</strong> macro-F1 with a tie-breaker on AUROC and coverage at the selective-prediction threshold.</p>
+<p><strong>Best config (typical):</strong>
+HGBC(
+learning_rate=0.07,
+max_iter=400,
+max_leaf_nodes=31,
+min_samples_leaf=20,
+l2_regularization=0.05,
+early_stopping='auto',
+validation_fraction=0.1
+)</p>
+<p><strong>Why not plain GBC?</strong><br />
+On the same folds, plain GBC matched accuracy only when <strong>much deeper trees</strong> were allowed—training was 3-6× slower and variance across folds was higher. With HGBC, histogram binning plus <code>min_samples_leaf</code> gave <strong>smoother loss curves</strong> and <strong>earlier stopping</strong> without sacrificing recall on minority classes.</p>
+<hr />
+<h2 id="model-choice-rationale-histgradientboosting-hgbc">Model Choice &amp; Rationale — HistGradientBoosting (HGBC)</h2>
+<p>I compared tree-based learners (RandomForest, GradientBoostingClassifier), linear baselines, and HGBC. HGBC won for this use-case:</p>
 <table>
 <thead>
 <tr>
-<th>Property</th>
-<th>Advantage</th>
+<th>Criterion</th>
+<th>HGBC (Chosen)</th>
+<th>Plain GBC</th>
+<th>Why it matters for DICOM-header metadata</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Mixed-type handling</td>
-<td>Works with numeric <strong>and</strong> categorical DICOM metadata</td>
+<td>Training speed on medium/large tabular data</td>
+<td><strong>Histogram binning</strong> (fast)</td>
+<td>Exact splits (slow)</td>
+<td>Faster iteration for tuning/validation on hospital-scale datasets</td>
 </tr>
 <tr>
-<td>Missing values</td>
-<td>Native support; minimal imputation</td>
+<td>Native handling of missing values</td>
+<td><strong>Yes</strong></td>
+<td>Partial/No</td>
+<td>Robust to sparsity and vendor-specific header gaps</td>
 </tr>
 <tr>
-<td>Histogram binning</td>
-<td>Noise-robust and fast</td>
+<td>Early stopping &amp; validation split</td>
+<td><strong>Built-in</strong></td>
+<td>Manual</td>
+<td>Safe convergence + automatic regularization</td>
 </tr>
 <tr>
-<td>Dense matrix support</td>
-<td>Avoids sparse-vector overhead</td>
+<td>Regularization knobs</td>
+<td><strong><code>l2_regularization</code>, <code>min_samples_leaf</code>, <code>max_leaf_nodes</code></strong></td>
+<td>Fewer stable knobs</td>
+<td>Tighter control → less overfit on small classes</td>
 </tr>
 <tr>
-<td>Regularization control</td>
-<td>Fine-grained tuning</td>
-</tr>
-<tr>
-<td>Early stopping</td>
-<td>Validation-based overfitting control</td>
+<td>Interpretability</td>
+<td><strong>Tree-based; SHAP works well</strong></td>
+<td>Same</td>
+<td>Feature attributions for clinical QA</td>
 </tr>
 </tbody>
 </table>
 <hr />
-<h2 id="explainability-model-safety">Explainability &amp; Model Safety</h2>
+<h2 id="explainability-robustness-model-safety">Explainability, Robustness &amp; Model Safety</h2>
 <ul>
-<li><strong>SHAP</strong> for per-feature importance.  </li>
-<li><strong>Self-inspection thresholds</strong> to prevent silent misclassification.  </li>
-<li><strong>Audit-ready</strong> JSON and serialized pipelines.</li>
+<li><strong>SHAP-based attributions</strong> shipped with predictions for audit-readiness; top contributors were TR/TE/FA and sequence-family tags, matching domain intuition.</li>
+<li><strong>Counterfactual probes:</strong> perturbed non-causal strings in textual headers to ensure predictions stayed stable; drift alarms if contribution of text fields spikes.</li>
+<li><strong>Selective-prediction policy:</strong> abstain when (1) max prob &lt; τ₁ or (2) top-2 prob gap &lt; τ₂; thresholds chosen on validation for F1@coverage.</li>
+<li><strong>Calibration:</strong> isotonic mapping per fold; stored along with the model for consistent probability semantics.</li>
+<li><strong>Data privacy &amp; governance:</strong> PHI removed upstream; experiments run on anonymized headers only; reproducible artifact hashes tracked.</li>
 </ul>
 <p><img alt="Test map" src="images/test_map.png" width="900" /></p>
 <hr />
-<h2 id="deployment-readiness">Deployment Readiness</h2>
-<table>
-<thead>
-<tr>
-<th>Component</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>mr_feature_extraction_script.py</code></td>
-<td>Extract MR DICOM headers → JSON</td>
-</tr>
-<tr>
-<td><code>mr_ml_train_test_script.py</code></td>
-<td>Train HGBC models (with/without <code>SeriesDescription</code>)</td>
-</tr>
-<tr>
-<td><code>classify_series_type.py</code></td>
-<td>Inference entry point for production</td>
-</tr>
-<tr>
-<td><code>inference.py</code></td>
-<td>Self-inspection + prediction interface</td>
-</tr>
-<tr>
-<td><code>utils.py</code></td>
-<td>Helpers (I/O, validation, preprocessing)</td>
-</tr>
-</tbody>
-</table>
+<h2 id="deployment-reproducibility">Deployment &amp; Reproducibility</h2>
+<ul>
+<li><strong>Single Sklearn Pipeline</strong>: <code>preprocess → model → calibration → selective gate</code>; versioned with semantic tags.</li>
+<li><strong>Determinism:</strong> fixed RNG seeds, pinned package versions, and input schema checks (pydantic) at load time.</li>
+<li><strong>Experiment tracking:</strong> run metadata (params, metrics, SHAP summaries, data snapshot hash) logged for every training job.</li>
+<li><strong>CI checks:</strong> unit tests for feature extractors; regression tests to ensure no drift in per-class recall.</li>
+<li><strong>Monitoring:</strong> in production, log coverage/abstention rate and top-k feature drifts; alerts when coverage &lt; 95% or class recall falls &gt; 3pp.</li>
+</ul>
+<hr />
+<h2 id="evaluation-protocol-metrics">Evaluation Protocol &amp; Metrics</h2>
+<ul>
+<li><strong>Splits:</strong> patient-level train/val/test; external partner hospitals held-out for final reporting.</li>
+<li><strong>Primary metrics:</strong> macro-F1 (class balance), per-class recall (clinical safety), and overall accuracy.</li>
+<li><strong>Selective prediction:</strong> tuned a probability-margin gate to maximize <strong>F1 @ ≥95% coverage</strong>; abstentions trigger radiologist review.</li>
+<li><strong>Calibration:</strong> verified reliability via <strong>isotonic</strong> calibration on validation folds; ECE &lt; 3% on test.</li>
+<li><strong>Ablations:</strong>  </li>
+<li><strong>Text present vs missing <code>SeriesDescription</code></strong> (two-model strategy)  </li>
+<li><strong>Remove top-k features</strong> (stability check)  </li>
+<li><strong>Swap HGBC→GBC/RandomForest</strong> (model choice justification)</li>
+</ul>
+<p><img alt="ROC_curve" src="images/ROC_curve.png" width="900" /></p>
 <hr />
 <h2 id="results-summary">Results Summary</h2>
 <p>External partner-hospital validation: <strong>MR 96.69%</strong>, <strong>CT 99.25%</strong>.<br />
 Deployed to production; supports safe retraining and human-in-the-loop.</p>
+<hr />
+<h2 id="limitations-next-steps">Limitations &amp; Next Steps</h2>
+<ul>
+<li><strong>Cross-vendor generalization:</strong> performance is strong but varies on rare protocol variants; plan targeted augmentation and vendor-specific priors.</li>
+<li><strong>Long-tail classes:</strong> continue collecting underrepresented sequences; consider <strong>focal loss</strong> proxy via class weights and threshold per class.</li>
+<li><strong>Lightweight text normalization:</strong> subword normalization for multilingual <code>SeriesDescription</code> without relying on full NLP stacks.</li>
+<li><strong>Automated drift triggers:</strong> schedule retrain when coverage dips, calibration ECE rises, or SHAP distributions drift beyond control limits.</li>
+</ul>
+<hr />
 <h2 id="acknowledgment">Acknowledgment</h2>
 <p>This project was conducted under <strong>Cercare-Medical, Denmark (2024)</strong> with direct collaboration with the <strong>Lead AI Developer</strong>, <strong>Senior Software Developers</strong>, and <strong>Operation Team</strong>, resulting in a successful production deployment and recommendation Letter from the <strong>CTO</strong>.</p>
 <!-- 두 이미지를 가로로 -->
