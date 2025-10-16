@@ -16,7 +16,7 @@
     
     
       
-        <title>Machine Learning Based Advanced MR and CT Series Type Detection - Jeongsoo Pang — Portfolio</title>
+        <title>Cercare-Medical ML Project - Jeongsoo Pang — Portfolio</title>
       
     
     
@@ -96,7 +96,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Machine Learning Based Advanced MR and CT Series Type Detection
+              Cercare-Medical ML Project
             
           </span>
         </div>
@@ -254,96 +254,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#project-goal" class="md-nav__link">
-    <span class="md-ellipsis">
-      Project Goal
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#my-contributions" class="md-nav__link">
-    <span class="md-ellipsis">
-      My Contributions
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#dataset-summary" class="md-nav__link">
-    <span class="md-ellipsis">
-      Dataset Summary
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#feature-overview" class="md-nav__link">
-    <span class="md-ellipsis">
-      Feature Overview
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#pipeline-overview" class="md-nav__link">
-    <span class="md-ellipsis">
-      Pipeline Overview
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#why-histgradientboosting" class="md-nav__link">
-    <span class="md-ellipsis">
-      Why HistGradientBoosting
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#explainability-model-safety" class="md-nav__link">
-    <span class="md-ellipsis">
-      Explainability &amp; Model Safety
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#deployment-readiness" class="md-nav__link">
-    <span class="md-ellipsis">
-      Deployment Readiness
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#results-summary" class="md-nav__link">
-    <span class="md-ellipsis">
-      Results Summary
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#acknowledgment" class="md-nav__link">
-    <span class="md-ellipsis">
-      Acknowledgment
-    </span>
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -373,9 +283,28 @@
 <h1 id="machine-learning-based-advanced-mr-and-ct-series-type-detection">Machine Learning Based Advanced MR and CT Series Type Detection</h1>
 <p><img alt="Jeongsoo Pang" class="headshot" src="images/profile.jpg" /></p>
 <p><strong>Jeongsoo Pang</strong><br />
+&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD
+Cercare-Meical R&amp;D 
+ML-Specialist
+=======
 UM–SJTU Joint Institute<br />
 Electrical &amp; Computer Engineering</p>
 <hr />
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>3e8b6ff (update)</p>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
 <h2 id="abstract">Abstract</h2>
 <p>Radiology workflows depend on correctly identifying <strong>series types</strong> (e.g., MR: DWI, SWI, T1, T2 FLAIR; CT: Angio/Perfusion/Noncontrast) before reconstruction, analysis, or visualization. Vendor-specific DICOM conventions, private tags, nested data, multilingual fields, and missing metadata make rule-based detectors unreliable.</p>
 <p>This project delivers a <strong>production-ready ML pipeline</strong> that automatically classifies <strong>8 MR</strong> and <strong>3 CT</strong> series using only DICOM header metadata. It features:<br />
@@ -383,13 +312,45 @@ Electrical &amp; Computer Engineering</p>
 2. Two <strong>HistGradientBoosting (HGBC)</strong> models—trained <strong>with</strong> and <strong>without</strong> <code>SeriesDescription</code>—to remain robust when textual labels are missing or inconsistent.<br />
 3. A <strong>self-inspection mechanism</strong> that flags low-confidence predictions to radiologists for review.</p>
 <p>Externally validated on partner-hospital datasets, the model achieved <strong>96.69% MR</strong> and <strong>99.25% CT</strong> accuracy, replacing the legacy C++ detector in production. The design emphasizes <strong>maintainability</strong>, <strong>future retraining</strong>, and <strong>clinical safety</strong>.</p>
+<h1 id="head">&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD</h1>
 <hr />
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>3e8b6ff (update)</p>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
 <h2 id="project-goal">Project Goal</h2>
 <ul>
 <li>Build an ML model to classify <strong>8 MR</strong> and <strong>3 CT</strong> series, replacing the company’s rule-based detector.  </li>
 <li>Ensure the model is <strong>easy to retrain</strong> for new series and <strong>safe to deploy</strong> through confidence-based self-inspection.  </li>
 </ul>
+<h1 id="head_1">&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD</h1>
 <hr />
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>3e8b6ff (update)</p>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
 <h2 id="my-contributions">My Contributions</h2>
 <ul>
 <li><strong>Engineered DICOM Header Extractor</strong> … <em>(keep the rest of your sections here as normal Markdown, always with a blank line before each <code>##</code>)</em>  </li>
@@ -400,7 +361,23 @@ Electrical &amp; Computer Engineering</p>
 <li><strong>External Validation &amp; Deployment</strong> with hospitals; production replacement.  </li>
 <li><strong>Explainability</strong> with SHAP; reproducible JSON/serialized pipelines.</li>
 </ul>
+<h1 id="head_2">&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD</h1>
 <hr />
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>3e8b6ff (update)</p>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
 <h2 id="dataset-summary">Dataset Summary</h2>
 <table>
 <thead>
@@ -425,11 +402,43 @@ Electrical &amp; Computer Engineering</p>
 </table>
 <p><strong>MR (8):</strong> <code>pwi_dsc</code>, <code>pwi_dce</code>, <code>swi</code>, <code>dwi</code>, <code>t2</code>, <code>t2_flair</code>, <code>t1</code>, <code>t1_contrast</code><br />
 <strong>CT (3):</strong> <code>ct_angiography</code>, <code>ct_perfusion</code>, <code>ct_noncontrast</code></p>
+<h1 id="head_3">&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD</h1>
 <hr />
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>3e8b6ff (update)</p>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
 <h2 id="feature-overview">Feature Overview</h2>
 <p><strong>MR:</strong> <code>NumberTemporalPositions</code>, <code>PhaseEncodingDirection</code>, <code>RepetitionTime</code>, <code>FlipAngle</code>, <code>InversionTime</code>, <code>EchoTrainLength</code>, <code>MagneticFieldStrength</code>, <code>EchoSpacing</code>, <code>PulseSequenceName</code>, <code>SequenceVariant</code>, <code>Bvalue</code>, <code>ScanOptions</code>  </p>
 <p><strong>CT:</strong> <code>ContrastBolusAgent</code>, <code>ExposureTime</code>, <code>KVP</code>, <code>ScanOptions</code>, <code>ReconstructionDiameter</code>, <code>ConvolutionKernel</code>, <code>TableSpeed</code>, <code>SeriesTime</code>, <code>Modality</code></p>
+<h1 id="head_4">&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD</h1>
 <hr />
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>3e8b6ff (update)</p>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
 <h2 id="pipeline-overview">Pipeline Overview</h2>
 <ol>
 <li><strong>Ingestion</strong>: select one DICOM per 3D series from Blackbox server.  </li>
@@ -439,7 +448,25 @@ Electrical &amp; Computer Engineering</p>
 <li><strong>Selective Prediction</strong>: abstain on low confidence or tight top-2.  </li>
 <li><strong>Validation/Deployment</strong>: external datasets; production replacement.</li>
 </ol>
+<p>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD
+<img alt="Pipeline workflow" src="images/workflow.png" width="900" />
+=======</p>
 <hr />
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>3e8b6ff (update)</p>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
 <h2 id="why-histgradientboosting">Why HistGradientBoosting</h2>
 <table>
 <thead>
@@ -475,14 +502,48 @@ Electrical &amp; Computer Engineering</p>
 </tr>
 </tbody>
 </table>
+<h1 id="head_5">&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD</h1>
 <hr />
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>3e8b6ff (update)</p>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
 <h2 id="explainability-model-safety">Explainability &amp; Model Safety</h2>
 <ul>
 <li><strong>SHAP</strong> for per-feature importance.  </li>
 <li><strong>Self-inspection thresholds</strong> to prevent silent misclassification.  </li>
 <li><strong>Audit-ready</strong> JSON and serialized pipelines.</li>
 </ul>
+<p>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD
+<img alt="Test map" src="images/test_map.png" width="900" /></p>
+<p>=======</p>
 <hr />
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>3e8b6ff (update)</p>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
 <h2 id="deployment-readiness">Deployment Readiness</h2>
 <table>
 <thead>
@@ -514,21 +575,55 @@ Electrical &amp; Computer Engineering</p>
 </tr>
 </tbody>
 </table>
+<h1 id="head_6">&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD</h1>
 <hr />
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>3e8b6ff (update)</p>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
 <h2 id="results-summary">Results Summary</h2>
 <p>External partner-hospital validation: <strong>MR 96.69%</strong>, <strong>CT 99.25%</strong>.<br />
 Deployed to production; supports safe retraining and human-in-the-loop.</p>
+<h2 id="acknowledgment">Acknowledgment</h2>
+<p>This project was conducted under <strong>Cercare-Medical, Denmark (2024)</strong> with direct collaboration with the <strong>Lead AI Developer</strong>, <strong>Senior Software Developers</strong>, and <strong>Operation Team</strong>, resulting in a successful production deployment and recommendation Letter from the <strong>CTO</strong>.</p>
 <!-- 두 이미지를 가로로 -->
 <div style="display:flex;justify-content:space-between;align-items:center;gap:2%;margin-top:12px;">
   <img src="images/cercare_1.jpg" alt="Cercare Image 1" style="width:49%;border-radius:8px;">
   <img src="images/cercare_2.jpg" alt="Cercare Image 2" style="width:49%;border-radius:8px;">
 </div>
 
+<h1 id="head_7">&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD</h1>
 <hr />
-<h2 id="acknowledgment">Acknowledgment</h2>
+<h2 id="acknowledgment_1">Acknowledgment</h2>
 <p>This project was conducted under <strong>Cercare-Medical, Denmark (2024)</strong> with direct collaboration with the <strong>Lead AI Developer</strong>, <strong>Senior Software Developers</strong>, and <strong>Operation Team</strong>, resulting in a successful production deployment and recommendation Letter from the <strong>CTO</strong>.</p>
-<p></section>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>3e8b6ff (update)
+  </section>
 </div></p>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
 
 
 
