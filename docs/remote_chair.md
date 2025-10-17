@@ -29,8 +29,6 @@ hide:
 
   </div>
 </div>
-
-
 ---
 
 ## System Overview
