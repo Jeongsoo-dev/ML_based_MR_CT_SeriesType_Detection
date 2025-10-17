@@ -16,7 +16,7 @@ hide:
 <div class="clear"></div>
 
 ---
-![Noise-robustness on image datasets](../images/expo.jpg){ style="max-width: 520px;" }
+![Noise-robustness on image datasets](../images/expo.jpg){ .img-center-half }
 
 ## Abstract
 We built a **dual-chair haptic system** that reproduces **tilt** (pitch/roll) and **vibration** from a remote machine seat in real time. **Chair-1** (on the machine) streams IMU motion; **Chair-2** (operator side) sits on a **3-actuator Stewart-inspired platform** and recreates the motion using inverse kinematics and vibration motors. The control core is **ESP32**, with **BLE** providing sub-10 ms command latency and **native PWM** to three linear actuators via BTS7960 drivers. Key capabilities: **±15° pitch/roll**, actuator speed **≈ 84 mm/s**, haptic rate **5–10 Hz**, and **> 1000 N** load. :contentReference[oaicite:1]{index=1}
