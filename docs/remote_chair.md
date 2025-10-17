@@ -5,8 +5,7 @@ hide:
 ---
 
 <div class="hero hero--chair">
-  <img src="../images/expo.jpg" alt="Jeongsoo Pang" class="headshot-hero">
-
+  <img src="images/chair_hero.jpg" alt="Jeongsoo Pang" class="headshot-hero">
   <div class="hero-text">
     <h1>Remote Feeling Mimicking Chair — Low-Latency Dual-Chair Haptic Teleoperation</h1>
     <strong class="bio-name">Jeongsoo Pang</strong><br>
