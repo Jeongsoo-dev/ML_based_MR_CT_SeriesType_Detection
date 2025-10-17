@@ -62,7 +62,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#abstract" class="md-skip">
+        <a href="#system-overview" class="md-skip">
           Skip to content
         </a>
       
@@ -288,15 +288,6 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#abstract" class="md-nav__link">
-    <span class="md-ellipsis">
-      Abstract
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#system-overview" class="md-nav__link">
     <span class="md-ellipsis">
       System Overview
@@ -406,9 +397,17 @@
 <div class="clear"></div>
 
 <hr />
-<p><img alt="Noise-robustness on image datasets" class="img-center-half" src="../images/expo.jpg" /></p>
-<h2 id="abstract">Abstract</h2>
-<p>We built a <strong>dual-chair haptic system</strong> that reproduces <strong>tilt</strong> (pitch/roll) and <strong>vibration</strong> from a remote machine seat in real time. <strong>Chair-1</strong> (on the machine) streams IMU motion; <strong>Chair-2</strong> (operator side) sits on a <strong>3-actuator Stewart-inspired platform</strong> and recreates the motion using inverse kinematics and vibration motors. The control core is <strong>ESP32</strong>, with <strong>BLE</strong> providing sub-10 ms command latency and <strong>native PWM</strong> to three linear actuators via BTS7960 drivers. Key capabilities: <strong>±15° pitch/roll</strong>, actuator speed <strong>≈ 84 mm/s</strong>, haptic rate <strong>5–10 Hz</strong>, and <strong>&gt; 1000 N</strong> load. :contentReference[oaicite:1]{index=1}</p>
+<div class="two-col">
+  <div class="col col-media">
+    <img src="../images/expo.jpg" alt="Expo photo of dual-chair haptic system" class="media-fit">
+  </div>
+
+  <div class="col">
+    ## Abstract
+    We built a **dual-chair haptic system** that reproduces **tilt** (pitch/roll) and **vibration** from a remote machine seat in real time. **Chair-1** (on the machine) streams IMU motion; **Chair-2** (operator side) sits on a **3-actuator Stewart-inspired platform** and recreates the motion using inverse kinematics and vibration motors. The control core is **ESP32**, with **BLE** providing sub-10 ms command latency and **native PWM** to three linear actuators via BTS7960 drivers. Key capabilities: **±15° pitch/roll**, actuator speed **≈ 84 mm/s**, haptic rate **5–10 Hz**, and **> 1000 N** load.  
+  </div>
+</div>
+
 <hr />
 <h2 id="system-overview">System Overview</h2>
 <p><strong>Chair-1 (Sensing)</strong>
