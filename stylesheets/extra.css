@@ -1,13 +1,21 @@
 /* Wider canvas */
 .md-grid { max-width: 1440px; }
 
-/* Emphasize the three project entries in the left nav */
+.headshot-hero {
+  width: clamp(160px, 22vw, 340px);  /* min 160px, usually ~22% viewport width, max 340px */
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 8px 24px rgba(0,0,0,.12);
+  margin-right: 1rem;
+}
+
 .md-nav__link[href$="/"],              /* root: Cercare-Medical ML Project (index.md) */
 .md-nav__link[href$="/anti_drone/"],  /* anti_drone.md */
 .md-nav__link[href$="/remote_chair/"] /* remote_chair.md */
 {
   font-weight: 700;
-  font-size: 0.98rem; /* bump slightly; adjust if you want bigger */
+  font-size: 0.92rem;  /* smaller than before, still prominent */
+  line-height: 1.1;
 }
 
 /* Optional: tighten line height a touch so it still looks neat */
