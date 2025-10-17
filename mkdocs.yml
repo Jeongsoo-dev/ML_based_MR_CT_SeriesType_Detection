@@ -1,17 +1,31 @@
 site_name: Jeongsoo Pang — Portfolio
+
 theme:
   name: material
   features:
     - navigation.instant
-    - toc.integrate      # ToC on the LEFT
+    - toc.integrate          # put page ToC in the left sidebar
+
+# Extra CSS is looked up relative to the docs/ folder.
 extra_css:
-  - stylesheets/extra.css   # relative to docs/
+  - stylesheets/extra.css
+
 markdown_extensions:
+  # --- core you already had ---
   - tables
-  - attr_list              # needed for {.headshot}
+  - attr_list               # allows `{.class}` syntax in Markdown
+
+  # --- REQUIRED to render Markdown inside your custom <div> columns ---
+  - md_in_html              # <- enables Markdown inside raw HTML
+
+  # (optional but recommended with Material)
+  - toc:
+      permalink: true
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+
 nav:
   - "1. Cercare-Medical ML Project": index.md
   - "2. Anti-Drone Project": anti_drone.md
   - "3. Remote Feeling Mimicking Chair": remote_chair.md
-
-
