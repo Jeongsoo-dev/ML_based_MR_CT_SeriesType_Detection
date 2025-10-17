@@ -10,8 +10,8 @@ markdown_extensions:
   - tables
   - attr_list              # needed for {.headshot}
 nav:
-  - "Cercare-Medical ML Project": index.md
-  - "Anti-Drone Project": anti_drone.md
-  - Remote Feeling Mimicking Chair: remote_chair.md
+  - "1. Cercare-Medical ML Project": index.md
+  - "2. Anti-Drone Project": anti_drone.md
+  - "3. Remote Feeling Mimicking Chair": remote_chair.md
 
 
