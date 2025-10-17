@@ -4,7 +4,7 @@ hide:
   - title
 ---
 
-<div class="hero">
+<div class="hero hero--chair">
   <img src="../images/expo.jpg" alt="Jeongsoo Pang" class="headshot-hero">
 
   <div class="hero-text">
