@@ -9,6 +9,8 @@
       
       
       
+        <link rel="prev" href="../anti_drone/">
+      
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -16,7 +18,7 @@
     
     
       
-        <title>IMAGES - Jeongsoo Pang — Portfolio</title>
+        <title>Remote Feeling Mimicking Chair - Jeongsoo Pang — Portfolio</title>
       
     
     
@@ -60,7 +62,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#images" class="md-skip">
+        <a href="#abstract" class="md-skip">
           Skip to content
         </a>
       
@@ -96,7 +98,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              IMAGES
+              Remote Feeling Mimicking Chair
             
           </span>
         </div>
@@ -164,6 +166,8 @@
         <div class="md-main__inner md-grid">
           
             
+              
+                
               
               <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
                 <div class="md-sidebar__scrollwrap">
@@ -235,10 +239,30 @@
       
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../remote_chair/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Remote Feeling Mimicking Chair
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -249,6 +273,105 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#abstract" class="md-nav__link">
+    <span class="md-ellipsis">
+      Abstract
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#system-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      System Overview
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-specs-prototype-targets-validation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key Specs (prototype targets &amp; validation)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#control-algorithms" class="md-nav__link">
+    <span class="md-ellipsis">
+      Control &amp; Algorithms
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#electrical-firmware-highlights" class="md-nav__link">
+    <span class="md-ellipsis">
+      Electrical &amp; Firmware Highlights
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mechanical-design" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mechanical Design
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#validation-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Validation (summary)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#use-cases-extensions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Use Cases &amp; Extensions
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#acknowledgment" class="md-nav__link">
+    <span class="md-ellipsis">
+      Acknowledgment
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -266,19 +389,101 @@
               <article class="md-content__inner md-typeset">
                 
                   
-
-
-
-<h1 id="images">IMAGES</h1>
-
+  
 
 
 
 
+<div class="hero">
+  <img src="../images/expo.jpg" alt="Jeongsoo Pang" class="headshot-hero">
+
+  <div class="hero-text">
+    <h1>Remote Feeling Mimicking Chair — Low-Latency Dual-Chair Haptic Teleoperation</h1>
+    <strong class="bio-name">Jeongsoo Pang</strong><br>
+    UM–SJTU Joint Institute & BuilderX (sponsor)<br>
+    2025
+  </div>
+</div>
+
+<div class="clear"></div>
+
+<hr />
+<h2 id="abstract">Abstract</h2>
+<p>We built a <strong>dual-chair haptic system</strong> that reproduces <strong>tilt</strong> (pitch/roll) and <strong>vibration</strong> from a remote machine seat in real time. <strong>Chair-1</strong> (on the machine) streams IMU motion; <strong>Chair-2</strong> (operator side) sits on a <strong>3-actuator Stewart-inspired platform</strong> and recreates the motion using inverse kinematics and vibration motors. The control core is <strong>ESP32</strong>, with <strong>BLE</strong> providing sub-10 ms command latency and <strong>native PWM</strong> to three linear actuators via BTS7960 drivers. Key capabilities: <strong>±15° pitch/roll</strong>, actuator speed <strong>≈ 84 mm/s</strong>, haptic rate <strong>5–10 Hz</strong>, and <strong>&gt; 1000 N</strong> load. :contentReference[oaicite:1]{index=1}</p>
+<hr />
+<h2 id="system-overview">System Overview</h2>
+<p><strong>Chair-1 (Sensing)</strong>
+- <strong>ICM45686 6-axis IMU</strong> captures orientation and vibration signatures.<br />
+- <strong>ESP32</strong> performs timestamping, filtering, BLE packetization.</p>
+<p><strong>Wireless Link</strong>
+- <strong>Bluetooth Low Energy</strong> with compact binary frames (quats + vibration cue); end-to-end goal <strong>&lt; 10 ms</strong>; RMS jitter <strong>&lt; 2 ms</strong> in lab. :contentReference[oaicite:2]{index=2}</p>
+<p><strong>Chair-2 (Actuation)</strong>
+- <strong>3 linear worm-gear actuators</strong> in an equilateral triangle (2-DOF pitch/roll).<br />
+- <strong>Universal/rod-end joints</strong> for misalignment tolerance; self-locking worm gears for fail-safe holds.<br />
+- <strong>Seat vibration motor</strong> for 5–80 Hz tactile cues.<br />
+- <strong>ESP32 + BTS7960</strong> motor drivers, 24 V power rail.</p>
+<hr />
+<h2 id="key-specs-prototype-targets-validation">Key Specs (prototype targets &amp; validation)</h2>
+<ul>
+<li><strong>Tilt range:</strong> ±15° pitch/roll; <strong>angular velocity</strong> up to ≈ 1.5 rad/s (comfortable/realistic).  </li>
+<li><strong>Actuation:</strong> stroke ≥ 300 mm; nominal <strong>84 mm/s</strong> linear speed.  </li>
+<li><strong>Load:</strong> &gt; 1000 N system capacity (≈ 100 kg user + safety margin).  </li>
+<li><strong>Haptics:</strong> 5–80 Hz vibration band coverage (terrain &amp; engine signatures).  </li>
+<li><strong>Latency:</strong> <strong>sub-10 ms</strong> end-to-end (sensor→BLE→IK→actuator command). :contentReference[oaicite:3]{index=3}</li>
+</ul>
+<hr />
+<h2 id="control-algorithms">Control &amp; Algorithms</h2>
+<ul>
+<li><strong>Inverse Kinematics (IK):</strong> closed-form mapping from desired pitch/roll → actuator lengths on the triangular platform; <strong>rate limiter</strong> + <strong>S-curve</strong> interpolation avoids jerk.  </li>
+<li><strong>Filtering:</strong> complementary filter on IMU (gyro drift removal, accel tilt reference); optional <strong>notch</strong> for known mechanical resonance.  </li>
+<li><strong>Safety:</strong> motion bounds (±15°), current/temperature monitor on drivers, <strong>self-locking</strong> actuators for power-loss hold. :contentReference[oaicite:4]{index=4}</li>
+</ul>
+<hr />
+<h2 id="electrical-firmware-highlights">Electrical &amp; Firmware Highlights</h2>
+<ul>
+<li><strong>MCU:</strong> ESP32 (dual core) – one task for BLE I/O, one for control loop (5–10 Hz tilt + high-rate PWM for motors).  </li>
+<li><strong>Drivers:</strong> 3 × <strong>BTS7960</strong> H-bridges (43 A peak), hardware current sense.  </li>
+<li><strong>Packet format:</strong> <code>[t, qx, qy, qz, qw, vib]</code> (little-endian) with sequence ID + simple CRC; dropped-frame smoothing via <strong>exponential hold</strong>. :contentReference[oaicite:5]{index=5}</li>
+</ul>
+<hr />
+<h2 id="mechanical-design">Mechanical Design</h2>
+<ul>
+<li><strong>Triangular top &amp; base frames</strong> (aluminum + wood core) for stiffness with low mass.  </li>
+<li><strong>Universal joints</strong> both ends; <strong>rod-ends</strong> to isolate lateral loads.  </li>
+<li><strong>Seatbelt</strong> and leg-support frame for occupant stability.  </li>
+<li><strong>Static hold</strong> without power thanks to worm gears; safety factor ≈ 3× at 100 kg payload. :contentReference[oaicite:6]{index=6}</li>
+</ul>
+<hr />
+<h2 id="validation-summary">Validation (summary)</h2>
+<ul>
+<li><strong>Latency &amp; jitter:</strong> met &lt; 10 ms target in bench tests; BLE link robust indoors (lab scale).  </li>
+<li><strong>Tilt accuracy:</strong> commanded vs. measured IMU tilt trace aligned within prototype tolerances; smooth interpolation with no overshoot.  </li>
+<li><strong>Haptic fidelity:</strong> 5–10 Hz “terrain” envelopes reproduced convincingly; high-frequency engine harmonics perceptible via seat motor.  </li>
+<li><strong>Structure:</strong> load &amp; stability checks passed; no binding under worst-case tilts. :contentReference[oaicite:7]{index=7}</li>
+</ul>
+<hr />
+<h2 id="use-cases-extensions">Use Cases &amp; Extensions</h2>
+<ul>
+<li>Remote excavator/forklift teleop; VR/AR training; rehabilitation devices.  </li>
+<li><strong>Roadmap:</strong> add EO/IR fusion (feature-level), temporal smoothing (LSTM/Transformer), and private-5G/TSN for deterministic links. :contentReference[oaicite:8]{index=8}</li>
+</ul>
+<hr />
+<h2 id="acknowledgment">Acknowledgment</h2>
+<p>BuilderX (sponsor), UM–SJTU JI capstone team, and supervisor Prof. Chengbin Ma. :contentReference[oaicite:9]{index=9}</p>
 
 
 
 
+
+
+
+  
+  
+
+
+
+
+  
 
 
 
