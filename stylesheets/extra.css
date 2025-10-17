@@ -1,6 +1,38 @@
 /* Wider canvas */
 .md-grid { max-width: 1440px; }
 
+/* Two-column section for the Chair page */
+.two-col {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;     /* top-align text and image */
+  margin: 1.25rem 0 2rem;
+}
+
+.two-col .col {               /* text column */
+  flex: 1 1 0;
+  min-width: 0;
+}
+
+.two-col .col-media {         /* image column */
+  flex: 0 0 340px;            /* ~340px image column */
+  max-width: 380px;
+}
+
+.media-fit {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0,0,0,.06);
+}
+
+/* Stack vertically on narrow screens */
+@media (max-width: 900px) {
+  .two-col { flex-direction: column; }
+  .two-col .col-media { flex-basis: auto; max-width: 100%; }
+}
+
 /* Centered + smaller image for the Expo photo on the Chair page */
 .img-center-half {
   /* pick one sizing approach you like, both keep it small */
