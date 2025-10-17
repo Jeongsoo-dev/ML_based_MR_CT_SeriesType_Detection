@@ -1,12 +1,15 @@
 /* Wider canvas */
 .md-grid { max-width: 1440px; }
 
-.headshot-hero {
-  width: clamp(160px, 22vw, 340px);  /* min 160px, usually ~22% viewport width, max 340px */
+/* Enlarge ONLY the hero image on the Remote-Chair page */
+.hero--chair .headshot-hero {
+  width: clamp(220px, 28vw, 440px);  /* bigger than default, responsive */
   height: auto;
-  border-radius: 10px;
-  box-shadow: 0 8px 24px rgba(0,0,0,.12);
-  margin-right: 1rem;
+}
+
+/* Optional: push it even larger on very wide screens */
+@media (min-width: 1280px) {
+  .hero--chair .headshot-hero { width: 460px; }
 }
 
 .md-nav__link[href$="/"],              /* root: Cercare-Medical ML Project (index.md) */
