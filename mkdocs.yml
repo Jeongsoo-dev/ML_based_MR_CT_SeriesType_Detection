@@ -11,12 +11,9 @@ extra_css:
   - stylesheets/extra.css
 
 markdown_extensions:
-  # --- core you already had ---
   - tables
-  - attr_list               # allows `{.class}` syntax in Markdown
-
-  # --- REQUIRED to render Markdown inside your custom <div> columns ---
-  - md_in_html              # <- enables Markdown inside raw HTML
+  - attr_list
+  - md_in_html        
 
   # (optional but recommended with Material)
   - toc:
