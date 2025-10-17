@@ -114,7 +114,7 @@ We evaluated both CNNs and classical models:
 
 The plot below summarizes accuracy by model across noise levels:
 
-![Noise-robustness on image datasets](../images/addtional_noise.jpg)
+![Noise-robustness on image datasets]({{ base_url }}/images/additional_noise.png)
 
 Key takeaways:
 - **MobileNetV2** and **GoogLeNet** maintained high accuracy up to moderate noise due to depthwise separable/inception multi-scale features.  
