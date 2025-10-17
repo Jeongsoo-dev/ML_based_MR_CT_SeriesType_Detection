@@ -353,6 +353,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#additional-experiment-noise-on-image-datasets" class="md-nav__link">
+    <span class="md-ellipsis">
+      Additional Experiment — Noise on Image Datasets
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#technical-highlights" class="md-nav__link">
     <span class="md-ellipsis">
       Technical Highlights
@@ -470,13 +479,23 @@ The system integrates classical machine learning (SVM, Random Forest, Gradient B
 <td>Radar cross-section images of drone surfaces</td>
 <td>RCS Imagery</td>
 </tr>
+<tr>
+<td><strong>Real Doppler RAD-DAR</strong> (<a href="https://www.kaggle.com/datasets/iroldan/real-doppler-raddar-database">Kaggle</a>)</td>
+<td>Real Doppler datasets recorded by the <strong>RAD-DAR</strong> radar system, a widely used platform internationally</td>
+<td>FMCW Doppler</td>
+</tr>
+<tr>
+<td><strong>Drone Remote Controller RF Signal</strong> (<a href="https://ieee-dataport.org/open-access/drone-remote-controller-rf-signal-dataset">IEEE Dataport</a>)</td>
+<td>RF baseband captures from drone remote controllers for auxiliary signal analysis</td>
+<td>RF / I/Q</td>
+</tr>
 </tbody>
 </table>
 <ul>
 <li><strong>Flattening &amp; Normalization:</strong> Converted radar tensors to 224 × 224 gray-scale arrays, normalized with ImageNet statistics for transfer learning compatibility.  </li>
 <li><strong>Noise Augmentation:</strong> Simulated Gaussian noise at σ² ∈ {1e-4 … 1e-2} to evaluate noise tolerance of SVC, HGBC, and RF models.  </li>
-<li><strong>Stratified Splits:</strong> Ensured balanced representation across drone types with 10 % validation sets.  </li>
-<li><strong>Dynamic Range Calibration:</strong> Capped and floor-normalized pixel intensities to mitigate power spikes.</li>
+<li><strong>Stratified Splits:</strong> Ensured balanced representation across drone types with 10% validation sets.  </li>
+<li><strong>Dynamic Range Calibration:</strong> Capped and floor-normalized pixel intensities to mitigate power spikes and saturation artifacts.</li>
 </ul>
 <hr />
 <h2 id="model-architectures">Model Architectures</h2>
@@ -524,28 +543,33 @@ The system integrates classical machine learning (SVM, Random Forest, Gradient B
 <tbody>
 <tr>
 <td><strong>AlexNet</strong></td>
-<td>61 M</td>
+<td>61.0</td>
 <td>Classic CNN baseline for radar texture learning</td>
 </tr>
 <tr>
 <td><strong>GoogLeNet</strong></td>
-<td>6.8 M</td>
+<td>6.8</td>
 <td>Inception-based multi-scale spatial features</td>
 </tr>
 <tr>
-<td><strong>ResNet-34/101</strong></td>
-<td>21 M / 44 M</td>
+<td><strong>ResNet-34 / ResNet-101</strong></td>
+<td>21.3 / 44.5</td>
 <td>Residual skip-connections for stable training</td>
 </tr>
 <tr>
 <td><strong>SqueezeNet</strong></td>
-<td>1.2 M</td>
+<td>1.2</td>
 <td>Lightweight model ideal for embedded inference</td>
 </tr>
 <tr>
 <td><strong>NasNet</strong></td>
-<td>5.3 M</td>
+<td>5.3</td>
 <td>Neural architecture search optimized backbone</td>
+</tr>
+<tr>
+<td><strong>MobileNetV2</strong></td>
+<td>3.5</td>
+<td>Depthwise separable convs; strong accuracy/FLOPs ratio</td>
 </tr>
 </tbody>
 </table>
@@ -553,18 +577,18 @@ The system integrates classical machine learning (SVM, Random Forest, Gradient B
 <hr />
 <h2 id="training-strategy">Training Strategy</h2>
 <ul>
-<li><strong>Framework:</strong> PyTorch + Hugging Face Transformers + W&amp;B logging.  </li>
+<li><strong>Framework:</strong> PyTorch + (optional) Hugging Face + W&amp;B logging.  </li>
 <li><strong>Batch Size:</strong> 128 (train) / 20 (eval).  </li>
 <li><strong>Epochs:</strong> 8–12 with early stopping and cosine LR scheduler.  </li>
-<li><strong>Optimizer:</strong> AdamW (lr = 1e-3 – 1e-2, weight decay = 1e-3).  </li>
-<li><strong>Mixed Precision (FP16):</strong> Enabled via <code>transformers.TrainingArguments(fp16=True)</code> for speed.  </li>
+<li><strong>Optimizer:</strong> AdamW (lr ∈ {1e-4, 5e-4, 1e-3, 1e-2}, weight decay = 1e-3).  </li>
+<li><strong>Mixed Precision (FP16):</strong> Enabled where supported for throughput.  </li>
 <li><strong>Metric Callback:</strong> Custom <code>compute_metrics()</code> tracking accuracy, F1, precision, recall, and AUC.  </li>
-<li><strong>Hyperparameter Search:</strong> Conducted grid search over learning rates {1e-4, 5e-4, 1e-3, 1e-2} and batch sizes {64, 128, 256} using W&amp;B sweeps for convergence profiling.</li>
+<li><strong>Hyperparameter Search:</strong> Grid over learning rates and batch sizes + W&amp;B sweeps for convergence profiling.</li>
 </ul>
 <hr />
 <h2 id="evaluation-methodology">Evaluation Methodology</h2>
 <ul>
-<li><strong>Cross-Validation:</strong> 10 % validation per seed = {21, 42, 77} for statistical robustness.  </li>
+<li><strong>Cross-Validation:</strong> 10% validation per seed ∈ {21, 42, 77}.  </li>
 <li><strong>Noise Perturbation Tests:</strong> Measured model accuracy across σ² ∈ {1e-4 … 1e-2} noise levels.  </li>
 <li><strong>Inference Profiling:</strong> Averaged 100 runs to estimate per-image latency (<code>perf_counter()</code> loop).  </li>
 <li><strong>Metrics:</strong> Micro-averaged F1, precision/recall, and timing std (μ ± σ).</li>
@@ -615,7 +639,7 @@ The system integrates classical machine learning (SVM, Random Forest, Gradient B
 <td>96.5</td>
 <td>0.96</td>
 <td>0.017</td>
-<td>21</td>
+<td>21.3</td>
 </tr>
 <tr>
 <td>GoogLeNet</td>
@@ -627,21 +651,35 @@ The system integrates classical machine learning (SVM, Random Forest, Gradient B
 </tbody>
 </table>
 <blockquote>
-<p>SqueezeNet achieved the best <strong>accuracy-efficiency balance</strong>, making it the <strong>production-ready model</strong> for real-time radar deployment.</p>
+<p><strong>SqueezeNet</strong> achieved the best <strong>accuracy-efficiency balance</strong>, making it the <strong>production-ready model</strong> for real-time radar deployment.</p>
 </blockquote>
+<hr />
+<h2 id="additional-experiment-noise-on-image-datasets">Additional Experiment — Noise on Image Datasets</h2>
+<p>To stress-test robustness, we performed <strong>accuracy experiments on noise-added image datasets</strong> (Gaussian noise with σ² ∈ {1e-4 … 1e-2}).<br />
+We evaluated both CNNs and classical models:</p>
+<ul>
+<li><strong>CNNs:</strong> ResNet-101, GoogLeNet, <strong>MobileNetV2</strong>  </li>
+<li><strong>Classical:</strong> SVC, Linear SVC, Gradient Boosted Decision Trees (HistGBDT), Random Forest</li>
+</ul>
+<p>The plot below summarizes accuracy by model across noise levels:</p>
+<p><img alt="Noise-robustness on image datasets" src="../images/addtional_noise.jpg" /></p>
+<p>Key takeaways:
+- <strong>MobileNetV2</strong> and <strong>GoogLeNet</strong> maintained high accuracy up to moderate noise due to depthwise separable/inception multi-scale features.<br />
+- <strong>ResNet-101</strong> remained the most stable at higher noise regimes, likely due to deeper residual capacity and batch-norm smoothing.<br />
+- Among classical models, <strong>HistGBDT</strong> outperformed <strong>RF</strong> and <strong>SVC</strong> under heavier noise, aligning with its histogram-binning robustness.</p>
 <hr />
 <h2 id="technical-highlights">Technical Highlights</h2>
 <ul>
-<li><strong>Hybrid Experimentation Framework:</strong> Unified classical + deep models within a single training harness for direct benchmarking.  </li>
-<li><strong>Custom Collate Fn:</strong> Converted raw radar tensors into 3-channel images via NumPy + PIL augmentation before Torch Tensor batching.  </li>
-<li><strong>W&amp;B Integration:</strong> Auto-logged metrics, confusion matrices, and parameter sweeps with reproducible seed control.  </li>
-<li><strong>Cross-Domain Validation:</strong> Demonstrated consistent &gt;96 % accuracy on unseen test and noise-augmented datasets.  </li>
-<li><strong>Explainability:</strong> Interpreted radar spectrogram activations using Grad-CAM for visual inspection of model focus areas.</li>
+<li><strong>Hybrid Experimentation Framework:</strong> Unified classical + deep models within a single harness for direct benchmarking.  </li>
+<li><strong>Custom Collate Fn:</strong> Converted raw radar tensors into 3-channel images via NumPy + PIL augmentation before Torch batching.  </li>
+<li><strong>W&amp;B Integration:</strong> Auto-logged metrics, confusion matrices, parameter sweeps, and artifacts with reproducible seeds.  </li>
+<li><strong>Cross-Domain Validation:</strong> Consistent &gt;96% accuracy on unseen test and noise-augmented datasets.  </li>
+<li><strong>Explainability:</strong> Interpreted radar spectrogram activations using Grad-CAM to validate model attention on micro-Doppler regions.</li>
 </ul>
 <hr />
 <h2 id="deployment-considerations">Deployment Considerations</h2>
 <ul>
-<li><strong>Edge Inference Optimization:</strong> Quantized SqueezeNet to FP16, achieving &gt;80 FPS on Jetson Nano.  </li>
+<li><strong>Edge Inference Optimization:</strong> Quantized <strong>SqueezeNet</strong> to FP16, achieving &gt;80 FPS on Jetson Nano.  </li>
 <li><strong>Model Serialization:</strong> Exported via TorchScript for embedded radar pipeline.  </li>
 <li><strong>Noise-Aware Retraining:</strong> Integrated Gaussian perturbation generator for continual retraining in field conditions.</li>
 </ul>
@@ -654,6 +692,7 @@ The system integrates classical machine learning (SVM, Random Forest, Gradient B
 </ul>
 <hr />
 <h2 id="repository-structure">Repository Structure</h2>
+<p><strong>Link to Repository:</strong> <a href="https://github.com/jpangece/Anti_Drone_System">https://github.com/jpangece/Anti_Drone_System</a></p>
 <table>
 <thead>
 <tr>
@@ -664,15 +703,15 @@ The system integrates classical machine learning (SVM, Random Forest, Gradient B
 <tbody>
 <tr>
 <td><code>AlexNet.py</code>, <code>GoogLeNet.py</code>, <code>ResNet34.py</code>, <code>ResNet101.py</code>, <code>SqueezeNet.py</code>, <code>NasNet.py</code></td>
-<td>Deep CNN backbones implemented with TorchVision hub</td>
+<td>Deep CNN backbones (TorchVision compatible)</td>
 </tr>
 <tr>
 <td><code>RandomForest.py</code>, <code>SVM_SB_RFC.py</code></td>
-<td>Classical ML baselines (SVM, RF, HGBC)</td>
+<td>Classical ML baselines (SVM, RF, HistGBDT)</td>
 </tr>
 <tr>
 <td><code>README.md</code></td>
-<td>Full documentation and experimental setup</td>
+<td>Documentation and experimental setup</td>
 </tr>
 <tr>
 <td><code>wandb/</code></td>
@@ -683,7 +722,7 @@ The system integrates classical machine learning (SVM, Random Forest, Gradient B
 <hr />
 <h2 id="acknowledgment">Acknowledgment</h2>
 <p>This work was part of a <strong>collaborative defense-AI initiative</strong>, integrating FMCW radar and EO sensor data for UAV detection.<br />
-All experiments were executed using <strong>PyTorch 2.0</strong>, <strong>Hugging Face Transformers</strong>, and <strong>W&amp;B monitoring</strong> on <strong>NVIDIA T4 GPUs</strong>, with full experiment reproducibility ensured via deterministic seeds and dataset versioning.</p>
+All experiments were executed using <strong>PyTorch 2.0</strong> and <strong>W&amp;B</strong>, with full experiment reproducibility ensured via deterministic seeds and dataset versioning.</p>
 
 
 
