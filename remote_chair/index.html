@@ -410,9 +410,8 @@
 
   </div>
 </div>
-
 <hr />
-<h2 id="system-overview">System Overview</h2>
+<h2 id="system-overview">System Overview<a class="headerlink" href="#system-overview" title="Permanent link">&para;</a></h2>
 <p><strong>Chair-1 (Sensing)</strong>
 - <strong>ICM45686 6-axis IMU</strong> captures orientation and vibration signatures.<br />
 - <strong>ESP32</strong> performs timestamping, filtering, BLE packetization.</p>
@@ -424,7 +423,7 @@
 - <strong>Seat vibration motor</strong> for 5–80 Hz tactile cues.<br />
 - <strong>ESP32 + BTS7960</strong> motor drivers, 24 V power rail.</p>
 <hr />
-<h2 id="key-specs-prototype-targets-validation">Key Specs (prototype targets &amp; validation)</h2>
+<h2 id="key-specs-prototype-targets-validation">Key Specs (prototype targets &amp; validation)<a class="headerlink" href="#key-specs-prototype-targets-validation" title="Permanent link">&para;</a></h2>
 <ul>
 <li><strong>Tilt range:</strong> ±15° pitch/roll; <strong>angular velocity</strong> up to ≈ 1.5 rad/s (comfortable/realistic).  </li>
 <li><strong>Actuation:</strong> stroke ≥ 300 mm; nominal <strong>84 mm/s</strong> linear speed.  </li>
@@ -433,21 +432,21 @@
 <li><strong>Latency:</strong> <strong>sub-10 ms</strong> end-to-end (sensor→BLE→IK→actuator command). :contentReference[oaicite:3]{index=3}</li>
 </ul>
 <hr />
-<h2 id="control-algorithms">Control &amp; Algorithms</h2>
+<h2 id="control-algorithms">Control &amp; Algorithms<a class="headerlink" href="#control-algorithms" title="Permanent link">&para;</a></h2>
 <ul>
 <li><strong>Inverse Kinematics (IK):</strong> closed-form mapping from desired pitch/roll → actuator lengths on the triangular platform; <strong>rate limiter</strong> + <strong>S-curve</strong> interpolation avoids jerk.  </li>
 <li><strong>Filtering:</strong> complementary filter on IMU (gyro drift removal, accel tilt reference); optional <strong>notch</strong> for known mechanical resonance.  </li>
 <li><strong>Safety:</strong> motion bounds (±15°), current/temperature monitor on drivers, <strong>self-locking</strong> actuators for power-loss hold. :contentReference[oaicite:4]{index=4}</li>
 </ul>
 <hr />
-<h2 id="electrical-firmware-highlights">Electrical &amp; Firmware Highlights</h2>
+<h2 id="electrical-firmware-highlights">Electrical &amp; Firmware Highlights<a class="headerlink" href="#electrical-firmware-highlights" title="Permanent link">&para;</a></h2>
 <ul>
 <li><strong>MCU:</strong> ESP32 (dual core) – one task for BLE I/O, one for control loop (5–10 Hz tilt + high-rate PWM for motors).  </li>
 <li><strong>Drivers:</strong> 3 × <strong>BTS7960</strong> H-bridges (43 A peak), hardware current sense.  </li>
 <li><strong>Packet format:</strong> <code>[t, qx, qy, qz, qw, vib]</code> (little-endian) with sequence ID + simple CRC; dropped-frame smoothing via <strong>exponential hold</strong>. :contentReference[oaicite:5]{index=5}</li>
 </ul>
 <hr />
-<h2 id="mechanical-design">Mechanical Design</h2>
+<h2 id="mechanical-design">Mechanical Design<a class="headerlink" href="#mechanical-design" title="Permanent link">&para;</a></h2>
 <ul>
 <li><strong>Triangular top &amp; base frames</strong> (aluminum + wood core) for stiffness with low mass.  </li>
 <li><strong>Universal joints</strong> both ends; <strong>rod-ends</strong> to isolate lateral loads.  </li>
@@ -455,7 +454,7 @@
 <li><strong>Static hold</strong> without power thanks to worm gears; safety factor ≈ 3× at 100 kg payload. :contentReference[oaicite:6]{index=6}</li>
 </ul>
 <hr />
-<h2 id="validation-summary">Validation (summary)</h2>
+<h2 id="validation-summary">Validation (summary)<a class="headerlink" href="#validation-summary" title="Permanent link">&para;</a></h2>
 <ul>
 <li><strong>Latency &amp; jitter:</strong> met &lt; 10 ms target in bench tests; BLE link robust indoors (lab scale).  </li>
 <li><strong>Tilt accuracy:</strong> commanded vs. measured IMU tilt trace aligned within prototype tolerances; smooth interpolation with no overshoot.  </li>
@@ -463,13 +462,13 @@
 <li><strong>Structure:</strong> load &amp; stability checks passed; no binding under worst-case tilts. :contentReference[oaicite:7]{index=7}</li>
 </ul>
 <hr />
-<h2 id="use-cases-extensions">Use Cases &amp; Extensions</h2>
+<h2 id="use-cases-extensions">Use Cases &amp; Extensions<a class="headerlink" href="#use-cases-extensions" title="Permanent link">&para;</a></h2>
 <ul>
 <li>Remote excavator/forklift teleop; VR/AR training; rehabilitation devices.  </li>
 <li><strong>Roadmap:</strong> add EO/IR fusion (feature-level), temporal smoothing (LSTM/Transformer), and private-5G/TSN for deterministic links. :contentReference[oaicite:8]{index=8}</li>
 </ul>
 <hr />
-<h2 id="acknowledgment">Acknowledgment</h2>
+<h2 id="acknowledgment">Acknowledgment<a class="headerlink" href="#acknowledgment" title="Permanent link">&para;</a></h2>
 <p>BuilderX (sponsor), UM–SJTU JI capstone team, and supervisor Prof. Chengbin Ma. :contentReference[oaicite:9]{index=9}</p>
 
 
