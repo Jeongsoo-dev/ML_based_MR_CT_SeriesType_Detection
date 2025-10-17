@@ -1,10 +1,10 @@
 /* Wider canvas */
 .md-grid { max-width: 1440px; }
 
-/* Enlarge ONLY the hero image on the Remote-Chair page */
-.hero--chair .headshot-hero {
-  width: clamp(220px, 28vw, 440px);  /* bigger than default, responsive */
-  height: auto;
+/* === Remote Chair page only: bigger hero image === */
+.hero.hero--chair img.headshot-hero {
+  width: clamp(320px, 36vw, 560px) !important;  /* larger + responsive */
+  height: auto !important;
 }
 
 /* Optional: push it even larger on very wide screens */
