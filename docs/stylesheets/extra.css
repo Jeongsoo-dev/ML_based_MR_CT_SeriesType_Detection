@@ -14,7 +14,14 @@
   min-width: 0;
 }
 
-.two-col .col-media { flex: 0 0 340px; max-width: 380px; }
+/* Two-column layout – image about half the previous width */
+.two-col { gap: 1.25rem; }                  /* optional: slightly tighter gap */
+.two-col .col-media {
+  flex: 0 0 210px;        /* was 420px */
+  max-width: 210px;       /* was 480px */
+}
+.media-fit { width: 100%; height: auto; }   /* keep image responsive inside column */
+
 
 
 .media-fit {
