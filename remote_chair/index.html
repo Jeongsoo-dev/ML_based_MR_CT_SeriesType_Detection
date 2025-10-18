@@ -477,32 +477,11 @@
   <div class="col">
     <h2>Abstract</h2>
 <p>
-This project presents the development of a <strong>dual-chair haptic teleoperation system</strong> designed to recreate both
-the <strong>tilt (pitch/roll)</strong> and <strong>vibration</strong> sensations from a remote operator’s seat in real time. The system aims
-to enhance <strong>remote presence and physical empathy</strong> by transmitting motion feedback between two identical
-chairs—one mounted on a remote machine (<em>Chair-1</em>) and another operated by a human user (<em>Chair-2</em>).
+This project presents a <strong>dual-chair haptic teleoperation system</strong> that reproduces both the <strong>tilt (pitch/roll)</strong> and <strong>vibration</strong> of a remote operator’s seat in real time. Using a <strong>three-actuator Stewart-inspired platform</strong> driven by 24 V DC linear actuators, the system achieves a ±15° motion range and an actuation speed of approximately 84 mm/s. A <strong>6-axis ICM-45686 IMU</strong> mounted on the remote chair streams motion data over <strong>Bluetooth Low Energy (BLE)</strong> with sub-10 ms latency to an <strong>ESP32 controller</strong> that performs real-time inverse-kinematics control through <strong>BTS7960 PWM drivers</strong>.
 </p>
 
 <p>
-The <strong>mechanical subsystem</strong> uses a <strong>3-actuator Stewart-inspired parallel platform</strong> driven by linear actuators
-with a dynamic range of ±15° in tilt and actuation speed of approximately 84 mm/s. The <strong>electrical control unit</strong>
-is based on an <strong>ESP32 microcontroller</strong> utilizing <strong>BLE communication</strong> for sub-10 ms latency and <strong>PWM-driven BTS7960</strong>
-motor drivers for precise bidirectional control. The <strong>sensor integration</strong> includes a 6-axis IMU for motion capture
-and real-time streaming from Chair-1 to Chair-2. 
-</p>
-
-<p>
-A <strong>multi-threaded firmware architecture</strong> ensures concurrent handling of IMU sampling, command parsing,
-and actuation loops, achieving smooth motion synchronization with minimal perceptible delay.
-The <strong>vibration feedback layer</strong> was tuned for a 5–10 Hz tactile frequency band, replicating realistic body cues
-such as engine resonance and floor tremors. 
-</p>
-
-<p>
-Experimental validation at the 2025 Design Expo confirmed <strong>stable communication</strong> under Bluetooth interference,
-load capacity beyond <strong>1000 N</strong>, and accurate reproduction of both slow and abrupt tilting motions. 
-The system demonstrates the feasibility of <strong>low-latency bilateral haptic communication</strong> using cost-effective
-embedded components, providing a foundation for future <strong>telepresence and assistive-robot interfaces</strong>.
+A <strong>multi-threaded firmware</strong> running on FreeRTOS ensures parallel handling of IMU sampling, BLE communication, and actuator feedback, producing smooth motion transitions with negligible delay. The <strong>vibration feedback layer</strong>, tuned to the 5–10 Hz frequency band, reproduces realistic tactile cues such as engine resonance and ground vibrations. Experimental validation at the <strong>2025 SJTU Design Expo</strong> confirmed stable operation under wireless interference, structural endurance beyond 1000 N, and near-perfect motion replication. The results verify the feasibility of <strong>low-latency, cost-efficient bilateral haptic communication</strong> suitable for next-generation <strong>telepresence and assistive robotic systems</strong>.
 </p>
 
   </div>
