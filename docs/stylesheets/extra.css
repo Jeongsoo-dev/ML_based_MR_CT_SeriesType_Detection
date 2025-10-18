@@ -17,8 +17,8 @@
 /* Two-column layout – image about half the previous width */
 .two-col { gap: 1.25rem; }                  /* optional: slightly tighter gap */
 .two-col .col-media {
-  flex: 0 0 210px;        /* was 420px */
-  max-width: 210px;       /* was 480px */
+  flex: 0 0 clamp(240px, 24vw, 320px);
+  max-width: clamp(240px, 24vw, 320px);
 }
 .media-fit { width: 100%; height: auto; }   /* keep image responsive inside column */
 
