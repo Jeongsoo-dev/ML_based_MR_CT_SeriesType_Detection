@@ -477,11 +477,7 @@
   <div class="col">
     <h2>Abstract</h2>
 <p>
-This project presents a <strong>dual-chair haptic teleoperation system</strong> that reproduces both the <strong>tilt (pitch/roll)</strong> and <strong>vibration</strong> of a remote operator’s seat in real time. Using a <strong>three-actuator Stewart-inspired platform</strong> driven by 24 V DC linear actuators, the system achieves a ±15° motion range and an actuation speed of approximately 84 mm/s. A <strong>6-axis ICM-45686 IMU</strong> mounted on the remote chair streams motion data over <strong>Bluetooth Low Energy (BLE)</strong> with sub-10 ms latency to an <strong>ESP32 controller</strong> that performs real-time inverse-kinematics control through <strong>BTS7960 PWM drivers</strong>.
-</p>
-
-<p>
-A <strong>multi-threaded firmware</strong> running on FreeRTOS ensures parallel handling of IMU sampling, BLE communication, and actuator feedback, producing smooth motion transitions with negligible delay. The <strong>vibration feedback layer</strong>, tuned to the 5–10 Hz frequency band, reproduces realistic tactile cues such as engine resonance and ground vibrations. Experimental validation at the <strong>2025 SJTU Design Expo</strong> confirmed stable operation under wireless interference, structural endurance beyond 1000 N, and near-perfect motion replication. The results verify the feasibility of <strong>low-latency, cost-efficient bilateral haptic communication</strong> suitable for next-generation <strong>telepresence and assistive robotic systems</strong>.
+This project presents a <strong>dual-chair haptic teleoperation system</strong> that reproduces both the <strong>tilt (pitch/roll)</strong> and <strong>vibration</strong> of a remote operator’s seat in real time. Using a <strong>three-actuator Stewart-inspired platform</strong> driven by 24 V DC linear actuators, the system achieves a ±15° motion range and an actuation speed of approximately 84 mm/s. A <strong>6-axis ICM-45686 IMU</strong> mounted on the remote chair streams motion data over <strong>Bluetooth Low Energy (BLE)</strong> with sub-10 ms latency to an <strong>ESP32 controller</strong> that performs real-time inverse-kinematics control through <strong>BTS7960 PWM drivers</strong>. A <strong>multi-threaded firmware</strong> running on FreeRTOS ensures parallel handling of IMU sampling, BLE communication, and actuator feedback, producing smooth motion transitions with negligible delay. Experimental validation at the <strong>2025 SJTU Design Expo</strong> confirmed stable operation.
 </p>
 
   </div>
