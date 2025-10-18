@@ -21,11 +21,18 @@ hide:
     <img src="../images/expo.jpg" alt="Expo photo of dual-chair haptic system" class="media-fit">
   </div>
 
-  <div class="col" markdown="1">
-
-## Abstract
-We built a **dual-chair haptic system** that reproduces **tilt** (pitch/roll) and **vibration** from a remote machine seat in real time. **Chair-1** (on the machine) streams IMU motion; **Chair-2** (operator side) sits on a **3-actuator Stewart-inspired platform** and recreates the motion using inverse kinematics and vibration motors. The control core is **ESP32**, with **BLE** providing sub-10 ms command latency and **native PWM** to three linear actuators via BTS7960 drivers. Key capabilities: **±15° pitch/roll**, actuator speed **≈ 84 mm/s**, haptic rate **5–10 Hz**, and **> 1000 N** load.
-
+  <div class="col">
+    <h2>Abstract</h2>
+    <p>
+      We built a <strong>dual-chair haptic system</strong> that reproduces <strong>tilt</strong> (pitch/roll) and
+      <strong>vibration</strong> from a remote machine seat in real time. <strong>Chair-1</strong> (on the machine)
+      streams IMU motion; <strong>Chair-2</strong> (operator side) sits on a <strong>3-actuator Stewart-inspired
+      platform</strong> and recreates the motion using inverse kinematics and vibration motors. The control core is
+      <strong>ESP32</strong>, with <strong>BLE</strong> providing sub-10 ms command latency and
+      <strong>native PWM</strong> to three linear actuators via BTS7960 drivers. Key capabilities:
+      <strong>±15° pitch/roll</strong>, actuator speed <strong>≈ 84 mm/s</strong>, haptic rate
+      <strong>5–10 Hz</strong>, and <strong>&gt; 1000 N</strong> load.
+    </p>
   </div>
 </div>
 
