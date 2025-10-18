@@ -14,10 +14,8 @@
   min-width: 0;
 }
 
-.two-col .col-media {         /* image column */
-  flex: 0 0 340px;            /* ~340px image column */
-  max-width: 380px;
-}
+.two-col .col-media { flex: 0 0 340px; max-width: 380px; }
+
 
 .media-fit {
   display: block;
