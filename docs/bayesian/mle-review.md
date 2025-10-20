@@ -1,5 +1,5 @@
 ---
-title: **Distributions and MLE**
+title: Distributions and MLE
 hide:
   - title
 ---
