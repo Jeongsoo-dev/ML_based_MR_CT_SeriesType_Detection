@@ -964,23 +964,37 @@
 <h1 id="1-bayesian-foundations-and-motivation"><strong>1. Bayesian foundations and motivation</strong></h1>
 <p><strong>Author:</strong> Jeongsoo Pang  </p>
 <h2 id="1-concept"><strong>1) Concept</strong></h2>
-<p><strong>Bayesian Statistical Inference:</strong> 
-- A framework that uses Bayes’ Rule to combine prior knowledge with observed data, forming a posterior belief about unknown parameters.</p>
-<p><strong>Core Idea</strong>
-- Treat parameters as random variables with probability distributions rather than fixed values.</p>
-<p><strong>Focus</strong>
-- Uncertainty quantification, knowledge updating, and probabilistic reasoning.  </p>
+<p><strong>Bayesian Statistical Inference</strong> </p>
+<ul>
+<li>A framework that uses Bayes’ Rule to combine prior knowledge with observed data, forming a posterior belief about unknown parameters.</li>
+</ul>
+<p><strong>Core Idea</strong></p>
+<ul>
+<li>Treat parameters as random variables with probability distributions rather than fixed values.</li>
+</ul>
+<p><strong>Focus</strong></p>
+<ul>
+<li>Uncertainty quantification, knowledge updating, and probabilistic reasoning.  </li>
+</ul>
 <hr />
 <h2 id="motivation"><strong>Motivation</strong></h2>
-<p><strong>Integrates prior knowledge</strong>
-- Encodes existing beliefs or domain expertise.  </p>
-<p><strong>Logical updating</strong>
-- Adjusts those beliefs as new data arrive.  </p>
-<p><strong>Probabilistic conclusions</strong>
-- Allows probability statements about parameters
-- ex) “There’s a 95% probability <span class="arithmatex">\(\theta\)</span> lies in this range”</p>
-<p><strong>Transparent modeling</strong>
-- Easy to test sensitivity to assumptions.  </p>
+<p><strong>Integrates prior knowledge</strong></p>
+<ul>
+<li>Encodes existing beliefs or domain expertise.  </li>
+</ul>
+<p><strong>Logical updating</strong></p>
+<ul>
+<li>Adjusts those beliefs as new data arrive.  </li>
+</ul>
+<p><strong>Probabilistic conclusions</strong></p>
+<ul>
+<li>Allows probability statements about parameters</li>
+<li>ex) “There’s a 95% probability <span class="arithmatex">\(\theta\)</span> lies in this range”</li>
+</ul>
+<p><strong>Transparent modeling</strong></p>
+<ul>
+<li>Easy to test sensitivity to assumptions.  </li>
+</ul>
 <hr />
 <h2 id="3-core-equation-bayes-rule"><strong>3) Core Equation (Bayes’ Rule)</strong></h2>
 <div class="arithmatex">\[
@@ -1035,18 +1049,26 @@ p(\theta \mid x) \;=\; \frac{p(x \mid \theta)\,p(\theta)}{p(x)} \;\propto\; p(x 
 </table>
 <hr />
 <h2 id="5-where-bayesian-appears-in-mlcs"><strong>5) Where “Bayesian” Appears in ML/CS</strong></h2>
-<p><strong>Naïve Bayes Classifier</strong> 
-- Spam detection
-- uses <span class="arithmatex">\(P(\text{spam} \mid \text{email}) \propto P(\text{email} \mid \text{spam})\,P(\text{spam})\)</span>.  </p>
-<p><strong>Bayesian Networks</strong>
-- Directed Acyclic Graphs (DAGs) modeling dependencies among variables
-- useful for causal inference and probabilistic reasoning.  </p>
-<p><strong>Bayesian Optimization</strong> 
-- Efficient search for global minima of costly black-box functions
-- ex) hyperparameter tuning or A/B testing</p>
-<p><strong>Bayesian Experimental Design</strong>
-- Adaptive experiments minimizing sample or cost
-- ex) early-stopping in clinical trials</p>
+<p><strong>Naïve Bayes Classifier</strong> </p>
+<ul>
+<li>Spam detection</li>
+<li>uses <span class="arithmatex">\(P(\text{spam} \mid \text{email}) \propto P(\text{email} \mid \text{spam})\,P(\text{spam})\)</span>.  </li>
+</ul>
+<p><strong>Bayesian Networks</strong></p>
+<ul>
+<li>Directed Acyclic Graphs (DAGs) modeling dependencies among variables</li>
+<li>useful for causal inference and probabilistic reasoning.  </li>
+</ul>
+<p><strong>Bayesian Optimization</strong> </p>
+<ul>
+<li>Efficient search for global minima of costly black-box functions</li>
+<li>ex) hyperparameter tuning or A/B testing</li>
+</ul>
+<p><strong>Bayesian Experimental Design</strong></p>
+<ul>
+<li>Adaptive experiments minimizing sample or cost</li>
+<li>ex) early-stopping in clinical trials</li>
+</ul>
 <hr />
 <h2 id="6-reason-for-resurgence"><strong>6) Reason for Resurgence</strong></h2>
 <ul>
