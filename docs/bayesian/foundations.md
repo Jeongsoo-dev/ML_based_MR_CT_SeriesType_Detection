@@ -1,9 +1,9 @@
 ---
-title: "Page Title"
+title: Bayesian Analysis
 hide:
   - title
 ---
-# Bayesian Analysis : 1. Bayesian foundations and motivation 
+# 1. Bayesian foundations and motivation 
 **Author:** Jeongsoo Pang  
 
 ## **1) Concept**
