@@ -26,6 +26,9 @@
     
       <link rel="stylesheet" href="../assets/stylesheets/main.84d31ad4.min.css">
       
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
       
 
 
@@ -55,7 +58,14 @@
   </head>
   
   
-    <body dir="ltr">
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
   
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
@@ -78,7 +88,7 @@
 
   
 
-<header class="md-header md-header--shadow" data-md-component="header">
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
     <a href=".." title="Jeongsoo Pang — Portfolio" class="md-header__button md-logo" aria-label="Jeongsoo Pang — Portfolio" data-md-component="logo">
       
@@ -106,6 +116,18 @@
         </div>
       </div>
     </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-hidden="true"  type="radio" name="__palette" id="__palette_0">
+    
+  
+</form>
+      
     
     
       <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
@@ -155,13 +177,84 @@
     
   </nav>
   
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../portfolio/" class="md-tabs__link">
+          
+  
+  
+  Portfolio
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../os/" class="md-tabs__link">
+          
+  
+  
+  OS
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../bayesian/" class="md-tabs__link">
+          
+  
+  
+  Bayesian
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
 </header>
     
     <div class="md-container" data-md-component="container">
       
       
-        
-          
         
       
       <main class="md-main" data-md-component="main">
@@ -177,10 +270,12 @@
                     
 
 
+  
+
 
   
 
-<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navigation" data-md-level="0">
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
     <a href=".." title="Jeongsoo Pang — Portfolio" class="md-nav__button md-logo" aria-label="Jeongsoo Pang — Portfolio" data-md-component="logo">
       
@@ -197,15 +292,61 @@
       
   
   
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Portfolio
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            Portfolio
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
   
   
     <li class="md-nav__item">
-      <a href=".." class="md-nav__link">
+      <a href="../portfolio/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    1. Cercare-Medical ML Project
+    Overview
     
   </span>
   
@@ -214,9 +355,33 @@
     </li>
   
 
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Cercare-Medical ML Project
     
-      
-      
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
   
   
     
@@ -234,7 +399,7 @@
   
   
   <span class="md-ellipsis">
-    2. Anti-Drone Project
+    Anti-Drone Project
     
   </span>
   
@@ -247,7 +412,7 @@
   
   
   <span class="md-ellipsis">
-    2. Anti-Drone Project
+    Anti-Drone Project
     
   </span>
   
@@ -415,9 +580,10 @@
     </li>
   
 
-    
-      
-      
+              
+            
+              
+                
   
   
   
@@ -428,12 +594,162 @@
   
   
   <span class="md-ellipsis">
-    3. Remote Feeling Mimicking Chair
+    Remote Feeling Mimicking Chair
     
   </span>
   
 
       </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    OS
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            OS
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../os/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Bayesian
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Bayesian
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../bayesian/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
     </li>
   
 
@@ -471,11 +787,11 @@
 <div class="clear"></div>
 
 <hr />
-<h2 id="abstract">Abstract<a class="headerlink" href="#abstract" title="Permanent link">&para;</a></h2>
+<h2 id="abstract">Abstract</h2>
 <p>The <strong>Anti-Drone Project</strong> focused on developing a reliable, low-latency <strong>machine learning pipeline</strong> to detect and classify UAVs using <strong>FMCW radar spectrograms</strong> and <strong>RCS imagery</strong>.<br />
 The system integrates classical machine learning (SVM, Random Forest, Gradient Boosting) and deep convolutional architectures (AlexNet, ResNet, GoogLeNet, NasNet, SqueezeNet) to achieve optimal trade-offs between <strong>accuracy</strong>, <strong>robustness</strong>, and <strong>real-time inference</strong> on edge devices.</p>
 <hr />
-<h2 id="project-objective">Project Objective<a class="headerlink" href="#project-objective" title="Permanent link">&para;</a></h2>
+<h2 id="project-objective">Project Objective</h2>
 <ul>
 <li>Build an <strong>end-to-end ML framework</strong> for <strong>drone detection and classification</strong> from Doppler and RCS data.</li>
 <li>Benchmark traditional classifiers versus deep CNN backbones for <strong>FMCW spectrograms</strong>.</li>
@@ -483,7 +799,7 @@ The system integrates classical machine learning (SVM, Random Forest, Gradient B
 <li>Provide a <strong>research-grade reproducible implementation</strong> with clear documentation and modularity.</li>
 </ul>
 <hr />
-<h2 id="dataset-preprocessing">Dataset &amp; Preprocessing<a class="headerlink" href="#dataset-preprocessing" title="Permanent link">&para;</a></h2>
+<h2 id="dataset-preprocessing">Dataset &amp; Preprocessing</h2>
 <table>
 <thead>
 <tr>
@@ -522,8 +838,8 @@ The system integrates classical machine learning (SVM, Random Forest, Gradient B
 <li><strong>Dynamic Range Calibration:</strong> Capped and floor-normalized pixel intensities to mitigate power spikes and saturation artifacts.</li>
 </ul>
 <hr />
-<h2 id="model-architectures">Model Architectures<a class="headerlink" href="#model-architectures" title="Permanent link">&para;</a></h2>
-<h3 id="classical-ml-models">Classical ML Models<a class="headerlink" href="#classical-ml-models" title="Permanent link">&para;</a></h3>
+<h2 id="model-architectures">Model Architectures</h2>
+<h3 id="classical-ml-models">Classical ML Models</h3>
 <table>
 <thead>
 <tr>
@@ -555,7 +871,7 @@ The system integrates classical machine learning (SVM, Random Forest, Gradient B
 </tr>
 </tbody>
 </table>
-<h3 id="deep-cnn-backbones">Deep CNN Backbones<a class="headerlink" href="#deep-cnn-backbones" title="Permanent link">&para;</a></h3>
+<h3 id="deep-cnn-backbones">Deep CNN Backbones</h3>
 <table>
 <thead>
 <tr>
@@ -599,7 +915,7 @@ The system integrates classical machine learning (SVM, Random Forest, Gradient B
 </table>
 <p>All deep networks were fine-tuned from <strong>PyTorch ImageNet weights</strong>, with a custom <strong>three-class output layer</strong> corresponding to drone categories (quadrotor, fixed-wing, multi-rotor).</p>
 <hr />
-<h2 id="training-strategy">Training Strategy<a class="headerlink" href="#training-strategy" title="Permanent link">&para;</a></h2>
+<h2 id="training-strategy">Training Strategy</h2>
 <ul>
 <li><strong>Framework:</strong> PyTorch + (optional) Hugging Face + W&amp;B logging.  </li>
 <li><strong>Batch Size:</strong> 128 (train) / 20 (eval).  </li>
@@ -610,7 +926,7 @@ The system integrates classical machine learning (SVM, Random Forest, Gradient B
 <li><strong>Hyperparameter Search:</strong> Grid over learning rates and batch sizes + W&amp;B sweeps for convergence profiling.</li>
 </ul>
 <hr />
-<h2 id="evaluation-methodology">Evaluation Methodology<a class="headerlink" href="#evaluation-methodology" title="Permanent link">&para;</a></h2>
+<h2 id="evaluation-methodology">Evaluation Methodology</h2>
 <ul>
 <li><strong>Cross-Validation:</strong> 10% validation per seed ∈ {21, 42, 77}.  </li>
 <li><strong>Noise Perturbation Tests:</strong> Measured model accuracy across σ² ∈ {1e-4 … 1e-2} noise levels.  </li>
@@ -618,7 +934,7 @@ The system integrates classical machine learning (SVM, Random Forest, Gradient B
 <li><strong>Metrics:</strong> Micro-averaged F1, precision/recall, and timing std (μ ± σ).</li>
 </ul>
 <hr />
-<h2 id="results-summary">Results Summary<a class="headerlink" href="#results-summary" title="Permanent link">&para;</a></h2>
+<h2 id="results-summary">Results Summary</h2>
 <table>
 <thead>
 <tr>
@@ -678,7 +994,7 @@ The system integrates classical machine learning (SVM, Random Forest, Gradient B
 <p><strong>SqueezeNet</strong> achieved the best <strong>accuracy-efficiency balance</strong>, making it the <strong>production-ready model</strong> for real-time radar deployment.</p>
 </blockquote>
 <hr />
-<h2 id="additional-experiment-noise-on-image-datasets">Additional Experiment — Noise on Image Datasets<a class="headerlink" href="#additional-experiment-noise-on-image-datasets" title="Permanent link">&para;</a></h2>
+<h2 id="additional-experiment-noise-on-image-datasets">Additional Experiment — Noise on Image Datasets</h2>
 <p>To stress-test robustness, we performed <strong>accuracy experiments on noise-added image datasets</strong> (Gaussian noise with σ² ∈ {1e-4 … 1e-2}).<br />
 We evaluated both CNNs and classical models:</p>
 <ul>
@@ -692,7 +1008,7 @@ We evaluated both CNNs and classical models:</p>
 - <strong>ResNet-101</strong> remained the most stable at higher noise regimes, likely due to deeper residual capacity and batch-norm smoothing.<br />
 - Among classical models, <strong>HistGBDT</strong> outperformed <strong>RF</strong> and <strong>SVC</strong> under heavier noise, aligning with its histogram-binning robustness.</p>
 <hr />
-<h2 id="technical-highlights">Technical Highlights<a class="headerlink" href="#technical-highlights" title="Permanent link">&para;</a></h2>
+<h2 id="technical-highlights">Technical Highlights</h2>
 <ul>
 <li><strong>Hybrid Experimentation Framework:</strong> Unified classical + deep models within a single harness for direct benchmarking.  </li>
 <li><strong>Custom Collate Fn:</strong> Converted raw radar tensors into 3-channel images via NumPy + PIL augmentation before Torch batching.  </li>
@@ -701,21 +1017,21 @@ We evaluated both CNNs and classical models:</p>
 <li><strong>Explainability:</strong> Interpreted radar spectrogram activations using Grad-CAM to validate model attention on micro-Doppler regions.</li>
 </ul>
 <hr />
-<h2 id="deployment-considerations">Deployment Considerations<a class="headerlink" href="#deployment-considerations" title="Permanent link">&para;</a></h2>
+<h2 id="deployment-considerations">Deployment Considerations</h2>
 <ul>
 <li><strong>Edge Inference Optimization:</strong> Quantized <strong>SqueezeNet</strong> to FP16, achieving &gt;80 FPS on Jetson Nano.  </li>
 <li><strong>Model Serialization:</strong> Exported via TorchScript for embedded radar pipeline.  </li>
 <li><strong>Noise-Aware Retraining:</strong> Integrated Gaussian perturbation generator for continual retraining in field conditions.</li>
 </ul>
 <hr />
-<h2 id="future-work">Future Work<a class="headerlink" href="#future-work" title="Permanent link">&para;</a></h2>
+<h2 id="future-work">Future Work</h2>
 <ul>
 <li>Real-time fusion with EO/IR imagery via feature-level concatenation.  </li>
 <li>Temporal smoothing (LSTM / Transformer) for tracking moving drones.  </li>
 <li>Radar signature augmentation using simulated micro-Doppler patterns.</li>
 </ul>
 <hr />
-<h2 id="repository-structure">Repository Structure<a class="headerlink" href="#repository-structure" title="Permanent link">&para;</a></h2>
+<h2 id="repository-structure">Repository Structure</h2>
 <p><strong>Link to Repository:</strong> <a href="https://github.com/jpangece/Anti_Drone_System">https://github.com/jpangece/Anti_Drone_System</a></p>
 <table>
 <thead>
@@ -744,7 +1060,7 @@ We evaluated both CNNs and classical models:</p>
 </tbody>
 </table>
 <hr />
-<h2 id="acknowledgment">Acknowledgment<a class="headerlink" href="#acknowledgment" title="Permanent link">&para;</a></h2>
+<h2 id="acknowledgment">Acknowledgment</h2>
 <p>This work was part of a <strong>collaborative defense-AI initiative</strong>, integrating FMCW radar and EO sensor data for UAV detection.<br />
 All experiments were executed using <strong>PyTorch 2.0</strong> and <strong>W&amp;B</strong>, with full experiment reproducibility ensured via deterministic seeds and dataset versioning.</p>
 
@@ -800,7 +1116,7 @@ All experiments were executed using <strong>PyTorch 2.0</strong> and <strong>W&a
     
     
       
-      <script id="__config" type="application/json">{"base": "..", "features": ["navigation.instant", "toc.integrate"], "search": "../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.instant", "toc.integrate"], "search": "../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
       <script src="../assets/javascripts/bundle.f55a23d4.min.js"></script>

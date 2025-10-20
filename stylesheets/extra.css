@@ -1,6 +1,9 @@
 /* Wider canvas */
 .md-grid { max-width: 1440px; }
 
+/* stylesheets/extra.css */
+.md-tabs__link { font-weight: 600; }
+
 /* Two-column section for the Chair page */
 .two-col {
   display: flex;
