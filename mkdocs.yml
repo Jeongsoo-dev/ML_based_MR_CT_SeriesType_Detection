@@ -3,26 +3,34 @@ site_name: Jeongsoo Pang — Portfolio
 theme:
   name: material
   features:
+    - navigation.tabs           # <-- top tabs in the blue bar
+    - navigation.tabs.sticky    # <-- keep tabs visible on scroll
     - navigation.instant
-    - toc.integrate          # put page ToC in the left sidebar
+    - toc.integrate
+  palette:
+    - scheme: default
+      primary: indigo           # (optional) header color
+      accent: indigo
 
-# Extra CSS is looked up relative to the docs/ folder.
 extra_css:
   - stylesheets/extra.css
 
 markdown_extensions:
   - tables
   - attr_list
-  - md_in_html        
-
-  # (optional but recommended with Material)
-  - toc:
-      permalink: true
-  - admonition
-  - pymdownx.details
-  - pymdownx.superfences
 
 nav:
-  - "1. Cercare-Medical ML Project": index.md
-  - "2. Anti-Drone Project": anti_drone.md
-  - "3. Remote Feeling Mimicking Chair": remote_chair.md
+  - Portfolio:
+      - "Cercare-Medical ML Project": index.md
+      - "Anti-Drone Project": anti_drone.md
+      - "Remote Feeling Mimicking Chair": remote_chair.md
+
+  - OS:
+      - "Overview": os/index.md        # you can add more OS pages later
+      # - "Linux Kernel Notes": os/kernel.md
+      # - "Systems Cheats": os/cheats.md
+
+  - Bayesian:
+      - "Overview": bayesian/index.md  # you can add more Bayesian pages later
+      # - "Inference Notes": bayesian/inference.md
+      # - "Probabilistic Models": bayesian/models.md
