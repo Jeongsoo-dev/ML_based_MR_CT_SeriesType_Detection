@@ -7,17 +7,11 @@ hide:
 **Author:** Jeongsoo Pang  
 
 ## **1) Concept**
-**Bayesian Statistical Inference** 
-
-- A framework that uses Bayes’ Rule to combine prior knowledge with observed data, forming a posterior belief about unknown parameters.
+**Bayesian Statistical Inference**" Framework that uses Bayes’ Rule to combine prior knowledge with observed data.
   
-**Core Idea**
-
-- Treat parameters as random variables with probability distributions rather than fixed values.
+**Core Idea**: Treat parameters as random variables with probability distributions rather than fixed values.
  
-**Focus**
-
-- Uncertainty quantification, knowledge updating, and probabilistic reasoning.  
+**Focus**: Uncertainty quantification, knowledge updating, and probabilistic reasoning.  
 
 ---
 
