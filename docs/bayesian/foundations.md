@@ -7,29 +7,36 @@ hide:
 **Author:** Jeongsoo Pang  
 
 ## **1) Concept**
-**Bayesian Statistical Inference:** 
+**Bayesian Statistical Inference** 
+
 - A framework that uses Bayes’ Rule to combine prior knowledge with observed data, forming a posterior belief about unknown parameters.
   
 **Core Idea**
+
 - Treat parameters as random variables with probability distributions rather than fixed values.
  
 **Focus**
+
 - Uncertainty quantification, knowledge updating, and probabilistic reasoning.  
 
 ---
 
 ## **Motivation**
 **Integrates prior knowledge**
+
 - Encodes existing beliefs or domain expertise.  
 
 **Logical updating**
+
 - Adjusts those beliefs as new data arrive.  
 
 **Probabilistic conclusions**
+
 - Allows probability statements about parameters
 - ex) “There’s a 95% probability $\theta$ lies in this range”
 
 **Transparent modeling**
+
 - Easy to test sensitivity to assumptions.  
 
 ---
@@ -64,18 +71,22 @@ $$
 
 ## **5) Where “Bayesian” Appears in ML/CS**
 **Naïve Bayes Classifier** 
+
 - Spam detection
 - uses $P(\text{spam} \mid \text{email}) \propto P(\text{email} \mid \text{spam})\,P(\text{spam})$.  
 
 **Bayesian Networks**
+
 - Directed Acyclic Graphs (DAGs) modeling dependencies among variables
 - useful for causal inference and probabilistic reasoning.  
 
 **Bayesian Optimization** 
+
 - Efficient search for global minima of costly black-box functions
 - ex) hyperparameter tuning or A/B testing
 
 **Bayesian Experimental Design**
+
 - Adaptive experiments minimizing sample or cost
 - ex) early-stopping in clinical trials
 
