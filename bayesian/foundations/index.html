@@ -74,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#page-title" class="md-skip">
+        <a href="#bayesian-analysis-1-bayesian-foundations-and-motivation" class="md-skip">
           Skip to content
         </a>
       
@@ -607,6 +607,19 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Foundations & motivation
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -618,6 +631,133 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-concept" class="md-nav__link">
+    <span class="md-ellipsis">
+      1) Concept
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-why-bayesian-motivation" class="md-nav__link">
+    <span class="md-ellipsis">
+      2) Why Bayesian? (Motivation)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-core-equation-bayes-rule" class="md-nav__link">
+    <span class="md-ellipsis">
+      3) Core Equation (Bayes’ Rule)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-bayesian-vs-frequentist" class="md-nav__link">
+    <span class="md-ellipsis">
+      4) Bayesian vs. Frequentist
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-where-bayesian-appears-in-mlcs" class="md-nav__link">
+    <span class="md-ellipsis">
+      5) Where “Bayesian” Appears in ML/CS
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-why-the-resurgence" class="md-nav__link">
+    <span class="md-ellipsis">
+      6) Why the Resurgence?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-key-terms" class="md-nav__link">
+    <span class="md-ellipsis">
+      7) Key Terms
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-bayesian-workflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      8) Bayesian Workflow
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-common-pitfalls" class="md-nav__link">
+    <span class="md-ellipsis">
+      9) Common Pitfalls
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-mini-example-naive-bayes-for-spam" class="md-nav__link">
+    <span class="md-ellipsis">
+      10) Mini Example – Naïve Bayes for Spam
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-what-to-know-for-midterm" class="md-nav__link">
+    <span class="md-ellipsis">
+      11) What to Know for Midterm
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12-summary-quote" class="md-nav__link">
+    <span class="md-ellipsis">
+      12) Summary Quote
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -833,8 +973,127 @@
 
 
 
-<h1 id="page-title">Page Title</h1>
-<p><em>Work-in-progress.</em></p>
+<h1 id="bayesian-analysis-1-bayesian-foundations-and-motivation">Bayesian Analysis : 1. Bayesian foundations and motivation</h1>
+<p><strong>Author:</strong> Jeongsoo Pang  </p>
+<h2 id="1-concept"><strong>1) Concept</strong></h2>
+<ul>
+<li><strong>Bayesian Statistical Inference:</strong> A framework that uses <strong>Bayes’ Rule</strong> to combine <strong>prior knowledge</strong> with <strong>observed data</strong>, forming a <strong>posterior belief</strong> about unknown parameters.  </li>
+<li><strong>Core Idea:</strong> Treat parameters as <strong>random variables</strong> with probability distributions rather than fixed values.  </li>
+<li><strong>Focus:</strong> <strong>Uncertainty quantification</strong>, <strong>knowledge updating</strong>, and <strong>probabilistic reasoning</strong>.  </li>
+</ul>
+<hr />
+<h2 id="2-why-bayesian-motivation"><strong>2) Why Bayesian? (Motivation)</strong></h2>
+<ul>
+<li><strong>Integrates prior knowledge:</strong> Encodes existing beliefs or domain expertise.  </li>
+<li><strong>Logical updating:</strong> Adjusts those beliefs as new data arrive.  </li>
+<li><strong>Probabilistic conclusions:</strong> Allows probability statements about parameters (e.g., “There’s a 95% probability θ lies in this range”).  </li>
+<li><strong>Transparent modeling:</strong> Easy to test sensitivity to assumptions.  </li>
+</ul>
+<hr />
+<h2 id="3-core-equation-bayes-rule"><strong>3) Core Equation (Bayes’ Rule)</strong></h2>
+<p>[
+p(\theta \mid x) = \frac{p(x \mid \theta)\,p(\theta)}{p(x)} \propto p(x \mid \theta)\,p(\theta)
+]<br />
+- <strong>Posterior</strong>: Updated belief after observing data.<br />
+- <strong>Likelihood</strong>: Information from observed data.<br />
+- <strong>Prior</strong>: Belief before observing data.<br />
+- <strong>Evidence (marginal likelihood)</strong>: Normalizing constant ensuring posterior integrates to 1.  </p>
+<hr />
+<h2 id="4-bayesian-vs-frequentist"><strong>4) Bayesian vs. Frequentist</strong></h2>
+<table>
+<thead>
+<tr>
+<th><strong>Aspect</strong></th>
+<th><strong>Bayesian</strong></th>
+<th><strong>Frequentist</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Parameter</td>
+<td>Random variable with distribution</td>
+<td>Fixed but unknown value</td>
+</tr>
+<tr>
+<td>Data</td>
+<td>Observed once; updates belief</td>
+<td>Repeated hypothetical samples</td>
+</tr>
+<tr>
+<td>Output</td>
+<td>Posterior probability</td>
+<td>Point estimate + confidence interval</td>
+</tr>
+<tr>
+<td>Inference</td>
+<td>Probabilistic about parameters</td>
+<td>Probabilistic about data</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="5-where-bayesian-appears-in-mlcs"><strong>5) Where “Bayesian” Appears in ML/CS</strong></h2>
+<ul>
+<li><strong>Naïve Bayes Classifier:</strong> Spam detection; uses (P(\text{spam} | \text{email}) \propto P(\text{email} | \text{spam})P(\text{spam})).  </li>
+<li><strong>Bayesian Networks:</strong> Directed Acyclic Graphs (DAGs) modeling dependencies among variables; useful for <strong>causal inference</strong> and <strong>probabilistic reasoning</strong>.  </li>
+<li><strong>Bayesian Optimization:</strong> Efficient search for global minima of costly black-box functions (hyperparameter tuning, A/B testing).  </li>
+<li><strong>Bayesian Experimental Design:</strong> Adaptive experiments minimizing sample or cost (e.g., early-stopping in clinical trials).  </li>
+</ul>
+<hr />
+<h2 id="6-why-the-resurgence"><strong>6) Why the Resurgence?</strong></h2>
+<ul>
+<li><strong>Computational Power:</strong> GPUs and MCMC algorithms make complex Bayesian models practical.  </li>
+<li><strong>Cultural Shift:</strong> Acceptance of subjective priors and probabilistic thinking.  </li>
+<li><strong>Educational Change:</strong> Modern statistics courses incorporate Bayesian reasoning.  </li>
+</ul>
+<hr />
+<h2 id="7-key-terms"><strong>7) Key Terms</strong></h2>
+<ul>
+<li><strong>Prior (p(\theta)):</strong> Belief about θ before seeing data.  </li>
+<li><strong>Likelihood (p(x|\theta)):</strong> Probability of data given θ.  </li>
+<li><strong>Posterior (p(\theta|x)):</strong> Updated belief after seeing data.  </li>
+<li><strong>Evidence (p(x)):</strong> Normalizing term for comparison across models.  </li>
+<li><strong>Predictive Distribution (p(x_{new}|x)):</strong> Predicts unseen data, integrating over parameter uncertainty.  </li>
+</ul>
+<hr />
+<h2 id="8-bayesian-workflow"><strong>8) Bayesian Workflow</strong></h2>
+<ol>
+<li><strong>Specify Prior:</strong> Choose distribution for parameter θ.  </li>
+<li><strong>Select Likelihood:</strong> Define model generating data.  </li>
+<li><strong>Compute Posterior:</strong> Combine prior and likelihood via Bayes’ rule.  </li>
+<li><strong>Summarize Inference:</strong> Use MAP, posterior mean, variance, or credible intervals.  </li>
+<li><strong>Make Decisions:</strong> Apply posterior to decision problems (e.g., minimize expected loss).  </li>
+</ol>
+<hr />
+<h2 id="9-common-pitfalls"><strong>9) Common Pitfalls</strong></h2>
+<ul>
+<li><strong>Overly strong priors:</strong> Can dominate data when sample size is small.  </li>
+<li><strong>Improper priors:</strong> May cause invalid posteriors (non-integrable).  </li>
+<li><strong>Computational complexity:</strong> High-dimensional models often need approximation (Monte Carlo, Variational Inference).  </li>
+<li><strong>Model checking:</strong> Always perform posterior predictive checks.  </li>
+</ul>
+<hr />
+<h2 id="10-mini-example-naive-bayes-for-spam"><strong>10) Mini Example – Naïve Bayes for Spam</strong></h2>
+<p>[
+P(\text{spam} \mid \text{email}) \propto P(\text{email} \mid \text{spam})P(\text{spam})
+]
+- <strong>Assumption:</strong> Words are conditionally independent given class.<br />
+- <strong>Result:</strong> Fast training, interpretable features, still used for baseline text classification.  </p>
+<hr />
+<h2 id="11-what-to-know-for-midterm"><strong>11) What to Know for Midterm</strong></h2>
+<ul>
+<li>Be able to <strong>state and interpret Bayes’ Rule</strong>.  </li>
+<li>Understand <strong>difference between Bayesian and Frequentist inference</strong>.  </li>
+<li>Explain <strong>why Bayesian inference is powerful</strong> (updates beliefs, quantifies uncertainty).  </li>
+<li>Know <strong>applications in ML</strong>: Naïve Bayes, Bayesian networks, optimization.  </li>
+<li>Understand <strong>reason for resurgence</strong>: computation + flexibility + interpretability.  </li>
+</ul>
+<hr />
+<h2 id="12-summary-quote"><strong>12) Summary Quote</strong></h2>
+<blockquote>
+<p><em>Bayesian inference formalizes learning from data by updating prior beliefs with evidence to obtain a posterior. It enables rational, probabilistic reasoning for real-world uncertainty — foundational to modern machine learning and decision-making.</em></p>
+</blockquote>
+<hr />
 
 
 
