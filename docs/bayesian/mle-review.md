@@ -1,16 +1,16 @@
 ---
-title: Distributions and MLE
+title: **Distributions and MLE**
 hide:
   - title
 ---
 
-# **2. Distributions and MLE (Statistics Review)**
+# **2. Distribution and Statistical Inference**
 **Author:** Jeongsoo Pang  
 
 ---
 
-## **1) Lecture Overview**
-This lecture reviews essential **probability distributions** and introduces **Maximum Likelihood Estimation (MLE)** — a foundation for both frequentist and Bayesian inference.
+## **1) Overview**
+Reviewing essential **probability distributions** and introduces **Maximum Likelihood Estimation (MLE)**
 
 ---
 
@@ -57,9 +57,6 @@ This lecture reviews essential **probability distributions** and introduces **Ma
   $$
   E[X] = Var(X) = \lambda
   $$  
-
-> 📸 **Suggested screenshot:** the lecture’s *“Common Discrete Distributions”* table slide (side-by-side formulas for Bernoulli → Poisson).
-
 ---
 
 ### **Continuous**
@@ -94,9 +91,8 @@ This lecture reviews essential **probability distributions** and introduces **Ma
   $$  
   $$
   E[X] = \frac{\alpha}{\beta}, \quad Var(X) = \frac{\alpha}{\beta^2}
-  $$  
-  > 📸 *Screenshot suggestion:* “Gamma distribution curve” or the *Gamma function integral definition* slide.
-
+  $$
+  
 - **Beta $(\alpha, \beta)$**  
   $$
   f(x|\alpha,\beta) = \frac{1}{B(\alpha,\beta)} x^{\alpha - 1} (1 - x)^{\beta - 1}, \quad 0 \le x \le 1
@@ -142,18 +138,5 @@ $$
 p(\theta|x) = \frac{p(x|\theta)p(\theta)}{p(x)} \propto p(x|\theta)p(\theta)
 $$  
 > This connects directly to **Lecture 3: Priors and Bayesian Updating**.
-
----
-
-## **5) Key Takeaways**
-- Memorize formulas for **mean** and **variance** of core distributions.  
-- Understand **MLE derivation** via log-likelihood maximization.  
-- Know how **Frequentist vs Bayesian** differ in interpretation.  
-- Visualize **Binomial → Normal approximation** (Galton Board figure).  
-
----
-
-## **6) Summary Quote**
-> *From distributions describing uncertainty to likelihood-based estimation, this lecture bridges probability theory with statistical inference — the entry point to Bayesian learning.*
 
 ---
