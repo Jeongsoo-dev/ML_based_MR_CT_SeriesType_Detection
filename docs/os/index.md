@@ -6,7 +6,10 @@ hide:
 
 # Operating Systems
 
-This section will collect kernels, scheduling, memory, and concurrency notes—plus small labs and demos.
-
-- Coming soon: Linux kernel reading notes, lock-free queues, epoll/reactor toy server, NUMA experiments.
+## Acknowledgement
+- Professor Manuel Charlemagne
+- ECE4820 Introduction to Operation Systems
+  
+## Table of Contents
+### 1. Critical Section
 
