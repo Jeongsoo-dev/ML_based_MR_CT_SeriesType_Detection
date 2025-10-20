@@ -3,22 +3,34 @@ title: Bayesian Analysis
 hide:
   - title
 ---
-
-# 1. Bayesian foundations and motivation 
+# **1. Bayesian foundations and motivation**
 **Author:** Jeongsoo Pang  
 
 ## **1) Concept**
-- **Bayesian Statistical Inference:** A framework that uses **Bayes’ Rule** to combine **prior knowledge** with **observed data**, forming a **posterior belief** about unknown parameters.  
-- **Core Idea:** Treat parameters as **random variables** with probability distributions rather than fixed values.  
-- **Focus:** **Uncertainty quantification**, **knowledge updating**, and **probabilistic reasoning**.  
+**Bayesian Statistical Inference:** 
+- A framework that uses Bayes’ Rule to combine prior knowledge with observed data, forming a posterior belief about unknown parameters.
+  
+**Core Idea**
+- Treat parameters as random variables with probability distributions rather than fixed values.
+ 
+**Focus**
+- Uncertainty quantification, knowledge updating, and probabilistic reasoning.  
 
 ---
 
-## **2) Why Bayesian? (Motivation)**
-- **Integrates prior knowledge:** Encodes existing beliefs or domain expertise.  
-- **Logical updating:** Adjusts those beliefs as new data arrive.  
-- **Probabilistic conclusions:** Allows probability statements about parameters (e.g., “There’s a 95% probability $\theta$ lies in this range”).  
-- **Transparent modeling:** Easy to test sensitivity to assumptions.  
+## **Motivation**
+**Integrates prior knowledge**
+- Encodes existing beliefs or domain expertise.  
+
+**Logical updating**
+- Adjusts those beliefs as new data arrive.  
+
+**Probabilistic conclusions**
+- Allows probability statements about parameters
+- ex) “There’s a 95% probability $\theta$ lies in this range”
+
+**Transparent modeling**
+- Easy to test sensitivity to assumptions.  
 
 ---
 
@@ -32,8 +44,14 @@ $$
 - **Prior**: Belief before observing data.  
 - **Evidence (marginal likelihood)**: Normalizing constant ensuring posterior integrates to 1.  
 
----
+### **Key Terms**
+- **Prior $p(\theta)$:** Belief about $\theta$ before seeing data.  
+- **Likelihood $p(x \mid \theta)$:** Probability of data given $\theta$.  
+- **Posterior $p(\theta \mid x)$:** Updated belief after seeing data.  
+- **Evidence $p(x)$:** Normalizing term for comparison across models.  
+- **Predictive Distribution $p(x_{\text{new}} \mid x)$:** Predicts unseen data, integrating over parameter uncertainty.  
 
+---
 ## **4) Bayesian vs. Frequentist**
 | **Aspect** | **Bayesian** | **Frequentist** |
 |-------------|---------------|----------------|
@@ -45,30 +63,33 @@ $$
 ---
 
 ## **5) Where “Bayesian” Appears in ML/CS**
-- **Naïve Bayes Classifier:** Spam detection; uses $P(\text{spam} \mid \text{email}) \propto P(\text{email} \mid \text{spam})\,P(\text{spam})$.  
-- **Bayesian Networks:** Directed Acyclic Graphs (DAGs) modeling dependencies among variables; useful for **causal inference** and **probabilistic reasoning**.  
-- **Bayesian Optimization:** Efficient search for global minima of costly black-box functions (hyperparameter tuning, A/B testing).  
-- **Bayesian Experimental Design:** Adaptive experiments minimizing sample or cost (e.g., early-stopping in clinical trials).  
+**Naïve Bayes Classifier** 
+- Spam detection
+- uses $P(\text{spam} \mid \text{email}) \propto P(\text{email} \mid \text{spam})\,P(\text{spam})$.  
+
+**Bayesian Networks**
+- Directed Acyclic Graphs (DAGs) modeling dependencies among variables
+- useful for causal inference and probabilistic reasoning.  
+
+**Bayesian Optimization** 
+- Efficient search for global minima of costly black-box functions
+- ex) hyperparameter tuning or A/B testing
+
+**Bayesian Experimental Design**
+- Adaptive experiments minimizing sample or cost
+- ex) early-stopping in clinical trials
 
 ---
 
-## **6) Why the Resurgence?**
+## **6) Reason for Resurgence**
 - **Computational Power:** GPUs and MCMC algorithms make complex Bayesian models practical.  
 - **Cultural Shift:** Acceptance of subjective priors and probabilistic thinking.  
 - **Educational Change:** Modern statistics courses incorporate Bayesian reasoning.  
 
----
-
-## **7) Key Terms**
-- **Prior $p(\theta)$:** Belief about $\theta$ before seeing data.  
-- **Likelihood $p(x \mid \theta)$:** Probability of data given $\theta$.  
-- **Posterior $p(\theta \mid x)$:** Updated belief after seeing data.  
-- **Evidence $p(x)$:** Normalizing term for comparison across models.  
-- **Predictive Distribution $p(x_{\text{new}} \mid x)$:** Predicts unseen data, integrating over parameter uncertainty.  
 
 ---
 
-## **8) Bayesian Workflow**
+## **7) Bayesian Workflow**
 1. **Specify Prior:** Choose distribution for parameter $\theta$.  
 2. **Select Likelihood:** Define model generating data.  
 3. **Compute Posterior:** Combine prior and likelihood via Bayes’ rule.  
@@ -77,15 +98,7 @@ $$
 
 ---
 
-## **9) Common Pitfalls**
-- **Overly strong priors:** Can dominate data when sample size is small.  
-- **Improper priors:** May cause invalid posteriors (non-integrable).  
-- **Computational complexity:** High-dimensional models often need approximation (Monte Carlo, Variational Inference).  
-- **Model checking:** Always perform posterior predictive checks.  
-
----
-
-## **10) Mini Example – Naïve Bayes for Spam**
+## **8) Mini Example – Naïve Bayes for Spam**
 $$
 P(\text{spam} \mid \text{email})
 \;\propto\;
@@ -97,14 +110,6 @@ $$
 
 ---
 
-## **11) What to Know for Midterm**
-- Be able to **state and interpret Bayes’ Rule**.  
-- Understand **difference between Bayesian and Frequentist inference**.  
-- Explain **why Bayesian inference is powerful** (updates beliefs, quantifies uncertainty).  
-- Know **applications in ML**: Naïve Bayes, Bayesian networks, optimization.  
-- Understand **reason for resurgence**: computation + flexibility + interpretability.  
-
----
-
 ## **12) Summary Quote**
-> *Bayesian inference formalizes learning from data by updating prior beliefs with evidence to obtain a posterior. It enables rational, probabilistic reasoning for real-world uncertainty — foundational to modern machine learning and decision-making.*
+> *Bayesian inference formalizes learning from data by updating prior beliefs with evidence to obtain a posterior. It enables rational, probabilistic reasoning for real-world uncertainty which is foundational to modern machine learning and decision-making.*
+
