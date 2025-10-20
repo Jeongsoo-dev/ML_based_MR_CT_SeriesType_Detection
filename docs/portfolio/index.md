@@ -1,8 +1,20 @@
 # Portfolio
 
-???+ info "Projects"
-    [:material-hospital-box-outline: **Cercare-Medical ML Project**](../index/) — ML pipeline for MR/CT series type detection (96.69% MR / 99.25% CT).
+**Portfolio**
+- [Cercare-Medical ML Project](../index/)
+- [Anti-Drone Project](../anti_drone/)
+- [Remote Feeling Mimicking Chair](../remote_chair/)
 
-    [:material-radar: **Anti-Drone Project**](../anti_drone/) — FMCW radar + EO fusion, classical ML vs deep CNNs.
+**OS**
+- [Critical Section](../os/critical_section/)
 
-    [:material-chair-school: **Remote Feeling Mimicking Chair**](../remote_chair/) — low-latency dual-chair haptic teleoperation.
+**Bayesian**
+- [Bayesian foundations and motivation](../bayesian/foundations/)
+- [Review of probability distributions and MLE](../bayesian/mle-review/)
+- [Prior distributions and Bayesian logic](../bayesian/priors-logic/)
+- [Types and properties of priors](../bayesian/priors-types/)
+- [Posterior inference mechanics](../bayesian/posterior-inference/)
+- [Interval estimation and prediction](../bayesian/intervals-prediction/)
+- [Hypothesis testing and model comparison](../bayesian/hypothesis-models/)
+- [Loss functions and optimal decisions](../bayesian/loss-decisions/)
+- [Computational methods for Bayesian](../bayesian/computation/)
