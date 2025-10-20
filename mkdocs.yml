@@ -27,5 +27,16 @@ nav:
       - "Remote Feeling Mimicking Chair": remote_chair.md
   - OS:
       - "Overview": os/index.md
+      - "Critical Section": os/critical_section.md
   - Bayesian:
       - "Overview": bayesian/index.md
+      - "Foundations & motivation": bayesian/foundations.md
+      - "Distributions & MLE review": bayesian/mle-review.md
+      - "Prior distributions & Bayesian logic": bayesian/priors-logic.md
+      - "Types & properties of priors": bayesian/priors-types.md
+      - "Posterior inference mechanics": bayesian/posterior-inference.md
+      - "Interval estimation & prediction": bayesian/intervals-prediction.md
+      - "Hypothesis testing & model comparison": bayesian/hypothesis-models.md
+      - "Loss functions & optimal decisions": bayesian/loss-decisions.md
+      - "Computational methods": bayesian/computation.md
+
