@@ -20,7 +20,7 @@
     
     
       
-        <title>Page Title - Jeongsoo Pang — Portfolio</title>
+        <title>Bayesian Analysis - Jeongsoo Pang — Portfolio</title>
       
     
     
@@ -74,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#bayesian-analysis-1-bayesian-foundations-and-motivation" class="md-skip">
+        <a href="#1-bayesian-foundations-and-motivation" class="md-skip">
           Skip to content
         </a>
       
@@ -110,7 +110,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Page Title
+              Bayesian Analysis
             
           </span>
         </div>
@@ -973,7 +973,7 @@
 
 
 
-<h1 id="bayesian-analysis-1-bayesian-foundations-and-motivation">Bayesian Analysis : 1. Bayesian foundations and motivation</h1>
+<h1 id="1-bayesian-foundations-and-motivation">1. Bayesian foundations and motivation</h1>
 <p><strong>Author:</strong> Jeongsoo Pang  </p>
 <h2 id="1-concept"><strong>1) Concept</strong></h2>
 <ul>
@@ -986,18 +986,20 @@
 <ul>
 <li><strong>Integrates prior knowledge:</strong> Encodes existing beliefs or domain expertise.  </li>
 <li><strong>Logical updating:</strong> Adjusts those beliefs as new data arrive.  </li>
-<li><strong>Probabilistic conclusions:</strong> Allows probability statements about parameters (e.g., “There’s a 95% probability θ lies in this range”).  </li>
+<li><strong>Probabilistic conclusions:</strong> Allows probability statements about parameters (e.g., “There’s a 95% probability <span class="arithmatex">\(\theta\)</span> lies in this range”).  </li>
 <li><strong>Transparent modeling:</strong> Easy to test sensitivity to assumptions.  </li>
 </ul>
 <hr />
 <h2 id="3-core-equation-bayes-rule"><strong>3) Core Equation (Bayes’ Rule)</strong></h2>
-<p>[
-p(\theta \mid x) = \frac{p(x \mid \theta)\,p(\theta)}{p(x)} \propto p(x \mid \theta)\,p(\theta)
-]<br />
-- <strong>Posterior</strong>: Updated belief after observing data.<br />
-- <strong>Likelihood</strong>: Information from observed data.<br />
-- <strong>Prior</strong>: Belief before observing data.<br />
-- <strong>Evidence (marginal likelihood)</strong>: Normalizing constant ensuring posterior integrates to 1.  </p>
+<div class="arithmatex">\[
+p(\theta \mid x) \;=\; \frac{p(x \mid \theta)\,p(\theta)}{p(x)} \;\propto\; p(x \mid \theta)\,p(\theta)
+\]</div>
+<ul>
+<li><strong>Posterior</strong>: Updated belief after observing data.  </li>
+<li><strong>Likelihood</strong>: Information from observed data.  </li>
+<li><strong>Prior</strong>: Belief before observing data.  </li>
+<li><strong>Evidence (marginal likelihood)</strong>: Normalizing constant ensuring posterior integrates to 1.  </li>
+</ul>
 <hr />
 <h2 id="4-bayesian-vs-frequentist"><strong>4) Bayesian vs. Frequentist</strong></h2>
 <table>
@@ -1034,7 +1036,7 @@ p(\theta \mid x) = \frac{p(x \mid \theta)\,p(\theta)}{p(x)} \propto p(x \mid \th
 <hr />
 <h2 id="5-where-bayesian-appears-in-mlcs"><strong>5) Where “Bayesian” Appears in ML/CS</strong></h2>
 <ul>
-<li><strong>Naïve Bayes Classifier:</strong> Spam detection; uses (P(\text{spam} | \text{email}) \propto P(\text{email} | \text{spam})P(\text{spam})).  </li>
+<li><strong>Naïve Bayes Classifier:</strong> Spam detection; uses <span class="arithmatex">\(P(\text{spam} \mid \text{email}) \propto P(\text{email} \mid \text{spam})\,P(\text{spam})\)</span>.  </li>
 <li><strong>Bayesian Networks:</strong> Directed Acyclic Graphs (DAGs) modeling dependencies among variables; useful for <strong>causal inference</strong> and <strong>probabilistic reasoning</strong>.  </li>
 <li><strong>Bayesian Optimization:</strong> Efficient search for global minima of costly black-box functions (hyperparameter tuning, A/B testing).  </li>
 <li><strong>Bayesian Experimental Design:</strong> Adaptive experiments minimizing sample or cost (e.g., early-stopping in clinical trials).  </li>
@@ -1049,16 +1051,16 @@ p(\theta \mid x) = \frac{p(x \mid \theta)\,p(\theta)}{p(x)} \propto p(x \mid \th
 <hr />
 <h2 id="7-key-terms"><strong>7) Key Terms</strong></h2>
 <ul>
-<li><strong>Prior (p(\theta)):</strong> Belief about θ before seeing data.  </li>
-<li><strong>Likelihood (p(x|\theta)):</strong> Probability of data given θ.  </li>
-<li><strong>Posterior (p(\theta|x)):</strong> Updated belief after seeing data.  </li>
-<li><strong>Evidence (p(x)):</strong> Normalizing term for comparison across models.  </li>
-<li><strong>Predictive Distribution (p(x_{new}|x)):</strong> Predicts unseen data, integrating over parameter uncertainty.  </li>
+<li><strong>Prior <span class="arithmatex">\(p(\theta)\)</span>:</strong> Belief about <span class="arithmatex">\(\theta\)</span> before seeing data.  </li>
+<li><strong>Likelihood <span class="arithmatex">\(p(x \mid \theta)\)</span>:</strong> Probability of data given <span class="arithmatex">\(\theta\)</span>.  </li>
+<li><strong>Posterior <span class="arithmatex">\(p(\theta \mid x)\)</span>:</strong> Updated belief after seeing data.  </li>
+<li><strong>Evidence <span class="arithmatex">\(p(x)\)</span>:</strong> Normalizing term for comparison across models.  </li>
+<li><strong>Predictive Distribution <span class="arithmatex">\(p(x_{\text{new}} \mid x)\)</span>:</strong> Predicts unseen data, integrating over parameter uncertainty.  </li>
 </ul>
 <hr />
 <h2 id="8-bayesian-workflow"><strong>8) Bayesian Workflow</strong></h2>
 <ol>
-<li><strong>Specify Prior:</strong> Choose distribution for parameter θ.  </li>
+<li><strong>Specify Prior:</strong> Choose distribution for parameter <span class="arithmatex">\(\theta\)</span>.  </li>
 <li><strong>Select Likelihood:</strong> Define model generating data.  </li>
 <li><strong>Compute Posterior:</strong> Combine prior and likelihood via Bayes’ rule.  </li>
 <li><strong>Summarize Inference:</strong> Use MAP, posterior mean, variance, or credible intervals.  </li>
@@ -1074,11 +1076,15 @@ p(\theta \mid x) = \frac{p(x \mid \theta)\,p(\theta)}{p(x)} \propto p(x \mid \th
 </ul>
 <hr />
 <h2 id="10-mini-example-naive-bayes-for-spam"><strong>10) Mini Example – Naïve Bayes for Spam</strong></h2>
-<p>[
-P(\text{spam} \mid \text{email}) \propto P(\text{email} \mid \text{spam})P(\text{spam})
-]
-- <strong>Assumption:</strong> Words are conditionally independent given class.<br />
-- <strong>Result:</strong> Fast training, interpretable features, still used for baseline text classification.  </p>
+<div class="arithmatex">\[
+P(\text{spam} \mid \text{email})
+\;\propto\;
+P(\text{email} \mid \text{spam})\,P(\text{spam})
+\]</div>
+<ul>
+<li><strong>Assumption:</strong> Words are conditionally independent given class.  </li>
+<li><strong>Result:</strong> Fast training, interpretable features, still used for baseline text classification.  </li>
+</ul>
 <hr />
 <h2 id="11-what-to-know-for-midterm"><strong>11) What to Know for Midterm</strong></h2>
 <ul>
@@ -1093,7 +1099,6 @@ P(\text{spam} \mid \text{email}) \propto P(\text{email} \mid \text{spam})P(\text
 <blockquote>
 <p><em>Bayesian inference formalizes learning from data by updating prior beliefs with evidence to obtain a posterior. It enables rational, probabilistic reasoning for real-world uncertainty — foundational to modern machine learning and decision-making.</em></p>
 </blockquote>
-<hr />
 
 
 
@@ -1151,6 +1156,10 @@ P(\text{spam} \mid \text{email}) \propto P(\text{email} \mid \text{spam})P(\text
     
     
       <script src="../../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>
