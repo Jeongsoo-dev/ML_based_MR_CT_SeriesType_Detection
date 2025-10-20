@@ -20,7 +20,7 @@
     
     
       
-        <title>Page Title - Jeongsoo Pang — Portfolio</title>
+        <title>Distributions and MLE - Jeongsoo Pang — Portfolio</title>
       
     
     
@@ -74,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#page-title" class="md-skip">
+        <a href="#2-distributions-and-mle-statistics-review" class="md-skip">
           Skip to content
         </a>
       
@@ -110,7 +110,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Page Title
+              Distributions and MLE
             
           </span>
         </div>
@@ -630,6 +630,19 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Distributions & MLE review
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -641,6 +654,121 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      1) Overview
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-common-probability-distributions" class="md-nav__link">
+    <span class="md-ellipsis">
+      2) Common Probability Distributions
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2) Common Probability Distributions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#discrete" class="md-nav__link">
+    <span class="md-ellipsis">
+      Discrete
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#continuous" class="md-nav__link">
+    <span class="md-ellipsis">
+      Continuous
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-binomial-to-normal-approximation" class="md-nav__link">
+    <span class="md-ellipsis">
+      3) Binomial to Normal Approximation
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-frequentist-perspective" class="md-nav__link">
+    <span class="md-ellipsis">
+      4) Frequentist Perspective
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-maximum-likelihood-estimation-mle" class="md-nav__link">
+    <span class="md-ellipsis">
+      5) Maximum Likelihood Estimation (MLE)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-transition-to-bayesian-perspective" class="md-nav__link">
+    <span class="md-ellipsis">
+      6) Transition to Bayesian Perspective
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-key-takeaways" class="md-nav__link">
+    <span class="md-ellipsis">
+      7) Key Takeaways
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-summary-quote" class="md-nav__link">
+    <span class="md-ellipsis">
+      8) Summary Quote
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -833,8 +961,134 @@
 
 
 
-<h1 id="page-title">Page Title</h1>
-<p><em>Work-in-progress.</em></p>
+<h1 id="2-distributions-and-mle-statistics-review"><strong>2. Distributions and MLE (Statistics Review)</strong></h1>
+<p><strong>Author:</strong> Jeongsoo Pang  </p>
+<hr />
+<h2 id="1-overview"><strong>1) Overview</strong></h2>
+<ol>
+<li>Review of common distributions (discrete &amp; continuous)  </li>
+<li>Maximum Likelihood Estimation (MLE)  </li>
+<li>Frequentist inference foundations  </li>
+<li>Transition to Bayesian thinking  </li>
+</ol>
+<hr />
+<h2 id="2-common-probability-distributions"><strong>2) Common Probability Distributions</strong></h2>
+<h3 id="discrete"><strong>Discrete</strong></h3>
+<ul>
+<li>
+<p><strong>Bernoulli <span class="arithmatex">\((p)\)</span></strong> — Binary outcome (success/failure)<br />
+<span class="arithmatex">\(<span class="arithmatex">\(f(x|p) = p^x(1-p)^{1-x}, \; x \in \{0,1\}\)</span>\)</span><br />
+<span class="arithmatex">\(E[X]=p,\; Var(X)=p(1-p)\)</span>  </p>
+</li>
+<li>
+<p><strong>Binomial <span class="arithmatex">\((n,p)\)</span></strong> — Number of successes in <span class="arithmatex">\(n\)</span> trials<br />
+<span class="arithmatex">\(<span class="arithmatex">\(P(X=x)=\binom{n}{x}p^x(1-p)^{n-x}\)</span>\)</span><br />
+<span class="arithmatex">\(E[X]=np,\; Var(X)=np(1-p)\)</span>  </p>
+</li>
+<li>
+<p><strong>Negative Binomial <span class="arithmatex">\((r,p)\)</span></strong> — Trials until <span class="arithmatex">\(r\)</span>-th success<br />
+<span class="arithmatex">\(<span class="arithmatex">\(P(X=x)=\binom{x-1}{r-1}p^r(1-p)^{x-r}\)</span>\)</span><br />
+<span class="arithmatex">\(E[X]=\frac{r}{p},\; Var(X)=\frac{r(1-p)}{p^2}\)</span>  </p>
+</li>
+<li>
+<p><strong>Geometric <span class="arithmatex">\((p)\)</span></strong> — Trials until the first success<br />
+<span class="arithmatex">\(<span class="arithmatex">\(P(X=x)=(1-p)^{x-1}p,\; x=1,2,\ldots\)</span>\)</span><br />
+<span class="arithmatex">\(E[X]=\frac{1}{p},\; Var(X)=\frac{1-p}{p^2}\)</span>  </p>
+</li>
+<li>
+<p><strong>Poisson <span class="arithmatex">\((\lambda)\)</span></strong> — Counts events in time interval<br />
+<span class="arithmatex">\(<span class="arithmatex">\(f(x|\lambda)=\frac{\lambda^x e^{-\lambda}}{x!},\; x=0,1,2,\ldots\)</span>\)</span><br />
+<span class="arithmatex">\(E[X]=Var(X)=\lambda\)</span>  </p>
+</li>
+</ul>
+<hr />
+<h3 id="continuous"><strong>Continuous</strong></h3>
+<ul>
+<li>
+<p><strong>Uniform <span class="arithmatex">\((\theta_1,\theta_2)\)</span></strong><br />
+<span class="arithmatex">\(<span class="arithmatex">\(f(x)=\frac{1}{\theta_2-\theta_1},\; x\in[\theta_1,\theta_2]\)</span>\)</span><br />
+<span class="arithmatex">\(E[X]=\frac{\theta_1+\theta_2}{2},\; Var(X)=\frac{(\theta_2-\theta_1)^2}{12}\)</span>  </p>
+</li>
+<li>
+<p><strong>Normal <span class="arithmatex">\((\mu,\sigma^2)\)</span></strong><br />
+<span class="arithmatex">\(<span class="arithmatex">\(f(x|\mu,\sigma)=\frac{1}{\sigma\sqrt{2\pi}}\,\exp\!\Big[-\frac{(x-\mu)^2}{2\sigma^2}\Big]\)</span>\)</span><br />
+<span class="arithmatex">\(E[X]=\mu,\; Var(X)=\sigma^2\)</span>  </p>
+</li>
+<li>
+<p><strong>Exponential <span class="arithmatex">\((\lambda)\)</span></strong><br />
+<span class="arithmatex">\(<span class="arithmatex">\(f(x|\lambda)=\lambda e^{-\lambda x},\; x\ge0\)</span>\)</span><br />
+<span class="arithmatex">\(E[X]=\frac{1}{\lambda},\; Var(X)=\frac{1}{\lambda^2}\)</span>  </p>
+</li>
+<li>
+<p><strong>Gamma <span class="arithmatex">\((\alpha,\beta)\)</span></strong><br />
+<span class="arithmatex">\(<span class="arithmatex">\(f(x|\alpha,\beta)=\frac{\beta^\alpha}{\Gamma(\alpha)}x^{\alpha-1}e^{-\beta x},\; x\ge0\)</span>\)</span><br />
+<span class="arithmatex">\(E[X]=\frac{\alpha}{\beta},\; Var(X)=\frac{\alpha}{\beta^2}\)</span>  </p>
+<blockquote>
+<p>✅ <em>Screenshot suggestion:</em> include the “Gamma function integral definition” slide (visual formula for <span class="arithmatex">\(\Gamma(\alpha)\)</span>).</p>
+</blockquote>
+</li>
+<li>
+<p><strong>Beta <span class="arithmatex">\((\alpha,\beta)\)</span></strong><br />
+<span class="arithmatex">\(<span class="arithmatex">\(f(x|\alpha,\beta)=\frac{1}{B(\alpha,\beta)}x^{\alpha-1}(1-x)^{\beta-1},\; 0\le x\le1\)</span>\)</span><br />
+<span class="arithmatex">\(E[X]=\frac{\alpha}{\alpha+\beta},\; Var(X)=\frac{\alpha\beta}{(\alpha+\beta)^2(\alpha+\beta+1)}\)</span>  </p>
+</li>
+</ul>
+<hr />
+<h2 id="3-binomial-to-normal-approximation"><strong>3) Binomial to Normal Approximation</strong></h2>
+<p>When <span class="arithmatex">\(n\)</span> is large:
+<span class="arithmatex">\(<span class="arithmatex">\(X \sim Bin(n,p) \approx N(np, np(1-p))\)</span>\)</span><br />
+Using Stirling’s approximation, the binomial pmf converges to a Gaussian curve centered at <span class="arithmatex">\(np\)</span>.  </p>
+<blockquote>
+<p>💡 <em>Screenshot suggestion:</em> The <strong>Galton Board</strong> slide (visual illustration of normal approximation).</p>
+</blockquote>
+<hr />
+<h2 id="4-frequentist-perspective"><strong>4) Frequentist Perspective</strong></h2>
+<ul>
+<li><strong>Probability</strong> = Long-run frequency of events.  </li>
+<li><strong>Parameters</strong> = Fixed but unknown constants (randomness only from data).  </li>
+<li><strong>Inference</strong> uses sampling distributions, LLN, and CLT for asymptotic guarantees</li>
+</ul>
+<p>Example (Coin flip):<br />
+- <span class="arithmatex">\(n=100\)</span>, <span class="arithmatex">\(x=44\)</span> heads<br />
+<span class="arithmatex">\(<span class="arithmatex">\(\hat{p}_{MLE}=\frac{x}{n}=0.44\)</span>\)</span><br />
+- Approx. sampling distribution: <span class="arithmatex">\(\hat{p}\approx N(p, p(1-p)/n)\)</span><br />
+- <span class="arithmatex">\(95\%\)</span> CI: <span class="arithmatex">\(\hat{p}\pm1.96\sqrt{\frac{\hat{p}(1-\hat{p})}{n}}=(0.34,0.54)\)</span>  </p>
+<hr />
+<h2 id="5-maximum-likelihood-estimation-mle"><strong>5) Maximum Likelihood Estimation (MLE)</strong></h2>
+<p>For model parameter <span class="arithmatex">\(\theta\)</span>, define likelihood:
+<span class="arithmatex">\(<span class="arithmatex">\(L(\theta; x)=f(x|\theta)\)</span>\)</span><br />
+Log-likelihood:
+<span class="arithmatex">\(<span class="arithmatex">\(\ell(\theta)=\ln L(\theta)=\sum_i \ln f(x_i|\theta)\)</span>\)</span><br />
+Then maximize <span class="arithmatex">\(\ell(\theta)\)</span> to get <span class="arithmatex">\(\hat{\theta}_{MLE}\)</span>.  </p>
+<p><strong>Example: Coin Flip</strong>
+<span class="arithmatex">\(<span class="arithmatex">\(L(p;x)=\binom{n}{x}p^x(1-p)^{n-x}\)</span>\)</span><br />
+<span class="arithmatex">\(<span class="arithmatex">\(\ell(p)=x\ln p+(n-x)\ln(1-p)\)</span>\)</span><br />
+<span class="arithmatex">\(<span class="arithmatex">\(\frac{d\ell}{dp}=0 \Rightarrow \hat{p}_{MLE}=\frac{x}{n}=0.44\)</span>\)</span>  </p>
+<hr />
+<h2 id="6-transition-to-bayesian-perspective"><strong>6) Transition to Bayesian Perspective</strong></h2>
+<ul>
+<li>Frequentist: Parameters fixed, randomness from data.  </li>
+<li>Bayesian: Parameters are <strong>random variables</strong> with <strong>prior beliefs</strong>.  </li>
+<li>Use <strong>Bayes’ Theorem</strong> for update:<br />
+<span class="arithmatex">\(<span class="arithmatex">\(p(\theta|y)=\frac{p(y|\theta)p(\theta)}{p(y)} \;\propto\; p(\theta)p(y|\theta)\)</span>\)</span>  </li>
+</ul>
+<blockquote>
+<p>This sets up the foundation for <strong>Lecture 3: Priors and Bayesian Updating</strong>.</p>
+</blockquote>
+<hr />
+<h2 id="7-key-takeaways"><strong>7) Key Takeaways</strong></h2>
+<ul>
+<li>Know <strong>mean and variance</strong> of Bernoulli, Binomial, Poisson, Normal, Exponential, Gamma, and Beta.  </li>
+<li>Understand <strong>MLE derivation</strong> via log-likelihood maximization.  </li>
+<li>Grasp difference between <strong>Frequentist vs Bayesian interpretation</strong> of probability.  </li>
+<li>Remember <strong>Normal approximation</strong> to Binomial and <strong>visualize via Galton board</strong>.  </li>
+</ul>
+<hr />
+<h2 id="8-summary-quote"><strong>8) Summary Quote</strong></h2>
+<blockquote>
+<p><em>Statistical inference starts by describing randomness through distributions, estimating parameters via likelihood, and ultimately extending to Bayesian updating for uncertainty quantification.</em></p>
+</blockquote>
+<hr />
 
 
 
