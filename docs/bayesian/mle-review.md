@@ -77,7 +77,7 @@ Using Stirling’s approximation, the binomial pmf converges to a Gaussian curve
 ## **4) Frequentist Perspective**
 - **Probability** = Long-run frequency of events.  
 - **Parameters** = Fixed but unknown constants (randomness only from data).  
-- **Inference** uses sampling distributions, LLN, and CLT for asymptotic guarantees:contentReference[oaicite:1]{index=1}.
+- **Inference** uses sampling distributions, LLN, and CLT for asymptotic guarantees
 
 Example (Coin flip):  
 - $n=100$, $x=44$ heads  
