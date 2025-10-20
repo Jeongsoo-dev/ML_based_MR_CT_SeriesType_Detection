@@ -1060,11 +1060,11 @@
 
 
 
-<h1 id="os-critical-section">OS : Critical Section</h1>
+<h1 id="os-critical-section">OS : Critical Section<a class="headerlink" href="#os-critical-section" title="Permanent link">&para;</a></h1>
 <ul>
 <li><strong>Author:</strong> Jeongsoo Pang  </li>
 </ul>
-<h2 id="1-concept"><strong>1) Concept</strong></h2>
+<h2 id="1-concept"><strong>1) Concept</strong><a class="headerlink" href="#1-concept" title="Permanent link">&para;</a></h2>
 <ul>
 <li><strong>Critical Section (CS):</strong> A section of code that <strong>accesses shared state</strong>, however, <strong>must not be executed by more than one thread/process at the same time</strong>.</li>
 <li><strong>Goal:</strong> Prevent <strong>race conditions</strong> (nondeterministic bugs caused by interleavings of reads/writes to shared data)..
@@ -1074,7 +1074,7 @@
 <li>Occasional test flakiness that “goes away” when adding prints or sleeps.</li>
 </ul>
 <hr />
-<h2 id="2-the-critical-section-problem"><strong>2) The “Critical Section Problem”</strong></h2>
+<h2 id="2-the-critical-section-problem"><strong>2) The “Critical Section Problem”</strong><a class="headerlink" href="#2-the-critical-section-problem" title="Permanent link">&para;</a></h2>
 <p>A correct solution enforces 3-properties (by Dijkstra):</p>
 <p><strong>1. Mutual Exclusion</strong> 
 - At most <strong>one</strong> thread is inside the CS at any time.</p>
@@ -1083,7 +1083,7 @@
 <p><strong>3. Bounded Waiting (No Starvation)</strong> 
 - There is a <strong>finite bound</strong> on the number of times other threads can enter their CS after a thread has requested entry and <strong>before</strong> it gets in.</p>
 <hr />
-<h2 id="3-the-4-part-structure-of-concurrent-code"><strong>3) The 4-part Structure of Concurrent Code</strong></h2>
+<h2 id="3-the-4-part-structure-of-concurrent-code"><strong>3) The 4-part Structure of Concurrent Code</strong><a class="headerlink" href="#3-the-4-part-structure-of-concurrent-code" title="Permanent link">&para;</a></h2>
 <pre><code class="language-text">1. Entry Section -&gt; 2. Critical Section -&gt; 3. Exit Section -&gt; 4. Remainder Section
  (check/acquire)      (touch shared)          (release)          (private work)
 </code></pre>
@@ -1094,11 +1094,11 @@
 <li><strong>Remainder</strong>: Do private or non-shared work.</li>
 </ul>
 <hr />
-<h2 id="5-classic-software-only-algorithms"><strong>5) Classic Software-Only Algorithms</strong></h2>
+<h2 id="5-classic-software-only-algorithms"><strong>5) Classic Software-Only Algorithms</strong><a class="headerlink" href="#5-classic-software-only-algorithms" title="Permanent link">&para;</a></h2>
 <blockquote>
 <p>Work on <strong>sequential consistency</strong> and shared memory. Useful to understand <strong>progress/bounded waiting</strong>.</p>
 </blockquote>
-<h3 id="51-petersons-algorithm-2-threads">5.1 Peterson’s Algorithm (2 threads)</h3>
+<h3 id="51-petersons-algorithm-2-threads">5.1 Peterson’s Algorithm (2 threads)<a class="headerlink" href="#51-petersons-algorithm-2-threads" title="Permanent link">&para;</a></h3>
 <pre><code class="language-c">// Shared
 volatile bool want[2] = {false, false};
 volatile int turn = 0;
@@ -1118,7 +1118,7 @@ want[i] = false;
 <li>Mostly pedagogical; compilers/CPUs reorder → needs memory barriers in practice.</li>
 </ul>
 <hr />
-<h2 id="6-hardware-support-atomic-primitives"><strong>6) Hardware Support: Atomic Primitives</strong></h2>
+<h2 id="6-hardware-support-atomic-primitives"><strong>6) Hardware Support: Atomic Primitives</strong><a class="headerlink" href="#6-hardware-support-atomic-primitives" title="Permanent link">&para;</a></h2>
 <p>Modern solutions rely on <strong>atomic read-modify-write (RMW)</strong> instructions:
 - <strong>Test-and-Set (TAS)</strong>:</p>
 <pre><code class="language-c">bool test_and_set(bool *x) {
@@ -1140,8 +1140,8 @@ return old;
 - Fences/barriers as needed (e.g., <code>atomic_thread_fence(memory_order_seq_cst)</code>).
 - In C/C++ atomics, pair <code>memory_order_acquire</code> with <code>memory_order_release</code>.</p>
 <hr />
-<h2 id="7-locks-and-locking-primitives"><strong>7) Locks and Locking Primitives</strong></h2>
-<h3 id="71-spinlock-busy-wait">7.1 Spinlock (busy-wait)</h3>
+<h2 id="7-locks-and-locking-primitives"><strong>7) Locks and Locking Primitives</strong><a class="headerlink" href="#7-locks-and-locking-primitives" title="Permanent link">&para;</a></h2>
+<h3 id="71-spinlock-busy-wait">7.1 Spinlock (busy-wait)<a class="headerlink" href="#71-spinlock-busy-wait" title="Permanent link">&para;</a></h3>
 <p>Use when CS is <strong>very short</strong> and threads are <strong>truly running on different CPUs</strong>.</p>
 <pre><code class="language-c">// TAS spinlock
 std::atomic&lt;bool&gt; locked{false};
@@ -1161,7 +1161,7 @@ locked.store(false, std::memory_order_release);
 <li><strong>Cons:</strong> Wastes CPU cycles; terrible if CS may block/sleep or be long.
 <strong>Improvements:</strong></li>
 </ul>
-<h3 id="72-mutex-sleeping-lock">7.2 Mutex (sleeping lock)</h3>
+<h3 id="72-mutex-sleeping-lock">7.2 Mutex (sleeping lock)<a class="headerlink" href="#72-mutex-sleeping-lock" title="Permanent link">&para;</a></h3>
 <p>Use when CS can be <strong>longer</strong> or a thread may <strong>block</strong> inside CS.</p>
 <ul>
 <li>If lock unavailable, the kernel places thread on a <strong>wait queue</strong>.</li>
@@ -1172,15 +1172,15 @@ locked.store(false, std::memory_order_release);
 /* critical section */
 pthread_mutex_unlock(&amp;m);
 </code></pre>
-<h3 id="73-readerwriter-sharedexclusive-locks">7.3 Reader–Writer (Shared/Exclusive) Locks</h3>
+<h3 id="73-readerwriter-sharedexclusive-locks">7.3 Reader–Writer (Shared/Exclusive) Locks<a class="headerlink" href="#73-readerwriter-sharedexclusive-locks" title="Permanent link">&para;</a></h3>
 <ul>
 <li><strong>Multiple readers</strong> can enter concurrently (<strong>writers</strong> need exclusivity).</li>
 <li>Variants: <strong>Reader-preferred</strong>, <strong>Writer-preferred</strong>, <strong>Fair</strong>.</li>
 <li>Be careful: Reader preference can starve writers.</li>
 </ul>
 <hr />
-<h2 id="8-higher-level-constructs"><strong>8) Higher-Level Constructs</strong></h2>
-<h3 id="81-semaphores"><strong>8.1 Semaphores</strong></h3>
+<h2 id="8-higher-level-constructs"><strong>8) Higher-Level Constructs</strong><a class="headerlink" href="#8-higher-level-constructs" title="Permanent link">&para;</a></h2>
+<h3 id="81-semaphores"><strong>8.1 Semaphores</strong><a class="headerlink" href="#81-semaphores" title="Permanent link">&para;</a></h3>
 <ul>
 <li><strong>Counting</strong> semaphore: integer ≥ 0 with <code>P()/wait()</code> and <code>V()/signal()</code>.</li>
 <li><strong>Binary</strong> semaphore ≈ mutex (but with different semantics = no ownership).</li>
@@ -1204,7 +1204,7 @@ get(item);
 signal(m);
 signal(empty);
 </code></pre>
-<h3 id="82-monitors"><strong>8.2 Monitors</strong></h3>
+<h3 id="82-monitors"><strong>8.2 Monitors</strong><a class="headerlink" href="#82-monitors" title="Permanent link">&para;</a></h3>
 <ul>
 <li><strong>Language-level</strong> construct: only one thread executes a monitor’s method at a time (implicit mutual exclusion).</li>
 <li><strong>Condition variables (CVs)</strong> inside a monitor provide <strong>waiting</strong> and <strong>signaling</strong>:
@@ -1212,7 +1212,7 @@ signal(empty);
   -\ <code>signal(cv)</code> or <code>broadcast(cv)</code>: wake one/all waiting threads.</li>
 </ul>
 <hr />
-<h2 id="9-kernel-vs-user-space"><strong>9) Kernel vs. User Space</strong></h2>
+<h2 id="9-kernel-vs-user-space"><strong>9) Kernel vs. User Space</strong><a class="headerlink" href="#9-kernel-vs-user-space" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
 <tr>
@@ -1286,8 +1286,8 @@ signal(empty);
 </tbody>
 </table>
 <hr />
-<h2 id="10-worked-examples"><strong>10) Worked Examples</strong></h2>
-<h3 id="101-protecting-a-shared-counter">10.1 Protecting a Shared Counter</h3>
+<h2 id="10-worked-examples"><strong>10) Worked Examples</strong><a class="headerlink" href="#10-worked-examples" title="Permanent link">&para;</a></h2>
+<h3 id="101-protecting-a-shared-counter">10.1 Protecting a Shared Counter<a class="headerlink" href="#101-protecting-a-shared-counter" title="Permanent link">&para;</a></h3>
 <p><strong>Incorrect:</strong></p>
 <pre><code class="language-c">// race: i++ is read-modify-write
 i++;
@@ -1310,7 +1310,7 @@ void increment() {
 <blockquote>
 <p>If other invariants exist around <code>i</code>, you might need stronger ordering.</p>
 </blockquote>
-<h3 id="102-producerconsumer-with-condition-variables-mesa-semantics">10.2 Producer–Consumer with Condition Variables (Mesa semantics)</h3>
+<h3 id="102-producerconsumer-with-condition-variables-mesa-semantics">10.2 Producer–Consumer with Condition Variables (Mesa semantics)<a class="headerlink" href="#102-producerconsumer-with-condition-variables-mesa-semantics" title="Permanent link">&para;</a></h3>
 <pre><code class="language-c">std::queue&lt;int&gt; q;
 const size_t CAP = 1024;
 pthread_mutex_t m = PTHREAD_MUTEX_INITIALIZER;
@@ -1336,7 +1336,7 @@ int consume() {
   return item;
 }
 </code></pre>
-<h2 id="11-notes"><strong>11) NOTES</strong></h2>
+<h2 id="11-notes"><strong>11) NOTES</strong><a class="headerlink" href="#11-notes" title="Permanent link">&para;</a></h2>
 <ul>
 <li>Keep CS <strong>minimal</strong> : do not call unbounded or blocking operations inside.</li>
 <li>Clearly <strong>document lock ownership</strong> and <strong>lock ordering</strong> in comments.</li>
@@ -1345,7 +1345,7 @@ int consume() {
 <li>Consider <strong>priority inversion</strong> in real-time systems: enable <strong>priority inheritance</strong>.</li>
 <li>On weakly ordered CPUs, ensure correct <strong>acquire/release</strong> semantics.</li>
 </ul>
-<h2 id="12-cheat-sheet-table-alternative">12) Cheat-Sheet (table alternative)</h2>
+<h2 id="12-cheat-sheet-table-alternative">12) Cheat-Sheet (table alternative)<a class="headerlink" href="#12-cheat-sheet-table-alternative" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
 <tr>

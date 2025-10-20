@@ -970,29 +970,20 @@
 
 
 
-<h1 id="1-bayesian-foundations-and-motivation"><strong>1. Bayesian foundations and motivation</strong></h1>
+<h1 id="1-bayesian-foundations-and-motivation"><strong>1. Bayesian foundations and motivation</strong><a class="headerlink" href="#1-bayesian-foundations-and-motivation" title="Permanent link">&para;</a></h1>
 <p><strong>Author:</strong> Jeongsoo Pang  </p>
-<h2 id="1-concept"><strong>1) Concept</strong></h2>
-<p><strong>Bayesian Statistical Inference</strong> </p>
-<ul>
-<li>A framework that uses Bayes’ Rule to combine prior knowledge with observed data, forming a posterior belief about unknown parameters.</li>
-</ul>
-<p><strong>Core Idea</strong></p>
-<ul>
-<li>Treat parameters as random variables with probability distributions rather than fixed values.</li>
-</ul>
-<p><strong>Focus</strong></p>
-<ul>
-<li>Uncertainty quantification, knowledge updating, and probabilistic reasoning.  </li>
-</ul>
+<h2 id="1-concept"><strong>1) Concept</strong><a class="headerlink" href="#1-concept" title="Permanent link">&para;</a></h2>
+<p><strong>Bayesian Statistical Inference</strong>" Framework that uses Bayes’ Rule to combine prior knowledge with observed data.</p>
+<p><strong>Core Idea</strong>: Treat parameters as random variables with probability distributions rather than fixed values.</p>
+<p><strong>Focus</strong>: Uncertainty quantification, knowledge updating, and probabilistic reasoning.  </p>
 <hr />
-<h2 id="motivation"><strong>Motivation</strong></h2>
+<h2 id="motivation"><strong>Motivation</strong><a class="headerlink" href="#motivation" title="Permanent link">&para;</a></h2>
 <p><strong>Integrates prior knowledge</strong>: Encodes existing beliefs or domain expertise.  </p>
 <p><strong>Logical updating</strong>: Adjusts those beliefs as new data arrive.  </p>
 <p><strong>Transparent modeling</strong>: Easy to test sensitivity to assumptions.  </p>
 <p><strong>Probabilistic conclusions</strong>: Allows probability statements about parameters</p>
-<h2 id="-ex-theres-a-95-probability-theta-lies-in-this-range">- ex) “There’s a 95% probability <span class="arithmatex">\(\theta\)</span> lies in this range”</h2>
-<h2 id="3-core-equation-bayes-rule"><strong>3) Core Equation (Bayes’ Rule)</strong></h2>
+<h2 id="-ex-theres-a-95-probability-theta-lies-in-this-range">- ex) “There’s a 95% probability <span class="arithmatex">\(\theta\)</span> lies in this range”<a class="headerlink" href="#-ex-theres-a-95-probability-theta-lies-in-this-range" title="Permanent link">&para;</a></h2>
+<h2 id="3-core-equation-bayes-rule"><strong>3) Core Equation (Bayes’ Rule)</strong><a class="headerlink" href="#3-core-equation-bayes-rule" title="Permanent link">&para;</a></h2>
 <div class="arithmatex">\[
 p(\theta \mid x) \;=\; \frac{p(x \mid \theta)\,p(\theta)}{p(x)} \;\propto\; p(x \mid \theta)\,p(\theta)
 \]</div>
@@ -1002,7 +993,7 @@ p(\theta \mid x) \;=\; \frac{p(x \mid \theta)\,p(\theta)}{p(x)} \;\propto\; p(x 
 <li><strong>Prior</strong>: Belief before observing data.  </li>
 <li><strong>Evidence (marginal likelihood)</strong>: Normalizing constant ensuring posterior integrates to 1.  </li>
 </ul>
-<h3 id="key-terms"><strong>Key Terms</strong></h3>
+<h3 id="key-terms"><strong>Key Terms</strong><a class="headerlink" href="#key-terms" title="Permanent link">&para;</a></h3>
 <ul>
 <li><strong>Prior <span class="arithmatex">\(p(\theta)\)</span>:</strong> Belief about <span class="arithmatex">\(\theta\)</span> before seeing data.  </li>
 <li><strong>Likelihood <span class="arithmatex">\(p(x \mid \theta)\)</span>:</strong> Probability of data given <span class="arithmatex">\(\theta\)</span>.  </li>
@@ -1011,7 +1002,7 @@ p(\theta \mid x) \;=\; \frac{p(x \mid \theta)\,p(\theta)}{p(x)} \;\propto\; p(x 
 <li><strong>Predictive Distribution <span class="arithmatex">\(p(x_{\text{new}} \mid x)\)</span>:</strong> Predicts unseen data, integrating over parameter uncertainty.  </li>
 </ul>
 <hr />
-<h2 id="4-bayesian-vs-frequentist"><strong>4) Bayesian vs. Frequentist</strong></h2>
+<h2 id="4-bayesian-vs-frequentist"><strong>4) Bayesian vs. Frequentist</strong><a class="headerlink" href="#4-bayesian-vs-frequentist" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
 <tr>
@@ -1044,7 +1035,7 @@ p(\theta \mid x) \;=\; \frac{p(x \mid \theta)\,p(\theta)}{p(x)} \;\propto\; p(x 
 </tbody>
 </table>
 <hr />
-<h2 id="5-where-bayesian-appears-in-mlcs"><strong>5) Where “Bayesian” Appears in ML/CS</strong></h2>
+<h2 id="5-where-bayesian-appears-in-mlcs"><strong>5) Where “Bayesian” Appears in ML/CS</strong><a class="headerlink" href="#5-where-bayesian-appears-in-mlcs" title="Permanent link">&para;</a></h2>
 <p><strong>Naïve Bayes Classifier</strong> </p>
 <ul>
 <li>Spam detection</li>
@@ -1066,14 +1057,14 @@ p(\theta \mid x) \;=\; \frac{p(x \mid \theta)\,p(\theta)}{p(x)} \;\propto\; p(x 
 <li>ex) early-stopping in clinical trials</li>
 </ul>
 <hr />
-<h2 id="6-reason-for-resurgence"><strong>6) Reason for Resurgence</strong></h2>
+<h2 id="6-reason-for-resurgence"><strong>6) Reason for Resurgence</strong><a class="headerlink" href="#6-reason-for-resurgence" title="Permanent link">&para;</a></h2>
 <ul>
 <li><strong>Computational Power:</strong> GPUs and MCMC algorithms make complex Bayesian models practical.  </li>
 <li><strong>Cultural Shift:</strong> Acceptance of subjective priors and probabilistic thinking.  </li>
 <li><strong>Educational Change:</strong> Modern statistics courses incorporate Bayesian reasoning.  </li>
 </ul>
 <hr />
-<h2 id="7-bayesian-workflow"><strong>7) Bayesian Workflow</strong></h2>
+<h2 id="7-bayesian-workflow"><strong>7) Bayesian Workflow</strong><a class="headerlink" href="#7-bayesian-workflow" title="Permanent link">&para;</a></h2>
 <ol>
 <li><strong>Specify Prior:</strong> Choose distribution for parameter <span class="arithmatex">\(\theta\)</span>.  </li>
 <li><strong>Select Likelihood:</strong> Define model generating data.  </li>
@@ -1082,7 +1073,7 @@ p(\theta \mid x) \;=\; \frac{p(x \mid \theta)\,p(\theta)}{p(x)} \;\propto\; p(x 
 <li><strong>Make Decisions:</strong> Apply posterior to decision problems (e.g., minimize expected loss).  </li>
 </ol>
 <hr />
-<h2 id="8-mini-example-naive-bayes-for-spam"><strong>8) Mini Example – Naïve Bayes for Spam</strong></h2>
+<h2 id="8-mini-example-naive-bayes-for-spam"><strong>8) Mini Example – Naïve Bayes for Spam</strong><a class="headerlink" href="#8-mini-example-naive-bayes-for-spam" title="Permanent link">&para;</a></h2>
 <div class="arithmatex">\[
 P(\text{spam} \mid \text{email})
 \;\propto\;
@@ -1093,7 +1084,7 @@ P(\text{email} \mid \text{spam})\,P(\text{spam})
 <li><strong>Result:</strong> Fast training, interpretable features, still used for baseline text classification.  </li>
 </ul>
 <hr />
-<h2 id="12-summary-quote"><strong>12) Summary Quote</strong></h2>
+<h2 id="12-summary-quote"><strong>12) Summary Quote</strong><a class="headerlink" href="#12-summary-quote" title="Permanent link">&para;</a></h2>
 <blockquote>
 <p><em>Bayesian inference formalizes learning from data by updating prior beliefs with evidence to obtain a posterior. It enables rational, probabilistic reasoning for real-world uncertainty which is foundational to modern machine learning and decision-making.</em></p>
 </blockquote>
