@@ -22,23 +22,15 @@ hide:
 ---
 
 ## **Motivation**
-**Integrates prior knowledge**
+**Integrates prior knowledge**: Encodes existing beliefs or domain expertise.  
 
-- Encodes existing beliefs or domain expertise.  
+**Logical updating**: Adjusts those beliefs as new data arrive.  
 
-**Logical updating**
+**Transparent modeling**: Easy to test sensitivity to assumptions.  
 
-- Adjusts those beliefs as new data arrive.  
+**Probabilistic conclusions**: Allows probability statements about parameters
 
-**Probabilistic conclusions**
-
-- Allows probability statements about parameters
 - ex) “There’s a 95% probability $\theta$ lies in this range”
-
-**Transparent modeling**
-
-- Easy to test sensitivity to assumptions.  
-
 ---
 
 ## **3) Core Equation (Bayes’ Rule)**
