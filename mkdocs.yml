@@ -21,16 +21,11 @@ markdown_extensions:
 
 nav:
   - Portfolio:
+      - "Overview": portfolio/index.md
       - "Cercare-Medical ML Project": index.md
       - "Anti-Drone Project": anti_drone.md
       - "Remote Feeling Mimicking Chair": remote_chair.md
-
   - OS:
-      - "Overview": os/index.md        # you can add more OS pages later
-      # - "Linux Kernel Notes": os/kernel.md
-      # - "Systems Cheats": os/cheats.md
-
+      - "Overview": os/index.md
   - Bayesian:
-      - "Overview": bayesian/index.md  # you can add more Bayesian pages later
-      # - "Inference Notes": bayesian/inference.md
-      # - "Probabilistic Models": bayesian/models.md
+      - "Overview": bayesian/index.md
