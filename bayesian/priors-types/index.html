@@ -1181,16 +1181,19 @@ $$
 </ul>
 <hr />
 <h2 id="8-reference-priors"><strong>8) Reference Priors</strong><a class="headerlink" href="#8-reference-priors" title="Permanent link">&para;</a></h2>
-<p>A <strong>reference prior</strong> maximizes mutual information between data and parameters:
-$$
-p^<em>(\theta)=\arg\max_{p(\theta)} I(\Theta,T)
-$$
-where
-$$
-I(\Theta,T)=\iint p(\theta,t)\log!\frac{p(\theta,t)}{p(\theta)p(t)}\,d\theta\,dt
-$$
-- Essentially: choose the prior that maximizes the </em><em>expected information gain</em>* from data.<br />
-- Used in objective Bayesian analysis, especially for multi-parameter models</p>
+<p>A <strong>reference prior</strong> maximizes <em>mutual information</em> between data and parameters.</p>
+<div class="arithmatex">\[
+p^*(\theta) = \arg\max_{p(\theta)} I(\Theta, T)
+\]</div>
+<p>where</p>
+<div class="arithmatex">\[
+I(\Theta, T) = \iint p(\theta, t)\,
+\log\!\frac{p(\theta, t)}{p(\theta)p(t)}\,d\theta\,dt
+\]</div>
+<ul>
+<li><strong>Essentially:</strong> choose the prior that maximizes the <strong>expected information gain</strong> from data.  </li>
+<li>Used in <strong>objective Bayesian analysis</strong>, especially for <strong>multi-parameter models</strong>.</li>
+</ul>
 <hr />
 <h2 id="summary-quote"><strong>Summary Quote</strong><a class="headerlink" href="#summary-quote" title="Permanent link">&para;</a></h2>
 <blockquote>
