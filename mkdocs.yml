@@ -39,13 +39,13 @@ nav:
       - "Critical Section": os/critical_section.md
   - Bayesian:
       - "Overview": bayesian/index.md
-      - "Foundations & motivation": bayesian/foundations.md
-      - "Distributions & MLE review": bayesian/mle-review.md
-      - "Prior distributions & Bayesian logic": bayesian/priors-logic.md
-      - "Types & properties of priors": bayesian/priors-types.md
-      - "Posterior inference mechanics": bayesian/posterior-inference.md
-      - "Interval estimation & prediction": bayesian/intervals-prediction.md
-      - "Hypothesis testing & model comparison": bayesian/hypothesis-models.md
+      - "Foundations": bayesian/foundations.md
+      - "MLE review": bayesian/mle-review.md
+      - "Prior and Bayesian": bayesian/priors-logic.md
+      - "Priors Details": bayesian/priors-types.md
+      - "Posterior inference": bayesian/posterior-inference.md
+      - "Interval Prediction": bayesian/intervals-prediction.md
+      - "Hypothesis models": bayesian/hypothesis-models.md
       - "Loss functions & optimal decisions": bayesian/loss-decisions.md
       - "Computational methods": bayesian/computation.md
 
