@@ -154,16 +154,22 @@ $$
 ---
 
 ## **8) Reference Priors**
-A **reference prior** maximizes mutual information between data and parameters:
+
+A **reference prior** maximizes *mutual information* between data and parameters.
+
 $$
-p^*(\theta)=\arg\max_{p(\theta)} I(\Theta,T)
+p^*(\theta) = \arg\max_{p(\theta)} I(\Theta, T)
 $$
+
 where
+
 $$
-I(\Theta,T)=\iint p(\theta,t)\log\!\frac{p(\theta,t)}{p(\theta)p(t)}\,d\theta\,dt
+I(\Theta, T) = \iint p(\theta, t)\,
+\log\!\frac{p(\theta, t)}{p(\theta)p(t)}\,d\theta\,dt
 $$
-- Essentially: choose the prior that maximizes the **expected information gain** from data.  
-- Used in objective Bayesian analysis, especially for multi-parameter models
+
+- **Essentially:** choose the prior that maximizes the **expected information gain** from data.  
+- Used in **objective Bayesian analysis**, especially for **multi-parameter models**.
 
 ---
 
