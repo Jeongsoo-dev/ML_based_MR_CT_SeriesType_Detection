@@ -9,10 +9,10 @@
       
       
       
-        <link rel="prev" href="../">
+        <link rel="prev" href="../lec2_process_thread/">
       
       
-        <link rel="next" href="../lec2_process_thread/">
+        <link rel="next" href="../../bayesian/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -20,7 +20,7 @@
     
     
       
-        <title>OS: Operating Systems Overview - Jeongsoo Pang — Portfolio</title>
+        <title>OS: Interprocess Communication & Synchronization - Jeongsoo Pang — Portfolio</title>
       
     
     
@@ -74,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#operating-systems-overview" class="md-skip">
+        <a href="#interprocess-communication-ipc-synchronization" class="md-skip">
           Skip to content
         </a>
       
@@ -110,7 +110,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              OS: Operating Systems Overview
+              OS: Interprocess Communication & Synchronization
             
           </span>
         </div>
@@ -501,32 +501,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    1. OS Overview
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../os_overview/" class="md-nav__link">
         
   
   
@@ -537,209 +515,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#1-operating-system" class="md-nav__link">
-    <span class="md-ellipsis">
-      1) Operating System
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="1) Operating System">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#main-roles" class="md-nav__link">
-    <span class="md-ellipsis">
-      Main Roles
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#2-os-goals-and-functions" class="md-nav__link">
-    <span class="md-ellipsis">
-      2) OS Goals and Functions
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#3-os-structure-components" class="md-nav__link">
-    <span class="md-ellipsis">
-      3) OS Structure &amp; Components
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="3) OS Structure &amp; Components">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#major-components" class="md-nav__link">
-    <span class="md-ellipsis">
-      Major Components
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#4-os-as-an-abstraction-layer" class="md-nav__link">
-    <span class="md-ellipsis">
-      4) OS as an Abstraction Layer
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="4) OS as an Abstraction Layer">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#concept" class="md-nav__link">
-    <span class="md-ellipsis">
-      Concept
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#example" class="md-nav__link">
-    <span class="md-ellipsis">
-      Example
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#5-system-calls" class="md-nav__link">
-    <span class="md-ellipsis">
-      5) System Calls
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="5) System Calls">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#definition" class="md-nav__link">
-    <span class="md-ellipsis">
-      Definition
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#categories-of-system-calls" class="md-nav__link">
-    <span class="md-ellipsis">
-      Categories of System Calls
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#6-computer-system-organization" class="md-nav__link">
-    <span class="md-ellipsis">
-      6) Computer System Organization
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#7-modes-of-operation" class="md-nav__link">
-    <span class="md-ellipsis">
-      7) Modes of Operation
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#8-dual-mode-operation-and-protection" class="md-nav__link">
-    <span class="md-ellipsis">
-      8) Dual-Mode Operation and Protection
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="8) Dual-Mode Operation and Protection">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#protection-mechanisms" class="md-nav__link">
-    <span class="md-ellipsis">
-      Protection Mechanisms
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#9-boot-process" class="md-nav__link">
-    <span class="md-ellipsis">
-      9) Boot Process
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#10-important-terms-to-memorize" class="md-nav__link">
-    <span class="md-ellipsis">
-      10) Important Terms to Memorize
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -772,10 +547,32 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../lec3_ipc_synchronization/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    3. IPC and Synchronization
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -786,6 +583,239 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-ipc-synchronization" class="md-nav__link">
+    <span class="md-ellipsis">
+      1) IPC &amp; Synchronization
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-critical-section-patterns" class="md-nav__link">
+    <span class="md-ellipsis">
+      2) Critical Section Patterns
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2) Critical Section Patterns">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.1 Structure
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-approaches" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.2 Approaches
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-mutex-condition-variables" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Mutex &amp; Condition Variables
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Mutex &amp; Condition Variables">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-mutex" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.1 Mutex
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-condition-variable-cv" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.2 Condition Variable (CV)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-semaphores" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Semaphores
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Semaphores">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-binary-semaphore-as-mutex" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.1 Binary Semaphore as Mutex
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-producerconsumer-bounded-buffer" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.2 Producer–Consumer (Bounded Buffer)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#order-matters-avoid-lost-wakeups-and-deadlock-always-acquirerelease-in-consistent-order" class="md-nav__link">
+    <span class="md-ellipsis">
+      &gt; Order matters: Avoid lost wakeups and deadlock (always acquire/release in consistent order).
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5monitors" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.Monitors
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-deadlock" class="md-nav__link">
+    <span class="md-ellipsis">
+      6) Deadlock
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6) Deadlock">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#61-coffman-conditions" class="md-nav__link">
+    <span class="md-ellipsis">
+      6.1 Coffman Conditions:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#62-prevention" class="md-nav__link">
+    <span class="md-ellipsis">
+      6.2 Prevention
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#63-avoidance-bankers-algorithm" class="md-nav__link">
+    <span class="md-ellipsis">
+      6.3 Avoidance (Banker’s Algorithm)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#64-detection-recovery" class="md-nav__link">
+    <span class="md-ellipsis">
+      6.4 Detection &amp; Recovery
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-performance-considerations" class="md-nav__link">
+    <span class="md-ellipsis">
+      7) Performance Considerations
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-memory-ordering" class="md-nav__link">
+    <span class="md-ellipsis">
+      8) Memory Ordering
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-key-terms-to-memorize" class="md-nav__link">
+    <span class="md-ellipsis">
+      10) Key Terms to Memorize
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Summary
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1094,239 +1124,198 @@
 
 
 
-<h1 id="operating-systems-overview"><strong>Operating Systems Overview</strong><a class="headerlink" href="#operating-systems-overview" title="Permanent link">&para;</a></h1>
+<h1 id="interprocess-communication-ipc-synchronization"><strong>Interprocess Communication (IPC) &amp; Synchronization</strong><a class="headerlink" href="#interprocess-communication-ipc-synchronization" title="Permanent link">&para;</a></h1>
 <hr />
-<h2 id="1-operating-system"><strong>1) Operating System</strong><a class="headerlink" href="#1-operating-system" title="Permanent link">&para;</a></h2>
-<p>An Operating System (OS) is a program that manages computer hardware and provides services for application programs.  </p>
-<h3 id="main-roles"><strong>Main Roles</strong><a class="headerlink" href="#main-roles" title="Permanent link">&para;</a></h3>
-<ol>
-<li><strong>Resource Manager</strong> – Manages CPU, memory, I/O devices, and storage.  </li>
-<li><strong>Control Program</strong> – Controls execution of user programs and prevents errors.  </li>
-<li><strong>Abstraction Layer</strong> – Hides hardware complexity and provides simple interfaces.  </li>
-</ol>
+<h2 id="1-ipc-synchronization"><strong>1) IPC &amp; Synchronization</strong><a class="headerlink" href="#1-ipc-synchronization" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Goal</strong>: Coordinate concurrent processes/threads that access shared state to avoid race conditions and ensure correctness.</li>
+<li><strong>Core correctness properties</strong> <em>(Dijkstra)</em>:</li>
+<li><strong>Mutual Exclusion</strong> — At most one thread is in the Critical Section (CS).</li>
+<li><strong>Progress</strong> — If no one is in CS, someone wanting to enter can eventually proceed.</li>
+<li><strong>Bounded Waiting (No Starvation)</strong> — A thread will not wait forever to enter CS.</li>
+</ul>
 <blockquote>
-<p>OS acts as an intermediary between hardware and user programs</p>
+<p>Race Condition: Outcome depends on interleaving of operations on shared data.</p>
 </blockquote>
 <hr />
-<h2 id="2-os-goals-and-functions"><strong>2) OS Goals and Functions</strong><a class="headerlink" href="#2-os-goals-and-functions" title="Permanent link">&para;</a></h2>
-<table>
-<thead>
-<tr>
-<th>Function</th>
-<th>Key Term</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Resource Allocation</strong></td>
-<td>CPU Scheduling, Memory Management</td>
-<td>Allocates system resources among multiple processes</td>
-</tr>
-<tr>
-<td><strong>Concurrency Control</strong></td>
-<td>Process Synchronization</td>
-<td>Prevents data corruption in concurrent execution</td>
-</tr>
-<tr>
-<td><strong>Protection &amp; Security</strong></td>
-<td>Access Control, Authentication</td>
-<td>Manages permissions and secure access</td>
-</tr>
-<tr>
-<td><strong>Abstraction</strong></td>
-<td>Virtual Memory, File System</td>
-<td>Simplifies hardware details via logical models</td>
-</tr>
-<tr>
-<td><strong>Error Handling</strong></td>
-<td>Fault Tolerance</td>
-<td>Detects and recovers from errors</td>
-</tr>
-</tbody>
-</table>
-<hr />
-<h2 id="3-os-structure-components"><strong>3) OS Structure &amp; Components</strong><a class="headerlink" href="#3-os-structure-components" title="Permanent link">&para;</a></h2>
-<h3 id="major-components"><strong>Major Components</strong><a class="headerlink" href="#major-components" title="Permanent link">&para;</a></h3>
-<table>
-<thead>
-<tr>
-<th>Component</th>
-<th>Term</th>
-<th>Core Function</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Process Manager</strong></td>
-<td>Process Management</td>
-<td>Process creation, scheduling, termination</td>
-</tr>
-<tr>
-<td><strong>Memory Manager</strong></td>
-<td>Memory Management</td>
-<td>Controls physical and virtual memory</td>
-</tr>
-<tr>
-<td><strong>File System</strong></td>
-<td>File Management</td>
-<td>Handles files, directories, and permissions</td>
-</tr>
-<tr>
-<td><strong>I/O Manager</strong></td>
-<td>Input/Output Management</td>
-<td>Manages device drivers and interrupts</td>
-</tr>
-<tr>
-<td><strong>Protection System</strong></td>
-<td>Security/Protection</td>
-<td>Provides access control and isolation</td>
-</tr>
-<tr>
-<td><strong>Command Interpreter</strong></td>
-<td>Shell</td>
-<td>Converts user commands to system calls</td>
-</tr>
-</tbody>
-</table>
-<hr />
-<h2 id="4-os-as-an-abstraction-layer"><strong>4) OS as an Abstraction Layer</strong><a class="headerlink" href="#4-os-as-an-abstraction-layer" title="Permanent link">&para;</a></h2>
-<h3 id="concept"><strong>Concept</strong><a class="headerlink" href="#concept" title="Permanent link">&para;</a></h3>
-<p>The OS hides hardware complexity through <strong>abstraction layers</strong> that make resources easier to use.</p>
-<p><strong>Flow: Physical Hardware → OS Abstractions → System Calls → Applications</strong></p>
-<h3 id="example"><strong>Example</strong><a class="headerlink" href="#example" title="Permanent link">&para;</a></h3>
-<table>
-<thead>
-<tr>
-<th>Hardware</th>
-<th>OS Abstraction</th>
-<th>User Interface</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Disk</td>
-<td>File</td>
-<td>File System</td>
-</tr>
-<tr>
-<td>Memory</td>
-<td>Address Space</td>
-<td>Virtual Memory</td>
-</tr>
-<tr>
-<td>CPU</td>
-<td>Process</td>
-<td>Scheduler</td>
-</tr>
-</tbody>
-</table>
-<hr />
-<h2 id="5-system-calls"><strong>5) System Calls</strong><a class="headerlink" href="#5-system-calls" title="Permanent link">&para;</a></h2>
-<h3 id="definition"><strong>Definition</strong><a class="headerlink" href="#definition" title="Permanent link">&para;</a></h3>
-<p>A System Call is the interface between a user program and the **OS kernel, allowing programs to request OS services.</p>
-<h3 id="categories-of-system-calls">Categories of System Calls<a class="headerlink" href="#categories-of-system-calls" title="Permanent link">&para;</a></h3>
-<table>
-<thead>
-<tr>
-<th>Category</th>
-<th>Example</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Process Control</strong></td>
-<td>fork(), exec(), wait()</td>
-<td>Create, manage, and terminate processes</td>
-</tr>
-<tr>
-<td><strong>File Manipulation</strong></td>
-<td>open(), read(), write()</td>
-<td>Access and modify files</td>
-</tr>
-<tr>
-<td><strong>Device Manipulation</strong></td>
-<td>ioctl(), read()</td>
-<td>Control I/O devices</td>
-</tr>
-<tr>
-<td><strong>Information Maintenance</strong></td>
-<td>getpid(), alarm()</td>
-<td>Retrieve process or system information</td>
-</tr>
-<tr>
-<td><strong>Communication</strong></td>
-<td>pipe(), shmget()</td>
-<td>Enable Inter-Process Communication (IPC)</td>
-</tr>
-</tbody>
-</table>
-<h2 id="6-computer-system-organization"><strong>6) Computer System Organization</strong><a class="headerlink" href="#6-computer-system-organization" title="Permanent link">&para;</a></h2>
-<ul>
-<li>System Layers</li>
-<li>Hardware – CPU, Memory, I/O Devices</li>
-<li>Operating System Kernel – Core system control</li>
-<li>System Programs – Command interpreters, compilers, utilities</li>
-<li>
-<p>User Applications – User-level programs</p>
-</li>
-<li>
-<p>Interrupts
-An Interrupt is a signal from hardware or software to the CPU indicating an event that needs immediate attention.</p>
-</li>
-</ul>
-<p>The OS maintains an Interrupt Vector Table (IVT) to dispatch appropriate routines.</p>
-<h2 id="7-modes-of-operation"><strong>7) Modes of Operation</strong><a class="headerlink" href="#7-modes-of-operation" title="Permanent link">&para;</a></h2>
-<table>
-<thead>
-<tr>
-<th>Mode</th>
-<th>Description</th>
-<th>Example</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>User Mode</strong></td>
-<td>Restricted access; system calls required for I/O</td>
-<td>Running user applications</td>
-</tr>
-<tr>
-<td><strong>Kernel Mode</strong></td>
-<td>Full access to hardware and system resources</td>
-<td>Executing system calls, I/O handling</td>
-</tr>
-</tbody>
-</table>
-<p>Mode Bit: A CPU flag indicating current privilege level.</p>
-<ul>
-<li>0 : Kernel Mode</li>
-<li>1 : User Mode</li>
-</ul>
-<h2 id="8-dual-mode-operation-and-protection"><strong>8) Dual-Mode Operation and Protection</strong><a class="headerlink" href="#8-dual-mode-operation-and-protection" title="Permanent link">&para;</a></h2>
-<p>** Goal: Prevent user programs from directly interfering with OS or other programs **</p>
-<h3 id="protection-mechanisms">Protection Mechanisms<a class="headerlink" href="#protection-mechanisms" title="Permanent link">&para;</a></h3>
+<h2 id="2-critical-section-patterns"><strong>2) Critical Section Patterns</strong><a class="headerlink" href="#2-critical-section-patterns" title="Permanent link">&para;</a></h2>
+<h3 id="21-structure"><strong>2.1 Structure</strong><a class="headerlink" href="#21-structure" title="Permanent link">&para;</a></h3>
+<pre><code class="language-text">entry_section();   // acquire
+/* Critical Section: read/write shared data */
+exit_section();    // release
+remainder_section();
+</code></pre>
+<h3 id="22-approaches"><strong>2.2 Approaches</strong><a class="headerlink" href="#22-approaches" title="Permanent link">&para;</a></h3>
 <ul>
 <li>
-<p>Timer Interrupts – Prevent infinite loops or CPU hogging</p>
+<p>Software-only: Strict alternation, Peterson’s Algorithm (2 threads), bakery algorithm (N threads).</p>
 </li>
 <li>
-<p>Memory Protection – Protect OS and other processes’ memory regions</p>
+<p>Hardware support: Atomic Instructions (Test-and-Set, Compare-and-Swap, Fetch-and-Add), Disable Interrupts (kernel-only, short).</p>
 </li>
 <li>
-<p>I/O Privilege Levels – Allow only kernel code to execute device operations</p>
+<p>OS primitives: Mutex, Semaphore, Condition Variable, Monitor.</p>
 </li>
 </ul>
-<h2 id="9-boot-process"><strong>9) Boot Process</strong><a class="headerlink" href="#9-boot-process" title="Permanent link">&para;</a></h2>
+<hr />
+<h2 id="3-mutex-condition-variables">3. Mutex &amp; Condition Variables<a class="headerlink" href="#3-mutex-condition-variables" title="Permanent link">&para;</a></h2>
+<h3 id="31-mutex">3.1 Mutex<a class="headerlink" href="#31-mutex" title="Permanent link">&para;</a></h3>
+<p>Ensures mutual exclusion around a CS.</p>
+<pre><code class="language-c">pthread_mutex_t m = PTHREAD_MUTEX_INITIALIZER;
+
+pthread_mutex_lock(&amp;m);
+/* Critical Section */
+pthread_mutex_unlock(&amp;m);
+</code></pre>
+<h3 id="32-condition-variable-cv">3.2 Condition Variable (CV)<a class="headerlink" href="#32-condition-variable-cv" title="Permanent link">&para;</a></h3>
+<p>Wait for a predicate to become true, atomically releasing &amp; reacquiring the mutex.</p>
+<pre><code class="language-c">pthread_mutex_t m = PTHREAD_MUTEX_INITIALIZER;
+pthread_cond_t  cv = PTHREAD_COND_INITIALIZER;
+int ready = 0;
+
+void wait_until_ready() {
+    pthread_mutex_lock(&amp;m);
+    while (!ready) // ALWAYS use while: guard against spurious wakeups
+        pthread_cond_wait(&amp;cv, &amp;m); // releases m while waiting, reacquires before return
+    /* proceed */
+    pthread_mutex_unlock(&amp;m);
+}
+
+void signal_ready() {
+    pthread_mutex_lock(&amp;m);
+    ready = 1;
+    pthread_cond_signal(&amp;cv);
+    pthread_mutex_unlock(&amp;m);
+}
+</code></pre>
+<hr />
+<h2 id="4-semaphores">4. Semaphores<a class="headerlink" href="#4-semaphores" title="Permanent link">&para;</a></h2>
+<p>Counting semaphore: integer value with two atomic ops.</p>
+<ul>
+<li>P / wait / down() — decrement (if negative → block)</li>
+<li>V / signal / up() — increment (if ≤ 0 → wake one)</li>
+</ul>
+<h3 id="41-binary-semaphore-as-mutex">4.1 Binary Semaphore as Mutex<a class="headerlink" href="#41-binary-semaphore-as-mutex" title="Permanent link">&para;</a></h3>
+<pre><code class="language-c">sem_t s; sem_init(&amp;s, 0, 1);
+sem_wait(&amp;s);   /* CS */
+sem_post(&amp;s);
+</code></pre>
+<h3 id="42-producerconsumer-bounded-buffer">4.2 Producer–Consumer (Bounded Buffer)<a class="headerlink" href="#42-producerconsumer-bounded-buffer" title="Permanent link">&para;</a></h3>
+<pre><code class="language-c">#define N  ... // buffer size
+item_t buf[N]; int in=0, out=0;
+
+sem_t empty, full, mutex;
+
+void producer(item_t x){
+    sem_wait(&amp;empty);
+    sem_wait(&amp;mutex);
+    buf[in] = x; in = (in+1)%N;
+    sem_post(&amp;mutex);
+    sem_post(&amp;full);
+}
+
+item_t consumer(){
+    item_t x;
+    sem_wait(&amp;full);
+    sem_wait(&amp;mutex);
+    x = buf[out]; out = (out+1)%N;
+    sem_post(&amp;mutex);
+    sem_post(&amp;empty);
+    return x;
+}
+</code></pre>
+<h2 id="order-matters-avoid-lost-wakeups-and-deadlock-always-acquirerelease-in-consistent-order">&gt; Order matters: Avoid lost wakeups and deadlock (always acquire/release in consistent order).<a class="headerlink" href="#order-matters-avoid-lost-wakeups-and-deadlock-always-acquirerelease-in-consistent-order" title="Permanent link">&para;</a></h2>
+<h2 id="5monitors">5.Monitors<a class="headerlink" href="#5monitors" title="Permanent link">&para;</a></h2>
+<ul>
+<li>High-level abstraction that encapsulates shared data, mutex, and condition variables.</li>
+<li>Methods are mutually exclusive; wait &amp; signal on CVs inside monitor.</li>
+</ul>
+<pre><code class="language-pseudo">monitor BoundedBuffer {
+  condition not_full, not_empty;
+  item_t buf[N]; int in=0, out=0, cnt=0;
+
+  procedure put(x){
+    while (cnt==N) wait(not_full);
+    buf[in]=x; in=(in+1)%N; cnt++;
+    signal(not_empty);
+  }
+
+  procedure get(out_x){
+    while (cnt==0) wait(not_empty);
+    out_x = buf[out]; out=(out+1)%N; cnt--;
+    signal(not_full);
+  }
+}
+</code></pre>
+<hr />
+<h2 id="6-deadlock"><strong>6) Deadlock</strong><a class="headerlink" href="#6-deadlock" title="Permanent link">&para;</a></h2>
+<h3 id="61-coffman-conditions"><strong>6.1 Coffman Conditions</strong>:<a class="headerlink" href="#61-coffman-conditions" title="Permanent link">&para;</a></h3>
 <ol>
-<li>Power On – CPU starts execution at a fixed memory address</li>
-<li>Bootstrap Program (Firmware / BIOS) executes from ROM</li>
-<li>Bootloader loads the OS kernel into memory</li>
-<li>Kernel Initialization – Sets up system tables and starts services</li>
-<li>User Processes – Launch user-level programs</li>
+<li><strong>Mutual Exclusion</strong> — Some resources are non-shareable.</li>
+<li><strong>Hold and Wait</strong> — A process holds at least one resource and requests additional ones.</li>
+<li><strong>No Preemption</strong> — Resources cannot be forcibly taken; they must be released voluntarily.</li>
+<li><strong>Circular Wait</strong> — A circular chain exists: P1 waits for a resource held by P2, …, Pn waits for a resource held by P1.</li>
 </ol>
-<h2 id="10-important-terms-to-memorize"><strong>10) Important Terms to Memorize</strong><a class="headerlink" href="#10-important-terms-to-memorize" title="Permanent link">&para;</a></h2>
+<h3 id="62-prevention"><strong>6.2 Prevention</strong><a class="headerlink" href="#62-prevention" title="Permanent link">&para;</a></h3>
+<p>Break at least one Coffman condition:</p>
+<ul>
+<li><strong>No Hold-and-Wait</strong>: Request all resources at once (downsides: low utilization, possible starvation).</li>
+<li><strong>Preemption</strong>: Allow resources to be preempted and rolled back to a safe state.</li>
+<li><strong>Resource Ordering</strong>: Impose a total order on resource acquisition; processes must request in ascending order.</li>
+</ul>
+<h3 id="63-avoidance-bankers-algorithm"><strong>6.3 Avoidance (Banker’s Algorithm)</strong><a class="headerlink" href="#63-avoidance-bankers-algorithm" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Admit a request only if the system remains in a <strong>safe state</strong> (there exists some order of process completion).</li>
+<li>Requires processes to declare maximum resource needs; works best with predictable demands.</li>
+</ul>
+<h3 id="64-detection-recovery"><strong>6.4 Detection &amp; Recovery</strong><a class="headerlink" href="#64-detection-recovery" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Detection</strong>: Build a wait-for graph (WFG); cycle -&gt; deadlock.</li>
+<li><strong>Recovery</strong>:</li>
+<li>Abort processes (select victim by priority, work done, resource usage).</li>
+<li>Resource Preemption (rollback the victim to a checkpoint and reclaim resources).</li>
+</ul>
+<hr />
+<h2 id="7-performance-considerations"><strong>7) Performance Considerations</strong><a class="headerlink" href="#7-performance-considerations" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Topic</th>
+<th>Guidance</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Busy Waiting vs Blocking</strong></td>
+<td>Spin only for <strong>short</strong> waits; otherwise <strong>block</strong> to save CPU.</td>
+</tr>
+<tr>
+<td><strong>Lock Granularity</strong></td>
+<td>Coarse locks → simpler but less parallel; fine-grained → higher concurrency but complex.</td>
+</tr>
+<tr>
+<td><strong>Contention</strong></td>
+<td>Shorten critical sections; partition data; prefer <strong>read–write locks</strong> for read-mostly workloads.</td>
+</tr>
+<tr>
+<td><strong>False Sharing</strong></td>
+<td>Pad hot fields to <strong>cache line</strong> size to avoid cache thrashing.</td>
+</tr>
+<tr>
+<td><strong>Lock-Free</strong></td>
+<td>Use <strong>CAS</strong> + backoff; manage memory safely (ABA, hazard pointers, epoch reclamation).</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="8-memory-ordering"><strong>8) Memory Ordering</strong><a class="headerlink" href="#8-memory-ordering" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Compilers/CPUs may <strong>reorder</strong> instructions.</li>
+<li>Locks, atomics, and condition variables establish <strong>happens-before</strong> relationships.</li>
+<li>For lock-free algorithms, use C/C++ atomics with explicit <strong>memory orders</strong> and <strong>fences</strong>.</li>
+</ul>
+<hr />
+<h2 id="10-key-terms-to-memorize"><strong>10) Key Terms to Memorize</strong><a class="headerlink" href="#10-key-terms-to-memorize" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
 <tr>
@@ -1336,35 +1325,60 @@ An Interrupt is a signal from hardware or software to the CPU indicating an even
 </thead>
 <tbody>
 <tr>
-<td><strong>Kernel</strong></td>
-<td>Core component of OS responsible for hardware management</td>
+<td><strong>Mutual Exclusion</strong></td>
+<td>Only one thread may execute in the critical section at a time.</td>
 </tr>
 <tr>
-<td><strong>System Call</strong></td>
-<td>Interface for user programs to request OS services</td>
+<td><strong>Progress</strong></td>
+<td>If CS is free, some waiting thread can proceed.</td>
 </tr>
 <tr>
-<td><strong>Interrupt</strong></td>
-<td>Signal notifying CPU of an event needing attention</td>
+<td><strong>Bounded Waiting</strong></td>
+<td>Each thread’s wait to enter CS is finitely bounded.</td>
 </tr>
 <tr>
-<td><strong>Context Switch</strong></td>
-<td>CPU switches from one process to another</td>
+<td><strong>Semaphore (P/V)</strong></td>
+<td>Counting primitive with atomic wait/signal operations.</td>
 </tr>
 <tr>
-<td><strong>Trap</strong></td>
-<td>Software-generated interrupt to invoke OS functions</td>
+<td><strong>Mutex</strong></td>
+<td>Binary lock for exclusive access.</td>
 </tr>
 <tr>
-<td><strong>Privilege Level</strong></td>
-<td>CPU protection mode controlling access rights</td>
+<td><strong>Condition Variable</strong></td>
+<td>Wait/signal mechanism for a predicate under a mutex.</td>
 </tr>
 <tr>
-<td><strong>Bootstrap Program</strong></td>
-<td>Initial firmware code that loads the OS kernel</td>
+<td><strong>Monitor</strong></td>
+<td>Encapsulated shared state + mutex + CVs; methods are mutually exclusive.</td>
+</tr>
+<tr>
+<td><strong>Deadlock</strong></td>
+<td>A cycle of threads each waiting for resources held by others.</td>
+</tr>
+<tr>
+<td><strong>Starvation</strong></td>
+<td>A thread never progresses despite overall system activity.</td>
+</tr>
+<tr>
+<td><strong>Spinlock</strong></td>
+<td>Busy-wait lock using TAS/CAS; best for very short CS.</td>
 </tr>
 </tbody>
 </table>
+<hr />
+<h2 id="summary"><strong>Summary</strong><a class="headerlink" href="#summary" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Deadlock requires all four Coffman conditions (prevention breaks at least one)</li>
+<li>Banker’s Algorithm avoids unsafe states given known maximum demands.</li>
+<li>Choose primitives and designs that ensure safety (no races) and liveness (no starvation), while optimizing <strong>performance</strong>.</li>
+</ul>
+<hr />
+<blockquote>
+<p>For deadlock questions: state Coffman, then give one concrete prevention.
+When using CVs: guard predicates with a while-loop; with semaphores: preserve acquire/release order.
+Argue both safety and liveness for full credit (what can’t happen vs. what must eventually happen).</p>
+</blockquote>
 
 
 
