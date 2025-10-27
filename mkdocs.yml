@@ -36,7 +36,8 @@ nav:
       - "3. Remote Feeling Mimicking Chair": remote_chair.md
   - OS:
       - "0. Overview": os/index.md
-      - "1. Critical Section": os/critical_section.md
+      - "1. OS Overview": os/os_overview.md
+      - "2. Critical Section": os/critical_section.md
   - Bayesian:
       - "0. Overview": bayesian/index.md
       - "1. Foundations": bayesian/foundations.md
