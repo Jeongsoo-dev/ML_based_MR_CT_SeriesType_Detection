@@ -112,8 +112,6 @@ item_t consumer(){
     return x;
 }
 ```
-> Order matters: Avoid lost wakeups and deadlock (always acquire/release in consistent order).
-
 ---
 
 ## 5. Monitors
