@@ -1101,14 +1101,16 @@
 <hr />
 <h2 id="1-process-concept"><strong>1) Process Concept</strong><a class="headerlink" href="#1-process-concept" title="Permanent link">&para;</a></h2>
 <p>A <strong>Process</strong> is an instance of a program in execution (basic unit of work in a system)</p>
-<p>Each process includes:
-- <strong>Program Code</strong> (Text Section)
-- <strong>Program Counter (PC)</strong> – current instruction address
-- <strong>Stack</strong> – function calls, local variables
-- <strong>Data Section</strong> – global/static variables
-- <strong>Heap</strong> – dynamically allocated memory</p>
+<p>Each process includes:</p>
+<ul>
+<li><strong>Program Code</strong> (Text Section)</li>
+<li><strong>Program Counter (PC)</strong> – current instruction address</li>
+<li><strong>Stack</strong> – function calls, local variables</li>
+<li><strong>Data Section</strong> – global/static variables</li>
+<li><strong>Heap</strong> – dynamically allocated memory</li>
+</ul>
 <blockquote>
-<p>A process is not just code; it’s a running entity with state, memory, and resources.</p>
+<p>A process is not just code, but a running entity with state, memory, and resources.</p>
 </blockquote>
 <hr />
 <h2 id="2-process-states"><strong>2) Process States</strong><a class="headerlink" href="#2-process-states" title="Permanent link">&para;</a></h2>
@@ -1186,14 +1188,16 @@
 </tbody>
 </table>
 <blockquote>
-<p>The PCB allows the OS to <strong>suspend and resume</strong> processes efficiently.</p>
+<p>The PCB allows the OS to suspend and resume processes efficiently.</p>
 </blockquote>
 <hr />
 <h2 id="4-context-switch"><strong>4) Context Switch</strong><a class="headerlink" href="#4-context-switch" title="Permanent link">&para;</a></h2>
 <p>A Context Switch occurs when the CPU switches from one process to another. </p>
-<p>The OS must:
-1. Save the current process’s state (PCB)
-2. Load the next process’s PCB and restore its state</p>
+<p>The OS must:</p>
+<ol>
+<li>Save the current process’s state (PCB)</li>
+<li>Load the next process’s PCB and restore its state</li>
+</ol>
 <h3 id="cost"><strong>Cost</strong><a class="headerlink" href="#cost" title="Permanent link">&para;</a></h3>
 <p>Context switching is overhead (no useful work is done during the switch)</p>
 <hr />
@@ -1253,9 +1257,11 @@ if (pid == 0) {
 <h2 id="7-process-hierarchies"><strong>7) Process Hierarchies</strong><a class="headerlink" href="#7-process-hierarchies" title="Permanent link">&para;</a></h2>
 <p>Processes form parent–child relationships.</p>
 <p>Parent may share resources or restrict child access.</p>
-<p>In UNIX:
-- <code>ps</code> command shows parent PID (PPID).
-- <code>init</code> (PID 1) is ancestor of all processes.</p>
+<p>In UNIX:</p>
+<ul>
+<li><code>ps</code> command shows parent PID (PPID).</li>
+<li><code>init</code> (PID 1) is ancestor of all processes.</li>
+</ul>
 <h2 id="8-interprocess-communication-ipc"><strong>8) Interprocess Communication (IPC)</strong><a class="headerlink" href="#8-interprocess-communication-ipc" title="Permanent link">&para;</a></h2>
 <p>Reasons for IPC
 - Data sharing
@@ -1280,15 +1286,19 @@ if (pid == 0) {
 </tbody>
 </table>
 <h2 id="9-threads-the-lightweight-process"><strong>9) Threads – The Lightweight Process</strong><a class="headerlink" href="#9-threads-the-lightweight-process" title="Permanent link">&para;</a></h2>
-<p>A Thread is the smallest unit of CPU utilization, consisting of:
-- Thread ID
-- Program Counter
-- Register Set
-- Stack</p>
-<p>Threads share within the same process:
-- Code Section
-- Data Section (globals, heap)
-- OS Resources (files, signals, address space)</p>
+<p>A Thread is the smallest unit of CPU utilization, consisting of:</p>
+<ul>
+<li>Thread ID</li>
+<li>Program Counter</li>
+<li>Register Set</li>
+<li>Stack</li>
+</ul>
+<p>Threads share within the same process:</p>
+<ul>
+<li>Code Section</li>
+<li>Data Section (globals, heap)</li>
+<li>OS Resources (files, signals, address space)</li>
+</ul>
 <blockquote>
 <p>Threads in the same process communicate cheaply via shared memory, but must synchronize to avoid races.</p>
 </blockquote>
