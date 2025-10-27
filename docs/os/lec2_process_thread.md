@@ -10,13 +10,14 @@ hide:
 A **Process** is an instance of a program in execution (basic unit of work in a system)
 
 Each process includes:
+
 - **Program Code** (Text Section)
 - **Program Counter (PC)** – current instruction address
 - **Stack** – function calls, local variables
 - **Data Section** – global/static variables
 - **Heap** – dynamically allocated memory
 
-> A process is not just code; it’s a running entity with state, memory, and resources.
+> A process is not just code, but a running entity with state, memory, and resources.
 
 ---
 
@@ -48,7 +49,7 @@ The Process Control Block (PCB) stores all information about a process.
 | **Accounting Info** | CPU usage, process ID |
 | **I/O Status Info** | List of open files, I/O devices |
 
-> The PCB allows the OS to **suspend and resume** processes efficiently.
+> The PCB allows the OS to suspend and resume processes efficiently.
 
 ---
 
@@ -56,6 +57,7 @@ The Process Control Block (PCB) stores all information about a process.
 A Context Switch occurs when the CPU switches from one process to another. 
 
 The OS must:
+
 1. Save the current process’s state (PCB)
 2. Load the next process’s PCB and restore its state
 
@@ -109,6 +111,7 @@ Processes form parent–child relationships.
 Parent may share resources or restrict child access.
 
 In UNIX:
+
 - `ps` command shows parent PID (PPID).
 - `init` (PID 1) is ancestor of all processes.
 
@@ -125,12 +128,14 @@ Reasons for IPC
 
 ## **9) Threads – The Lightweight Process**
 A Thread is the smallest unit of CPU utilization, consisting of:
+
 - Thread ID
 - Program Counter
 - Register Set
 - Stack
 
 Threads share within the same process:
+
 - Code Section
 - Data Section (globals, heap)
 - OS Resources (files, signals, address space)
