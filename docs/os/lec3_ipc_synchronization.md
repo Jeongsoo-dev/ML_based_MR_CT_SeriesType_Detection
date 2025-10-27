@@ -19,7 +19,7 @@ hide:
 ---
 
 ## **2) Critical Section Patterns**
-### **2.1 Structure**
+### 2.1 Structure
 ```text
 entry_section();   // acquire
 /* Critical Section: read/write shared data */
@@ -27,7 +27,7 @@ exit_section();    // release
 remainder_section();
 ```
 
-### **2.2 Approaches**
+### 2.2 Approaches
 
 - Software-only: Strict alternation, Peterson’s Algorithm (2 threads), bakery algorithm (N threads).
 
@@ -89,7 +89,7 @@ sem_post(&s);
 
 ### 4.2 Producer–Consumer (Bounded Buffer)
 ```c
-#define N  ... // buffer size
+#define N  ...
 item_t buf[N]; int in=0, out=0;
 
 sem_t empty, full, mutex;
@@ -113,12 +113,13 @@ item_t consumer(){
 }
 ```
 > Order matters: Avoid lost wakeups and deadlock (always acquire/release in consistent order).
+
 ---
 
-## 5.Monitors
+## 5. Monitors
 
 - High-level abstraction that encapsulates shared data, mutex, and condition variables.
-- Methods are mutually exclusive; wait & signal on CVs inside monitor.
+- Methods are mutually exclusive (wait & signal on CVs inside monitor).
 ```pseudo
 monitor BoundedBuffer {
   condition not_full, not_empty;
@@ -154,32 +155,30 @@ Break at least one Coffman condition:
 - **Resource Ordering**: Impose a total order on resource acquisition; processes must request in ascending order.
 
 ### **6.3 Avoidance (Banker’s Algorithm)**
-- Admit a request only if the system remains in a **safe state** (there exists some order of process completion).
+- Admit a request only if the system remains in a safe state (there exists some order of process completion).
 - Requires processes to declare maximum resource needs; works best with predictable demands.
 
 ### **6.4 Detection & Recovery**
 - **Detection**: Build a wait-for graph (WFG); cycle -> deadlock.
-- **Recovery**:
-1. Abort processes (select victim by priority, work done, resource usage).
-2. Resource Preemption (rollback the victim to a checkpoint and reclaim resources).
+- **Recovery**: Abort processes and  rollback the victim to a checkpoint and reclaim resources.
 
 ---
 
 ## **7) Performance Considerations**
 | Topic | Guidance |
 |------|----------|
-| **Busy Waiting vs Blocking** | Spin only for **short** waits; otherwise **block** to save CPU. |
+| **Busy Waiting vs Blocking** | Spin only for short waits; otherwise block to save CPU. |
 | **Lock Granularity** | Coarse locks → simpler but less parallel; fine-grained → higher concurrency but complex. |
-| **Contention** | Shorten critical sections; partition data; prefer **read–write locks** for read-mostly workloads. |
-| **False Sharing** | Pad hot fields to **cache line** size to avoid cache thrashing. |
-| **Lock-Free** | Use **CAS** + backoff; manage memory safely (ABA, hazard pointers, epoch reclamation). |
+| **Contention** | Shorten critical sections; partition data; prefer read–write locks for read-mostly workloads. |
+| **False Sharing** | Pad hot fields to cache line size to avoid cache thrashing. |
+| **Lock-Free** | Use CAS + backoff; manage memory safely (ABA, hazard pointers, epoch reclamation). |
 
 ---
 
 ## **8) Memory Ordering**
-- Compilers/CPUs may **reorder** instructions.
-- Locks, atomics, and condition variables establish **happens-before** relationships.
-- For lock-free algorithms, use C/C++ atomics with explicit **memory orders** and **fences**.
+- Compilers/CPUs may reorder instructions.
+- Locks, atomics, and condition variables establish happens-before relationships.
+- For lock-free algorithms, use C/C++ atomics with explicit memory orders and fences.
 
 ---
 
@@ -202,7 +201,7 @@ Break at least one Coffman condition:
 ## **Summary**
 - Deadlock requires all four Coffman conditions (prevention breaks at least one)
 - Banker’s Algorithm avoids unsafe states given known maximum demands.
-- Choose primitives and designs that ensure safety (no races) and liveness (no starvation), while optimizing **performance**.
+- Choose primitives and designs that ensure safety (no races) and liveness (no starvation), while optimizing performance.
 
 ---
 
