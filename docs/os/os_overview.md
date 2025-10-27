@@ -49,8 +49,7 @@ An Operating System (OS) is a program that manages computer hardware and provide
 ### **Concept**
 The OS hides hardware complexity through **abstraction layers** that make resources easier to use.
 
-**Flow:**  
-**Physical Hardware → OS Abstractions → System Calls → Applications**
+**Flow: Physical Hardware → OS Abstractions → System Calls → Applications**
 
 ### **Example**
 | Hardware | OS Abstraction | User Interface |
