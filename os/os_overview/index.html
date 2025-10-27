@@ -12,7 +12,7 @@
         <link rel="prev" href="../">
       
       
-        <link rel="next" href="../critical_section/">
+        <link rel="next" href="../lec2_process_thread/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -705,15 +705,6 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#goal" class="md-nav__link">
-    <span class="md-ellipsis">
-      Goal
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#protection-mechanisms" class="md-nav__link">
     <span class="md-ellipsis">
       Protection Mechanisms
@@ -761,12 +752,35 @@
   
   
     <li class="md-nav__item">
+      <a href="../lec2_process_thread/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2. Process and Threads
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../critical_section/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    2. Critical Section
+    3. Critical Section
     
   </span>
   
@@ -1179,8 +1193,7 @@
 <h2 id="4-os-as-an-abstraction-layer"><strong>4) OS as an Abstraction Layer</strong><a class="headerlink" href="#4-os-as-an-abstraction-layer" title="Permanent link">&para;</a></h2>
 <h3 id="concept"><strong>Concept</strong><a class="headerlink" href="#concept" title="Permanent link">&para;</a></h3>
 <p>The OS hides hardware complexity through <strong>abstraction layers</strong> that make resources easier to use.</p>
-<p><strong>Flow:</strong><br />
-<strong>Physical Hardware → OS Abstractions → System Calls → Applications</strong></p>
+<p><strong>Flow: Physical Hardware → OS Abstractions → System Calls → Applications</strong></p>
 <h3 id="example"><strong>Example</strong><a class="headerlink" href="#example" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
@@ -1212,11 +1225,6 @@
 <h2 id="5-system-calls"><strong>5) System Calls</strong><a class="headerlink" href="#5-system-calls" title="Permanent link">&para;</a></h2>
 <h3 id="definition"><strong>Definition</strong><a class="headerlink" href="#definition" title="Permanent link">&para;</a></h3>
 <p>A System Call is the interface between a user program and the **OS kernel, allowing programs to request OS services.</p>
-<pre><code class="language-c">// Example: Linux System Calls
-int fd = open(&quot;data.txt&quot;, O_RDONLY);
-read(fd, buffer, 128);
-close(fd);
-</code></pre>
 <h3 id="categories-of-system-calls">Categories of System Calls<a class="headerlink" href="#categories-of-system-calls" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
@@ -1256,22 +1264,18 @@ close(fd);
 </table>
 <h2 id="6-computer-system-organization"><strong>6) Computer System Organization</strong><a class="headerlink" href="#6-computer-system-organization" title="Permanent link">&para;</a></h2>
 <ul>
-<li>
-<p>System Layers</p>
-</li>
-<li>
-<p>Hardware – CPU, Memory, I/O Devices</p>
-</li>
+<li>System Layers</li>
+<li>Hardware – CPU, Memory, I/O Devices</li>
 <li>Operating System Kernel – Core system control</li>
 <li>System Programs – Command interpreters, compilers, utilities</li>
 <li>
 <p>User Applications – User-level programs</p>
 </li>
 <li>
-<p>Interrupts</p>
+<p>Interrupts
+An Interrupt is a signal from hardware or software to the CPU indicating an event that needs immediate attention.</p>
 </li>
 </ul>
-<p>An Interrupt is a signal from hardware or software to the CPU indicating an event that needs immediate attention.</p>
 <p>The OS maintains an Interrupt Vector Table (IVT) to dispatch appropriate routines.</p>
 <h2 id="7-modes-of-operation"><strong>7) Modes of Operation</strong><a class="headerlink" href="#7-modes-of-operation" title="Permanent link">&para;</a></h2>
 <table>
@@ -1301,8 +1305,7 @@ close(fd);
 <li>1 : User Mode</li>
 </ul>
 <h2 id="8-dual-mode-operation-and-protection"><strong>8) Dual-Mode Operation and Protection</strong><a class="headerlink" href="#8-dual-mode-operation-and-protection" title="Permanent link">&para;</a></h2>
-<h3 id="goal">Goal<a class="headerlink" href="#goal" title="Permanent link">&para;</a></h3>
-<p>Prevent user programs from directly interfering with OS or other programs.</p>
+<p>** Goal: Prevent user programs from directly interfering with OS or other programs **</p>
 <h3 id="protection-mechanisms">Protection Mechanisms<a class="headerlink" href="#protection-mechanisms" title="Permanent link">&para;</a></h3>
 <ul>
 <li>
