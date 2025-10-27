@@ -708,18 +708,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#order-matters-avoid-lost-wakeups-and-deadlock-always-acquirerelease-in-consistent-order" class="md-nav__link">
+  <a href="#5-monitors" class="md-nav__link">
     <span class="md-ellipsis">
-      &gt; Order matters: Avoid lost wakeups and deadlock (always acquire/release in consistent order).
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#5monitors" class="md-nav__link">
-    <span class="md-ellipsis">
-      5.Monitors
+      5. Monitors
     </span>
   </a>
   
@@ -1139,13 +1130,13 @@
 </blockquote>
 <hr />
 <h2 id="2-critical-section-patterns"><strong>2) Critical Section Patterns</strong><a class="headerlink" href="#2-critical-section-patterns" title="Permanent link">&para;</a></h2>
-<h3 id="21-structure"><strong>2.1 Structure</strong><a class="headerlink" href="#21-structure" title="Permanent link">&para;</a></h3>
+<h3 id="21-structure">2.1 Structure<a class="headerlink" href="#21-structure" title="Permanent link">&para;</a></h3>
 <pre><code class="language-text">entry_section();   // acquire
 /* Critical Section: read/write shared data */
 exit_section();    // release
 remainder_section();
 </code></pre>
-<h3 id="22-approaches"><strong>2.2 Approaches</strong><a class="headerlink" href="#22-approaches" title="Permanent link">&para;</a></h3>
+<h3 id="22-approaches">2.2 Approaches<a class="headerlink" href="#22-approaches" title="Permanent link">&para;</a></h3>
 <ul>
 <li>
 <p>Software-only: Strict alternation, Peterson’s Algorithm (2 threads), bakery algorithm (N threads).</p>
@@ -1201,7 +1192,7 @@ sem_wait(&amp;s);   /* CS */
 sem_post(&amp;s);
 </code></pre>
 <h3 id="42-producerconsumer-bounded-buffer">4.2 Producer–Consumer (Bounded Buffer)<a class="headerlink" href="#42-producerconsumer-bounded-buffer" title="Permanent link">&para;</a></h3>
-<pre><code class="language-c">#define N  ... // buffer size
+<pre><code class="language-c">#define N  ...
 item_t buf[N]; int in=0, out=0;
 
 sem_t empty, full, mutex;
@@ -1224,11 +1215,14 @@ item_t consumer(){
     return x;
 }
 </code></pre>
-<h2 id="order-matters-avoid-lost-wakeups-and-deadlock-always-acquirerelease-in-consistent-order">&gt; Order matters: Avoid lost wakeups and deadlock (always acquire/release in consistent order).<a class="headerlink" href="#order-matters-avoid-lost-wakeups-and-deadlock-always-acquirerelease-in-consistent-order" title="Permanent link">&para;</a></h2>
-<h2 id="5monitors">5.Monitors<a class="headerlink" href="#5monitors" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p>Order matters: Avoid lost wakeups and deadlock (always acquire/release in consistent order).</p>
+</blockquote>
+<hr />
+<h2 id="5-monitors">5. Monitors<a class="headerlink" href="#5-monitors" title="Permanent link">&para;</a></h2>
 <ul>
 <li>High-level abstraction that encapsulates shared data, mutex, and condition variables.</li>
-<li>Methods are mutually exclusive; wait &amp; signal on CVs inside monitor.</li>
+<li>Methods are mutually exclusive (wait &amp; signal on CVs inside monitor).</li>
 </ul>
 <pre><code class="language-pseudo">monitor BoundedBuffer {
   condition not_full, not_empty;
@@ -1265,15 +1259,13 @@ item_t consumer(){
 </ul>
 <h3 id="63-avoidance-bankers-algorithm"><strong>6.3 Avoidance (Banker’s Algorithm)</strong><a class="headerlink" href="#63-avoidance-bankers-algorithm" title="Permanent link">&para;</a></h3>
 <ul>
-<li>Admit a request only if the system remains in a <strong>safe state</strong> (there exists some order of process completion).</li>
+<li>Admit a request only if the system remains in a safe state (there exists some order of process completion).</li>
 <li>Requires processes to declare maximum resource needs; works best with predictable demands.</li>
 </ul>
 <h3 id="64-detection-recovery"><strong>6.4 Detection &amp; Recovery</strong><a class="headerlink" href="#64-detection-recovery" title="Permanent link">&para;</a></h3>
 <ul>
 <li><strong>Detection</strong>: Build a wait-for graph (WFG); cycle -&gt; deadlock.</li>
-<li><strong>Recovery</strong>:</li>
-<li>Abort processes (select victim by priority, work done, resource usage).</li>
-<li>Resource Preemption (rollback the victim to a checkpoint and reclaim resources).</li>
+<li><strong>Recovery</strong>: Abort processes and  rollback the victim to a checkpoint and reclaim resources.</li>
 </ul>
 <hr />
 <h2 id="7-performance-considerations"><strong>7) Performance Considerations</strong><a class="headerlink" href="#7-performance-considerations" title="Permanent link">&para;</a></h2>
@@ -1287,7 +1279,7 @@ item_t consumer(){
 <tbody>
 <tr>
 <td><strong>Busy Waiting vs Blocking</strong></td>
-<td>Spin only for <strong>short</strong> waits; otherwise <strong>block</strong> to save CPU.</td>
+<td>Spin only for short waits; otherwise block to save CPU.</td>
 </tr>
 <tr>
 <td><strong>Lock Granularity</strong></td>
@@ -1295,24 +1287,24 @@ item_t consumer(){
 </tr>
 <tr>
 <td><strong>Contention</strong></td>
-<td>Shorten critical sections; partition data; prefer <strong>read–write locks</strong> for read-mostly workloads.</td>
+<td>Shorten critical sections; partition data; prefer read–write locks for read-mostly workloads.</td>
 </tr>
 <tr>
 <td><strong>False Sharing</strong></td>
-<td>Pad hot fields to <strong>cache line</strong> size to avoid cache thrashing.</td>
+<td>Pad hot fields to cache line size to avoid cache thrashing.</td>
 </tr>
 <tr>
 <td><strong>Lock-Free</strong></td>
-<td>Use <strong>CAS</strong> + backoff; manage memory safely (ABA, hazard pointers, epoch reclamation).</td>
+<td>Use CAS + backoff; manage memory safely (ABA, hazard pointers, epoch reclamation).</td>
 </tr>
 </tbody>
 </table>
 <hr />
 <h2 id="8-memory-ordering"><strong>8) Memory Ordering</strong><a class="headerlink" href="#8-memory-ordering" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Compilers/CPUs may <strong>reorder</strong> instructions.</li>
-<li>Locks, atomics, and condition variables establish <strong>happens-before</strong> relationships.</li>
-<li>For lock-free algorithms, use C/C++ atomics with explicit <strong>memory orders</strong> and <strong>fences</strong>.</li>
+<li>Compilers/CPUs may reorder instructions.</li>
+<li>Locks, atomics, and condition variables establish happens-before relationships.</li>
+<li>For lock-free algorithms, use C/C++ atomics with explicit memory orders and fences.</li>
 </ul>
 <hr />
 <h2 id="10-key-terms-to-memorize"><strong>10) Key Terms to Memorize</strong><a class="headerlink" href="#10-key-terms-to-memorize" title="Permanent link">&para;</a></h2>
@@ -1371,7 +1363,7 @@ item_t consumer(){
 <ul>
 <li>Deadlock requires all four Coffman conditions (prevention breaks at least one)</li>
 <li>Banker’s Algorithm avoids unsafe states given known maximum demands.</li>
-<li>Choose primitives and designs that ensure safety (no races) and liveness (no starvation), while optimizing <strong>performance</strong>.</li>
+<li>Choose primitives and designs that ensure safety (no races) and liveness (no starvation), while optimizing performance.</li>
 </ul>
 <hr />
 <blockquote>
