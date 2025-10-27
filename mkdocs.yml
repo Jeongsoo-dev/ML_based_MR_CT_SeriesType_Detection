@@ -37,7 +37,8 @@ nav:
   - OS:
       - "0. Overview": os/index.md
       - "1. OS Overview": os/os_overview.md
-      - "2. Critical Section": os/critical_section.md
+      - "2. Process and Threads": os/lec2_process_thread.md
+      - "3. Critical Section": os/critical_section.md
   - Bayesian:
       - "0. Overview": bayesian/index.md
       - "1. Foundations": bayesian/foundations.md
