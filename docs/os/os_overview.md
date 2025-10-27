@@ -65,13 +65,6 @@ The OS hides hardware complexity through **abstraction layers** that make resour
 ### **Definition**
 A System Call is the interface between a user program and the **OS kernel, allowing programs to request OS services.
 
-```c
-// Example: Linux System Calls
-int fd = open("data.txt", O_RDONLY);
-read(fd, buffer, 128);
-close(fd);
-```
-
 ### Categories of System Calls
 
 | Category                    | Example                 | Description                              |
@@ -84,14 +77,12 @@ close(fd);
 
 ## **6) Computer System Organization**
 - System Layers
-
 1. Hardware – CPU, Memory, I/O Devices
 2. Operating System Kernel – Core system control
 3. System Programs – Command interpreters, compilers, utilities
 4. User Applications – User-level programs
 
 - Interrupts
-
 An Interrupt is a signal from hardware or software to the CPU indicating an event that needs immediate attention.
 
 The OS maintains an Interrupt Vector Table (IVT) to dispatch appropriate routines.
@@ -108,9 +99,7 @@ Mode Bit: A CPU flag indicating current privilege level.
 - 1 : User Mode
 
 ## **8) Dual-Mode Operation and Protection**
-### Goal
-
-Prevent user programs from directly interfering with OS or other programs.
+** Goal: Prevent user programs from directly interfering with OS or other programs **
 
 ### Protection Mechanisms
 
