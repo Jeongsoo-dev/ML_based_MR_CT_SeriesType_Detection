@@ -755,6 +755,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#-determines-runnable-interleavings-a1-b1-a2" class="md-nav__link">
+    <span class="md-ellipsis">
+      - Determines runnable interleavings (A1, B1, A2, …)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#classic-synchronization-problem-dining-philosophers" class="md-nav__link">
     <span class="md-ellipsis">
       Classic Synchronization Problem: Dining Philosophers
@@ -1079,29 +1088,51 @@
 <hr />
 <h2 id="schedulers-role"><strong>Scheduler’s Role</strong><a class="headerlink" href="#schedulers-role" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Multiple processes <strong>competing</strong> for CPU time</li>
-<li>When more than one is <strong>Ready</strong>, scheduler chooses who runs next</li>
-<li>Affects <strong>perceived system performance</strong></li>
+<li>Multiple processes competing for CPU time</li>
+<li>When more than one is Ready, scheduler chooses who runs next</li>
+<li>Affects perceived system performance</li>
 <li>Scheduling decisions occur on:</li>
-<li><strong>Process creation</strong></li>
-<li><strong>Process exit / blocking</strong></li>
-<li><strong>I/O completion interrupt</strong> </li>
+<li>Process creation</li>
+<li>Process exit / blocking</li>
+<li>I/O completion interrupt</li>
 </ul>
 <hr />
 <h2 id="context-switch-overhead"><strong>Context Switch Overhead</strong><a class="headerlink" href="#context-switch-overhead" title="Permanent link">&para;</a></h2>
-<p>Switching tasks is <strong>expensive</strong>:
-- Trap to kernel mode
-- Save current CPU state (registers, memory map)
-- Select new process &amp; restore its state
-- Resume execution<br />
-Too many switches <strong>waste CPU time</strong>.</p>
+<p>Switching tasks is expensive:</p>
+<ul>
+<li>Trap to kernel mode</li>
+<li>Save current CPU state (registers, memory map)</li>
+<li>Select new process &amp; restore its state</li>
+<li>Resume execution<br />
+Too many switches waste CPU time.</li>
+</ul>
 <hr />
 <h2 id="process-cpu-behavior"><strong>Process CPU Behavior</strong><a class="headerlink" href="#process-cpu-behavior" title="Permanent link">&para;</a></h2>
-<p>Two typical categories:
-| Type | Behavior | Resource Usage | Notes |
-|---|---|---|---|
-| <strong>CPU-bound</strong> | Long computations | Mostly CPU | Few I/O wait times |
-| <strong>I/O-bound</strong> | Short bursts | Mostly I/O | Spend time waiting |</p>
+<p>Two typical categories:</p>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Behavior</th>
+<th>Resource Usage</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>CPU-bound</strong></td>
+<td>Long computations</td>
+<td>Mostly CPU</td>
+<td>Few I/O wait times</td>
+</tr>
+<tr>
+<td><strong>I/O-bound</strong></td>
+<td>Short bursts</td>
+<td>Mostly I/O</td>
+<td>Spend time waiting</td>
+</tr>
+</tbody>
+</table>
 <blockquote>
 <p>Modern systems become more I/O-bound as CPUs get faster.</p>
 </blockquote>
@@ -1132,8 +1163,7 @@ Too many switches <strong>waste CPU time</strong>.</p>
 </tbody>
 </table>
 <blockquote>
-<p><strong>Preemption requires</strong> timer interrupt/hardware support.<br />
-:contentReference[oaicite:4]{index=4}</p>
+<p>Preemption requires timer interrupt/hardware support.</p>
 </blockquote>
 <hr />
 <h2 id="scheduling-goals"><strong>Scheduling Goals</strong><a class="headerlink" href="#scheduling-goals" title="Permanent link">&para;</a></h2>
@@ -1160,10 +1190,6 @@ Too many switches <strong>waste CPU time</strong>.</p>
 <tr>
 <td><strong>Real-Time</strong></td>
 <td>Meet deadlines, predictability (NO data loss)</td>
-</tr>
-<tr>
-<td>:contentReference[oaicite:5]{index=5}</td>
-<td></td>
 </tr>
 </tbody>
 </table>
@@ -1211,7 +1237,7 @@ Good when fairness with weighted share is desired</li>
 <ul>
 <li>Real-time focused</li>
 <li>Run task with closest deadline first
-Hard requirement: process must **announce deadline</li>
+Hard requirement: process must announce deadline</li>
 </ul>
 <hr />
 <h2 id="policy-vs-mechanism"><strong>Policy vs. Mechanism</strong><a class="headerlink" href="#policy-vs-mechanism" title="Permanent link">&para;</a></h2>
@@ -1222,20 +1248,26 @@ Hard requirement: process must **announce deadline</li>
 </ul>
 <hr />
 <h2 id="scheduling-threads"><strong>Scheduling Threads</strong><a class="headerlink" href="#scheduling-threads" title="Permanent link">&para;</a></h2>
-<p>User-level vs Kernel-level scheduling<br />
-- User-level threads: Kernel unaware → user scheduler only
-- Kernel-level threads: Kernel actively chooses runnable threads<br />
-Determines runnable interleavings (A1, B1, A2, …)</p>
-<hr />
+<p>User-level vs Kernel-level scheduling  </p>
+<ul>
+<li>
+<p>User level threads: Kernel unaware → user scheduler only</p>
+</li>
+<li>
+<p>Kernellevel threads: Kernel actively chooses runnable threads</p>
+</li>
+</ul>
+<h2 id="-determines-runnable-interleavings-a1-b1-a2">- Determines runnable interleavings (A1, B1, A2, …)<a class="headerlink" href="#-determines-runnable-interleavings-a1-b1-a2" title="Permanent link">&para;</a></h2>
 <h2 id="classic-synchronization-problem-dining-philosophers">C<strong>lassic Synchronization Problem: Dining Philosophers</strong><a class="headerlink" href="#classic-synchronization-problem-dining-philosophers" title="Permanent link">&para;</a></h2>
-<p>Illustrates deadlock + starvation risks
-- Five philosophers share chopsticks
-- Need mutual exclusion on chopsticks
-- Fix involves:
-  - Correct resource ordering
-  - Mutex + state tracking
-  - Semaphores controlling neighbors  </p>
-<p>Key lesson: Scheduling + synchronization are tightly coupled.</p>
+<p>Illustrates deadlock + starvation risks</p>
+<ul>
+<li>Five philosophers share chopsticks</li>
+<li>Need mutual exclusion on chopsticks</li>
+<li>Fix involves:</li>
+<li>Correct resource ordering</li>
+<li>Mutex + state tracking</li>
+<li>Semaphores controlling neighbors  </li>
+</ul>
 
 
 
