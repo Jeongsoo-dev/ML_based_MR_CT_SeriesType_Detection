@@ -761,6 +761,81 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Classic Synchronization Problem: Dining Philosophers">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#problem-recap" class="md-nav__link">
+    <span class="md-ellipsis">
+      Problem Recap
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#key-ideas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key Ideas
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#execution-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      Execution Flow
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Execution Flow">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#when-philosopher-gets-hungry-take_csi" class="md-nav__link">
+    <span class="md-ellipsis">
+      When Philosopher Gets Hungry → take_cs(i)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#after-eating-put_csi" class="md-nav__link">
+    <span class="md-ellipsis">
+      After Eating → put_cs(i)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-heart-of-the-solution-testi" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Heart of the Solution → test(i)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-it-solves-the-classical-issues" class="md-nav__link">
+    <span class="md-ellipsis">
+      How It Solves the Classical Issues
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -1245,18 +1320,106 @@ Hard requirement: process must announce deadline</li>
 <hr />
 <h2 id="classic-synchronization-problem-dining-philosophers"><strong>Classic Synchronization Problem: Dining Philosophers</strong><a class="headerlink" href="#classic-synchronization-problem-dining-philosophers" title="Permanent link">&para;</a></h2>
 <p>Illustrates deadlock + starvation risks</p>
-<p><img alt="Dining Philosopher" src="images/dining_1.jpg" width="900" /></p>
+<p><img alt="Dining Philosopher" src="../../images/dining_1.jpg" width="500" /></p>
 <ul>
 <li>Five philosophers share chopsticks</li>
 <li>Need mutual exclusion on chopsticks</li>
 </ul>
-<p><img alt="Solution" src="images/dining_1.jpg" width="900" /></p>
-<p>Fix involves:</p>
+<p><img alt="Solution" src="../../images/dining_2.jpg" width="500" /></p>
+<h3 id="problem-recap">Problem Recap<a class="headerlink" href="#problem-recap" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Deadlock : All philosophers pick the left chopstick and wait forever</li>
+<li>Starvation : A philosopher may never get a chance to eat</li>
+<li>Concurrency control : Neighbors must not eat simultaneously</li>
+</ul>
+<h3 id="key-ideas">Key Ideas<a class="headerlink" href="#key-ideas" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Component</th>
+<th>Purpose</th>
+<th>Effect</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>state[i]</code></td>
+<td>Each philosopher’s state (THINKING / HUNGRY / EATING)</td>
+<td>Allows control logic on neighbors</td>
+</tr>
+<tr>
+<td><code>mut</code> (mutex)</td>
+<td>Protects access to shared state</td>
+<td>Ensures mutual exclusion when modifying states</td>
+</tr>
+<tr>
+<td><code>s[i]</code> (semaphore per philosopher)</td>
+<td>Controls who gets permission to eat</td>
+<td>Prevents neighbors from eating simultaneously</td>
+</tr>
+<tr>
+<td><code>test(i)</code></td>
+<td>Check if philosopher <code>i</code> can start eating</td>
+<td>Enforces safe conditions</td>
+</tr>
+</tbody>
+</table>
+<h3 id="execution-flow">Execution Flow<a class="headerlink" href="#execution-flow" title="Permanent link">&para;</a></h3>
+<h4 id="when-philosopher-gets-hungry-take_csi">When Philosopher Gets Hungry → <code>take_cs(i)</code><a class="headerlink" href="#when-philosopher-gets-hungry-take_csi" title="Permanent link">&para;</a></h4>
 <ol>
-<li>Correct resource ordering</li>
-<li>Mutex + state tracking</li>
-<li>Semaphores controlling neighbors  </li>
+<li>Lock mutex</li>
+<li>Set state to <code>HUNGRY</code></li>
+<li>Check if neighbors are eating (<code>test(i)</code>)</li>
+<li>Unlock mutex</li>
+<li>Wait until permission is given (<code>down(s[i])</code>) → Blocks until chopsticks available</li>
 </ol>
+<h4 id="after-eating-put_csi">After Eating → <code>put_cs(i)</code><a class="headerlink" href="#after-eating-put_csi" title="Permanent link">&para;</a></h4>
+<ol>
+<li>Lock mutex</li>
+<li>Set state back to <code>THINKING</code></li>
+<li>Signal neighbors to try eating (<code>test(LEFT)</code> + <code>test(RIGHT)</code>)</li>
+<li>Unlock mutex</li>
+</ol>
+<h3 id="the-heart-of-the-solution-testi">The Heart of the Solution → <code>test(i)</code><a class="headerlink" href="#the-heart-of-the-solution-testi" title="Permanent link">&para;</a></h3>
+<pre><code class="language-c">if (state[i] == HUNGRY &amp;&amp;
+    state[LEFT] != EATING &amp;&amp;
+    state[RIGHT] != EATING) {
+    state[i] = EATING;
+    up(&amp;s[i]);
+}
+</code></pre>
+<p>This guarantees:</p>
+<ul>
+<li>A philosopher only eats if both neighbors are not eating</li>
+<li>Unlocks semaphore for only one philosopher at a time</li>
+</ul>
+<h3 id="how-it-solves-the-classical-issues">How It Solves the Classical Issues<a class="headerlink" href="#how-it-solves-the-classical-issues" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Issue</th>
+<th>How It is Prevented</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Deadlock</strong></td>
+<td>No circular wait: philosopher only grabs both chopsticks when allowed; otherwise releases/not blocks while holding one</td>
+</tr>
+<tr>
+<td><strong>Starvation</strong></td>
+<td>When a philosopher stops eating, neighbors are **immediately tested and possibly signaled → fairness</td>
+</tr>
+<tr>
+<td><strong>Race conditions on state</strong></td>
+<td>Protected by mutex (<code>mut</code>)</td>
+</tr>
+<tr>
+<td><strong>Neighbors eating simultaneously</strong></td>
+<td><code>test()</code> explicitly checks left &amp; right philosopher states</td>
+</tr>
+</tbody>
+</table>
 
 
 
