@@ -20,7 +20,7 @@
     
     
       
-        <title>Scheduling - Jeongsoo Pang</title>
+        <title>OS: Scheduling - Jeongsoo Pang</title>
       
     
     
@@ -110,7 +110,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Scheduling
+              OS: Scheduling
             
           </span>
         </div>
@@ -555,7 +555,7 @@
   
   
   <span class="md-ellipsis">
-    3. IPC and Synchronization
+    3. IPC
     
   </span>
   
@@ -621,15 +621,6 @@
       Table of contents
     </label>
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#author-jeongsoo-pang" class="md-nav__link">
-    <span class="md-ellipsis">
-      Author: Jeongsoo Pang
-    </span>
-  </a>
-  
-</li>
       
         <li class="md-nav__item">
   <a href="#schedulers-role" class="md-nav__link">
@@ -1025,7 +1016,7 @@
   
   
   <span class="md-ellipsis">
-    8. Loss functions & optimal decisions
+    8. Loss functions
     
   </span>
   
@@ -1085,8 +1076,8 @@
 
 
 <h1 id="scheduling">Scheduling<a class="headerlink" href="#scheduling" title="Permanent link">&para;</a></h1>
-<h2 id="author-jeongsoo-pang"><strong>Author:</strong> Jeongsoo Pang<a class="headerlink" href="#author-jeongsoo-pang" title="Permanent link">&para;</a></h2>
-<h2 id="schedulers-role">Scheduler’s Role<a class="headerlink" href="#schedulers-role" title="Permanent link">&para;</a></h2>
+<hr />
+<h2 id="schedulers-role"><strong>Scheduler’s Role</strong><a class="headerlink" href="#schedulers-role" title="Permanent link">&para;</a></h2>
 <ul>
 <li>Multiple processes <strong>competing</strong> for CPU time</li>
 <li>When more than one is <strong>Ready</strong>, scheduler chooses who runs next</li>
@@ -1097,7 +1088,7 @@
 <li><strong>I/O completion interrupt</strong> </li>
 </ul>
 <hr />
-<h2 id="context-switch-overhead">Context Switch Overhead<a class="headerlink" href="#context-switch-overhead" title="Permanent link">&para;</a></h2>
+<h2 id="context-switch-overhead"><strong>Context Switch Overhead</strong><a class="headerlink" href="#context-switch-overhead" title="Permanent link">&para;</a></h2>
 <p>Switching tasks is <strong>expensive</strong>:
 - Trap to kernel mode
 - Save current CPU state (registers, memory map)
@@ -1105,7 +1096,7 @@
 - Resume execution<br />
 Too many switches <strong>waste CPU time</strong>.</p>
 <hr />
-<h2 id="process-cpu-behavior">Process CPU Behavior<a class="headerlink" href="#process-cpu-behavior" title="Permanent link">&para;</a></h2>
+<h2 id="process-cpu-behavior"><strong>Process CPU Behavior</strong><a class="headerlink" href="#process-cpu-behavior" title="Permanent link">&para;</a></h2>
 <p>Two typical categories:
 | Type | Behavior | Resource Usage | Notes |
 |---|---|---|---|
@@ -1115,7 +1106,7 @@ Too many switches <strong>waste CPU time</strong>.</p>
 <p>Modern systems become more I/O-bound as CPUs get faster.</p>
 </blockquote>
 <hr />
-<h2 id="preemptive-vs-non-preemptive-scheduling">Preemptive vs Non-Preemptive Scheduling<a class="headerlink" href="#preemptive-vs-non-preemptive-scheduling" title="Permanent link">&para;</a></h2>
+<h2 id="preemptive-vs-non-preemptive-scheduling"><strong>Preemptive vs Non-Preemptive Scheduling</strong><a class="headerlink" href="#preemptive-vs-non-preemptive-scheduling" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
 <tr>
@@ -1145,7 +1136,7 @@ Too many switches <strong>waste CPU time</strong>.</p>
 :contentReference[oaicite:4]{index=4}</p>
 </blockquote>
 <hr />
-<h2 id="scheduling-goals">Scheduling Goals<a class="headerlink" href="#scheduling-goals" title="Permanent link">&para;</a></h2>
+<h2 id="scheduling-goals"><strong>Scheduling Goals</strong><a class="headerlink" href="#scheduling-goals" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
 <tr>
@@ -1177,15 +1168,15 @@ Too many switches <strong>waste CPU time</strong>.</p>
 </tbody>
 </table>
 <hr />
-<h2 id="common-scheduling-algorithms">Common Scheduling Algorithms<a class="headerlink" href="#common-scheduling-algorithms" title="Permanent link">&para;</a></h2>
-<h3 id="1-first-come-first-served-fcfs">1. First-Come First-Served (FCFS)<a class="headerlink" href="#1-first-come-first-served-fcfs" title="Permanent link">&para;</a></h3>
+<h2 id="common-scheduling-algorithms"><strong>Common Scheduling Algorithms</strong><a class="headerlink" href="#common-scheduling-algorithms" title="Permanent link">&para;</a></h2>
+<h3 id="1-first-come-first-served-fcfs"><strong>1. First-Come First-Served (FCFS)</strong><a class="headerlink" href="#1-first-come-first-served-fcfs" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Non-preemptive</li>
 <li>Simple FIFO queue 
 Problem: Long jobs block short ones (convoy effect)</li>
 </ul>
 <hr />
-<h3 id="2-shortest-job-first-sjf">2. Shortest Job First (SJF)<a class="headerlink" href="#2-shortest-job-first-sjf" title="Permanent link">&para;</a></h3>
+<h3 id="2-shortest-job-first-sjf"><strong>2. Shortest Job First (SJF)</strong><a class="headerlink" href="#2-shortest-job-first-sjf" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Non-preemptive, requires job length knowledge</li>
 <li>Minimizes average turnaround time</li>
@@ -1193,7 +1184,7 @@ Problem: Long jobs block short ones (convoy effect)</li>
 Risk: Starvation of long jobs</li>
 </ul>
 <hr />
-<h3 id="3-round-robin-rr">3. Round Robin (RR)<a class="headerlink" href="#3-round-robin-rr" title="Permanent link">&para;</a></h3>
+<h3 id="3-round-robin-rr"><strong>3. Round Robin (RR)</strong><a class="headerlink" href="#3-round-robin-rr" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Preemptive, equal quantum for each process</li>
 <li>Very common in interactive systems</li>
@@ -1202,41 +1193,41 @@ Risk: Starvation of long jobs</li>
 <li>Too large → degenerates to FCFS</li>
 </ul>
 <hr />
-<h3 id="4-priority-scheduling">4. Priority Scheduling<a class="headerlink" href="#4-priority-scheduling" title="Permanent link">&para;</a></h3>
+<h3 id="4-priority-scheduling"><strong>4. Priority Scheduling</strong><a class="headerlink" href="#4-priority-scheduling" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Higher priority tasks run first</li>
 <li>Can combine with RR per priority class</li>
 <li>Starvation possible → fix: aging</li>
 </ul>
 <hr />
-<h3 id="5-lottery-scheduling">5. Lottery Scheduling<a class="headerlink" href="#5-lottery-scheduling" title="Permanent link">&para;</a></h3>
+<h3 id="5-lottery-scheduling"><strong>5. Lottery Scheduling</strong><a class="headerlink" href="#5-lottery-scheduling" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Random scheduling based on # of tickets</li>
 <li>Dynamic, flexible priority control<br />
 Good when fairness with weighted share is desired</li>
 </ul>
 <hr />
-<h3 id="6-earliest-deadline-first-edf">6. Earliest Deadline First (EDF)<a class="headerlink" href="#6-earliest-deadline-first-edf" title="Permanent link">&para;</a></h3>
+<h3 id="6-earliest-deadline-first-edf"><strong>6. Earliest Deadline First (EDF)</strong><a class="headerlink" href="#6-earliest-deadline-first-edf" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Real-time focused</li>
 <li>Run task with closest deadline first
 Hard requirement: process must **announce deadline</li>
 </ul>
 <hr />
-<h2 id="policy-vs-mechanism">Policy vs. Mechanism<a class="headerlink" href="#policy-vs-mechanism" title="Permanent link">&para;</a></h2>
+<h2 id="policy-vs-mechanism"><strong>Policy vs. Mechanism</strong><a class="headerlink" href="#policy-vs-mechanism" title="Permanent link">&para;</a></h2>
 <ul>
 <li><strong>Scheduling mechanism</strong>: how scheduling is done</li>
 <li><strong>Scheduling policy</strong>: who should run + priority rules</li>
 <li>Parent process can set children priority parameters → avoids assumptions  </li>
 </ul>
 <hr />
-<h2 id="scheduling-threads">Scheduling Threads<a class="headerlink" href="#scheduling-threads" title="Permanent link">&para;</a></h2>
+<h2 id="scheduling-threads"><strong>Scheduling Threads</strong><a class="headerlink" href="#scheduling-threads" title="Permanent link">&para;</a></h2>
 <p>User-level vs Kernel-level scheduling<br />
 - User-level threads: Kernel unaware → user scheduler only
 - Kernel-level threads: Kernel actively chooses runnable threads<br />
 Determines runnable interleavings (A1, B1, A2, …)</p>
 <hr />
-<h2 id="classic-synchronization-problem-dining-philosophers">Classic Synchronization Problem: Dining Philosophers<a class="headerlink" href="#classic-synchronization-problem-dining-philosophers" title="Permanent link">&para;</a></h2>
+<h2 id="classic-synchronization-problem-dining-philosophers">C<strong>lassic Synchronization Problem: Dining Philosophers</strong><a class="headerlink" href="#classic-synchronization-problem-dining-philosophers" title="Permanent link">&para;</a></h2>
 <p>Illustrates deadlock + starvation risks
 - Five philosophers share chopsticks
 - Need mutual exclusion on chopsticks
