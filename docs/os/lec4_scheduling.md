@@ -131,7 +131,7 @@ Illustrates deadlock + starvation risks
 - Five philosophers share chopsticks
 - Need mutual exclusion on chopsticks
   
-![Solution](../images/dining_1.jpg){ width="500" }
+![Solution](../images/dining_2.jpg){ width="500" }
 
 Fix involves:
 
