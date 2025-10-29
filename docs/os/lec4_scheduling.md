@@ -8,10 +8,10 @@ hide:
 ---
 
 ## **Scheduler’s Role**
-- Multiple processes competing for CPU time
-- When more than one is Ready, scheduler chooses who runs next
-- Affects perceived system performance
-- Scheduling decisions occur on:
+### Multiple processes competing for CPU time
+### When more than one is Ready, scheduler chooses who runs next
+### Affects perceived system performance
+### Scheduling decisions occur on:
   - Process creation
   - Process exit / blocking
   - I/O completion interrupt
