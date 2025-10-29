@@ -1,4 +1,4 @@
-site_name: Jeongsoo Pang — Portfolio
+site_name: Jeongsoo Pang
 
 theme:
   name: material
@@ -29,7 +29,7 @@ extra_javascript:
   - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
 
 nav:
-  - Portfolio:
+  - Projects:
       - "0. Overview": portfolio/index.md
       - "1. Cercare-Medical ML Project": index.md
       - "2. Anti-Drone Project": anti_drone.md
@@ -39,6 +39,7 @@ nav:
       - "1. OS Overview": os/os_overview.md
       - "2. Process and Threads": os/lec2_process_thread.md
       - "3. IPC and Synchronization": os/lec3_ipc_synchronization.md
+      - "4. Schduling": os/lec4_scheduling.md
   - Bayesian:
       - "0. Overview": bayesian/index.md
       - "1. Foundations": bayesian/foundations.md
