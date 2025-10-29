@@ -38,7 +38,7 @@ nav:
       - "0. Overview": os/index.md
       - "1. OS Overview": os/os_overview.md
       - "2. Process and Threads": os/lec2_process_thread.md
-      - "3. IPC and Synchronization": os/lec3_ipc_synchronization.md
+      - "3. IPC": os/lec3_ipc_synchronization.md
       - "4. Schduling": os/lec4_scheduling.md
   - Bayesian:
       - "0. Overview": bayesian/index.md
@@ -49,6 +49,6 @@ nav:
       - "5. Posterior inference": bayesian/posterior-inference.md
       - "6. Interval Prediction": bayesian/intervals-prediction.md
       - "7. Hypothesis models": bayesian/hypothesis-models.md
-      - "8. Loss functions & optimal decisions": bayesian/loss-decisions.md
+      - "8. Loss functions": bayesian/loss-decisions.md
       - "9. Computational methods": bayesian/computation.md
 
