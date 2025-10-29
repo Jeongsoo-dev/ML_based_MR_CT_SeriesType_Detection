@@ -100,7 +100,7 @@ Risk: Starvation of long jobs
 ### **5. Lottery Scheduling**
 - Random scheduling based on # of tickets
 - Dynamic, flexible priority control  
-Good when fairness with weighted share is desired
+- Good when fairness with weighted share is desired
 
 ---
 
@@ -122,13 +122,11 @@ Hard requirement: process must announce deadline
 User-level vs Kernel-level scheduling  
 
 - User level threads: Kernel unaware → user scheduler only
-
 - Kernellevel threads: Kernel actively chooses runnable threads
-  
 - Determines runnable interleavings (A1, B1, A2, …)
 ---
 
-## C**lassic Synchronization Problem: Dining Philosophers**
+## **Classic Synchronization Problem: Dining Philosophers**
 Illustrates deadlock + starvation risks
 
 - Five philosophers share chopsticks
