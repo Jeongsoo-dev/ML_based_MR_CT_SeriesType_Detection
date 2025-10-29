@@ -8,28 +8,30 @@ hide:
 ---
 
 ## **Scheduler’s Role**
-- Multiple processes **competing** for CPU time
-- When more than one is **Ready**, scheduler chooses who runs next
-- Affects **perceived system performance**
+- Multiple processes competing for CPU time
+- When more than one is Ready, scheduler chooses who runs next
+- Affects perceived system performance
 - Scheduling decisions occur on:
-  - **Process creation**
-  - **Process exit / blocking**
-  - **I/O completion interrupt** 
+  - Process creation
+  - Process exit / blocking
+  - I/O completion interrupt
 
 ---
 
 ## **Context Switch Overhead**
-Switching tasks is **expensive**:
+Switching tasks is expensive:
+
 - Trap to kernel mode
 - Save current CPU state (registers, memory map)
 - Select new process & restore its state
 - Resume execution  
-Too many switches **waste CPU time**.
+Too many switches waste CPU time.
 
 ---
 
 ## **Process CPU Behavior**
 Two typical categories:
+
 | Type | Behavior | Resource Usage | Notes |
 |---|---|---|---|
 | **CPU-bound** | Long computations | Mostly CPU | Few I/O wait times |
@@ -40,24 +42,25 @@ Two typical categories:
 ---
 
 ## **Preemptive vs Non-Preemptive Scheduling**
+
 | Strategy | CPU Ownership Ends When… | Pros | Cons |
 |---|---|---|---|
 | **Preemptive** | Quantum expires or higher-priority arrival | Better for interactivity | More context switch overhead |
 | **Non-Preemptive** | Process blocks or exits | Simpler, lower overhead | Bad response time if long jobs exist |
 
-> **Preemption requires** timer interrupt/hardware support.  
-:contentReference[oaicite:4]{index=4}
+> Preemption requires timer interrupt/hardware support.
 
 ---
 
 ## **Scheduling Goals**
+
 | System Type | Major Metrics |
 |---|---|
 | **All systems** | Fairness, CPU balance, enforce policy |
 | **Interactive** | Response time, proportionality |
 | **Batch** | Throughput ↑, turnaround time ↓, CPU utilization ↑ |
 | **Real-Time** | Meet deadlines, predictability (NO data loss) |  
-:contentReference[oaicite:5]{index=5}
+
 
 ---
 
@@ -104,7 +107,7 @@ Good when fairness with weighted share is desired
 ### **6. Earliest Deadline First (EDF)**
 - Real-time focused
 - Run task with closest deadline first
-Hard requirement: process must **announce deadline
+Hard requirement: process must announce deadline
 
 ---
 
@@ -117,19 +120,20 @@ Hard requirement: process must **announce deadline
 
 ## **Scheduling Threads**
 User-level vs Kernel-level scheduling  
-- User-level threads: Kernel unaware → user scheduler only
-- Kernel-level threads: Kernel actively chooses runnable threads  
-Determines runnable interleavings (A1, B1, A2, …)
+
+- User level threads: Kernel unaware → user scheduler only
+
+- Kernellevel threads: Kernel actively chooses runnable threads
+  
+- Determines runnable interleavings (A1, B1, A2, …)
 ---
 
 ## C**lassic Synchronization Problem: Dining Philosophers**
 Illustrates deadlock + starvation risks
+
 - Five philosophers share chopsticks
 - Need mutual exclusion on chopsticks
 - Fix involves:
   - Correct resource ordering
   - Mutex + state tracking
   - Semaphores controlling neighbors  
-
-Key lesson: Scheduling + synchronization are tightly coupled.
-
