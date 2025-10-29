@@ -1,14 +1,13 @@
 ---
-title: "Scheduling"
+title: "OS: Scheduling"
 hide:
   - title
 ---
 
 # Scheduling  
-**Author:** Jeongsoo Pang  
 ---
 
-## Scheduler’s Role
+## **Scheduler’s Role**
 - Multiple processes **competing** for CPU time
 - When more than one is **Ready**, scheduler chooses who runs next
 - Affects **perceived system performance**
@@ -19,7 +18,7 @@ hide:
 
 ---
 
-## Context Switch Overhead
+## **Context Switch Overhead**
 Switching tasks is **expensive**:
 - Trap to kernel mode
 - Save current CPU state (registers, memory map)
@@ -29,7 +28,7 @@ Too many switches **waste CPU time**.
 
 ---
 
-## Process CPU Behavior
+## **Process CPU Behavior**
 Two typical categories:
 | Type | Behavior | Resource Usage | Notes |
 |---|---|---|---|
@@ -40,7 +39,7 @@ Two typical categories:
 
 ---
 
-## Preemptive vs Non-Preemptive Scheduling
+## **Preemptive vs Non-Preemptive Scheduling**
 | Strategy | CPU Ownership Ends When… | Pros | Cons |
 |---|---|---|---|
 | **Preemptive** | Quantum expires or higher-priority arrival | Better for interactivity | More context switch overhead |
@@ -51,7 +50,7 @@ Two typical categories:
 
 ---
 
-## Scheduling Goals
+## **Scheduling Goals**
 | System Type | Major Metrics |
 |---|---|
 | **All systems** | Fairness, CPU balance, enforce policy |
@@ -62,16 +61,16 @@ Two typical categories:
 
 ---
 
-## Common Scheduling Algorithms
+## **Common Scheduling Algorithms**
 
-### 1. First-Come First-Served (FCFS)
+### **1. First-Come First-Served (FCFS)**
 - Non-preemptive
 - Simple FIFO queue 
 Problem: Long jobs block short ones (convoy effect)
 
 ---
 
-### 2. Shortest Job First (SJF)
+### **2. Shortest Job First (SJF)**
 - Non-preemptive, requires job length knowledge
 - Minimizes average turnaround time
 - Not realistic → runtime unknown  
@@ -79,7 +78,7 @@ Risk: Starvation of long jobs
 
 ---
 
-### 3. Round Robin (RR)
+### **3. Round Robin (RR)**
 - Preemptive, equal quantum for each process
 - Very common in interactive systems
 - Choice of quantum matters:
@@ -88,42 +87,42 @@ Risk: Starvation of long jobs
 
 ---
 
-### 4. Priority Scheduling
+### **4. Priority Scheduling**
 - Higher priority tasks run first
 - Can combine with RR per priority class
 - Starvation possible → fix: aging
 
 ---
 
-### 5. Lottery Scheduling
+### **5. Lottery Scheduling**
 - Random scheduling based on # of tickets
 - Dynamic, flexible priority control  
 Good when fairness with weighted share is desired
 
 ---
 
-### 6. Earliest Deadline First (EDF)
+### **6. Earliest Deadline First (EDF)**
 - Real-time focused
 - Run task with closest deadline first
 Hard requirement: process must **announce deadline
 
 ---
 
-## Policy vs. Mechanism
+## **Policy vs. Mechanism**
 - **Scheduling mechanism**: how scheduling is done
 - **Scheduling policy**: who should run + priority rules
 - Parent process can set children priority parameters → avoids assumptions  
 
 ---
 
-## Scheduling Threads
+## **Scheduling Threads**
 User-level vs Kernel-level scheduling  
 - User-level threads: Kernel unaware → user scheduler only
 - Kernel-level threads: Kernel actively chooses runnable threads  
 Determines runnable interleavings (A1, B1, A2, …)
 ---
 
-## Classic Synchronization Problem: Dining Philosophers
+## C**lassic Synchronization Problem: Dining Philosophers**
 Illustrates deadlock + starvation risks
 - Five philosophers share chopsticks
 - Need mutual exclusion on chopsticks
