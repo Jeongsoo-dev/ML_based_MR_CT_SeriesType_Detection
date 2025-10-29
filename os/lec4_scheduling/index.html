@@ -9,25 +9,25 @@
       
       
       
-        <link rel="prev" href="../remote_chair/">
+        <link rel="prev" href="../lec3_ipc_synchronization/">
       
       
-        <link rel="next" href="os_overview/">
+        <link rel="next" href="../../bayesian/">
       
       
-      <link rel="icon" href="../assets/images/favicon.png">
+      <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.22">
     
     
       
-        <title>OS — Notes & Projects - Jeongsoo Pang</title>
+        <title>Scheduling - Jeongsoo Pang</title>
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.84d31ad4.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.84d31ad4.min.css">
       
         
-        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -46,9 +46,9 @@
       
     
     
-      <link rel="stylesheet" href="../stylesheets/extra.css">
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
     
-    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -74,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#operating-systems" class="md-skip">
+        <a href="#scheduling" class="md-skip">
           Skip to content
         </a>
       
@@ -90,7 +90,7 @@
 
 <header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href=".." title="Jeongsoo Pang" class="md-header__button md-logo" aria-label="Jeongsoo Pang" data-md-component="logo">
+    <a href="../.." title="Jeongsoo Pang" class="md-header__button md-logo" aria-label="Jeongsoo Pang" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -110,7 +110,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              OS — Notes & Projects
+              Scheduling
             
           </span>
         </div>
@@ -191,7 +191,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../portfolio/" class="md-tabs__link">
+        <a href="../../portfolio/" class="md-tabs__link">
           
   
   
@@ -213,7 +213,7 @@
     
     
       <li class="md-tabs__item md-tabs__item--active">
-        <a href="./" class="md-tabs__link">
+        <a href="../" class="md-tabs__link">
           
   
   
@@ -233,7 +233,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../bayesian/" class="md-tabs__link">
+        <a href="../../bayesian/" class="md-tabs__link">
           
   
   
@@ -277,7 +277,7 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href=".." title="Jeongsoo Pang" class="md-nav__button md-logo" aria-label="Jeongsoo Pang" data-md-component="logo">
+    <a href="../.." title="Jeongsoo Pang" class="md-nav__button md-logo" aria-label="Jeongsoo Pang" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -336,7 +336,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../portfolio/" class="md-nav__link">
+      <a href="../../portfolio/" class="md-nav__link">
         
   
   
@@ -359,7 +359,7 @@
   
   
     <li class="md-nav__item">
-      <a href=".." class="md-nav__link">
+      <a href="../.." class="md-nav__link">
         
   
   
@@ -382,7 +382,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../anti_drone/" class="md-nav__link">
+      <a href="../../anti_drone/" class="md-nav__link">
         
   
   
@@ -405,7 +405,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../remote_chair/" class="md-nav__link">
+      <a href="../../remote_chair/" class="md-nav__link">
         
   
   
@@ -478,32 +478,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    0. Overview
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
         
   
   
@@ -514,59 +492,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#acknowledgement" class="md-nav__link">
-    <span class="md-ellipsis">
-      Acknowledgement
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#table-of-contents" class="md-nav__link">
-    <span class="md-ellipsis">
-      Table of Contents
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Table of Contents">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#1-critical-section" class="md-nav__link">
-    <span class="md-ellipsis">
-      1. Critical Section
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -579,7 +504,7 @@
   
   
     <li class="md-nav__item">
-      <a href="os_overview/" class="md-nav__link">
+      <a href="../os_overview/" class="md-nav__link">
         
   
   
@@ -602,7 +527,7 @@
   
   
     <li class="md-nav__item">
-      <a href="lec2_process_thread/" class="md-nav__link">
+      <a href="../lec2_process_thread/" class="md-nav__link">
         
   
   
@@ -625,7 +550,7 @@
   
   
     <li class="md-nav__item">
-      <a href="lec3_ipc_synchronization/" class="md-nav__link">
+      <a href="../lec3_ipc_synchronization/" class="md-nav__link">
         
   
   
@@ -645,10 +570,32 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="lec4_scheduling/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    4. Schduling
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -659,6 +606,176 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#author-jeongsoo-pang" class="md-nav__link">
+    <span class="md-ellipsis">
+      Author: Jeongsoo Pang
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#schedulers-role" class="md-nav__link">
+    <span class="md-ellipsis">
+      Scheduler’s Role
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#context-switch-overhead" class="md-nav__link">
+    <span class="md-ellipsis">
+      Context Switch Overhead
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#process-cpu-behavior" class="md-nav__link">
+    <span class="md-ellipsis">
+      Process CPU Behavior
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#preemptive-vs-non-preemptive-scheduling" class="md-nav__link">
+    <span class="md-ellipsis">
+      Preemptive vs Non-Preemptive Scheduling
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#scheduling-goals" class="md-nav__link">
+    <span class="md-ellipsis">
+      Scheduling Goals
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#common-scheduling-algorithms" class="md-nav__link">
+    <span class="md-ellipsis">
+      Common Scheduling Algorithms
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Common Scheduling Algorithms">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-first-come-first-served-fcfs" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. First-Come First-Served (FCFS)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-shortest-job-first-sjf" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Shortest Job First (SJF)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-round-robin-rr" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Round Robin (RR)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-priority-scheduling" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Priority Scheduling
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-lottery-scheduling" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Lottery Scheduling
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-earliest-deadline-first-edf" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Earliest Deadline First (EDF)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#policy-vs-mechanism" class="md-nav__link">
+    <span class="md-ellipsis">
+      Policy vs. Mechanism
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#scheduling-threads" class="md-nav__link">
+    <span class="md-ellipsis">
+      Scheduling Threads
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#classic-synchronization-problem-dining-philosophers" class="md-nav__link">
+    <span class="md-ellipsis">
+      Classic Synchronization Problem: Dining Philosophers
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -719,7 +836,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../bayesian/" class="md-nav__link">
+      <a href="../../bayesian/" class="md-nav__link">
         
   
   
@@ -742,7 +859,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../bayesian/foundations/" class="md-nav__link">
+      <a href="../../bayesian/foundations/" class="md-nav__link">
         
   
   
@@ -765,7 +882,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../bayesian/mle-review/" class="md-nav__link">
+      <a href="../../bayesian/mle-review/" class="md-nav__link">
         
   
   
@@ -788,7 +905,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../bayesian/priors-logic/" class="md-nav__link">
+      <a href="../../bayesian/priors-logic/" class="md-nav__link">
         
   
   
@@ -811,7 +928,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../bayesian/priors-types/" class="md-nav__link">
+      <a href="../../bayesian/priors-types/" class="md-nav__link">
         
   
   
@@ -834,7 +951,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../bayesian/posterior-inference/" class="md-nav__link">
+      <a href="../../bayesian/posterior-inference/" class="md-nav__link">
         
   
   
@@ -857,7 +974,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../bayesian/intervals-prediction/" class="md-nav__link">
+      <a href="../../bayesian/intervals-prediction/" class="md-nav__link">
         
   
   
@@ -880,7 +997,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../bayesian/hypothesis-models/" class="md-nav__link">
+      <a href="../../bayesian/hypothesis-models/" class="md-nav__link">
         
   
   
@@ -903,7 +1020,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../bayesian/loss-decisions/" class="md-nav__link">
+      <a href="../../bayesian/loss-decisions/" class="md-nav__link">
         
   
   
@@ -926,7 +1043,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../bayesian/computation/" class="md-nav__link">
+      <a href="../../bayesian/computation/" class="md-nav__link">
         
   
   
@@ -967,14 +1084,167 @@
 
 
 
-<h1 id="operating-systems">Operating Systems<a class="headerlink" href="#operating-systems" title="Permanent link">&para;</a></h1>
-<h2 id="acknowledgement">Acknowledgement<a class="headerlink" href="#acknowledgement" title="Permanent link">&para;</a></h2>
+<h1 id="scheduling">Scheduling<a class="headerlink" href="#scheduling" title="Permanent link">&para;</a></h1>
+<h2 id="author-jeongsoo-pang"><strong>Author:</strong> Jeongsoo Pang<a class="headerlink" href="#author-jeongsoo-pang" title="Permanent link">&para;</a></h2>
+<h2 id="schedulers-role">Scheduler’s Role<a class="headerlink" href="#schedulers-role" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Professor Manuel Charlemagne</li>
-<li>ECE4820 Introduction to Operation Systems</li>
+<li>Multiple processes <strong>competing</strong> for CPU time</li>
+<li>When more than one is <strong>Ready</strong>, scheduler chooses who runs next</li>
+<li>Affects <strong>perceived system performance</strong></li>
+<li>Scheduling decisions occur on:</li>
+<li><strong>Process creation</strong></li>
+<li><strong>Process exit / blocking</strong></li>
+<li><strong>I/O completion interrupt</strong> </li>
 </ul>
-<h2 id="table-of-contents">Table of Contents<a class="headerlink" href="#table-of-contents" title="Permanent link">&para;</a></h2>
-<h3 id="1-critical-section">1. Critical Section<a class="headerlink" href="#1-critical-section" title="Permanent link">&para;</a></h3>
+<hr />
+<h2 id="context-switch-overhead">Context Switch Overhead<a class="headerlink" href="#context-switch-overhead" title="Permanent link">&para;</a></h2>
+<p>Switching tasks is <strong>expensive</strong>:
+- Trap to kernel mode
+- Save current CPU state (registers, memory map)
+- Select new process &amp; restore its state
+- Resume execution<br />
+Too many switches <strong>waste CPU time</strong>.</p>
+<hr />
+<h2 id="process-cpu-behavior">Process CPU Behavior<a class="headerlink" href="#process-cpu-behavior" title="Permanent link">&para;</a></h2>
+<p>Two typical categories:
+| Type | Behavior | Resource Usage | Notes |
+|---|---|---|---|
+| <strong>CPU-bound</strong> | Long computations | Mostly CPU | Few I/O wait times |
+| <strong>I/O-bound</strong> | Short bursts | Mostly I/O | Spend time waiting |</p>
+<blockquote>
+<p>Modern systems become more I/O-bound as CPUs get faster.</p>
+</blockquote>
+<hr />
+<h2 id="preemptive-vs-non-preemptive-scheduling">Preemptive vs Non-Preemptive Scheduling<a class="headerlink" href="#preemptive-vs-non-preemptive-scheduling" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Strategy</th>
+<th>CPU Ownership Ends When…</th>
+<th>Pros</th>
+<th>Cons</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Preemptive</strong></td>
+<td>Quantum expires or higher-priority arrival</td>
+<td>Better for interactivity</td>
+<td>More context switch overhead</td>
+</tr>
+<tr>
+<td><strong>Non-Preemptive</strong></td>
+<td>Process blocks or exits</td>
+<td>Simpler, lower overhead</td>
+<td>Bad response time if long jobs exist</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>Preemption requires</strong> timer interrupt/hardware support.<br />
+:contentReference[oaicite:4]{index=4}</p>
+</blockquote>
+<hr />
+<h2 id="scheduling-goals">Scheduling Goals<a class="headerlink" href="#scheduling-goals" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>System Type</th>
+<th>Major Metrics</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>All systems</strong></td>
+<td>Fairness, CPU balance, enforce policy</td>
+</tr>
+<tr>
+<td><strong>Interactive</strong></td>
+<td>Response time, proportionality</td>
+</tr>
+<tr>
+<td><strong>Batch</strong></td>
+<td>Throughput ↑, turnaround time ↓, CPU utilization ↑</td>
+</tr>
+<tr>
+<td><strong>Real-Time</strong></td>
+<td>Meet deadlines, predictability (NO data loss)</td>
+</tr>
+<tr>
+<td>:contentReference[oaicite:5]{index=5}</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="common-scheduling-algorithms">Common Scheduling Algorithms<a class="headerlink" href="#common-scheduling-algorithms" title="Permanent link">&para;</a></h2>
+<h3 id="1-first-come-first-served-fcfs">1. First-Come First-Served (FCFS)<a class="headerlink" href="#1-first-come-first-served-fcfs" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Non-preemptive</li>
+<li>Simple FIFO queue 
+Problem: Long jobs block short ones (convoy effect)</li>
+</ul>
+<hr />
+<h3 id="2-shortest-job-first-sjf">2. Shortest Job First (SJF)<a class="headerlink" href="#2-shortest-job-first-sjf" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Non-preemptive, requires job length knowledge</li>
+<li>Minimizes average turnaround time</li>
+<li>Not realistic → runtime unknown<br />
+Risk: Starvation of long jobs</li>
+</ul>
+<hr />
+<h3 id="3-round-robin-rr">3. Round Robin (RR)<a class="headerlink" href="#3-round-robin-rr" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Preemptive, equal quantum for each process</li>
+<li>Very common in interactive systems</li>
+<li>Choice of quantum matters:</li>
+<li>Too small → context switching overhead ↑</li>
+<li>Too large → degenerates to FCFS</li>
+</ul>
+<hr />
+<h3 id="4-priority-scheduling">4. Priority Scheduling<a class="headerlink" href="#4-priority-scheduling" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Higher priority tasks run first</li>
+<li>Can combine with RR per priority class</li>
+<li>Starvation possible → fix: aging</li>
+</ul>
+<hr />
+<h3 id="5-lottery-scheduling">5. Lottery Scheduling<a class="headerlink" href="#5-lottery-scheduling" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Random scheduling based on # of tickets</li>
+<li>Dynamic, flexible priority control<br />
+Good when fairness with weighted share is desired</li>
+</ul>
+<hr />
+<h3 id="6-earliest-deadline-first-edf">6. Earliest Deadline First (EDF)<a class="headerlink" href="#6-earliest-deadline-first-edf" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Real-time focused</li>
+<li>Run task with closest deadline first
+Hard requirement: process must **announce deadline</li>
+</ul>
+<hr />
+<h2 id="policy-vs-mechanism">Policy vs. Mechanism<a class="headerlink" href="#policy-vs-mechanism" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Scheduling mechanism</strong>: how scheduling is done</li>
+<li><strong>Scheduling policy</strong>: who should run + priority rules</li>
+<li>Parent process can set children priority parameters → avoids assumptions  </li>
+</ul>
+<hr />
+<h2 id="scheduling-threads">Scheduling Threads<a class="headerlink" href="#scheduling-threads" title="Permanent link">&para;</a></h2>
+<p>User-level vs Kernel-level scheduling<br />
+- User-level threads: Kernel unaware → user scheduler only
+- Kernel-level threads: Kernel actively chooses runnable threads<br />
+Determines runnable interleavings (A1, B1, A2, …)</p>
+<hr />
+<h2 id="classic-synchronization-problem-dining-philosophers">Classic Synchronization Problem: Dining Philosophers<a class="headerlink" href="#classic-synchronization-problem-dining-philosophers" title="Permanent link">&para;</a></h2>
+<p>Illustrates deadlock + starvation risks
+- Five philosophers share chopsticks
+- Need mutual exclusion on chopsticks
+- Fix involves:
+  - Correct resource ordering
+  - Mutex + state tracking
+  - Semaphores controlling neighbors  </p>
+<p>Key lesson: Scheduling + synchronization are tightly coupled.</p>
 
 
 
@@ -1028,10 +1298,10 @@
     
     
       
-      <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.instant", "toc.integrate"], "search": "../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.instant", "toc.integrate"], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      <script src="../../assets/javascripts/bundle.f55a23d4.min.js"></script>
       
         <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
       
