@@ -629,48 +629,6 @@
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Scheduler’s Role">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#multiple-processes-competing-for-cpu-time" class="md-nav__link">
-    <span class="md-ellipsis">
-      Multiple processes competing for CPU time
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#when-more-than-one-is-ready-scheduler-chooses-who-runs-next" class="md-nav__link">
-    <span class="md-ellipsis">
-      When more than one is Ready, scheduler chooses who runs next
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#affects-perceived-system-performance" class="md-nav__link">
-    <span class="md-ellipsis">
-      Affects perceived system performance
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#scheduling-decisions-occur-on" class="md-nav__link">
-    <span class="md-ellipsis">
-      Scheduling decisions occur on:
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
 </li>
       
         <li class="md-nav__item">
@@ -1120,14 +1078,11 @@
 <h1 id="scheduling">Scheduling<a class="headerlink" href="#scheduling" title="Permanent link">&para;</a></h1>
 <hr />
 <h2 id="schedulers-role"><strong>Scheduler’s Role</strong><a class="headerlink" href="#schedulers-role" title="Permanent link">&para;</a></h2>
-<h3 id="multiple-processes-competing-for-cpu-time">Multiple processes competing for CPU time<a class="headerlink" href="#multiple-processes-competing-for-cpu-time" title="Permanent link">&para;</a></h3>
-<h3 id="when-more-than-one-is-ready-scheduler-chooses-who-runs-next">When more than one is Ready, scheduler chooses who runs next<a class="headerlink" href="#when-more-than-one-is-ready-scheduler-chooses-who-runs-next" title="Permanent link">&para;</a></h3>
-<h3 id="affects-perceived-system-performance">Affects perceived system performance<a class="headerlink" href="#affects-perceived-system-performance" title="Permanent link">&para;</a></h3>
-<h3 id="scheduling-decisions-occur-on">Scheduling decisions occur on:<a class="headerlink" href="#scheduling-decisions-occur-on" title="Permanent link">&para;</a></h3>
 <ul>
-<li>Process creation</li>
-<li>Process exit / blocking</li>
-<li>I/O completion interrupt</li>
+<li>Multiple processes competing for CPU time</li>
+<li>When more than one is Ready, scheduler chooses who runs next</li>
+<li>Affects perceived system performance</li>
+<li>Scheduling decisions occur on: Process creation, Process exit / blocking, or I/O completion interrupt</li>
 </ul>
 <hr />
 <h2 id="context-switch-overhead"><strong>Context Switch Overhead</strong><a class="headerlink" href="#context-switch-overhead" title="Permanent link">&para;</a></h2>
@@ -1293,8 +1248,12 @@ Hard requirement: process must announce deadline</li>
 <ul>
 <li>Five philosophers share chopsticks</li>
 <li>Need mutual exclusion on chopsticks</li>
-<li>Fix involves:</li>
-<li>Correct resource ordering</li>
+<li>
+<p>Fix involves:</p>
+</li>
+<li>
+<p>Correct resource ordering</p>
+</li>
 <li>Mutex + state tracking</li>
 <li>Semaphores controlling neighbors  </li>
 </ul>
