@@ -133,8 +133,52 @@ Illustrates deadlock + starvation risks
   
 ![Solution](../images/dining_2.jpg){ width="500" }
 
-Fix involves:
+### Problem Recap
+- Deadlock : All philosophers pick the left chopstick and wait forever
+- Starvation : A philosopher may never get a chance to eat
+- Concurrency control : Neighbors must not eat simultaneously
 
-1. Correct resource ordering
-2. Mutex + state tracking
-3. Semaphores controlling neighbors  
+### Key Ideas
+| Component                          | Purpose                                               | Effect                                         |
+| ---------------------------------- | ----------------------------------------------------- | ---------------------------------------------- |
+| `state[i]`                         | Each philosopher’s state (THINKING / HUNGRY / EATING) | Allows control logic on neighbors              |
+| `mut` (mutex)                      | Protects access to shared state                       | Ensures mutual exclusion when modifying states |
+| `s[i]` (semaphore per philosopher) | Controls who gets permission to eat                   | Prevents neighbors from eating simultaneously  |
+| `test(i)`                          | Check if philosopher `i` can start eating             | Enforces safe conditions                       |
+
+### Execution Flow
+#### When Philosopher Gets Hungry → `take_cs(i)`
+1. Lock mutex
+2. Set state to `HUNGRY`
+3. Check if neighbors are eating (`test(i)`)
+4. Unlock mutex
+5. Wait until permission is given (`down(s[i])`) → Blocks until chopsticks available
+
+#### After Eating → `put_cs(i)`
+1. Lock mutex
+2. Set state back to `THINKING`
+3. Signal neighbors to try eating (`test(LEFT)` + `test(RIGHT)`)
+4. Unlock mutex
+
+### The Heart of the Solution → `test(i)`
+```c
+if (state[i] == HUNGRY &&
+    state[LEFT] != EATING &&
+    state[RIGHT] != EATING) {
+    state[i] = EATING;
+    up(&s[i]);
+}
+```
+This guarantees:
+
+- A philosopher only eats if both neighbors are not eating
+- Unlocks semaphore for only one philosopher at a time
+
+### How It Solves the Classical Issues
+| Issue                               | How It is Prevented                                                                                                    |
+| ----------------------------------- | ---------------------------------------------------------------------------------------------------------------------- |
+| **Deadlock**                        | No circular wait: philosopher only grabs both chopsticks when allowed; otherwise releases/not blocks while holding one |
+| **Starvation**                      | When a philosopher stops eating, neighbors are **immediately tested and possibly signaled → fairness                 |
+| **Race conditions on state**        | Protected by mutex (`mut`)                                                                                             |
+| **Neighbors eating simultaneously** | `test()` explicitly checks left & right philosopher states                                                             |
+
