@@ -130,6 +130,6 @@ Illustrates deadlock + starvation risks
 - Need mutual exclusion on chopsticks
 - Fix involves:
 
-1.Correct resource ordering
+1. Correct resource ordering
 2. Mutex + state tracking
 3. Semaphores controlling neighbors  
