@@ -129,6 +129,6 @@ Illustrates deadlock + starvation risks
 - Five philosophers share chopsticks
 - Need mutual exclusion on chopsticks
 - Fix involves:
-  - Correct resource ordering
-  - Mutex + state tracking
-  - Semaphores controlling neighbors  
+  1.Correct resource ordering
+  2. Mutex + state tracking
+  3. Semaphores controlling neighbors  
