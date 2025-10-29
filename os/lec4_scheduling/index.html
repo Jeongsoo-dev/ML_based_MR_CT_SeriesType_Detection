@@ -755,15 +755,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#-determines-runnable-interleavings-a1-b1-a2" class="md-nav__link">
-    <span class="md-ellipsis">
-      - Determines runnable interleavings (A1, B1, A2, …)
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#classic-synchronization-problem-dining-philosophers" class="md-nav__link">
     <span class="md-ellipsis">
       Classic Synchronization Problem: Dining Philosophers
@@ -1229,8 +1220,8 @@ Risk: Starvation of long jobs</li>
 <h3 id="5-lottery-scheduling"><strong>5. Lottery Scheduling</strong><a class="headerlink" href="#5-lottery-scheduling" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Random scheduling based on # of tickets</li>
-<li>Dynamic, flexible priority control<br />
-Good when fairness with weighted share is desired</li>
+<li>Dynamic, flexible priority control  </li>
+<li>Good when fairness with weighted share is desired</li>
 </ul>
 <hr />
 <h3 id="6-earliest-deadline-first-edf"><strong>6. Earliest Deadline First (EDF)</strong><a class="headerlink" href="#6-earliest-deadline-first-edf" title="Permanent link">&para;</a></h3>
@@ -1250,15 +1241,12 @@ Hard requirement: process must announce deadline</li>
 <h2 id="scheduling-threads"><strong>Scheduling Threads</strong><a class="headerlink" href="#scheduling-threads" title="Permanent link">&para;</a></h2>
 <p>User-level vs Kernel-level scheduling  </p>
 <ul>
-<li>
-<p>User level threads: Kernel unaware → user scheduler only</p>
-</li>
-<li>
-<p>Kernellevel threads: Kernel actively chooses runnable threads</p>
-</li>
+<li>User level threads: Kernel unaware → user scheduler only</li>
+<li>Kernellevel threads: Kernel actively chooses runnable threads</li>
+<li>Determines runnable interleavings (A1, B1, A2, …)</li>
 </ul>
-<h2 id="-determines-runnable-interleavings-a1-b1-a2">- Determines runnable interleavings (A1, B1, A2, …)<a class="headerlink" href="#-determines-runnable-interleavings-a1-b1-a2" title="Permanent link">&para;</a></h2>
-<h2 id="classic-synchronization-problem-dining-philosophers">C<strong>lassic Synchronization Problem: Dining Philosophers</strong><a class="headerlink" href="#classic-synchronization-problem-dining-philosophers" title="Permanent link">&para;</a></h2>
+<hr />
+<h2 id="classic-synchronization-problem-dining-philosophers"><strong>Classic Synchronization Problem: Dining Philosophers</strong><a class="headerlink" href="#classic-synchronization-problem-dining-philosophers" title="Permanent link">&para;</a></h2>
 <p>Illustrates deadlock + starvation risks</p>
 <ul>
 <li>Five philosophers share chopsticks</li>
