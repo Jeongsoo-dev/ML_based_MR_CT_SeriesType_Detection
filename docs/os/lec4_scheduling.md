@@ -125,11 +125,14 @@ User-level vs Kernel-level scheduling
 
 ## **Classic Synchronization Problem: Dining Philosophers**
 Illustrates deadlock + starvation risks
+
 ![Dining Philosopher](images/dining_1.jpg){ width="900" }
+
 - Five philosophers share chopsticks
 - Need mutual exclusion on chopsticks
-![Solution](images/dining_1.jpg){ width="900" }
   
+![Solution](images/dining_1.jpg){ width="900" }
+
 Fix involves:
 
 1. Correct resource ordering
