@@ -175,5 +175,4 @@ Break at least one of 4 conditions:
 
 ---
 
-<sub>© {{ site.time | date: "%Y" }} Jeongsoo Pang — All rights reserved.</sub>
-
+s
