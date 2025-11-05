@@ -131,7 +131,7 @@ $$
 
 ---
 
-### **Example: Bernoulli**
+### **6.1) Ex1. Bernoulli**
 For $X_i\sim Bern(p)$,  
 $$
 I(p)=\frac{n}{p(1-p)} \Rightarrow \pi(p)\propto [p(1-p)]^{-1/2}
@@ -141,7 +141,7 @@ $$
 p(p)\sim Beta\!\left(\frac{1}{2},\frac{1}{2}\right)
 $$
 
-### **Example: Normal mean (σ² known)**
+### **6.2) Ex2.Example: Normal mean (σ² known)**
 For $X\sim N(\mu,\sigma^2)$,
 $$
 I(\mu)=\frac{1}{\sigma^2} \Rightarrow \pi(\mu)\propto1
