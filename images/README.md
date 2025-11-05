@@ -102,36 +102,57 @@ Available resources: $[3,3,2]$.
 
 I attempt to find a safe sequence using the Banker's Algorithm.
 
-1. **$P_2$**: Need $(1,2,2)\le(3,3,2)$  
-   Work update:
-   $$
-   \mathbf{Work}\leftarrow(3,3,2)+(2,0,0)=(5,3,2)
-   $$
+**(P_2\)**  
+Need \((1,2,2) \le (3,3,2)\)
 
-2. **$P_4$**: Need $(0,1,1)\le(5,3,2)$  
-   Work update:
-   $$
-   \mathbf{Work}\leftarrow(5,3,2)+(2,1,1)=(7,4,3)
-   $$
+Work update:
 
-3. **$P_5$**: Need $(4,3,1)\le(7,4,3)$  
-   Work update:
-   $$
-   \mathbf{Work}\leftarrow(7,4,3)+(0,0,2)=(7,4,5)
-   $$
+$$
+\mathbf{Work} \leftarrow (3,3,2) + (2,0,0) = (5,3,2)
+$$
 
-4. **$P_1$**: Need $(7,4,3)\le(7,4,5)$  
-   Work update:
-   $$
-   \mathbf{Work}\leftarrow(7,4,5)+(0,1,0)=(7,5,5)
-   $$
+**(P_4\)**  
+Need \((0,1,1) \le (5,3,2)\)
 
-5. **$P_3$**: Need $(6,0,0)\le(7,5,5)$  
-   Work update:
-   $$
-   \mathbf{Work}\leftarrow(7,5,5)+(3,0,2)=(10,5,7)
-   $$
-   
+Work update:
+
+$$
+\mathbf{Work} \leftarrow (5,3,2) + (2,1,1) = (7,4,3)
+$$
+
+**(P_5\)**  
+Need \((4,3,1) \le (7,4,3)\)
+
+Work update:
+
+$$
+\mathbf{Work} \leftarrow (7,4,3) + (0,0,2) = (7,4,5)
+$$
+
+**(P_1\)**  
+Need \((7,4,3) \le (7,4,5)\)
+
+Work update:
+
+$$
+\mathbf{Work} \leftarrow (7,4,5) + (0,1,0) = (7,5,5)
+$$
+
+**(P_3\)**  
+Need \((6,0,0) \le (7,5,5)\)
+
+Work update:
+
+$$
+\mathbf{Work} \leftarrow (7,5,5) + (3,0,2) = (10,5,7)
+$$
+
+Safe sequence:
+
+$$
+P_2 \rightarrow P_4 \rightarrow P_5 \rightarrow P_1 \rightarrow P_3
+$$
+
 #### 3. Can all the processes be completed without the system being in an unsafe state at any stage?
 Yes, executing processes in the safe sequence above ensures that at no stage does the system enter an unsafe state, and all processes complete.
 
