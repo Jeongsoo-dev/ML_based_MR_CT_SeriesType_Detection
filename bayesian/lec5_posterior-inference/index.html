@@ -857,30 +857,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#4-maximum-posterior-estimator" class="md-nav__link">
-    <span class="md-ellipsis">
-      4) Maximum Posterior Estimator
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="4) Maximum Posterior Estimator">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#41-example" class="md-nav__link">
-    <span class="md-ellipsis">
-      4.1 Example
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#5-posterior-mean-shrinkage" class="md-nav__link">
     <span class="md-ellipsis">
       5) Posterior Mean &amp; Shrinkage
@@ -891,9 +867,9 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#51-beta-binomial-example" class="md-nav__link">
+  <a href="#51-betabinomial-example" class="md-nav__link">
     <span class="md-ellipsis">
-      5.1 Beta-Binomial Example
+      5.1 Beta–Binomial Example
     </span>
   </a>
   
@@ -1110,30 +1086,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#4-maximum-posterior-estimator" class="md-nav__link">
-    <span class="md-ellipsis">
-      4) Maximum Posterior Estimator
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="4) Maximum Posterior Estimator">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#41-example" class="md-nav__link">
-    <span class="md-ellipsis">
-      4.1 Example
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#5-posterior-mean-shrinkage" class="md-nav__link">
     <span class="md-ellipsis">
       5) Posterior Mean &amp; Shrinkage
@@ -1144,9 +1096,9 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#51-beta-binomial-example" class="md-nav__link">
+  <a href="#51-betabinomial-example" class="md-nav__link">
     <span class="md-ellipsis">
-      5.1 Beta-Binomial Example
+      5.1 Beta–Binomial Example
     </span>
   </a>
   
@@ -1272,82 +1224,35 @@ p(\sigma^2 \mid y) \propto (\sigma^2)^{-\frac{n}{2}-1} \exp\left(-\frac{1}{2\sig
 $$</p>
 <p>⇒ <span class="arithmatex">\(\sigma^2 | y \sim \text{Inv-Gamma}\left(\frac{n}{2}, \frac{1}{2} \sum (y_i - \mu)^2\right)\)</span></p>
 <hr />
-<h2 id="4-maximum-posterior-estimator"><strong>4) Maximum Posterior Estimator</strong><a class="headerlink" href="#4-maximum-posterior-estimator" title="Permanent link">&para;</a></h2>
-<p>MAP = Posterior Mode</p>
-<div class="arithmatex">\[
-\hat{\theta}_{MAP} = \arg\max_{\theta} \, p(\theta | D)
-= \arg\max_{\theta} \, \log p(D | \theta) + \log \pi(\theta)
-\]</div>
-<table>
-<thead>
-<tr>
-<th>Estimator</th>
-<th>Formula</th>
-<th>Prior Used</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>MLE</strong></td>
-<td>$\arg\max_\theta \, p(D</td>
-<td>\theta)$</td>
-</tr>
-<tr>
-<td><strong>MAP</strong></td>
-<td>$\arg\max_\theta \, p(D</td>
-<td>\theta)\pi(\theta)$</td>
-</tr>
-</tbody>
-</table>
-<hr />
-<h3 id="41-example"><strong>4.1 Example</strong><a class="headerlink" href="#41-example" title="Permanent link">&para;</a></h3>
-<p>Data: <span class="arithmatex">\(x = (0,0,1,1,0)\)</span> from Bernoulli(<span class="arithmatex">\(\theta\)</span>)</p>
-<ul>
-<li>
-<p>MLE:
-  $$
-  \hat{\theta}_{MLE} = \frac{2}{5} = 0.4
-  $$</p>
-</li>
-<li>
-<p>If prior: <span class="arithmatex">\(\theta \in \{0.2, 0.5, 0.7\}\)</span> with<br />
-<span class="arithmatex">\(\pi = \{0.1,0.01,0.89\}\)</span></p>
-</li>
-</ul>
-<p>→ MAP = 0.7 (prior dominates)</p>
-<hr />
 <h2 id="5-posterior-mean-shrinkage"><strong>5) Posterior Mean &amp; Shrinkage</strong><a class="headerlink" href="#5-posterior-mean-shrinkage" title="Permanent link">&para;</a></h2>
 <p>Posterior mean is a weighted average of data + prior.</p>
-<h3 id="51-beta-binomial-example"><strong>5.1 Beta-Binomial Example</strong><a class="headerlink" href="#51-beta-binomial-example" title="Permanent link">&para;</a></h3>
-<p>If <span class="arithmatex">\(X_i \sim \text{Bern}(\theta)\)</span>, <span class="arithmatex">\(\pi(\theta) \sim \text{Beta}(\alpha,\beta)\)</span>:</p>
+<h3 id="51-betabinomial-example"><strong>5.1 Beta–Binomial Example</strong><a class="headerlink" href="#51-betabinomial-example" title="Permanent link">&para;</a></h3>
+<p>If <span class="arithmatex">\(X_i \sim \operatorname{Bern}(\theta)\)</span> and <span class="arithmatex">\(\pi(\theta)\sim \operatorname{Beta}(\alpha,\beta)\)</span>:</p>
 <ul>
-<li>
-<p>Posterior:
-$$
-\theta | X \sim \text{Beta}(\alpha + S_n,\;\beta + n - S_n)
-$$</p>
-</li>
-<li>
-<p>Posterior Mean:</p>
-</li>
+<li><strong>Posterior</strong></li>
 </ul>
-<div class="arithmatex">\[
-\hat{\theta}_E = \frac{S_n + \alpha}{n + \alpha + \beta}
-= \lambda \cdot \hat{\theta}_{MLE} + (1-\lambda)\theta_{prior}
-\]</div>
-<p>where<br />
-$$
-\lambda = \frac{n}{n + \alpha + \beta}
-$$</p>
+<p>$$
+  \theta \mid X \sim \operatorname{Beta}(\alpha+S_n,\;\beta+n-S_n)
+  $$</p>
+<ul>
+<li><strong>Posterior Mean</strong></li>
+</ul>
+<p>$$
+  \hat{\theta}<em _text_MLE="\text{MLE">E
+  = \frac{S_n+\alpha}{n+\alpha+\beta}
+  = \lambda\,\hat{\theta}</em>,
+  \qquad
+  \lambda=\frac{n}{n+\alpha+\beta}
+  $$}} + (1-\lambda)\,\theta_{\text{prior}</p>
 <hr />
 <h2 id="6-posterior-variance"><strong>6) Posterior Variance</strong><a class="headerlink" href="#6-posterior-variance" title="Permanent link">&para;</a></h2>
-<p>For Beta-Binomial:</p>
+<p>For Beta–Binomial:</p>
 <div class="arithmatex">\[
-\text{Var}(\theta | X) =
-\frac{(\alpha+S_n)(\beta+n-S_n)}{(n + \alpha + \beta)^2(n + \alpha + \beta + 1)}
+\operatorname{Var}(\theta \mid X)
+= \frac{(\alpha+S_n)(\beta+n-S_n)}{(n+\alpha+\beta)^2\, (n+\alpha+\beta+1)}
 \]</div>
 <ul>
-<li>As <span class="arithmatex">\(n \uparrow\)</span> → Variance <span class="arithmatex">\(\downarrow\)</span> → Posterior concentrates.</li>
+<li>As <span class="arithmatex">\(n \uparrow\)</span> → variance <span class="arithmatex">\(\downarrow\)</span> → posterior concentrates.</li>
 </ul>
 <hr />
 <h2 id="7-credible-intervals-vs-confidence-intervals"><strong>7) Credible Intervals vs Confidence Intervals</strong><a class="headerlink" href="#7-credible-intervals-vs-confidence-intervals" title="Permanent link">&para;</a></h2>
@@ -1361,19 +1266,19 @@ $$</p>
 </thead>
 <tbody>
 <tr>
-<td>Definition</td>
-<td>Interval <span class="arithmatex">\(C(D)\)</span> s.t. <span class="arithmatex">\(P_\theta(\theta \in C(D)) = 1-\alpha\)</span></td>
-<td>$P(\theta \in I</td>
+<td><strong>Definition</strong></td>
+<td>Interval <span class="arithmatex">\(C(D)\)</span> s.t. <span class="arithmatex">\(P_\theta\!\big(\theta \in C(D)\big)=1-\alpha\)</span></td>
+<td><span class="arithmatex">\(P\!\big(\theta \in I \mid D\big)=1-\alpha\)</span></td>
 </tr>
 <tr>
-<td>Probability refers to</td>
+<td><strong>Probability refers to</strong></td>
 <td>Data variability</td>
 <td>Parameter uncertainty</td>
 </tr>
 <tr>
-<td>Interpretation</td>
-<td>In repeated sampling, captures true θ 95% of time</td>
-<td>Given data, θ has 95% chance in interval</td>
+<td><strong>Interpretation</strong></td>
+<td>In repeated sampling, captures true <span class="arithmatex">\(\theta\)</span> 95% of time</td>
+<td>Given data, <span class="arithmatex">\(\theta\)</span> has 95% chance in interval</td>
 </tr>
 </tbody>
 </table>
