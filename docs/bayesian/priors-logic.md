@@ -146,3 +146,5 @@ $$
 ## **One-sentence Note**
 > *Conjugate priors turn Bayes’ rule into simple algebra: prior hyperparameters update with sufficient statistics, giving closed-form posteriors and crisp interpretations (precision-weighted averaging, count-additivity).*
 
+---
+<sub>© Jeongsoo Pang — All rights reserved
