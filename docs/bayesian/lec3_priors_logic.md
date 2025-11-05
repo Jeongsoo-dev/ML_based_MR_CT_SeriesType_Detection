@@ -82,7 +82,9 @@ A prior $\pi(\theta)$ is **conjugate** to likelihood $p(x\mid\theta)$ if the **p
 ---
 
 ## **5) Variance Priors & Joint Conjugacy for Normal**
-### **5.1) Inverse-Gamma for variance (mean known)**
+### **5.1) Inverse-Gamma for variance**
+(mean known)
+
 - $X\sim\mathcal N(\mu,\sigma^2)$ with $\mu$ known  
 - Prior: $\sigma^2\sim\mathrm{InvGamma}(\alpha,\beta)$  
 - Posterior:
@@ -90,7 +92,9 @@ A prior $\pi(\theta)$ is **conjugate** to likelihood $p(x\mid\theta)$ if the **p
   \sigma^2 \mid X \sim \mathrm{InvGamma}\!\left(\alpha+\tfrac12,\;\beta+\tfrac12(X-\mu)^2\right)
   $$
 
-### **5.2) Normal–Inverse-Gamma (mean & variance unknown)**
+### **5.2) Normal–Inverse-Gamma**
+(mean & variance unknown)
+
 - Likelihood: $X\mid\mu,\sigma^2\sim\mathcal N(\mu,\sigma^2)$  
 - Prior: 
   $$
@@ -119,7 +123,7 @@ A prior $\pi(\theta)$ is **conjugate** to likelihood $p(x\mid\theta)$ if the **p
 
 ---
 
-## **7) Exponential Family View (why conjugacy is common)**
+## **7) Exponential Family View**
 Many likelihoods satisfy  
 $$
 p(x\mid\eta)=h(x)\exp\{\eta^\top t(x)-g(\eta)\}
