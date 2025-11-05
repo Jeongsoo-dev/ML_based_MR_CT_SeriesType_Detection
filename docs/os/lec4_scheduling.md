@@ -182,3 +182,5 @@ This guarantees:
 | **Race conditions on state**        | Protected by mutex (`mut`)                                                                                             |
 | **Neighbors eating simultaneously** | `test()` explicitly checks left & right philosopher states                                                             |
 
+<sub>© Jeongsoo Pang — All rights reserved
+
