@@ -77,6 +77,7 @@ Data: $x = (0,0,1,1,0)$ from Bernoulli($\theta$)
   $$
 
 - **Discrete prior**: $\theta \in \{0.2,0.5,0.7\}$ with $\pi=\{0.1,0.01,0.89\}$ → MAP $=0.7$
+
 ---
 ## **5) Posterior Mean & Shrinkage**
 
