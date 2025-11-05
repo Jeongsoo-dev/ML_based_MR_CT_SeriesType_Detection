@@ -5,8 +5,6 @@ hide:
 ---
 
 # **4. Prior Distributions II (Advanced Priors)**
-**Author:** Jeongsoo Pang  
-
 ---
 
 ## **1) Overview**
@@ -67,6 +65,7 @@ which is proper—so flat prior $\pi(\mu)\propto1$ works fine
 - **Flat prior:** Constant over parameter space (e.g., $\pi(\theta)\propto1$), fully noninformative.
 
 **Noninformative priors**:
+
 - Aim to let data “speak for itself.”  
 - Used in **objective Bayes** when little prior knowledge exists.  
 - No universally agreed definition — depends on model parameterization.  
@@ -76,7 +75,7 @@ which is proper—so flat prior $\pi(\mu)\propto1$ works fine
 ## **5) Parameterization Sensitivity**
 Noninformative priors depend heavily on how parameters are defined.
 
-### **Example 1 — Binomial model**
+### **5.1) Ex1. Binomial model**
 For $y\sim Bin(n,\theta)$:
 
 - Flat prior: $\theta\sim Uniform(0,1)$ or $\text{Beta}(1,1)$  
@@ -84,7 +83,7 @@ For $y\sim Bin(n,\theta)$:
   \Rightarrow \theta|y\sim Beta(y+1, n-y+1)
   $$
 
-### **Example 2 — Odds transformation**
+### **5.2) Ex2. Odds transformation**
 Let $o=\frac{\theta}{1-\theta}$ and assume flat prior on $o$ ($p(o)\propto1$).  
 Then the induced prior on $\theta$ is:
 $$
@@ -100,7 +99,7 @@ Posterior becomes improper when $n-y\le1$
 
 ---
 
-### **Example 3 — Log-odds reparameterization**
+### **5.3) Ex3. Log-odds reparameterization**
 Let $\rho=\log\!\left(\frac{\theta}{1-\theta}\right)$ and assume $\rho\sim Uniform(-\infty,\infty)$.  
 Then,
 $$
@@ -115,7 +114,7 @@ $$
 ---
 
 ## **6) Jeffreys’ Prior**
-**Motivation:** A prior should remain “uninformative” under smooth reparameterization.  
+Motivation: prior should remain “uninformative” under smooth reparameterization.  
 
 Jeffreys’ Rule:
 $$
@@ -147,7 +146,7 @@ For $X\sim N(\mu,\sigma^2)$,
 $$
 I(\mu)=\frac{1}{\sigma^2} \Rightarrow \pi(\mu)\propto1
 $$
-⇒ Jeffreys’ prior is **uniform** (improper)
+⇒ Jeffreys’ prior is **uniform**
 
 ---
 
@@ -180,7 +179,7 @@ $$
 ---
 
 ## **Summary**
-> *A prior’s “uninformativeness” depends on the parameter scale. Jeffreys’ rule and weakly informative priors balance mathematical invariance and practical stability—ensuring the data, not arbitrary parameterization, drives inference.*
+> *A prior’s “uninformativeness” depends on the parameter scale. Jeffreys’ rule and weakly informative priors balance mathematical invariance and practical stability which ensures the data, not arbitrary parameterization, drives inference.*
 
 ---
 <sub>© Jeongsoo Pang — All rights reserved
