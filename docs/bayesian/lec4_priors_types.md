@@ -52,9 +52,11 @@ the posterior $\text{Beta}(y, n-y)$ is proper when $y,n-y>0$.
 
 For $X_i\sim N(\mu,\sigma^2)$ with $\pi(\mu)\propto1$,
 
+
 $$
 \mu|x\sim N(\bar{x},\sigma^2/n)
 $$
+
 which is proper—so flat prior $\pi(\mu)\propto1$ works fine
 
 ---
@@ -94,7 +96,7 @@ Posterior under Binomial likelihood:
 $$
 p(\theta|y)\propto \theta^y(1-\theta)^{n-y-2} \Rightarrow \theta|y\sim Beta(y+1, n-y-1)
 $$
-Posterior becomes improper when $n-y\le1$:contentReference[oaicite:3]{index=3}.
+Posterior becomes improper when $n-y\le1$
 
 ---
 
