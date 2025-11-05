@@ -16,7 +16,7 @@
     
     
       
-        <title>Page Title - Jeongsoo Pang</title>
+        <title>Bayesian Inference - Jeongsoo Pang</title>
       
     
     
@@ -70,7 +70,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#page-title" class="md-skip">
+        <a href="#6-bayesian-inference" class="md-skip">
           Skip to content
         </a>
       
@@ -106,7 +106,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Page Title
+              Bayesian Inference
             
           </span>
         </div>
@@ -906,6 +906,134 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-key-concepts" class="md-nav__link">
+    <span class="md-ellipsis">
+      1) Key Concepts
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-confidence-vs-credible-interval" class="md-nav__link">
+    <span class="md-ellipsis">
+      2) Confidence vs Credible Interval
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2) Confidence vs Credible Interval">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-confidence-interval-frequentist" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.1 Confidence Interval (Frequentist)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-credible-interval-bayesian" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.2 Credible Interval (Bayesian)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-types-of-credible-intervals" class="md-nav__link">
+    <span class="md-ellipsis">
+      3) Types of Credible Intervals
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-hpd-interval-definition" class="md-nav__link">
+    <span class="md-ellipsis">
+      4) HPD Interval Definition
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-ex1beta-binomial-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      5) Ex1.Beta-Binomial Model
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-ex2exponential-with-gamma-prior" class="md-nav__link">
+    <span class="md-ellipsis">
+      6) Ex2.Exponential with Gamma Prior
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-ex3censored-exponential-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      7) Ex3.Censored Exponential Data
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-bayesian-prediction" class="md-nav__link">
+    <span class="md-ellipsis">
+      8) Bayesian Prediction
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-bayesian-hypothesis-testing" class="md-nav__link">
+    <span class="md-ellipsis">
+      9) Bayesian Hypothesis Testing
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="9) Bayesian Hypothesis Testing">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bayes-factor-bf" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bayes Factor (BF)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -922,8 +1050,169 @@
 
 
 
-<h1 id="page-title">Page Title<a class="headerlink" href="#page-title" title="Permanent link">&para;</a></h1>
-<p><em>Work-in-progress.</em></p>
+<h1 id="6-bayesian-inference"><strong>6. Bayesian Inference</strong><a class="headerlink" href="#6-bayesian-inference" title="Permanent link">&para;</a></h1>
+<hr />
+<h2 id="1-key-concepts"><strong>1) Key Concepts</strong><a class="headerlink" href="#1-key-concepts" title="Permanent link">&para;</a></h2>
+<p>This lecture focuses on:</p>
+<ul>
+<li>Difference between *onfidence Intervals (Frequentist) and Credible Intervals (Bayesian)</li>
+<li>HPD (Highest Posterior Density) intervals</li>
+<li>Bayesian credible interval calculation</li>
+<li>Posterior prediction</li>
+<li>Bayesian hypothesis testing &amp; Bayes Factor</li>
+</ul>
+<hr />
+<h2 id="2-confidence-vs-credible-interval"><strong>2) Confidence vs Credible Interval</strong><a class="headerlink" href="#2-confidence-vs-credible-interval" title="Permanent link">&para;</a></h2>
+<h3 id="21-confidence-interval-frequentist"><strong>2.1 Confidence Interval (Frequentist)</strong><a class="headerlink" href="#21-confidence-interval-frequentist" title="Permanent link">&para;</a></h3>
+<p>A 100(1−α)% confidence interval satisfies:</p>
+<div class="arithmatex">\[
+P_\theta(\theta \in C(X)) = 1 - \alpha
+\]</div>
+<ul>
+<li>Probability refers to the random sample, not θ.</li>
+<li>Example (Normal mean, σ known):
+  $$
+  \bar{X} \pm z_{\alpha/2} \frac{\sigma}{\sqrt{n}}
+  $$</li>
+</ul>
+<h3 id="22-credible-interval-bayesian"><strong>2.2 Credible Interval (Bayesian)</strong><a class="headerlink" href="#22-credible-interval-bayesian" title="Permanent link">&para;</a></h3>
+<p>A 100(1−α)% credible interval I satisfies:</p>
+<div class="arithmatex">\[
+P(\theta \in I \mid X) = 1 - \alpha
+\]</div>
+<ul>
+<li>Probability is with respect to the posterior distribution of θ.</li>
+<li>Directly interpretable as belief about θ after seeing data.</li>
+</ul>
+<hr />
+<h2 id="3-types-of-credible-intervals"><strong>3) Types of Credible Intervals</strong><a class="headerlink" href="#3-types-of-credible-intervals" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Interval Type</th>
+<th>Definition</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Equal-Tailed</strong></td>
+<td>Lower α/2 and upper 1−α/2 posterior quantiles</td>
+</tr>
+<tr>
+<td><strong>HPD (Highest Posterior Density)</strong></td>
+<td>Shortest interval B such that ∫_B p(θ</td>
+</tr>
+<tr>
+<td><strong>One-Sided</strong></td>
+<td>[a, ∞) or (−∞, b]</td>
+</tr>
+<tr>
+<td><strong>Two-Sided</strong></td>
+<td>Symmetric around mean or median (if posterior is symmetric)</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="4-hpd-interval-definition"><strong>4) HPD Interval Definition</strong><a class="headerlink" href="#4-hpd-interval-definition" title="Permanent link">&para;</a></h2>
+<p>For a posterior π(θ|x), HPD region is:</p>
+<div class="arithmatex">\[
+\text{HPD} = \{\theta : \pi(\theta|x) \ge k \}
+\]</div>
+<p>where k is chosen such that:</p>
+<div class="arithmatex">\[
+\int_{\{\pi(\theta|x) \ge k\}} \pi(\theta|x) \, d\theta = 1 - \alpha
+\]</div>
+<ul>
+<li>If posterior is unimodal → HPD is one interval  </li>
+<li>If multimodal → HPD may consist of disjoint intervals</li>
+</ul>
+<hr />
+<h2 id="5-ex1beta-binomial-model"><strong>5) Ex1.Beta-Binomial Model</strong><a class="headerlink" href="#5-ex1beta-binomial-model" title="Permanent link">&para;</a></h2>
+<p>Given:
+- Data: <span class="arithmatex">\(x = 11\)</span> successes out of <span class="arithmatex">\(n = 12\)</span>
+- Prior: <span class="arithmatex">\(\theta \sim \text{Beta}(7, 3)\)</span></p>
+<p>Posterior:</p>
+<div class="arithmatex">\[
+\theta | x \sim \text{Beta}(18, 4)
+\]</div>
+<p>MAP estimate:</p>
+<div class="arithmatex">\[
+\hat{\theta}_{MAP} = \frac{α - 1}{α + β - 2}
+= \frac{17}{20} = 0.85
+\]</div>
+<p>80% Equal-Tailed CI:</p>
+<div class="arithmatex">\[
+[\theta_{0.1}, \theta_{0.9}] = [0.709,\, 0.914]
+\]</div>
+<p>80% HPD Interval:</p>
+<div class="arithmatex">\[
+[0.7329,\, 0.9313]
+\]</div>
+<hr />
+<h2 id="6-ex2exponential-with-gamma-prior"><strong>6) Ex2.Exponential with Gamma Prior</strong><a class="headerlink" href="#6-ex2exponential-with-gamma-prior" title="Permanent link">&para;</a></h2>
+<p>Model:
+- <span class="arithmatex">\(X_i \sim \text{Exponential}(\theta)\)</span> (θ is mean)
+- Prior: <span class="arithmatex">\(\theta \sim \text{Gamma}(r, \lambda)\)</span></p>
+<p>Posterior:</p>
+<div class="arithmatex">\[
+\theta | x \sim \text{Gamma}(r + n, \lambda + \sum x_i)
+\]</div>
+<p>Example values:
+- <span class="arithmatex">\(n = 13\)</span>, <span class="arithmatex">\(\bar{x} = 0.21\)</span>
+- <span class="arithmatex">\(r = 7\)</span>, <span class="arithmatex">\(\lambda = 12\)</span>
+→ Posterior: <span class="arithmatex">\(\text{Gamma}(20, 39.3)\)</span><br />
+95% credible interval = <strong>2.5% and 97.5% quantiles</strong></p>
+<hr />
+<h2 id="7-ex3censored-exponential-data"><strong>7) Ex3.Censored Exponential Data</strong><a class="headerlink" href="#7-ex3censored-exponential-data" title="Permanent link">&para;</a></h2>
+<p>Survival model:
+$$
+f(t|\theta) = \frac{1}{\theta} e^{-t/\theta}
+$$</p>
+<p>If r failures observed at times <span class="arithmatex">\(t_1,...,t_r\)</span> and <span class="arithmatex">\((n-r)\)</span> survive until <span class="arithmatex">\(t_r\)</span>:</p>
+<p>Total exposure time:</p>
+<div class="arithmatex">\[
+T = \sum_{i=1}^{r} t_i + (n - r) t_r
+\]</div>
+<p>Likelihood:</p>
+<div class="arithmatex">\[
+L(\theta|t) \propto \theta^{-r} \exp\left(-\frac{T}{\theta}\right)
+\]</div>
+<p>With prior <span class="arithmatex">\(\theta \sim \text{Inv-Gamma}(α, β)\)</span>:
+$$
+\theta | t \sim \text{Inv-Gamma}(α + r,\, β + T)
+$$</p>
+<hr />
+<h2 id="8-bayesian-prediction"><strong>8) Bayesian Prediction</strong><a class="headerlink" href="#8-bayesian-prediction" title="Permanent link">&para;</a></h2>
+<p>Predictive distribution of new data <span class="arithmatex">\(X_{n+1}\)</span>:</p>
+<div class="arithmatex">\[
+p(x_{n+1}|D) = \int p(x_{n+1}|\theta) \, p(\theta|D) \, d\theta
+\]</div>
+<p>Interpretation: weighted average of likelihood using posterior as weights.</p>
+<hr />
+<h2 id="9-bayesian-hypothesis-testing"><strong>9) Bayesian Hypothesis Testing</strong><a class="headerlink" href="#9-bayesian-hypothesis-testing" title="Permanent link">&para;</a></h2>
+<p>Posterior probabilities:</p>
+<div class="arithmatex">\[
+P(H_0 | x), \quad P(H_1 | x)
+\]</div>
+<p>Decision Rule:
+- If <span class="arithmatex">\(P(H_0 | x) &gt; P(H_1 | x)\)</span> → accept <span class="arithmatex">\(H_0\)</span>
+- If close → inconclusive</p>
+<hr />
+<h3 id="bayes-factor-bf"><strong>Bayes Factor (BF)</strong><a class="headerlink" href="#bayes-factor-bf" title="Permanent link">&para;</a></h3>
+<p>For hypotheses <span class="arithmatex">\(H_0: θ = θ_0\)</span> vs <span class="arithmatex">\(H_1: θ = θ_1\)</span>:</p>
+<div class="arithmatex">\[
+B_{01} = \frac{f(x|\theta_0)}{f(x|\theta_1)}
+\]</div>
+<p>Posterior Odds:</p>
+<div class="arithmatex">\[
+\frac{P(H_0|x)}{P(H_1|x)}
+= B_{01} \cdot \frac{P(H_0)}{P(H_1)}
+\]</div>
+<p>Interpretation:
+- <span class="arithmatex">\(B_{01} &gt; 1\)</span>: data support <span class="arithmatex">\(H_0\)</span>
+- <span class="arithmatex">\(B_{01} &lt; 1\)</span>: data support <span class="arithmatex">\(H_1\)</span></p>
+<hr />
+<p><sub>© Jeongsoo Pang — All rights reserved</sub></p>
 
 
 

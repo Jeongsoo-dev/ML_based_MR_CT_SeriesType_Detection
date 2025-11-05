@@ -16,7 +16,7 @@
     
     
       
-        <title>Page Title - Jeongsoo Pang</title>
+        <title>Bayesian Inference - Jeongsoo Pang</title>
       
     
     
@@ -70,7 +70,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#page-title" class="md-skip">
+        <a href="#5-bayesian-inference" class="md-skip">
           Skip to content
         </a>
       
@@ -106,7 +106,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Page Title
+              Bayesian Inference
             
           </span>
         </div>
@@ -906,6 +906,131 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      1) Overview
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-improper-jeffreys-prior" class="md-nav__link">
+    <span class="md-ellipsis">
+      2) Improper &amp; Jeffreys’ Prior
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-posterior-derivation-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      3) Posterior Derivation Example
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-maximum-a-posteriori-estimator" class="md-nav__link">
+    <span class="md-ellipsis">
+      4) Maximum a Posteriori Estimator
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4) Maximum a Posteriori Estimator">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.1 Example
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-posterior-mean-shrinkage" class="md-nav__link">
+    <span class="md-ellipsis">
+      5) Posterior Mean &amp; Shrinkage
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5) Posterior Mean &amp; Shrinkage">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51-beta-binomial-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.1 Beta-Binomial Example
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-posterior-variance" class="md-nav__link">
+    <span class="md-ellipsis">
+      6) Posterior Variance
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-credible-intervals-vs-confidence-intervals" class="md-nav__link">
+    <span class="md-ellipsis">
+      7) Credible Intervals vs Confidence Intervals
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7) Credible Intervals vs Confidence Intervals">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#71-types-of-credible-intervals" class="md-nav__link">
+    <span class="md-ellipsis">
+      7.1 Types of Credible Intervals
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-bayesian-prediction" class="md-nav__link">
+    <span class="md-ellipsis">
+      8) Bayesian Prediction
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -922,8 +1047,183 @@
 
 
 
-<h1 id="page-title">Page Title<a class="headerlink" href="#page-title" title="Permanent link">&para;</a></h1>
-<p><em>Work-in-progress.</em></p>
+<h1 id="5-bayesian-inference"><strong>5. Bayesian Inference</strong><a class="headerlink" href="#5-bayesian-inference" title="Permanent link">&para;</a></h1>
+<hr />
+<h2 id="1-overview"><strong>1) Overview</strong><a class="headerlink" href="#1-overview" title="Permanent link">&para;</a></h2>
+<p>Bayesian inference updates belief about unknown parameters using prior knowledge and observed data.</p>
+<ul>
+<li><strong>Goal:</strong> Compute the <strong>posterior distribution</strong><br />
+  $$
+  p(\theta \mid D) = \frac{p(D \mid \theta) \pi(\theta)}{p(D)}
+  $$</li>
+<li>Prior reflects belief before data → Updated into posterior after observing data.</li>
+<li>
+<p>Posterior distribution enables:</p>
+</li>
+<li>
+<p>Estimation (MAP, posterior mean)</p>
+</li>
+<li>Credible intervals</li>
+<li>Prediction for future data</li>
+</ul>
+<hr />
+<h2 id="2-improper-jeffreys-prior"><strong>2) Improper &amp; Jeffreys’ Prior</strong><a class="headerlink" href="#2-improper-jeffreys-prior" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Concept</th>
+<th>Definition</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Improper Prior</strong></td>
+<td>Prior that does <strong>not integrate to 1</strong>, but can still yield a proper posterior</td>
+<td><span class="arithmatex">\(\pi(\sigma^2) \propto \frac{1}{\sigma^2}\)</span></td>
+</tr>
+<tr>
+<td><strong>Jeffreys’ Prior</strong></td>
+<td>Objective noninformative prior derived from Fisher Information <span class="arithmatex">\(I(\theta)\)</span></td>
+<td><span class="arithmatex">\(\pi(\theta) \propto \sqrt{I(\theta)}\)</span></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="3-posterior-derivation-example"><strong>3) Posterior Derivation Example</strong><a class="headerlink" href="#3-posterior-derivation-example" title="Permanent link">&para;</a></h2>
+<p>(Variance of Normal)</p>
+<p>Let <span class="arithmatex">\(Y_i \sim N(\mu, \sigma^2)\)</span> with improper prior:
+$$
+\pi(\sigma^2) \propto \frac{1}{\sigma^2}
+$$</p>
+<p>Posterior:
+$$
+p(\sigma^2 \mid y) \propto (\sigma^2)^{-\frac{n}{2}-1} \exp\left(-\frac{1}{2\sigma^2} \sum (y_i - \mu)^2 \right)
+$$</p>
+<p>⇒ <span class="arithmatex">\(\sigma^2 | y \sim \text{Inv-Gamma}\left(\frac{n}{2}, \frac{1}{2} \sum (y_i - \mu)^2\right)\)</span></p>
+<hr />
+<h2 id="4-maximum-a-posteriori-estimator"><strong>4) Maximum a Posteriori Estimator</strong><a class="headerlink" href="#4-maximum-a-posteriori-estimator" title="Permanent link">&para;</a></h2>
+<p>MAP = Posterior Mode</p>
+<div class="arithmatex">\[
+\hat{\theta}_{MAP} = \arg\max_{\theta} \, p(\theta | D)
+= \arg\max_{\theta} \, \log p(D | \theta) + \log \pi(\theta)
+\]</div>
+<table>
+<thead>
+<tr>
+<th>Estimator</th>
+<th>Formula</th>
+<th>Prior Used</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>MLE</strong></td>
+<td>$\arg\max_\theta \, p(D</td>
+<td>\theta)$</td>
+</tr>
+<tr>
+<td><strong>MAP</strong></td>
+<td>$\arg\max_\theta \, p(D</td>
+<td>\theta)\pi(\theta)$</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="41-example"><strong>4.1 Example</strong><a class="headerlink" href="#41-example" title="Permanent link">&para;</a></h3>
+<p>Data: <span class="arithmatex">\(x = (0,0,1,1,0)\)</span> from Bernoulli(<span class="arithmatex">\(\theta\)</span>)</p>
+<ul>
+<li>
+<p>MLE:
+  $$
+  \hat{\theta}_{MLE} = \frac{2}{5} = 0.4
+  $$</p>
+</li>
+<li>
+<p>If prior: <span class="arithmatex">\(\theta \in \{0.2, 0.5, 0.7\}\)</span> with<br />
+<span class="arithmatex">\(\pi = \{0.1,0.01,0.89\}\)</span></p>
+</li>
+</ul>
+<p>→ MAP = 0.7 (prior dominates)</p>
+<hr />
+<h2 id="5-posterior-mean-shrinkage"><strong>5) Posterior Mean &amp; Shrinkage</strong><a class="headerlink" href="#5-posterior-mean-shrinkage" title="Permanent link">&para;</a></h2>
+<p>Posterior mean is a weighted average of data + prior.</p>
+<h3 id="51-beta-binomial-example"><strong>5.1 Beta-Binomial Example</strong><a class="headerlink" href="#51-beta-binomial-example" title="Permanent link">&para;</a></h3>
+<p>If <span class="arithmatex">\(X_i \sim \text{Bern}(\theta)\)</span>, <span class="arithmatex">\(\pi(\theta) \sim \text{Beta}(\alpha,\beta)\)</span>:</p>
+<ul>
+<li>
+<p>Posterior:
+$$
+\theta | X \sim \text{Beta}(\alpha + S_n,\;\beta + n - S_n)
+$$</p>
+</li>
+<li>
+<p>Posterior Mean:
+$$
+\hat{\theta}<em MLE="MLE">E = \frac{S_n + \alpha}{n + \alpha + \beta}
+= \lambda \cdot \hat{\theta}</em>
+$$} + (1-\lambda)\theta_{prior</p>
+</li>
+</ul>
+<p>where<br />
+$$
+\lambda = \frac{n}{n + \alpha + \beta}
+$$</p>
+<hr />
+<h2 id="6-posterior-variance"><strong>6) Posterior Variance</strong><a class="headerlink" href="#6-posterior-variance" title="Permanent link">&para;</a></h2>
+<p>For Beta-Binomial:</p>
+<div class="arithmatex">\[
+\text{Var}(\theta | X) =
+\frac{(\alpha+S_n)(\beta+n-S_n)}{(n + \alpha + \beta)^2(n + \alpha + \beta + 1)}
+\]</div>
+<ul>
+<li>As <span class="arithmatex">\(n \uparrow\)</span> → Variance <span class="arithmatex">\(\downarrow\)</span> → Posterior concentrates.</li>
+</ul>
+<hr />
+<h2 id="7-credible-intervals-vs-confidence-intervals"><strong>7) Credible Intervals vs Confidence Intervals</strong><a class="headerlink" href="#7-credible-intervals-vs-confidence-intervals" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Concept</th>
+<th>Frequentist Confidence Interval</th>
+<th>Bayesian Credible Interval</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Definition</td>
+<td>Interval <span class="arithmatex">\(C(D)\)</span> s.t. <span class="arithmatex">\(P_\theta(\theta \in C(D)) = 1-\alpha\)</span></td>
+<td>$P(\theta \in I</td>
+</tr>
+<tr>
+<td>Probability refers to</td>
+<td>Data variability</td>
+<td>Parameter uncertainty</td>
+</tr>
+<tr>
+<td>Interpretation</td>
+<td>In repeated sampling, captures true θ 95% of time</td>
+<td>Given data, θ has 95% chance in interval</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="71-types-of-credible-intervals"><strong>7.1 Types of Credible Intervals</strong><a class="headerlink" href="#71-types-of-credible-intervals" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Equal-tailed:</strong> <span class="arithmatex">\(\alpha/2\)</span> in each tail  </li>
+<li><strong>HPD (Highest Posterior Density):</strong> Shortest interval with <span class="arithmatex">\(1-\alpha\)</span> mass  </li>
+<li><strong>One-sided intervals</strong></li>
+</ul>
+<hr />
+<h2 id="8-bayesian-prediction"><strong>8) Bayesian Prediction</strong><a class="headerlink" href="#8-bayesian-prediction" title="Permanent link">&para;</a></h2>
+<p>After observing data <span class="arithmatex">\(D\)</span>:</p>
+<p>Predictive distribution for future observation <span class="arithmatex">\(X_{n+1}\)</span>:</p>
+<div class="arithmatex">\[
+p(x_{n+1} | D) = \int p(x_{n+1} | \theta) \, p(\theta | D)\, d\theta
+\]</div>
+<p>→ Weighted average of likelihood using posterior as weights.</p>
+<hr />
+<p><sub>© Jeongsoo Pang — All rights reserved</sub></p>
 
 
 
