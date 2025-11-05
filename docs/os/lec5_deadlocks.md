@@ -11,7 +11,9 @@ hide:
 
 Deadlock occurs when a set of processes are blocked forever, each waiting for a resource held by another process.
 
-### Four Necessary Conditions (Coffman’s Conditions)  
+### 1.1 Four Necessary Conditions 
+(Coffman’s Conditions)
+
 A deadlock can happen only if all four are true:
 
 | Condition | Description |
@@ -32,7 +34,7 @@ A deadlock can happen only if all four are true:
 
 ---
 
-## 3. Resource Allocation Graph (RAG)
+## 3. Resource Allocation Graph
 
 - **Process → Resource (request)**
 - **Resource → Process (assigned)**  
@@ -43,8 +45,7 @@ P1 → R1 → P2 → R2 → P1 → Deadlock
 
 ---
 
-## 4. Example — Deadlock Detection (Single Instance)
-
+## 4. Deadlock Detection Example
 Given the graph, detect cycle:
 
 - D holds **U**, waiting for **S** and **T**  
@@ -83,7 +84,7 @@ Deadlock exists if no process's request can be satisfied with A, and this persis
 
 ---
 
-## 7. Recovering from Deadlock
+## 7. Deadlock Recovery
 
 | Method | Description | Disadvantage |
 |--------|-------------|--------------|
@@ -95,7 +96,7 @@ Deadlock exists if no process's request can be satisfied with A, and this persis
 
 ## 8. Deadlock Avoidance
 
-### Safe vs Unsafe State (Resource Trajectories)  
+### 8.1 Safe vs Unsafe State
 | State | Meaning |
 |-------|---------|
 | **Safe** | There exists some order in which all processes can finish |
@@ -105,19 +106,19 @@ Deadlock exists if no process's request can be satisfied with A, and this persis
 
 ---
 
-### Banker’s Algorithm (Dijkstra, 1965)
+### 8.2 Banker’s Algorithm
 
 Goal: Avoid unsafe states by simulation before granting a request. 
 Works if system knows in advance: max resources each process may need.
 
-#### Banker’s Check:
+#### 8.2.1 Banker’s Check
 1. If **Request ≤ Available**, pretend to allocate resources.
 2. Check if resulting state is Safe (using safety algorithm).
 3. If safe → grant request and if unsafe → deny.  
 
 ---
 
-### Example — Safety Test
+### 8.3 Safety Test Example
 
 **Resource types:** Scanners, Plotters, Printers, DVD  
 **Totals:**  E = (6, 3, 4, 2)  
@@ -164,17 +165,6 @@ Break at least one of 4 conditions:
 | **Hold & Wait** | Ask all resources at once | X Inefficient |
 | **No Preemption** | Take resource forcibly | X Can corrupt data |
 | **Circular Wait** | Impose ordering on resources | O Most practical |  
-
----
-
-## 10. Real-world Deadlock-Like Situations
-
-| Issue | Meaning |
-|-------|--------|
-| **Livelock** | Processes are active, but no one makes progress |
-| **Starvation** | A process never gets resources even if system runs |
-| **Database Deadlocks** | Two-phase locking used to avoid conflicts |
-| **Communication Deadlocks** | Processes wait for messages, no hardware involved |  
 
 ---
 
