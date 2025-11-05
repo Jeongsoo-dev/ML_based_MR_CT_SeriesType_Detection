@@ -14,7 +14,7 @@ Reviewing essential probability distributions and introduces Maximum Likelihood 
 
 ## **2) Common Probability Distributions**
 
-### **Discrete**
+### **2.1) Discrete**
 
 - **Bernoulli $(p)$** — Binary outcome (success/failure)  
   $$
@@ -57,7 +57,7 @@ Reviewing essential probability distributions and introduces Maximum Likelihood 
   $$  
 ---
 
-### **Continuous**
+### **2.2) Continuous**
 
 - **Uniform $(\theta_1, \theta_2)$**  
   $$
@@ -101,7 +101,7 @@ Reviewing essential probability distributions and introduces Maximum Likelihood 
 
 ---
 
-## **3) MLE – Maximum Likelihood Estimation**
+## **3) Maximum Likelihood Estimation**
 **Goal:** Estimate parameters $\theta$ that make observed data most probable.  
 Likelihood:  
 
