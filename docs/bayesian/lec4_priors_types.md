@@ -141,8 +141,10 @@ $$
 p(p)\sim Beta\!\left(\frac{1}{2},\frac{1}{2}\right)
 $$
 
-### **6.2) Ex2.Example: Normal mean (σ² known)**
+### **6.2) Ex2. Normal mean**
+
 For $X\sim N(\mu,\sigma^2)$,
+
 $$
 I(\mu)=\frac{1}{\sigma^2} \Rightarrow \pi(\mu)\propto1
 $$
