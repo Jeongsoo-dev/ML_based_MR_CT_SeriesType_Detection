@@ -50,8 +50,8 @@ nav:
       - "2. MLE": bayesian/lec2_mle_review.md
       - "3. Prior and Bayesian": bayesian/lec3_priors_logic.md
       - "4. Priors Details": bayesian/lec4_priors_types.md
-      - "5. Posterior inference": bayesian/lec5_posterior_inference.md
-      - "6. Interval Prediction": bayesian/lec6_intervals_prediction.md
+      - "5. Posterior inference": bayesian/lec5_posterior-inference.md
+      - "6. Interval Prediction": bayesian/lec6_intervals-prediction.md
       - "7. Hypothesis models": bayesian/lec7_hypothesis_models.md
       - "8. Loss functions": bayesian/lec8_loss_decisions.md
       - "9. Computational methods": bayesian/lec9_computation.md
