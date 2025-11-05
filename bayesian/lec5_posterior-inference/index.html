@@ -9,6 +9,10 @@
       
       
       
+        <link rel="prev" href="../lec4_priors_types/">
+      
+      
+        <link rel="next" href="../lec6_intervals-prediction/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -223,10 +227,12 @@
   
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
+      <li class="md-tabs__item md-tabs__item--active">
         <a href="../" class="md-tabs__link">
           
   
@@ -610,24 +616,29 @@
       
   
   
+    
   
   
+  
     
     
     
     
-      
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
         
           
-          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
             
   
   
@@ -640,7 +651,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             Bayesian
@@ -766,10 +777,32 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../lec5_posterior_inference.md" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    5. Posterior inference
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -780,6 +813,143 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      1) Overview
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-improper-jeffreys-prior" class="md-nav__link">
+    <span class="md-ellipsis">
+      2) Improper &amp; Jeffreys’ Prior
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-posterior-derivation-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      3) Posterior Derivation Example
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-maximum-a-posteriori-estimator" class="md-nav__link">
+    <span class="md-ellipsis">
+      4) Maximum a Posteriori Estimator
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4) Maximum a Posteriori Estimator">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.1 Example
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-posterior-mean-shrinkage" class="md-nav__link">
+    <span class="md-ellipsis">
+      5) Posterior Mean &amp; Shrinkage
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5) Posterior Mean &amp; Shrinkage">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51-beta-binomial-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.1 Beta-Binomial Example
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-posterior-variance" class="md-nav__link">
+    <span class="md-ellipsis">
+      6) Posterior Variance
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-credible-intervals-vs-confidence-intervals" class="md-nav__link">
+    <span class="md-ellipsis">
+      7) Credible Intervals vs Confidence Intervals
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7) Credible Intervals vs Confidence Intervals">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#71-types-of-credible-intervals" class="md-nav__link">
+    <span class="md-ellipsis">
+      7.1 Types of Credible Intervals
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-bayesian-prediction" class="md-nav__link">
+    <span class="md-ellipsis">
+      8) Bayesian Prediction
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -792,7 +962,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../lec6_intervals_prediction.md" class="md-nav__link">
+      <a href="../lec6_intervals-prediction/" class="md-nav__link">
         
   
   
