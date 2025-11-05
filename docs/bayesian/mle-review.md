@@ -140,3 +140,4 @@ $$
 > This connects directly to **Lecture 3: Priors and Bayesian Updating**.
 
 ---
+<sub>© Jeongsoo Pang — All rights reserved
