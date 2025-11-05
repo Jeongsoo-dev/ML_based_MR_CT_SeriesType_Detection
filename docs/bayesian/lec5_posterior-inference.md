@@ -50,7 +50,34 @@ $$
 ⇒ $\sigma^2 | y \sim \text{Inv-Gamma}\left(\frac{n}{2}, \frac{1}{2} \sum (y_i - \mu)^2\right)$
 
 ---
+## **4) Maximum a Posteriori Estimator**
 
+MAP = Posterior Mode
+
+$$
+\hat{\theta}_{\text{MAP}}
+= \arg\max_{\theta}\, p(\theta \mid D)
+= \arg\max_{\theta}\, \log p(D \mid \theta) + \log \pi(\theta)
+$$
+
+| Estimator | Formula | Prior Used |
+|---|---|---|
+| **MLE** | $\arg\max_{\theta}\, p(D \mid \theta)$ | No prior |
+| **MAP** | $\arg\max_{\theta}\, p(D \mid \theta)\,\pi(\theta)$ | Includes prior |
+
+---
+
+### **4.1 Example**
+Data: $x = (0,0,1,1,0)$ from Bernoulli($\theta$)
+
+- **MLE**
+
+  $$
+  \hat{\theta}_{\text{MLE}}=\frac{2}{5}=0.4
+  $$
+
+- **Discrete prior**: $\theta \in \{0.2,0.5,0.7\}$ with $\pi=\{0.1,0.01,0.89\}$ → MAP $=0.7$
+---
 ## **5) Posterior Mean & Shrinkage**
 
 Posterior mean is a weighted average of data + prior.
