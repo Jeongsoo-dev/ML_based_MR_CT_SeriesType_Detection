@@ -206,3 +206,5 @@ Break at least one Coffman condition:
 > For deadlock questions: state Coffman, then give one concrete prevention.
 > When using CVs: guard predicates with a while-loop; with semaphores: preserve acquire/release order.
 > Argue both safety and liveness for full credit (what can’t happen vs. what must eventually happen).
+---
+<sub>© Jeongsoo Pang — All rights reserved
