@@ -51,7 +51,7 @@ $$
 
 ---
 
-## **4) Maximum a Posteriori Estimator**
+## **4) Maximum Posterior Estimator**
 
 MAP = Posterior Mode
 
@@ -96,6 +96,7 @@ $$
 $$
 
 - Posterior Mean:
+
 $$
 \hat{\theta}_E = \frac{S_n + \alpha}{n + \alpha + \beta}
 = \lambda \cdot \hat{\theta}_{MLE} + (1-\lambda)\theta_{prior}
