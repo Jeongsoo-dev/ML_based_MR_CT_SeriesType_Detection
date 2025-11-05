@@ -7,7 +7,7 @@ hide:
 # Scheduling  
 ---
 
-## **Scheduler’s Role**
+## **1. Scheduler’s Role**
 - Multiple processes competing for CPU time
 - When more than one is Ready, scheduler chooses who runs next
 - Affects perceived system performance
@@ -15,7 +15,7 @@ hide:
 
 ---
 
-## **Context Switch Overhead**
+## **2. Context Switch Overhead**
 Switching tasks is expensive:
 
 - Trap to kernel mode
@@ -26,7 +26,7 @@ Too many switches waste CPU time.
 
 ---
 
-## **Process CPU Behavior**
+## **3. Process CPU Behavior**
 Two typical categories:
 
 | Type | Behavior | Resource Usage | Notes |
@@ -38,7 +38,7 @@ Two typical categories:
 
 ---
 
-## **Preemptive vs Non-Preemptive Scheduling**
+## **4. Preemptive vs Non-Preemptive Scheduling**
 
 | Strategy | CPU Ownership Ends When… | Pros | Cons |
 |---|---|---|---|
@@ -49,7 +49,7 @@ Two typical categories:
 
 ---
 
-## **Scheduling Goals**
+## **5. Scheduling Goals**
 
 | System Type | Major Metrics |
 |---|---|
@@ -61,16 +61,16 @@ Two typical categories:
 
 ---
 
-## **Common Scheduling Algorithms**
+## **6. Common Scheduling Algorithms**
 
-### **1. First-Come First-Served (FCFS)**
+### **6.1 First-Come First-Served**
 - Non-preemptive
 - Simple FIFO queue 
 Problem: Long jobs block short ones (convoy effect)
 
 ---
 
-### **2. Shortest Job First (SJF)**
+### **6.2 Shortest Job First**
 - Non-preemptive, requires job length knowledge
 - Minimizes average turnaround time
 - Not realistic → runtime unknown  
@@ -78,7 +78,7 @@ Risk: Starvation of long jobs
 
 ---
 
-### **3. Round Robin (RR)**
+### **6.3 Round Robin**
 - Preemptive, equal quantum for each process
 - Very common in interactive systems
 - Choice of quantum matters:
@@ -87,35 +87,35 @@ Risk: Starvation of long jobs
 
 ---
 
-### **4. Priority Scheduling**
+### **6.4 Priority Scheduling**
 - Higher priority tasks run first
 - Can combine with RR per priority class
 - Starvation possible → fix: aging
 
 ---
 
-### **5. Lottery Scheduling**
+### **6.5 Lottery Scheduling**
 - Random scheduling based on # of tickets
 - Dynamic, flexible priority control  
 - Good when fairness with weighted share is desired
 
 ---
 
-### **6. Earliest Deadline First (EDF)**
+### **6.6 Earliest Deadline First (EDF)**
 - Real-time focused
 - Run task with closest deadline first
 Hard requirement: process must announce deadline
 
 ---
 
-## **Policy vs. Mechanism**
+## **7. Policy vs. Mechanism**
 - **Scheduling mechanism**: how scheduling is done
 - **Scheduling policy**: who should run + priority rules
 - Parent process can set children priority parameters → avoids assumptions  
 
 ---
 
-## **Scheduling Threads**
+## **8. Scheduling Threads**
 User-level vs Kernel-level scheduling  
 
 - User level threads: Kernel unaware → user scheduler only
@@ -123,7 +123,9 @@ User-level vs Kernel-level scheduling
 - Determines runnable interleavings (A1, B1, A2, …)
 ---
 
-## **Classic Synchronization Problem: Dining Philosophers**
+## **9. Dining Philosophers**
+(Classic Synchronization Problem)
+
 Illustrates deadlock + starvation risks
 
 ![Dining Philosopher](../images/dining_1.jpg){ width="500" }
@@ -133,12 +135,12 @@ Illustrates deadlock + starvation risks
   
 ![Solution](../images/dining_2.jpg){ width="500" }
 
-### Problem Recap
+### 9.1 Problem Recap
 - Deadlock : All philosophers pick the left chopstick and wait forever
 - Starvation : A philosopher may never get a chance to eat
 - Concurrency control : Neighbors must not eat simultaneously
 
-### Key Ideas
+### 9.2 Key Ideas
 | Component                          | Purpose                                               | Effect                                         |
 | ---------------------------------- | ----------------------------------------------------- | ---------------------------------------------- |
 | `state[i]`                         | Each philosopher’s state (THINKING / HUNGRY / EATING) | Allows control logic on neighbors              |
@@ -146,21 +148,21 @@ Illustrates deadlock + starvation risks
 | `s[i]` (semaphore per philosopher) | Controls who gets permission to eat                   | Prevents neighbors from eating simultaneously  |
 | `test(i)`                          | Check if philosopher `i` can start eating             | Enforces safe conditions                       |
 
-### Execution Flow
-#### When Philosopher Gets Hungry → `take_cs(i)`
+### 9.3 Execution Flow
+#### 9.3.1 When Philosopher Gets Hungry → `take_cs(i)`
 1. Lock mutex
 2. Set state to `HUNGRY`
 3. Check if neighbors are eating (`test(i)`)
 4. Unlock mutex
 5. Wait until permission is given (`down(s[i])`) → Blocks until chopsticks available
 
-#### After Eating → `put_cs(i)`
+#### 9.3.2 After Eating → `put_cs(i)`
 1. Lock mutex
 2. Set state back to `THINKING`
 3. Signal neighbors to try eating (`test(LEFT)` + `test(RIGHT)`)
 4. Unlock mutex
 
-### The Heart of the Solution → `test(i)`
+### 9.4 Solution: `test(i)`
 ```c
 if (state[i] == HUNGRY &&
     state[LEFT] != EATING &&
@@ -174,7 +176,7 @@ This guarantees:
 - A philosopher only eats if both neighbors are not eating
 - Unlocks semaphore for only one philosopher at a time
 
-### How It Solves the Classical Issues
+### 9.5 How It Solves the Classical Issues
 | Issue                               | How It is Prevented                                                                                                    |
 | ----------------------------------- | ---------------------------------------------------------------------------------------------------------------------- |
 | **Deadlock**                        | No circular wait: philosopher only grabs both chopsticks when allowed; otherwise releases/not blocks while holding one |
@@ -183,4 +185,3 @@ This guarantees:
 | **Neighbors eating simultaneously** | `test()` explicitly checks left & right philosopher states                                                             |
 
 <sub>© Jeongsoo Pang — All rights reserved
-
