@@ -44,12 +44,12 @@ nav:
       - "5. Deadlocks": os/lec5_deadlocks.md
   - Bayesian:
       - "0. Overview": bayesian/index.md
-      - "1. Foundations": bayesian/foundations.md
-      - "2. MLE": bayesian/mle-review.md
-      - "3. Prior and Bayesian": bayesian/priors-logic.md
-      - "4. Priors Details": bayesian/priors-types.md
-      - "5. Posterior inference": bayesian/posterior-inference.md
-      - "6. Interval Prediction": bayesian/intervals-prediction.md
-      - "7. Hypothesis models": bayesian/hypothesis-models.md
-      - "8. Loss functions": bayesian/loss-decisions.md
-      - "9. Computational methods": bayesian/computation.md
+      - "1. Foundations": bayesian/lec1_foundations.md
+      - "2. MLE": bayesian/lec2_mle_review.md
+      - "3. Prior and Bayesian": bayesian/lec3_priors_logic.md
+      - "4. Priors Details": bayesian/lec4_priors_types.md
+      - "5. Posterior inference": bayesian/lec5_posterior_inference.md
+      - "6. Interval Prediction": bayesian/lec6_intervals_prediction.md
+      - "7. Hypothesis models": bayesian/lec7_hypothesis_models.md
+      - "8. Loss functions": bayesian/lec8_loss_decisions.md
+      - "9. Computational methods": bayesian/lec9_computation.md
