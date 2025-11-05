@@ -84,23 +84,24 @@ Posterior mean is a weighted average of data + prior.
 
 ### **5.1 Beta–Binomial Example**
 
-If $X_i \sim \operatorname{Bern}(\theta)$ and $\pi(\theta)\sim \operatorname{Beta}(\alpha,\beta)$:
+If $X_i \sim \text{Bern}(\theta)$ and $\pi(\theta) \sim \text{Beta}(\alpha,\beta)$:
 
 - **Posterior**
 
-  $$
-  \theta \mid X \sim \operatorname{Beta}(\alpha+S_n,\;\beta+n-S_n)
-  $$
+$$
+\theta \mid X \sim \text{Beta}(\alpha + S_n,\; \beta + n - S_n)
+$$
 
 - **Posterior Mean**
 
-  $$
-  \hat{\theta}_E
-  = \frac{S_n+\alpha}{n+\alpha+\beta}
-  = \lambda\,\hat{\theta}_{\text{MLE}} + (1-\lambda)\,\theta_{\text{prior}},
-  \qquad
-  \lambda=\frac{n}{n+\alpha+\beta}
-  $$
+$$
+\hat{\theta}_E
+= \frac{S_n + \alpha}{n + \alpha + \beta}
+= \lambda \cdot \hat{\theta}_{\text{MLE}} + (1 - \lambda)\theta_{\text{prior}},
+\qquad
+\lambda = \frac{n}{n + \alpha + \beta}
+$$
+
 
 ---
 
