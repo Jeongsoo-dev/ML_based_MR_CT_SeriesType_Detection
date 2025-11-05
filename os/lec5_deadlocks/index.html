@@ -1113,9 +1113,9 @@
 <h1 id="os-deadlocks">OS : Deadlocks<a class="headerlink" href="#os-deadlocks" title="Permanent link">&para;</a></h1>
 <hr />
 <h2 id="1-what-is-a-deadlock">1. What is a Deadlock<a class="headerlink" href="#1-what-is-a-deadlock" title="Permanent link">&para;</a></h2>
-<p>Deadlock occurs when a set of processes are <strong>blocked forever</strong>, each waiting for a resource held by another process.</p>
+<p>Deadlock occurs when a set of processes are blocked forever, each waiting for a resource held by another process.</p>
 <h3 id="four-necessary-conditions-coffmans-conditions">Four Necessary Conditions (Coffman’s Conditions)<a class="headerlink" href="#four-necessary-conditions-coffmans-conditions" title="Permanent link">&para;</a></h3>
-<p>A deadlock can happen only if <strong>all four</strong> are true:</p>
+<p>A deadlock can happen only if all four are true:</p>
 <table>
 <thead>
 <tr>
@@ -1170,26 +1170,28 @@
 <ul>
 <li><strong>Process → Resource (request)</strong></li>
 <li><strong>Resource → Process (assigned)</strong>  </li>
-<li>If a <strong>cycle exists and each resource has only 1 instance → Deadlock</strong>.</li>
+<li>If a cycle exists and each resource has only 1 instance → Deadlock</li>
 </ul>
 <p>Example:<br />
 P1 → R1 → P2 → R2 → P1 → Deadlock</p>
 <hr />
 <h2 id="4-example-deadlock-detection-single-instance">4. Example — Deadlock Detection (Single Instance)<a class="headerlink" href="#4-example-deadlock-detection-single-instance" title="Permanent link">&para;</a></h2>
-<p>Given the graph, detect cycle:
-- D holds <strong>U</strong>, waiting for <strong>S</strong> and <strong>T</strong><br />
-- E holds <strong>T</strong>, waiting for <strong>V</strong><br />
-- G holds <strong>V</strong>, waiting for <strong>U</strong>  </p>
+<p>Given the graph, detect cycle:</p>
+<ul>
+<li>D holds <strong>U</strong>, waiting for <strong>S</strong> and <strong>T</strong>  </li>
+<li>E holds <strong>T</strong>, waiting for <strong>V</strong>  </li>
+<li>G holds <strong>V</strong>, waiting for <strong>U</strong>  </li>
+</ul>
 <p><strong>Cycle detected:</strong><br />
 U (held by D) → T (held by E) → V (held by G) → U</p>
 <p><strong>Deadlock exists among D, E, G.</strong></p>
 <hr />
 <h2 id="5-ostrich-algorithm">5. Ostrich Algorithm<a class="headerlink" href="#5-ostrich-algorithm" title="Permanent link">&para;</a></h2>
 <blockquote>
-<p>“If it rarely occurs, ignore it.”<br />
-Used by UNIX/Linux systems because full prevention is costly.<br />
-Good if "cost of handling deadlock" &gt; "cost of ignoring".</p>
+<p>“If it rarely occurs, ignore it”</p>
 </blockquote>
+<p>Used by UNIX/Linux systems because full prevention is costly.<br />
+Good if "cost of handling deadlock" &gt; "cost of ignoring".</p>
 <hr />
 <h2 id="6-deadlock-detection-multiple-resource-instances">6. Deadlock Detection (Multiple Resource Instances)<a class="headerlink" href="#6-deadlock-detection-multiple-resource-instances" title="Permanent link">&para;</a></h2>
 <p>Uses matrices:  </p>
@@ -1287,18 +1289,22 @@ Works if system knows in advance: max resources each process may need.</p>
 <p><strong>Resource types:</strong> Scanners, Plotters, Printers, DVD<br />
 <strong>Totals:</strong>  E = (6, 3, 4, 2)<br />
 <strong>Available:</strong> A = (1, 1, 2, 0)  </p>
-<p><strong>Allocation C</strong> (rows = P1..P5):
-- P1: (3,0,1,1)
-- P2: (0,1,0,0)
-- P3: (1,0,1,0)
-- P4: (1,1,0,1)
-- P5: (0,0,0,0)</p>
-<p><strong>Need R</strong> (remaining request):
-- P1: (2,1,0,0)
-- P2: (0,1,1,1)
-- P3: (3,1,0,0)
-- P4: (0,0,1,0)
-- P5: (3,1,1,0)</p>
+<p><strong>Allocation C</strong> (rows = P1..P5):</p>
+<ul>
+<li>P1: (3,0,1,1)</li>
+<li>P2: (0,1,0,0)</li>
+<li>P3: (1,0,1,0)</li>
+<li>P4: (1,1,0,1)</li>
+<li>P5: (0,0,0,0)</li>
+</ul>
+<p><strong>Need R</strong> (remaining request):</p>
+<ul>
+<li>P1: (2,1,0,0)</li>
+<li>P2: (0,1,1,1)</li>
+<li>P3: (3,1,0,0)</li>
+<li>P4: (0,0,1,0)</li>
+<li>P5: (3,1,1,0)</li>
+</ul>
 <p><strong>Safety test (find completion order):</strong>
 1) A=(1,1,2,0). <strong>P4</strong> need (0,0,1,0) ≤ A → run P4, release C4=(1,1,0,1)<br />
    New A = (2,2,2,1)
