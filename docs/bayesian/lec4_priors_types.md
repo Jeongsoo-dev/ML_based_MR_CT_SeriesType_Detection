@@ -50,6 +50,7 @@ the posterior $\text{Beta}(y, n-y)$ is proper when $y,n-y>0$.
 
 **Another example:**  
 For $X_i\sim N(\mu,\sigma^2)$ with $\pi(\mu)\propto1$,
+
 $$
 \mu|x\sim N(\bar{x},\sigma^2/n)
 $$
