@@ -9,6 +9,10 @@
       
       
       
+        <link rel="prev" href="../lec4_scheduling/">
+      
+      
+        <link rel="next" href="../../bayesian/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -203,10 +207,12 @@
   
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
+      <li class="md-tabs__item md-tabs__item--active">
         <a href="../" class="md-tabs__link">
           
   
@@ -358,7 +364,7 @@
   
   
   <span class="md-ellipsis">
-    1. Cercare-Medical ML Project
+    1. Cercare-Medical
     
   </span>
   
@@ -381,7 +387,7 @@
   
   
   <span class="md-ellipsis">
-    2. Anti-Drone Project
+    2. Anti-Drone
     
   </span>
   
@@ -426,24 +432,29 @@
       
   
   
+    
   
   
+  
     
     
     
     
-      
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
         
           
-          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
             
   
   
@@ -456,7 +467,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             OS
@@ -578,6 +589,224 @@
 
               
             
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    5. Deadlocks
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    5. Deadlocks
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-what-is-a-deadlock" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. What is a Deadlock
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. What is a Deadlock">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#four-necessary-conditions-coffmans-conditions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Four Necessary Conditions (Coffman’s Conditions)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-resource-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Resource Types
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-resource-allocation-graph-rag" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Resource Allocation Graph (RAG)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-example-deadlock-detection-single-instance" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Example — Deadlock Detection (Single Instance)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-ostrich-algorithm" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Ostrich Algorithm
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-deadlock-detection-multiple-resource-instances" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Deadlock Detection (Multiple Resource Instances)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-recovering-from-deadlock" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. Recovering from Deadlock
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-deadlock-avoidance" class="md-nav__link">
+    <span class="md-ellipsis">
+      8. Deadlock Avoidance
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8. Deadlock Avoidance">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#safe-vs-unsafe-state-resource-trajectories" class="md-nav__link">
+    <span class="md-ellipsis">
+      Safe vs Unsafe State (Resource Trajectories)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bankers-algorithm-dijkstra-1965" class="md-nav__link">
+    <span class="md-ellipsis">
+      Banker’s Algorithm (Dijkstra, 1965)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Banker’s Algorithm (Dijkstra, 1965)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bankers-check" class="md-nav__link">
+    <span class="md-ellipsis">
+      Banker’s Check:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-safety-test" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example — Safety Test
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-deadlock-prevention" class="md-nav__link">
+    <span class="md-ellipsis">
+      9. Deadlock Prevention
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-real-world-deadlock-like-situations" class="md-nav__link">
+    <span class="md-ellipsis">
+      10. Real-world Deadlock-Like Situations
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -684,7 +913,7 @@
   
   
   <span class="md-ellipsis">
-    2. MLE review
+    2. MLE
     
   </span>
   
