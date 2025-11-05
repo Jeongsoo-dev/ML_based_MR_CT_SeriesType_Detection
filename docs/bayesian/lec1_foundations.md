@@ -14,7 +14,7 @@ hide:
 
 ---
 
-## **Motivation**
+## **2) Motivation**
 **Integrates prior knowledge**: Encodes existing beliefs or domain expertise.  
 
 **Logical updating**: Adjusts those beliefs as new data arrive.  
@@ -23,7 +23,6 @@ hide:
 
 **Probabilistic conclusions**: Allows probability statements about parameters
 
-ex) “There’s a 95% probability $\theta$ lies in this range”
 ---
 
 ## **3) Core Equation (Bayes’ Rule)**
@@ -36,7 +35,7 @@ $$
 - **Prior**: Belief before observing data.  
 - **Evidence (marginal likelihood)**: Normalizing constant ensuring posterior integrates to 1.  
 
-### **Key Terms**
+### **3.1) Key Terms**
 - **Prior $p(\theta)$:** Belief about $\theta$ before seeing data.  
 - **Likelihood $p(x \mid \theta)$:** Probability of data given $\theta$.  
 - **Posterior $p(\theta \mid x)$:** Updated belief after seeing data.  
@@ -54,7 +53,7 @@ $$
 
 ---
 
-## **5) Where “Bayesian” Appears in ML/CS**
+## **5) “Bayesian” in ML/CS**
 **Naïve Bayes Classifier** 
 
 - Spam detection
@@ -94,7 +93,7 @@ $$
 
 ---
 
-## **8) Mini Example – Naïve Bayes for Spam**
+## **8) Naive Bayes for Spam Example**
 $$
 P(\text{spam} \mid \text{email})
 \;\propto\;
@@ -106,7 +105,8 @@ $$
 
 ---
 
-## **12) Summary Quote**
-> *Bayesian inference formalizes learning from data by updating prior beliefs with evidence to obtain a posterior. It enables rational, probabilistic reasoning for real-world uncertainty which is foundational to modern machine learning and decision-making.*
+**Summary Quote**
+
+> Bayesian inference formalizes learning from data by updating prior beliefs with evidence to obtain a posterior. It enables rational, probabilistic reasoning for real-world uncertainty which is foundational to modern machine learning and decision-making
 ---
 <sub>© Jeongsoo Pang — All rights reserved
