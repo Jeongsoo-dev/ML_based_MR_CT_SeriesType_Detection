@@ -911,27 +911,27 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#5-ex1beta-binomial-model" class="md-nav__link">
+  <a href="#5-beta-binomial-model-example" class="md-nav__link">
     <span class="md-ellipsis">
-      5) Ex1.Beta-Binomial Model
+      5) Beta-Binomial Model Example
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#6-ex2exponential-with-gamma-prior" class="md-nav__link">
+  <a href="#6-exponential-with-gamma-prior-example" class="md-nav__link">
     <span class="md-ellipsis">
-      6) Ex2.Exponential with Gamma Prior
+      6) Exponential with Gamma Prior Example
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#7-ex3censored-exponential-data" class="md-nav__link">
+  <a href="#7-censored-exponential-data-example" class="md-nav__link">
     <span class="md-ellipsis">
-      7) Ex3.Censored Exponential Data
+      7) Censored Exponential Data Example
     </span>
   </a>
   
@@ -957,9 +957,9 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#bayes-factor-bf" class="md-nav__link">
+  <a href="#91-bayes-factor" class="md-nav__link">
     <span class="md-ellipsis">
-      Bayes Factor (BF)
+      9.1 Bayes Factor
     </span>
   </a>
   
@@ -1144,27 +1144,27 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#5-ex1beta-binomial-model" class="md-nav__link">
+  <a href="#5-beta-binomial-model-example" class="md-nav__link">
     <span class="md-ellipsis">
-      5) Ex1.Beta-Binomial Model
+      5) Beta-Binomial Model Example
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#6-ex2exponential-with-gamma-prior" class="md-nav__link">
+  <a href="#6-exponential-with-gamma-prior-example" class="md-nav__link">
     <span class="md-ellipsis">
-      6) Ex2.Exponential with Gamma Prior
+      6) Exponential with Gamma Prior Example
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#7-ex3censored-exponential-data" class="md-nav__link">
+  <a href="#7-censored-exponential-data-example" class="md-nav__link">
     <span class="md-ellipsis">
-      7) Ex3.Censored Exponential Data
+      7) Censored Exponential Data Example
     </span>
   </a>
   
@@ -1190,9 +1190,9 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#bayes-factor-bf" class="md-nav__link">
+  <a href="#91-bayes-factor" class="md-nav__link">
     <span class="md-ellipsis">
-      Bayes Factor (BF)
+      9.1 Bayes Factor
     </span>
   </a>
   
@@ -1224,7 +1224,6 @@
 <h1 id="6-bayesian-inference"><strong>6. Bayesian Inference</strong><a class="headerlink" href="#6-bayesian-inference" title="Permanent link">&para;</a></h1>
 <hr />
 <h2 id="1-key-concepts"><strong>1) Key Concepts</strong><a class="headerlink" href="#1-key-concepts" title="Permanent link">&para;</a></h2>
-<p>This lecture focuses on:</p>
 <ul>
 <li>Difference between *onfidence Intervals (Frequentist) and Credible Intervals (Bayesian)</li>
 <li>HPD (Highest Posterior Density) intervals</li>
@@ -1234,7 +1233,7 @@
 </ul>
 <hr />
 <h2 id="2-confidence-vs-credible-interval"><strong>2) Confidence vs Credible Interval</strong><a class="headerlink" href="#2-confidence-vs-credible-interval" title="Permanent link">&para;</a></h2>
-<h3 id="21-confidence-interval-frequentist"><strong>2.1 Confidence Interval (Frequentist)</strong><a class="headerlink" href="#21-confidence-interval-frequentist" title="Permanent link">&para;</a></h3>
+<h3 id="21-confidence-interval-frequentist">2.1 Confidence Interval (Frequentist)<a class="headerlink" href="#21-confidence-interval-frequentist" title="Permanent link">&para;</a></h3>
 <p>A 100(1−α)% confidence interval satisfies:</p>
 <div class="arithmatex">\[
 P_\theta(\theta \in C(X)) = 1 - \alpha
@@ -1246,7 +1245,7 @@ P_\theta(\theta \in C(X)) = 1 - \alpha
   \bar{X} \pm z_{\alpha/2} \frac{\sigma}{\sqrt{n}}
   $$</li>
 </ul>
-<h3 id="22-credible-interval-bayesian"><strong>2.2 Credible Interval (Bayesian)</strong><a class="headerlink" href="#22-credible-interval-bayesian" title="Permanent link">&para;</a></h3>
+<h3 id="22-credible-interval-bayesian">2.2 Credible Interval (Bayesian)<a class="headerlink" href="#22-credible-interval-bayesian" title="Permanent link">&para;</a></h3>
 <p>A 100(1−α)% credible interval I satisfies:</p>
 <div class="arithmatex">\[
 P(\theta \in I \mid X) = 1 - \alpha
@@ -1270,7 +1269,7 @@ P(\theta \in I \mid X) = 1 - \alpha
 <td>Lower α/2 and upper 1−α/2 posterior quantiles</td>
 </tr>
 <tr>
-<td><strong>HPD (Highest Posterior Density)</strong></td>
+<td><strong>Highest Posterior Density</strong></td>
 <td>Shortest interval B such that ∫_B p(θ</td>
 </tr>
 <tr>
@@ -1298,7 +1297,7 @@ P(\theta \in I \mid X) = 1 - \alpha
 <li>If multimodal → HPD may consist of disjoint intervals</li>
 </ul>
 <hr />
-<h2 id="5-ex1beta-binomial-model"><strong>5) Ex1.Beta-Binomial Model</strong><a class="headerlink" href="#5-ex1beta-binomial-model" title="Permanent link">&para;</a></h2>
+<h2 id="5-beta-binomial-model-example"><strong>5) Beta-Binomial Model Example</strong><a class="headerlink" href="#5-beta-binomial-model-example" title="Permanent link">&para;</a></h2>
 <p>Given:
 - Data: <span class="arithmatex">\(x = 11\)</span> successes out of <span class="arithmatex">\(n = 12\)</span>
 - Prior: <span class="arithmatex">\(\theta \sim \text{Beta}(7, 3)\)</span></p>
@@ -1320,7 +1319,7 @@ P(\theta \in I \mid X) = 1 - \alpha
 [0.7329,\, 0.9313]
 \]</div>
 <hr />
-<h2 id="6-ex2exponential-with-gamma-prior"><strong>6) Ex2.Exponential with Gamma Prior</strong><a class="headerlink" href="#6-ex2exponential-with-gamma-prior" title="Permanent link">&para;</a></h2>
+<h2 id="6-exponential-with-gamma-prior-example"><strong>6) Exponential with Gamma Prior Example</strong><a class="headerlink" href="#6-exponential-with-gamma-prior-example" title="Permanent link">&para;</a></h2>
 <p>Model:
 - <span class="arithmatex">\(X_i \sim \text{Exponential}(\theta)\)</span> (θ is mean)
 - Prior: <span class="arithmatex">\(\theta \sim \text{Gamma}(r, \lambda)\)</span></p>
@@ -1334,7 +1333,7 @@ P(\theta \in I \mid X) = 1 - \alpha
 → Posterior: <span class="arithmatex">\(\text{Gamma}(20, 39.3)\)</span><br />
 95% credible interval = <strong>2.5% and 97.5% quantiles</strong></p>
 <hr />
-<h2 id="7-ex3censored-exponential-data"><strong>7) Ex3.Censored Exponential Data</strong><a class="headerlink" href="#7-ex3censored-exponential-data" title="Permanent link">&para;</a></h2>
+<h2 id="7-censored-exponential-data-example"><strong>7) Censored Exponential Data Example</strong><a class="headerlink" href="#7-censored-exponential-data-example" title="Permanent link">&para;</a></h2>
 <p>Survival model:
 $$
 f(t|\theta) = \frac{1}{\theta} e^{-t/\theta}
@@ -1369,7 +1368,7 @@ P(H_0 | x), \quad P(H_1 | x)
 - If <span class="arithmatex">\(P(H_0 | x) &gt; P(H_1 | x)\)</span> → accept <span class="arithmatex">\(H_0\)</span>
 - If close → inconclusive</p>
 <hr />
-<h3 id="bayes-factor-bf"><strong>Bayes Factor (BF)</strong><a class="headerlink" href="#bayes-factor-bf" title="Permanent link">&para;</a></h3>
+<h3 id="91-bayes-factor">9.1 Bayes Factor<a class="headerlink" href="#91-bayes-factor" title="Permanent link">&para;</a></h3>
 <p>For hypotheses <span class="arithmatex">\(H_0: θ = θ_0\)</span> vs <span class="arithmatex">\(H_1: θ = θ_1\)</span>:</p>
 <div class="arithmatex">\[
 B_{01} = \frac{f(x|\theta_0)}{f(x|\theta_1)}

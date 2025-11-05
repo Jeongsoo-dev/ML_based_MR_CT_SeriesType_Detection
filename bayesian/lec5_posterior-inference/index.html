@@ -857,13 +857,13 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#4-maximum-a-posteriori-estimator" class="md-nav__link">
+  <a href="#4-maximum-posterior-estimator" class="md-nav__link">
     <span class="md-ellipsis">
-      4) Maximum a Posteriori Estimator
+      4) Maximum Posterior Estimator
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="4) Maximum a Posteriori Estimator">
+    <nav class="md-nav" aria-label="4) Maximum Posterior Estimator">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1110,13 +1110,13 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#4-maximum-a-posteriori-estimator" class="md-nav__link">
+  <a href="#4-maximum-posterior-estimator" class="md-nav__link">
     <span class="md-ellipsis">
-      4) Maximum a Posteriori Estimator
+      4) Maximum Posterior Estimator
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="4) Maximum a Posteriori Estimator">
+    <nav class="md-nav" aria-label="4) Maximum Posterior Estimator">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1272,7 +1272,7 @@ p(\sigma^2 \mid y) \propto (\sigma^2)^{-\frac{n}{2}-1} \exp\left(-\frac{1}{2\sig
 $$</p>
 <p>⇒ <span class="arithmatex">\(\sigma^2 | y \sim \text{Inv-Gamma}\left(\frac{n}{2}, \frac{1}{2} \sum (y_i - \mu)^2\right)\)</span></p>
 <hr />
-<h2 id="4-maximum-a-posteriori-estimator"><strong>4) Maximum a Posteriori Estimator</strong><a class="headerlink" href="#4-maximum-a-posteriori-estimator" title="Permanent link">&para;</a></h2>
+<h2 id="4-maximum-posterior-estimator"><strong>4) Maximum Posterior Estimator</strong><a class="headerlink" href="#4-maximum-posterior-estimator" title="Permanent link">&para;</a></h2>
 <p>MAP = Posterior Mode</p>
 <div class="arithmatex">\[
 \hat{\theta}_{MAP} = \arg\max_{\theta} \, p(\theta | D)
@@ -1328,13 +1328,13 @@ $$
 $$</p>
 </li>
 <li>
-<p>Posterior Mean:
-$$
-\hat{\theta}<em MLE="MLE">E = \frac{S_n + \alpha}{n + \alpha + \beta}
-= \lambda \cdot \hat{\theta}</em>
-$$} + (1-\lambda)\theta_{prior</p>
+<p>Posterior Mean:</p>
 </li>
 </ul>
+<div class="arithmatex">\[
+\hat{\theta}_E = \frac{S_n + \alpha}{n + \alpha + \beta}
+= \lambda \cdot \hat{\theta}_{MLE} + (1-\lambda)\theta_{prior}
+\]</div>
 <p>where<br />
 $$
 \lambda = \frac{n}{n + \alpha + \beta}
