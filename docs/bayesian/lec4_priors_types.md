@@ -31,6 +31,7 @@ Extending prior concepts into **improper, noninformative, Jeffreys, weakly infor
 
 ## **3) Proper vs. Improper Priors**
 A prior $p(\theta)$ is **proper** if it integrates to 1:
+
 $$
 \int p(\theta)\,d\theta = 1
 $$
@@ -44,6 +45,7 @@ $$
 
 **Example:**  
 For Binomial $y\sim Bin(n,\theta)$ and prior $\text{Beta}(0,0)$,  
+
 the posterior $\text{Beta}(y, n-y)$ is proper when $y,n-y>0$.  
 
 **Another example:**  
