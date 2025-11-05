@@ -857,6 +857,39 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#4-maximum-a-posteriori-estimator" class="md-nav__link">
+    <span class="md-ellipsis">
+      4) Maximum a Posteriori Estimator
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4) Maximum a Posteriori Estimator">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.1 Example
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#-discrete-prior-theta-in-020507-with-pi01001089-map-07" class="md-nav__link">
+    <span class="md-ellipsis">
+      - Discrete prior: \(\theta \in \{0.2,0.5,0.7\}\) with \(\pi=\{0.1,0.01,0.89\}\) → MAP \(=0.7\)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#5-posterior-mean-shrinkage" class="md-nav__link">
     <span class="md-ellipsis">
       5) Posterior Mean &amp; Shrinkage
@@ -1086,6 +1119,39 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#4-maximum-a-posteriori-estimator" class="md-nav__link">
+    <span class="md-ellipsis">
+      4) Maximum a Posteriori Estimator
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4) Maximum a Posteriori Estimator">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.1 Example
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#-discrete-prior-theta-in-020507-with-pi01001089-map-07" class="md-nav__link">
+    <span class="md-ellipsis">
+      - Discrete prior: \(\theta \in \{0.2,0.5,0.7\}\) with \(\pi=\{0.1,0.01,0.89\}\) → MAP \(=0.7\)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#5-posterior-mean-shrinkage" class="md-nav__link">
     <span class="md-ellipsis">
       5) Posterior Mean &amp; Shrinkage
@@ -1224,6 +1290,44 @@ p(\sigma^2 \mid y) \propto (\sigma^2)^{-\frac{n}{2}-1} \exp\left(-\frac{1}{2\sig
 $$</p>
 <p>⇒ <span class="arithmatex">\(\sigma^2 | y \sim \text{Inv-Gamma}\left(\frac{n}{2}, \frac{1}{2} \sum (y_i - \mu)^2\right)\)</span></p>
 <hr />
+<h2 id="4-maximum-a-posteriori-estimator"><strong>4) Maximum a Posteriori Estimator</strong><a class="headerlink" href="#4-maximum-a-posteriori-estimator" title="Permanent link">&para;</a></h2>
+<p>MAP = Posterior Mode</p>
+<div class="arithmatex">\[
+\hat{\theta}_{\text{MAP}}
+= \arg\max_{\theta}\, p(\theta \mid D)
+= \arg\max_{\theta}\, \log p(D \mid \theta) + \log \pi(\theta)
+\]</div>
+<table>
+<thead>
+<tr>
+<th>Estimator</th>
+<th>Formula</th>
+<th>Prior Used</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>MLE</strong></td>
+<td><span class="arithmatex">\(\arg\max_{\theta}\, p(D \mid \theta)\)</span></td>
+<td>No prior</td>
+</tr>
+<tr>
+<td><strong>MAP</strong></td>
+<td><span class="arithmatex">\(\arg\max_{\theta}\, p(D \mid \theta)\,\pi(\theta)\)</span></td>
+<td>Includes prior</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="41-example"><strong>4.1 Example</strong><a class="headerlink" href="#41-example" title="Permanent link">&para;</a></h3>
+<p>Data: <span class="arithmatex">\(x = (0,0,1,1,0)\)</span> from Bernoulli(<span class="arithmatex">\(\theta\)</span>)</p>
+<ul>
+<li><strong>MLE</strong></li>
+</ul>
+<p>$$
+  \hat{\theta}_{\text{MLE}}=\frac{2}{5}=0.4
+  $$</p>
+<h2 id="-discrete-prior-theta-in-020507-with-pi01001089-map-07">- <strong>Discrete prior</strong>: <span class="arithmatex">\(\theta \in \{0.2,0.5,0.7\}\)</span> with <span class="arithmatex">\(\pi=\{0.1,0.01,0.89\}\)</span> → MAP <span class="arithmatex">\(=0.7\)</span><a class="headerlink" href="#-discrete-prior-theta-in-020507-with-pi01001089-map-07" title="Permanent link">&para;</a></h2>
 <h2 id="5-posterior-mean-shrinkage"><strong>5) Posterior Mean &amp; Shrinkage</strong><a class="headerlink" href="#5-posterior-mean-shrinkage" title="Permanent link">&para;</a></h2>
 <p>Posterior mean is a weighted average of data + prior.</p>
 <h3 id="51-betabinomial-example"><strong>5.1 Beta–Binomial Example</strong><a class="headerlink" href="#51-betabinomial-example" title="Permanent link">&para;</a></h3>
