@@ -173,5 +173,9 @@ $$
 
 ---
 
-## **Summary Quote**
+## **Summary**
 > *A prior’s “uninformativeness” depends on the parameter scale. Jeffreys’ rule and weakly informative priors balance mathematical invariance and practical stability—ensuring the data, not arbitrary parameterization, drives inference.*
+
+---
+<sub>© Jeongsoo Pang — All rights reserved
+
