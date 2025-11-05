@@ -15,6 +15,7 @@ hide:
 - **Proper posterior is required:** $\sum_\theta p(\theta\mid x)=1$ (discrete) or $\int p(\theta\mid x)d\theta=1$ (continuous).  
 
 **Useful identities**
+
 - **Odds form:** $\displaystyle \frac{P(\theta_1\mid Y)}{P(\theta_2\mid Y)}=\frac{P(\theta_1)P(Y\mid\theta_1)}{P(\theta_2)P(Y\mid\theta_2)}$  
 - **Total expectation:** $E[U]=E_V\!\big[E[U\mid V]\big]$  
 - **Total variance:** $\mathrm{Var}(U)=E[\mathrm{Var}(U\mid V)]+\mathrm{Var}(E[U\mid V])$  
@@ -22,9 +23,9 @@ hide:
 ---
 
 ## **2) What is a Prior**
-- Priors encode information **before** observing $x$.  
-- **Not all priors are “subjective”:** can be chosen by **objective** principles (e.g., invariance, Jeffreys), **mathematical convenience**, **decision-theoretic** arguments, or **elicitation** from experts.  
-- Families: **conjugate**, **informative/weakly-informative**, **non/informative**, **reference**, **Jeffreys**, **improper**, **invariant**, **nonparametric**.  
+- Priors encode information before observing $x$.  
+- Not all priors are “subjective”: can be chosen by **objective principles**, **mathematical convenience**, **decision-theoretic arguments**, or **elicitation** from experts.  
+- **Families**: **conjugate**, **informative/weakly-informative**, **non/informative**, **reference**, **Jeffreys**, **improper**, **invariant**, **nonparametric**.  
 
 ---
 
@@ -36,7 +37,7 @@ A prior $\pi(\theta)$ is **conjugate** to likelihood $p(x\mid\theta)$ if the **p
 
 ## **4) Core Conjugate Pairs**
 
-### **Normal mean**
+### **4.1) Normal mean**
 - Model: $X\sim\mathcal N(\mu,\sigma^2)$, $\sigma^2$ known  
 - Prior: $\mu\sim\mathcal N(\nu,\eta^2)$  
 - Posterior:
@@ -54,7 +55,7 @@ A prior $\pi(\theta)$ is **conjugate** to likelihood $p(x\mid\theta)$ if the **p
   \right)
   $$
 
-### **Bernoulli/Binomial**
+### **4.2) Bernoulli/Binomial**
 - Bernoulli $X_i\sim\mathrm{Ber}(\theta)$ or $Y\sim\mathrm{Bin}(n,\theta)$  
 - Prior: $\theta\sim\mathrm{Beta}(\alpha,\beta)$  
 - Let $S=\sum_i X_i$ (or $y$). Posterior:
@@ -62,7 +63,7 @@ A prior $\pi(\theta)$ is **conjugate** to likelihood $p(x\mid\theta)$ if the **p
   \theta\mid X \sim \mathrm{Beta}\!\big(\alpha+S,\;\beta+n-S\big)
   $$
 
-### **Geometric**
+### **4.3) Geometric**
 - $X\sim\mathrm{Geom}(\theta)$ (trials until first success, support $1,2,\dots$)  
 - Prior: $\theta\sim\mathrm{Beta}(\alpha,\beta)$  
 - Posterior:
@@ -70,7 +71,7 @@ A prior $\pi(\theta)$ is **conjugate** to likelihood $p(x\mid\theta)$ if the **p
   \theta\mid X=x \sim \mathrm{Beta}\!\big(\alpha+1,\;\beta+x-1\big)
   $$
 
-### **Poisson**
+### **4.4) Poisson**
 - $X\sim\mathrm{Poisson}(\lambda)$  
 - Prior: $\lambda\sim\mathrm{Gamma}(\alpha,\beta)$ (shape–rate)  
 - Posterior:
@@ -81,7 +82,7 @@ A prior $\pi(\theta)$ is **conjugate** to likelihood $p(x\mid\theta)$ if the **p
 ---
 
 ## **5) Variance Priors & Joint Conjugacy for Normal**
-### **Inverse-Gamma for variance (mean known)**
+### **5.1) Inverse-Gamma for variance (mean known)**
 - $X\sim\mathcal N(\mu,\sigma^2)$ with $\mu$ known  
 - Prior: $\sigma^2\sim\mathrm{InvGamma}(\alpha,\beta)$  
 - Posterior:
@@ -89,7 +90,7 @@ A prior $\pi(\theta)$ is **conjugate** to likelihood $p(x\mid\theta)$ if the **p
   \sigma^2 \mid X \sim \mathrm{InvGamma}\!\left(\alpha+\tfrac12,\;\beta+\tfrac12(X-\mu)^2\right)
   $$
 
-### **Normal–Inverse-Gamma (mean & variance unknown)**
+### **5.2) Normal–Inverse-Gamma (mean & variance unknown)**
 - Likelihood: $X\mid\mu,\sigma^2\sim\mathcal N(\mu,\sigma^2)$  
 - Prior: 
   $$
@@ -123,7 +124,7 @@ Many likelihoods satisfy
 $$
 p(x\mid\eta)=h(x)\exp\{\eta^\top t(x)-g(\eta)\}
 $$
-A **generic conjugate prior** is  
+A generic conjugate prior is  
 $$
 \pi(\eta\mid\tau,\rho)\propto \exp\{\tau^\top\eta-\rho\,g(\eta)\}
 $$
@@ -143,8 +144,8 @@ $$
 
 ---
 
-## **One-sentence Note**
-> *Conjugate priors turn Bayes’ rule into simple algebra: prior hyperparameters update with sufficient statistics, giving closed-form posteriors and crisp interpretations (precision-weighted averaging, count-additivity).*
+## **Note**
+> Conjugate priors turn Bayes’ rule into simple algebra: prior hyperparameters update with sufficient statistics, giving closed-form posteriors and crisp interpretations (precision-weighted averaging, count-additivity).
 
 ---
 <sub>© Jeongsoo Pang — All rights reserved
