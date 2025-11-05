@@ -4,7 +4,6 @@ hide:
   - title
 ---
 # **1. Bayesian foundations and motivation**
-**Author:** Jeongsoo Pang  
 
 ## **1) Concept**
 **Bayesian Statistical Inference**" Framework that uses Bayes’ Rule to combine prior knowledge with observed data.
@@ -24,7 +23,7 @@ hide:
 
 **Probabilistic conclusions**: Allows probability statements about parameters
 
-- ex) “There’s a 95% probability $\theta$ lies in this range”
+ex) “There’s a 95% probability $\theta$ lies in this range”
 ---
 
 ## **3) Core Equation (Bayes’ Rule)**
@@ -106,8 +105,8 @@ $$
 - **Result:** Fast training, interpretable features, still used for baseline text classification.  
 
 ---
-<sub>© Jeongsoo Pang — All rights reserved
 
 ## **12) Summary Quote**
 > *Bayesian inference formalizes learning from data by updating prior beliefs with evidence to obtain a posterior. It enables rational, probabilistic reasoning for real-world uncertainty which is foundational to modern machine learning and decision-making.*
-
+---
+<sub>© Jeongsoo Pang — All rights reserved
