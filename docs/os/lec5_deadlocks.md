@@ -175,4 +175,4 @@ Break at least one of 4 conditions:
 
 ---
 
-s
+<sub>© Jeongsoo Pang — All rights reserved
