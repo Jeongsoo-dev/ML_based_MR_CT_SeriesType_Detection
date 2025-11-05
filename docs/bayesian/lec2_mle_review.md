@@ -5,12 +5,10 @@ hide:
 ---
 
 # **2. Distribution and Statistical Inference**
-**Author:** Jeongsoo Pang  
-
 ---
 
 ## **1) Overview**
-Reviewing essential **probability distributions** and introduces **Maximum Likelihood Estimation (MLE)**
+Reviewing essential probability distributions and introduces Maximum Likelihood Estimation (MLE)
 
 ---
 
@@ -106,14 +104,18 @@ Reviewing essential **probability distributions** and introduces **Maximum Likel
 ## **3) MLE – Maximum Likelihood Estimation**
 **Goal:** Estimate parameters $\theta$ that make observed data most probable.  
 Likelihood:  
+
 $$
 L(\theta; x) = f(x|\theta)
 $$  
 Log-likelihood:  
+
 $$
 \ell(\theta) = \ln L(\theta) = \sum_i \ln f(x_i|\theta)
 $$  
 MLE estimate:  
+
+
 $$
 \hat{\theta}_{MLE} = \arg\max_\theta \ell(\theta)
 $$  
@@ -137,7 +139,7 @@ Bayesian treats $\theta$ as random with prior $p(\theta)$:
 $$
 p(\theta|x) = \frac{p(x|\theta)p(\theta)}{p(x)} \propto p(x|\theta)p(\theta)
 $$  
-> This connects directly to **Lecture 3: Priors and Bayesian Updating**.
+> This connects directly to Lecture 3: Priors and Bayesian
 
 ---
 <sub>© Jeongsoo Pang — All rights reserved
