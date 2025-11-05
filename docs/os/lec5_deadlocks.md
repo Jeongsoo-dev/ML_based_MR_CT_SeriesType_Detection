@@ -9,10 +9,10 @@ hide:
 
 ## 1. What is a Deadlock
 
-Deadlock occurs when a set of processes are **blocked forever**, each waiting for a resource held by another process.
+Deadlock occurs when a set of processes are blocked forever, each waiting for a resource held by another process.
 
 ### Four Necessary Conditions (Coffman’s Conditions)  
-A deadlock can happen only if **all four** are true:
+A deadlock can happen only if all four are true:
 
 | Condition | Description |
 |-----------|-------------|
@@ -36,17 +36,17 @@ A deadlock can happen only if **all four** are true:
 
 - **Process → Resource (request)**
 - **Resource → Process (assigned)**  
-- If a **cycle exists and each resource has only 1 instance → Deadlock**.
+- If a cycle exists and each resource has only 1 instance → Deadlock
 
 Example:  
 P1 → R1 → P2 → R2 → P1 → Deadlock
-
 
 ---
 
 ## 4. Example — Deadlock Detection (Single Instance)
 
 Given the graph, detect cycle:
+
 - D holds **U**, waiting for **S** and **T**  
 - E holds **T**, waiting for **V**  
 - G holds **V**, waiting for **U**  
@@ -60,7 +60,8 @@ U (held by D) → T (held by E) → V (held by G) → U
 
 ## 5. Ostrich Algorithm
 
-> “If it rarely occurs, ignore it.”  
+> “If it rarely occurs, ignore it”
+ 
 Used by UNIX/Linux systems because full prevention is costly.  
 Good if "cost of handling deadlock" > "cost of ignoring".
 
@@ -123,6 +124,7 @@ Works if system knows in advance: max resources each process may need.
 **Available:** A = (1, 1, 2, 0)  
 
 **Allocation C** (rows = P1..P5):
+
 - P1: (3,0,1,1)
 - P2: (0,1,0,0)
 - P3: (1,0,1,0)
@@ -130,6 +132,7 @@ Works if system knows in advance: max resources each process may need.
 - P5: (0,0,0,0)
 
 **Need R** (remaining request):
+
 - P1: (2,1,0,0)
 - P2: (0,1,1,1)
 - P3: (3,1,0,0)
