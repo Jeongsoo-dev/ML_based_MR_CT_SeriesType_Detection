@@ -29,22 +29,23 @@ Therefor, the system is deadlock-free for n ≤ 5, and a deadlock becomes possib
 #### 3. A real-time system has four periodic events with periods of 50, 100, 200, and 250 msec each. Suppose the four events require 35, 20, 10, and x msec of CPU time, respectively. What is the largest value x for which the system is schedulable?
 
 **Utilization computation**
-\[
+
+$$
 U \;=\; \frac{35}{50}+\frac{20}{100}+\frac{10}{200}+\frac{x}{250}
 \;=\; 0.70 + 0.20 + 0.05 + \frac{x}{250}
 \;=\; 0.95 + \frac{x}{250}.
-\]
+$$
 
 **Schedulability condition**
-\[
-0.95 + \frac{x}{250} \;\le\; 1
-\;\;\Longrightarrow\;\;
-\frac{x}{250} \le 0.05
-\;\;\Longrightarrow\;\;
-x \le 12.5\ \text{ms}.
-\]
 
-**Therefore,** largest feasible \(x\): \(x_{\max}=12.5\) ms.  
+$$
+0.95 + \frac{x}{250} \;\le\; 1
+\;\Longrightarrow\;
+\frac{x}{250} \le 0.05
+\;\Longrightarrow\;
+x \le 12.5\ \text{ms}.
+$$
+
 #### 4. Round-robin schedulers normally maintain a list of all runnable processes, with each process oc-curring exactly once in the list. What would happen if a process occurred more than once in the list? Would there be any reason for allowing this?
 
 In standard Round-robin scheduler, each runnable process appears exactly once, and each receives one time quantum per full rotation.
@@ -75,47 +76,61 @@ Assuming three resources consider the following snapshot of a system.
 | P4      | 211       | 222     |           |
 | P5      | 002       | 433     |           |
 
-#### 1. Determine the content of the Request matrix.
-By definition,
-\[
-\mathbf{Need} \;=\; \mathbf{Max} - \mathbf{Alloc}.
-\]
-Row-wise:
-- \(P_1:\ (7,5,3)-(0,1,0)=(7,4,3)\)
-- \(P_2:\ (3,2,2)-(2,0,0)=(1,2,2)\)
-- \(P_3:\ (9,0,2)-(3,0,2)=(6,0,0)\)
-- \(P_4:\ (2,2,2)-(2,1,1)=(0,1,1)\)
-- \(P_5:\ (4,3,3)-(0,0,2)=(4,3,1)\)
+#### 1. Determine the content of the Request (Need) matrix.
+Row-wise calculations:
 
-So
-\[
-\mathbf{Need}=
+- \(P_1: (7,5,3) - (0,1,0) = (7,4,3)\)  
+- \(P_2: (3,2,2) - (2,0,0) = (1,2,2)\)  
+- \(P_3: (9,0,2) - (3,0,2) = (6,0,0)\)  
+- \(P_4: (2,2,2) - (2,1,1) = (0,1,1)\)  
+- \(P_5: (4,3,3) - (0,0,2) = (4,3,1)\)  
+
+Need matrix:
+$$
+\mathbf{Need} =
 \begin{bmatrix}
 7 & 4 & 3 \\
 1 & 2 & 2 \\
 6 & 0 & 0 \\
 0 & 1 & 1 \\
 4 & 3 & 1
-\end{bmatrix}.
-\]
+\end{bmatrix}
+$$
 
 #### 2. Is the system in a safe state?
 Available resources: $[3,3,2]$. 
 
-1. **\(P_2\)**: \((1,2,2) \le (3,3,2)\)   
-   \(\mathbf{Work}\leftarrow (3,3,2)+(2,0,0)=(5,3,2)\)
+I attempt to find a safe sequence using the Banker's Algorithm.
 
-2. **\(P_4\)**: \((0,1,1) \le (5,3,2)\)   
-   \(\mathbf{Work}\leftarrow (5,3,2)+(2,1,1)=(7,4,3)\)
+1. **\(P_2\)**: Need \((1,2,2) \le (3,3,2)\)  
+   → Work becomes  
+   $$
+   \mathbf{Work} \leftarrow (3,3,2) + (2,0,0) = (5,3,2)
+   $$
 
-3. **\(P_5\)**: \((4,3,1) \le (7,4,3)\)   
-   \(\mathbf{Work}\leftarrow (7,4,3)+(0,0,2)=(7,4,5)\)
+2. **\(P_4\)**: Need \((0,1,1) \le (5,3,2)\)  
+   → Work becomes  
+   $$
+   \mathbf{Work} \leftarrow (5,3,2) + (2,1,1) = (7,4,3)
+   $$
 
-4. **\(P_1\)**: \((7,4,3) \le (7,4,5)\)   
-   \(\mathbf{Work}\leftarrow (7,4,5)+(0,1,0)=(7,5,5)\)
+3. **\(P_5\)**: Need \((4,3,1) \le (7,4,3)\)  
+   → Work becomes  
+   $$
+   \mathbf{Work} \leftarrow (7,4,3) + (0,0,2) = (7,4,5)
+   $$
 
-5. **\(P_3\)**: \((6,0,0) \le (7,5,5)\)   
-   \(\mathbf{Work}\leftarrow (7,5,5)+(3,0,2)=(10,5,7)\)
+4. **\(P_1\)**: Need \((7,4,3) \le (7,4,5)\)  
+   → Work becomes  
+   $$
+   \mathbf{Work} \leftarrow (7,4,5) + (0,1,0) = (7,5,5)
+   $$
+
+5. **\(P_3\)**: Need \((6,0,0) \le (7,5,5)\)  
+   → Work becomes  
+   $$
+   \mathbf{Work} \leftarrow (7,5,5) + (3,0,2) = (10,5,7)
+   $$
 
 #### 3. Can all the processes be completed without the system being in an unsafe state at any stage?
 Yes, executing processes in the safe sequence above ensures that at no stage does the system enter an unsafe state, and all processes complete.
