@@ -188,3 +188,6 @@ Functions:
 - `pthread_yield()` – Yield CPU voluntarily
 
 > A process is an independent execution unit; a thread is a lightweight component sharing the same resources. Always distinguish between process-level isolation and thread-level concurrency.
+---
+<sub>© Jeongsoo Pang — All rights reserved
+
