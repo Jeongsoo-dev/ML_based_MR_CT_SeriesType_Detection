@@ -1104,10 +1104,9 @@
 
 
 <h1 id="2-distribution-and-statistical-inference"><strong>2. Distribution and Statistical Inference</strong><a class="headerlink" href="#2-distribution-and-statistical-inference" title="Permanent link">&para;</a></h1>
-<p><strong>Author:</strong> Jeongsoo Pang  </p>
 <hr />
 <h2 id="1-overview"><strong>1) Overview</strong><a class="headerlink" href="#1-overview" title="Permanent link">&para;</a></h2>
-<p>Reviewing essential <strong>probability distributions</strong> and introduces <strong>Maximum Likelihood Estimation (MLE)</strong></p>
+<p>Reviewing essential probability distributions and introduces Maximum Likelihood Estimation (MLE)</p>
 <hr />
 <h2 id="2-common-probability-distributions"><strong>2) Common Probability Distributions</strong><a class="headerlink" href="#2-common-probability-distributions" title="Permanent link">&para;</a></h2>
 <h3 id="discrete"><strong>Discrete</strong><a class="headerlink" href="#discrete" title="Permanent link">&para;</a></h3>
@@ -1210,18 +1209,18 @@
 <hr />
 <h2 id="3-mle-maximum-likelihood-estimation"><strong>3) MLE – Maximum Likelihood Estimation</strong><a class="headerlink" href="#3-mle-maximum-likelihood-estimation" title="Permanent link">&para;</a></h2>
 <p><strong>Goal:</strong> Estimate parameters <span class="arithmatex">\(\theta\)</span> that make observed data most probable.<br />
-Likelihood:<br />
-$$
+Likelihood:  </p>
+<p>$$
 L(\theta; x) = f(x|\theta)
 $$<br />
-Log-likelihood:<br />
-$$
+Log-likelihood:  </p>
+<p>$$
 \ell(\theta) = \ln L(\theta) = \sum_i \ln f(x_i|\theta)
 $$<br />
-MLE estimate:<br />
-$$
-\hat{\theta}<em>{MLE} = \arg\max</em>\theta \ell(\theta)
-$$  </p>
+MLE estimate:  </p>
+<div class="arithmatex">\[
+\hat{\theta}_{MLE} = \arg\max_\theta \ell(\theta)
+\]</div>
 <p><strong>Example: Coin flips</strong>
 $$
 L(p; x) = \binom{n}{x}p^x(1 - p)^{n - x}
@@ -1240,7 +1239,7 @@ $$
 p(\theta|x) = \frac{p(x|\theta)p(\theta)}{p(x)} \propto p(x|\theta)p(\theta)
 $$  </p>
 <blockquote>
-<p>This connects directly to <strong>Lecture 3: Priors and Bayesian Updating</strong>.</p>
+<p>This connects directly to Lecture 3: Priors and Bayesian</p>
 </blockquote>
 <hr />
 <p><sub>© Jeongsoo Pang — All rights reserved</p>

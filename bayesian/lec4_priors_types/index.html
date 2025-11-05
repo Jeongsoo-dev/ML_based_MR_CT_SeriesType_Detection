@@ -851,27 +851,27 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#example-1-binomial-model" class="md-nav__link">
+  <a href="#51-ex1-binomial-model" class="md-nav__link">
     <span class="md-ellipsis">
-      Example 1 — Binomial model
+      5.1) Ex1. Binomial model
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#example-2-odds-transformation" class="md-nav__link">
+  <a href="#52-ex2-odds-transformation" class="md-nav__link">
     <span class="md-ellipsis">
-      Example 2 — Odds transformation
+      5.2) Ex2. Odds transformation
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#example-3-log-odds-reparameterization" class="md-nav__link">
+  <a href="#53-ex3-log-odds-reparameterization" class="md-nav__link">
     <span class="md-ellipsis">
-      Example 3 — Log-odds reparameterization
+      5.3) Ex3. Log-odds reparameterization
     </span>
   </a>
   
@@ -1148,27 +1148,27 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#example-1-binomial-model" class="md-nav__link">
+  <a href="#51-ex1-binomial-model" class="md-nav__link">
     <span class="md-ellipsis">
-      Example 1 — Binomial model
+      5.1) Ex1. Binomial model
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#example-2-odds-transformation" class="md-nav__link">
+  <a href="#52-ex2-odds-transformation" class="md-nav__link">
     <span class="md-ellipsis">
-      Example 2 — Odds transformation
+      5.2) Ex2. Odds transformation
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#example-3-log-odds-reparameterization" class="md-nav__link">
+  <a href="#53-ex3-log-odds-reparameterization" class="md-nav__link">
     <span class="md-ellipsis">
-      Example 3 — Log-odds reparameterization
+      5.3) Ex3. Log-odds reparameterization
     </span>
   </a>
   
@@ -1258,7 +1258,6 @@
 
 
 <h1 id="4-prior-distributions-ii-advanced-priors"><strong>4. Prior Distributions II (Advanced Priors)</strong><a class="headerlink" href="#4-prior-distributions-ii-advanced-priors" title="Permanent link">&para;</a></h1>
-<p><strong>Author:</strong> Jeongsoo Pang  </p>
 <hr />
 <h2 id="1-overview"><strong>1) Overview</strong><a class="headerlink" href="#1-overview" title="Permanent link">&para;</a></h2>
 <p>Extending prior concepts into <strong>improper, noninformative, Jeffreys, weakly informative</strong>, and <strong>reference priors</strong>, exploring how <strong>parameterization</strong> affects prior meaning and inference</p>
@@ -1354,14 +1353,16 @@ For Binomial <span class="arithmatex">\(y\sim Bin(n,\theta)\)</span> and prior <
 <li><strong>Vague/diffuse prior:</strong> High variance, weak information.  </li>
 <li><strong>Flat prior:</strong> Constant over parameter space (e.g., <span class="arithmatex">\(\pi(\theta)\propto1\)</span>), fully noninformative.</li>
 </ul>
-<p><strong>Noninformative priors</strong>:
-- Aim to let data “speak for itself.”<br />
-- Used in <strong>objective Bayes</strong> when little prior knowledge exists.<br />
-- No universally agreed definition — depends on model parameterization.  </p>
+<p><strong>Noninformative priors</strong>:</p>
+<ul>
+<li>Aim to let data “speak for itself.”  </li>
+<li>Used in <strong>objective Bayes</strong> when little prior knowledge exists.  </li>
+<li>No universally agreed definition — depends on model parameterization.  </li>
+</ul>
 <hr />
 <h2 id="5-parameterization-sensitivity"><strong>5) Parameterization Sensitivity</strong><a class="headerlink" href="#5-parameterization-sensitivity" title="Permanent link">&para;</a></h2>
 <p>Noninformative priors depend heavily on how parameters are defined.</p>
-<h3 id="example-1-binomial-model"><strong>Example 1 — Binomial model</strong><a class="headerlink" href="#example-1-binomial-model" title="Permanent link">&para;</a></h3>
+<h3 id="51-ex1-binomial-model"><strong>5.1) Ex1. Binomial model</strong><a class="headerlink" href="#51-ex1-binomial-model" title="Permanent link">&para;</a></h3>
 <p>For <span class="arithmatex">\(y\sim Bin(n,\theta)\)</span>:</p>
 <ul>
 <li>Flat prior: <span class="arithmatex">\(\theta\sim Uniform(0,1)\)</span> or <span class="arithmatex">\(\text{Beta}(1,1)\)</span><br />
@@ -1369,7 +1370,7 @@ For Binomial <span class="arithmatex">\(y\sim Bin(n,\theta)\)</span> and prior <
   \Rightarrow \theta|y\sim Beta(y+1, n-y+1)
   $$</li>
 </ul>
-<h3 id="example-2-odds-transformation"><strong>Example 2 — Odds transformation</strong><a class="headerlink" href="#example-2-odds-transformation" title="Permanent link">&para;</a></h3>
+<h3 id="52-ex2-odds-transformation"><strong>5.2) Ex2. Odds transformation</strong><a class="headerlink" href="#52-ex2-odds-transformation" title="Permanent link">&para;</a></h3>
 <p>Let <span class="arithmatex">\(o=\frac{\theta}{1-\theta}\)</span> and assume flat prior on <span class="arithmatex">\(o\)</span> (<span class="arithmatex">\(p(o)\propto1\)</span>).<br />
 Then the induced prior on <span class="arithmatex">\(\theta\)</span> is:
 $$
@@ -1382,7 +1383,7 @@ p(\theta|y)\propto \theta^y(1-\theta)^{n-y-2} \Rightarrow \theta|y\sim Beta(y+1,
 $$
 Posterior becomes improper when <span class="arithmatex">\(n-y\le1\)</span></p>
 <hr />
-<h3 id="example-3-log-odds-reparameterization"><strong>Example 3 — Log-odds reparameterization</strong><a class="headerlink" href="#example-3-log-odds-reparameterization" title="Permanent link">&para;</a></h3>
+<h3 id="53-ex3-log-odds-reparameterization"><strong>5.3) Ex3. Log-odds reparameterization</strong><a class="headerlink" href="#53-ex3-log-odds-reparameterization" title="Permanent link">&para;</a></h3>
 <p>Let <span class="arithmatex">\(\rho=\log\!\left(\frac{\theta}{1-\theta}\right)\)</span> and assume <span class="arithmatex">\(\rho\sim Uniform(-\infty,\infty)\)</span>.<br />
 Then,
 $$
@@ -1395,7 +1396,7 @@ $$
 <strong>Insight:</strong> “Flat” priors depend on the scale; uniform in <span class="arithmatex">\(\theta\)</span>, <span class="arithmatex">\(o\)</span>, or <span class="arithmatex">\(\rho\)</span> lead to very different beliefs</p>
 <hr />
 <h2 id="6-jeffreys-prior"><strong>6) Jeffreys’ Prior</strong><a class="headerlink" href="#6-jeffreys-prior" title="Permanent link">&para;</a></h2>
-<p><strong>Motivation:</strong> A prior should remain “uninformative” under smooth reparameterization.  </p>
+<p>Motivation: prior should remain “uninformative” under smooth reparameterization.  </p>
 <p>Jeffreys’ Rule:
 $$
 \pi(\theta)\propto \sqrt{I(\theta)}
@@ -1424,7 +1425,7 @@ $$</p>
 $$
 I(\mu)=\frac{1}{\sigma^2} \Rightarrow \pi(\mu)\propto1
 $$
-⇒ Jeffreys’ prior is <strong>uniform</strong> (improper)</p>
+⇒ Jeffreys’ prior is <strong>uniform</strong></p>
 <hr />
 <h2 id="7-weakly-informative-priors"><strong>7) Weakly Informative Priors</strong><a class="headerlink" href="#7-weakly-informative-priors" title="Permanent link">&para;</a></h2>
 <ul>
@@ -1451,7 +1452,7 @@ I(\Theta, T) = \iint p(\theta, t)\,
 <hr />
 <h2 id="summary"><strong>Summary</strong><a class="headerlink" href="#summary" title="Permanent link">&para;</a></h2>
 <blockquote>
-<p><em>A prior’s “uninformativeness” depends on the parameter scale. Jeffreys’ rule and weakly informative priors balance mathematical invariance and practical stability—ensuring the data, not arbitrary parameterization, drives inference.</em></p>
+<p><em>A prior’s “uninformativeness” depends on the parameter scale. Jeffreys’ rule and weakly informative priors balance mathematical invariance and practical stability which ensures the data, not arbitrary parameterization, drives inference.</em></p>
 </blockquote>
 <hr />
 <p><sub>© Jeongsoo Pang — All rights reserved</p>
