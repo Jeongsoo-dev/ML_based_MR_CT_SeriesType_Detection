@@ -31,8 +31,8 @@ extra_javascript:
 nav:
   - Projects:
       - "0. Overview": portfolio/index.md
-      - "1. Cercare-Medical ML Project": index.md
-      - "2. Anti-Drone Project": anti_drone.md
+      - "1. Cercare-Medical": index.md
+      - "2. Anti-Drone": anti_drone.md
       - "3. Remote Feeling Mimicking Chair": remote_chair.md
   - OS:
       - "0. Overview": os/index.md
@@ -40,10 +40,11 @@ nav:
       - "2. Process and Threads": os/lec2_process_thread.md
       - "3. IPC": os/lec3_ipc_synchronization.md
       - "4. Schduling": os/lec4_scheduling.md
+      - "5. Deadlocks": os/lec5_deadlocks.md
   - Bayesian:
       - "0. Overview": bayesian/index.md
       - "1. Foundations": bayesian/foundations.md
-      - "2. MLE review": bayesian/mle-review.md
+      - "2. MLE": bayesian/mle-review.md
       - "3. Prior and Bayesian": bayesian/priors-logic.md
       - "4. Priors Details": bayesian/priors-types.md
       - "5. Posterior inference": bayesian/posterior-inference.md
