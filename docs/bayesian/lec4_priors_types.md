@@ -49,6 +49,7 @@ For Binomial $y\sim Bin(n,\theta)$ and prior $\text{Beta}(0,0)$,
 the posterior $\text{Beta}(y, n-y)$ is proper when $y,n-y>0$.  
 
 **Another example:**  
+
 For $X_i\sim N(\mu,\sigma^2)$ with $\pi(\mu)\propto1$,
 
 $$
