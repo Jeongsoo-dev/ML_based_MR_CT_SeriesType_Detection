@@ -10,8 +10,6 @@ hide:
 
 ## **1) Key Concepts**
 
-This lecture focuses on:
-
 - Difference between *onfidence Intervals (Frequentist) and Credible Intervals (Bayesian)
 - HPD (Highest Posterior Density) intervals
 - Bayesian credible interval calculation
@@ -22,7 +20,7 @@ This lecture focuses on:
 
 ## **2) Confidence vs Credible Interval**
 
-### **2.1 Confidence Interval (Frequentist)**  
+### 2.1 Confidence Interval (Frequentist)
 A 100(1−α)% confidence interval satisfies:
 
 $$
@@ -35,7 +33,7 @@ $$
   \bar{X} \pm z_{\alpha/2} \frac{\sigma}{\sqrt{n}}
   $$
 
-### **2.2 Credible Interval (Bayesian)**  
+### 2.2 Credible Interval (Bayesian)
 A 100(1−α)% credible interval I satisfies:
 
 $$
@@ -52,7 +50,7 @@ $$
 | Interval Type | Definition |
 |---------------|------------|
 | **Equal-Tailed** | Lower α/2 and upper 1−α/2 posterior quantiles |
-| **HPD (Highest Posterior Density)** | Shortest interval B such that ∫_B p(θ|x) dθ = 1−α and all interior points have higher posterior density than outside |
+| **Highest Posterior Density** | Shortest interval B such that ∫_B p(θ|x) dθ = 1−α and all interior points have higher posterior density than outside |
 | **One-Sided** | [a, ∞) or (−∞, b] |
 | **Two-Sided** | Symmetric around mean or median (if posterior is symmetric) |
 
@@ -77,7 +75,7 @@ $$
 
 ---
 
-## **5) Ex1.Beta-Binomial Model**
+## **5) Beta-Binomial Model Example**
 
 Given:
 - Data: $x = 11$ successes out of $n = 12$
@@ -110,7 +108,7 @@ $$
 
 ---
 
-## **6) Ex2.Exponential with Gamma Prior**
+## **6) Exponential with Gamma Prior Example**
 
 Model:
 - $X_i \sim \text{Exponential}(\theta)$ (θ is mean)
@@ -130,7 +128,7 @@ Example values:
 
 ---
 
-## **7) Ex3.Censored Exponential Data**
+## **7) Censored Exponential Data Example**
 
 Survival model:
 $$
@@ -184,8 +182,7 @@ Decision Rule:
 
 ---
 
-### **Bayes Factor (BF)**
-
+### 9.1 Bayes Factor
 For hypotheses $H_0: θ = θ_0$ vs $H_1: θ = θ_1$:
 
 $$
