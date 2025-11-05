@@ -881,15 +881,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#-discrete-prior-theta-in-020507-with-pi01001089-map-07" class="md-nav__link">
-    <span class="md-ellipsis">
-      - Discrete prior: \(\theta \in \{0.2,0.5,0.7\}\) with \(\pi=\{0.1,0.01,0.89\}\) → MAP \(=0.7\)
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#5-posterior-mean-shrinkage" class="md-nav__link">
     <span class="md-ellipsis">
       5) Posterior Mean &amp; Shrinkage
@@ -1143,15 +1134,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#-discrete-prior-theta-in-020507-with-pi01001089-map-07" class="md-nav__link">
-    <span class="md-ellipsis">
-      - Discrete prior: \(\theta \in \{0.2,0.5,0.7\}\) with \(\pi=\{0.1,0.01,0.89\}\) → MAP \(=0.7\)
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#5-posterior-mean-shrinkage" class="md-nav__link">
     <span class="md-ellipsis">
       5) Posterior Mean &amp; Shrinkage
@@ -1327,27 +1309,30 @@ $$</p>
 <p>$$
   \hat{\theta}_{\text{MLE}}=\frac{2}{5}=0.4
   $$</p>
-<h2 id="-discrete-prior-theta-in-020507-with-pi01001089-map-07">- <strong>Discrete prior</strong>: <span class="arithmatex">\(\theta \in \{0.2,0.5,0.7\}\)</span> with <span class="arithmatex">\(\pi=\{0.1,0.01,0.89\}\)</span> → MAP <span class="arithmatex">\(=0.7\)</span><a class="headerlink" href="#-discrete-prior-theta-in-020507-with-pi01001089-map-07" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Discrete prior</strong>: <span class="arithmatex">\(\theta \in \{0.2,0.5,0.7\}\)</span> with <span class="arithmatex">\(\pi=\{0.1,0.01,0.89\}\)</span> → MAP <span class="arithmatex">\(=0.7\)</span></li>
+</ul>
+<hr />
 <h2 id="5-posterior-mean-shrinkage"><strong>5) Posterior Mean &amp; Shrinkage</strong><a class="headerlink" href="#5-posterior-mean-shrinkage" title="Permanent link">&para;</a></h2>
 <p>Posterior mean is a weighted average of data + prior.</p>
 <h3 id="51-betabinomial-example"><strong>5.1 Beta–Binomial Example</strong><a class="headerlink" href="#51-betabinomial-example" title="Permanent link">&para;</a></h3>
-<p>If <span class="arithmatex">\(X_i \sim \operatorname{Bern}(\theta)\)</span> and <span class="arithmatex">\(\pi(\theta)\sim \operatorname{Beta}(\alpha,\beta)\)</span>:</p>
+<p>If <span class="arithmatex">\(X_i \sim \text{Bern}(\theta)\)</span> and <span class="arithmatex">\(\pi(\theta) \sim \text{Beta}(\alpha,\beta)\)</span>:</p>
 <ul>
 <li><strong>Posterior</strong></li>
 </ul>
-<p>$$
-  \theta \mid X \sim \operatorname{Beta}(\alpha+S_n,\;\beta+n-S_n)
-  $$</p>
+<div class="arithmatex">\[
+\theta \mid X \sim \text{Beta}(\alpha + S_n,\; \beta + n - S_n)
+\]</div>
 <ul>
 <li><strong>Posterior Mean</strong></li>
 </ul>
-<p>$$
-  \hat{\theta}<em _text_MLE="\text{MLE">E
-  = \frac{S_n+\alpha}{n+\alpha+\beta}
-  = \lambda\,\hat{\theta}</em>,
-  \qquad
-  \lambda=\frac{n}{n+\alpha+\beta}
-  $$}} + (1-\lambda)\,\theta_{\text{prior}</p>
+<div class="arithmatex">\[
+\hat{\theta}_E
+= \frac{S_n + \alpha}{n + \alpha + \beta}
+= \lambda \cdot \hat{\theta}_{\text{MLE}} + (1 - \lambda)\theta_{\text{prior}},
+\qquad
+\lambda = \frac{n}{n + \alpha + \beta}
+\]</div>
 <hr />
 <h2 id="6-posterior-variance"><strong>6) Posterior Variance</strong><a class="headerlink" href="#6-posterior-variance" title="Permanent link">&para;</a></h2>
 <p>For Beta–Binomial:</p>
