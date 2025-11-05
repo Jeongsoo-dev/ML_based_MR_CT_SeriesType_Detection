@@ -9,6 +9,8 @@
       
       
       
+        <link rel="prev" href="../lec3_priors_logic/">
+      
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -223,10 +225,12 @@
   
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
+      <li class="md-tabs__item md-tabs__item--active">
         <a href="../" class="md-tabs__link">
           
   
@@ -610,24 +614,29 @@
       
   
   
+    
   
   
+  
     
     
     
     
-      
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
         
           
-          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
             
   
   
@@ -640,7 +649,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             Bayesian
@@ -677,7 +686,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../foundations.md" class="md-nav__link">
+      <a href="../lec1_foundations/" class="md-nav__link">
         
   
   
@@ -700,7 +709,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../mle-review.md" class="md-nav__link">
+      <a href="../lec2_mle_review/" class="md-nav__link">
         
   
   
@@ -723,7 +732,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../priors-logic.md" class="md-nav__link">
+      <a href="../lec3_priors_logic/" class="md-nav__link">
         
   
   
@@ -743,10 +752,32 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../priors-types.md" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    4. Priors Details
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -757,6 +788,164 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      1) Overview
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-categories-of-priors" class="md-nav__link">
+    <span class="md-ellipsis">
+      2) Categories of Priors
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-proper-vs-improper-priors" class="md-nav__link">
+    <span class="md-ellipsis">
+      3) Proper vs. Improper Priors
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-informative-vs-noninformative-priors" class="md-nav__link">
+    <span class="md-ellipsis">
+      4) Informative vs. Noninformative Priors
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-parameterization-sensitivity" class="md-nav__link">
+    <span class="md-ellipsis">
+      5) Parameterization Sensitivity
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5) Parameterization Sensitivity">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-1-binomial-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example 1 — Binomial model
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-2-odds-transformation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example 2 — Odds transformation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-3-log-odds-reparameterization" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example 3 — Log-odds reparameterization
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-jeffreys-prior" class="md-nav__link">
+    <span class="md-ellipsis">
+      6) Jeffreys’ Prior
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6) Jeffreys’ Prior">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-bernoulli" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example: Bernoulli
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-normal-mean-2-known" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example: Normal mean (σ² known)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-weakly-informative-priors" class="md-nav__link">
+    <span class="md-ellipsis">
+      7) Weakly Informative Priors
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-reference-priors" class="md-nav__link">
+    <span class="md-ellipsis">
+      8) Reference Priors
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Summary
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -769,7 +958,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../posterior-inference/" class="md-nav__link">
+      <a href="../lec5_posterior_inference.md" class="md-nav__link">
         
   
   
@@ -792,7 +981,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../intervals-prediction/" class="md-nav__link">
+      <a href="../lec6_intervals_prediction.md" class="md-nav__link">
         
   
   
@@ -815,7 +1004,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../hypothesis-models/" class="md-nav__link">
+      <a href="../lec7_hypothesis_models.md" class="md-nav__link">
         
   
   
@@ -838,7 +1027,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../loss-decisions/" class="md-nav__link">
+      <a href="../lec8_loss_decisions.md" class="md-nav__link">
         
   
   
@@ -861,7 +1050,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../computation/" class="md-nav__link">
+      <a href="../lec9_computation.md" class="md-nav__link">
         
   
   
