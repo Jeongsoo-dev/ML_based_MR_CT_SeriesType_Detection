@@ -106,7 +106,7 @@ $$
 ---
 
 **Summary Quote**
-
 > Bayesian inference formalizes learning from data by updating prior beliefs with evidence to obtain a posterior. It enables rational, probabilistic reasoning for real-world uncertainty which is foundational to modern machine learning and decision-making
+
 ---
 <sub>© Jeongsoo Pang — All rights reserved
