@@ -1,4 +1,3 @@
-
 ---
 title: MCMC Updates
 hide:
@@ -13,15 +12,15 @@ hide:
 
 While basic MCMC methods (Metropolis–Hastings, Gibbs) are widely used, practical issues arise:
 
-- Slow convergence in high dimensions  
-- High autocorrelation between samples  
-- Poor mixing when parameters are correlated  
+- **Slow convergence in high dimensions**
+- **High autocorrelation between samples**
+- **Poor mixing when parameters are correlated**
 
 To address these, we study advanced MCMC update strategies:
 
-- Component-wise vs. block updating  
-- Adaptive and gradient-based proposals  
-- Diagnostics for efficiency
+- **Component-wise vs. block updating**
+- **Adaptive and gradient-based proposals**  
+- **Diagnostics for efficiency**
 
 ---
 
@@ -143,6 +142,7 @@ where
 - $K(p) = \frac{1}{2}p^\top M^{-1}p$ (kinetic energy)
 
 Simulate trajectories using leapfrog steps:
+
 1. Update momentum $p$
 2. Update position $\theta$
 3. Accept/reject based on energy conservation
@@ -189,4 +189,4 @@ $$
 
 ---
 
-<sub>© Jeongsoo Pang — All rights reserved</sub>
+<sub>© Jeongsoo Pang — All rights reserved
