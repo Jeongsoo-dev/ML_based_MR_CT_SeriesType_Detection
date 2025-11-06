@@ -12,7 +12,7 @@ hide:
 
 Bayesian inference updates belief about unknown parameters using prior knowledge and observed data.
 
-- **Goal:** Compute the **posterior distribution**  
+- **Goal: Compute posterior distribution**  
   $$
   p(\theta \mid D) = \frac{p(D \mid \theta) \pi(\theta)}{p(D)}
   $$
@@ -29,7 +29,7 @@ Bayesian inference updates belief about unknown parameters using prior knowledge
 
 | Concept | Definition | Example |
 |---------|------------|---------|
-| **Improper Prior** | Prior that does **not integrate to 1**, but can still yield a proper posterior | $\pi(\sigma^2) \propto \frac{1}{\sigma^2}$ |
+| **Improper Prior** | Prior that does not integrate to 1, but can still yield a proper posterior | $\pi(\sigma^2) \propto \frac{1}{\sigma^2}$ |
 | **Jeffreys’ Prior** | Objective noninformative prior derived from Fisher Information $I(\theta)$ | $\pi(\theta) \propto \sqrt{I(\theta)}$ |
 
 ---
