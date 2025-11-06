@@ -1300,12 +1300,13 @@ w(\theta) = \frac{p(\theta)}{q(\theta)}
 <p><strong>Procedure:</strong></p>
 <ol>
 <li><strong>Initialize:</strong> Choose a starting value <span class="arithmatex">\(\theta^{(0)}\)</span>.</li>
-<li><strong>At iteration <span class="arithmatex">\(t\)</span> (for <span class="arithmatex">\(t = 0,1,2,\dots\)</span>):</strong></li>
-<li><strong>(a) Propose a candidate</strong><br />
+<li>
+<p><strong>At iteration <span class="arithmatex">\(t\)</span> (for <span class="arithmatex">\(t = 0,1,2,\dots\)</span>):</strong>
+<strong>(a) Propose a candidate</strong><br />
      $$
      \theta^* \sim q(\theta^* \mid \theta^{(t)})
-     $$</li>
-<li><strong>(b) Compute the acceptance probability</strong>
+     $$
+<strong>(b) Compute the acceptance probability</strong>
      $$
      \alpha(\theta^{(t)}, \theta^*) = 
      \min \left[
@@ -1313,12 +1314,13 @@ w(\theta) = \frac{p(\theta)}{q(\theta)}
      \frac{p(\theta^*) \; q(\theta^{(t)} \mid \theta^*)}
           {p(\theta^{(t)}) \; q(\theta^* \mid \theta^{(t)})}
      \right]
-     $$</li>
-<li><strong>(c) Accept or reject</strong><ul>
-<li>With probability <span class="arithmatex">\(\alpha\)</span>, set <span class="arithmatex">\(\theta^{(t+1)} = \theta^\*\)</span>  </li>
-<li>Otherwise, keep previous value: <span class="arithmatex">\(\theta^{(t+1)} = \theta^{(t)}\)</span></li>
-</ul>
+     $$
+<strong>(c) Accept or reject</strong></p>
 </li>
+<li>
+<p>With probability <span class="arithmatex">\(\alpha\)</span>, set <span class="arithmatex">\(\theta^{(t+1)} = \theta^\*\)</span>  </p>
+</li>
+<li>Otherwise, keep previous value: <span class="arithmatex">\(\theta^{(t+1)} = \theta^{(t)}\)</span></li>
 </ol>
 <h3 id="72-special-case-random-walk-metropolis"><strong>7.2 Special Case: Random Walk Metropolis</strong><a class="headerlink" href="#72-special-case-random-walk-metropolis" title="Permanent link">&para;</a></h3>
 <p>A common and simple choice of proposal is a symmetric random walk:</p>
