@@ -1019,19 +1019,19 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#7-metropolis-hastings-mh-algorithm" class="md-nav__link">
+  <a href="#7-metropolishastings-mh-algorithm" class="md-nav__link">
     <span class="md-ellipsis">
-      7) Metropolis-Hastings (MH) Algorithm
+      7) Metropolis–Hastings (MH) Algorithm
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="7) Metropolis-Hastings (MH) Algorithm">
+    <nav class="md-nav" aria-label="7) Metropolis–Hastings (MH) Algorithm">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#71algorithm" class="md-nav__link">
+  <a href="#71-algorithm-step-by-step" class="md-nav__link">
     <span class="md-ellipsis">
-      7.1)Algorithm
+      7.1 Algorithm (Step-by-step)
     </span>
   </a>
   
@@ -1040,7 +1040,7 @@
           <li class="md-nav__item">
   <a href="#72-special-case-random-walk-metropolis" class="md-nav__link">
     <span class="md-ellipsis">
-      7.2) Special case: Random Walk Metropolis
+      7.2 Special Case: Random Walk Metropolis
     </span>
   </a>
   
@@ -1291,27 +1291,49 @@ w(\theta) = \frac{p(\theta)}{q(\theta)}
 <li>After burn-in, the chain approximates <span class="arithmatex">\(p(\theta|y)\)</span></li>
 </ul>
 <hr />
-<h2 id="7-metropolis-hastings-mh-algorithm"><strong>7) Metropolis-Hastings (MH) Algorithm</strong><a class="headerlink" href="#7-metropolis-hastings-mh-algorithm" title="Permanent link">&para;</a></h2>
-<h3 id="71algorithm"><strong>7.1)Algorithm</strong><a class="headerlink" href="#71algorithm" title="Permanent link">&para;</a></h3>
+<h2 id="7-metropolishastings-mh-algorithm"><strong>7) Metropolis–Hastings (MH) Algorithm</strong><a class="headerlink" href="#7-metropolishastings-mh-algorithm" title="Permanent link">&para;</a></h2>
+<p>The Metropolis–Hastings algorithm is a Markov Chain Monte Carlo method for sampling from a target distribution<br />
+(e.g., posterior <span class="arithmatex">\(p(\theta \mid y)\)</span>) when direct sampling is difficult.</p>
+<hr />
+<h3 id="71-algorithm-step-by-step"><strong>7.1 Algorithm (Step-by-step)</strong><a class="headerlink" href="#71-algorithm-step-by-step" title="Permanent link">&para;</a></h3>
+<p><strong>Goal:</strong> Construct a Markov chain <span class="arithmatex">\(\{\theta^{(t)}\}\)</span> whose stationary distribution is <span class="arithmatex">\(p(\theta \mid y)\)</span>.</p>
+<p><strong>Procedure:</strong></p>
 <ol>
-<li>Start at <span class="arithmatex">\(\theta^{(0)}\)</span></li>
-<li>At step <span class="arithmatex">\(t\)</span>:</li>
-<li>Propose <span class="arithmatex">\(\theta^* \sim q(\theta^* \mid \theta^{(t)})\)</span></li>
-<li>
-<p>Compute acceptance ratio:</p>
-<p>$$
- \alpha = \min \left(1, \frac{p(\theta^<em>) q(\theta^{(t)} \mid \theta^</em>)}
-                              {p(\theta^{(t)}) q(\theta^* \mid \theta^{(t)})} \right)
- $$</p>
+<li><strong>Initialize:</strong> Choose a starting value <span class="arithmatex">\(\theta^{(0)}\)</span>.</li>
+<li><strong>At iteration <span class="arithmatex">\(t\)</span> (for <span class="arithmatex">\(t = 0,1,2,\dots\)</span>):</strong></li>
+<li><strong>(a) Propose a candidate</strong><br />
+     $$
+     \theta^* \sim q(\theta^* \mid \theta^{(t)})
+     $$</li>
+<li><strong>(b) Compute the acceptance probability</strong>
+     $$
+     \alpha(\theta^{(t)}, \theta^*) = 
+     \min \left[
+     1,\;
+     \frac{p(\theta^*) \; q(\theta^{(t)} \mid \theta^*)}
+          {p(\theta^{(t)}) \; q(\theta^* \mid \theta^{(t)})}
+     \right]
+     $$</li>
+<li><strong>(c) Accept or reject</strong><ul>
+<li>With probability <span class="arithmatex">\(\alpha\)</span>, set <span class="arithmatex">\(\theta^{(t+1)} = \theta^\*\)</span>  </li>
+<li>Otherwise, keep previous value: <span class="arithmatex">\(\theta^{(t+1)} = \theta^{(t)}\)</span></li>
+</ul>
 </li>
-<li>
-<p>Accept <span class="arithmatex">\(\theta^{(t+1)} = \theta^*\)</span> with probability <span class="arithmatex">\(\alpha\)</span>  </p>
-</li>
-<li>Otherwise set <span class="arithmatex">\(\theta^{(t+1)} = \theta^{(t)}\)</span></li>
 </ol>
-<h3 id="72-special-case-random-walk-metropolis"><strong>7.2) Special case: Random Walk Metropolis</strong><a class="headerlink" href="#72-special-case-random-walk-metropolis" title="Permanent link">&para;</a></h3>
+<h3 id="72-special-case-random-walk-metropolis"><strong>7.2 Special Case: Random Walk Metropolis</strong><a class="headerlink" href="#72-special-case-random-walk-metropolis" title="Permanent link">&para;</a></h3>
+<p>A common and simple choice of proposal is a symmetric random walk:</p>
 <div class="arithmatex">\[
-q(\theta^* \mid \theta^{(t)}) = N(\theta^{(t)}, \sigma^2)
+q(\theta^\* \mid \theta^{(t)}) = \mathcal{N}(\theta^{(t)}, \sigma^2)
+\]</div>
+<p>Since this proposal is <strong>symmetric</strong>:
+$$
+q(\theta^* \mid \theta^{(t)}) = q(\theta^{(t)} \mid \theta^*)
+$$</p>
+<p>The acceptance probability simplifies to:</p>
+<div class="arithmatex">\[
+\alpha = \min \left( 1,\;
+\frac{p(\theta^\*)}{p(\theta^{(t)})}
+\right)
 \]</div>
 <hr />
 <h2 id="8-gibbs-sampling"><strong>8) Gibbs Sampling</strong><a class="headerlink" href="#8-gibbs-sampling" title="Permanent link">&para;</a></h2>
