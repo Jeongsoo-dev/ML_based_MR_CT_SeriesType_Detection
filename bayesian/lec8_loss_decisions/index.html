@@ -9,6 +9,10 @@
       
       
       
+        <link rel="prev" href="../lec7_hypothesis_models/">
+      
+      
+        <link rel="next" href="../lec9_computation/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -16,7 +20,7 @@
     
     
       
-        <title>Page Title - Jeongsoo Pang</title>
+        <title>Bayesian Decision Theory - Jeongsoo Pang</title>
       
     
     
@@ -70,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#page-title" class="md-skip">
+        <a href="#8-bayesian-decision-theory" class="md-skip">
           Skip to content
         </a>
       
@@ -106,7 +110,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Page Title
+              Bayesian Decision Theory
             
           </span>
         </div>
@@ -223,10 +227,12 @@
   
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
+      <li class="md-tabs__item md-tabs__item--active">
         <a href="../" class="md-tabs__link">
           
   
@@ -610,24 +616,29 @@
       
   
   
+    
   
   
+  
     
     
     
     
-      
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
         
           
-          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
             
   
   
@@ -640,7 +651,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             Bayesian
@@ -835,15 +846,170 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../lec8_loss_decisions.md" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    8. Loss functions
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
   <span class="md-ellipsis">
     8. Loss functions
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      1) Overview
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-components-of-a-bayesian-decision-problem" class="md-nav__link">
+    <span class="md-ellipsis">
+      2) Components of a Bayesian Decision Problem
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-loss-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      3) Loss Functions
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-frequentist-risk" class="md-nav__link">
+    <span class="md-ellipsis">
+      4) Frequentist Risk
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-posterior-risk-bayesian-perspective" class="md-nav__link">
+    <span class="md-ellipsis">
+      5) Posterior Risk (Bayesian Perspective)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-bayes-estimator" class="md-nav__link">
+    <span class="md-ellipsis">
+      6) Bayes Estimator
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-bayes-risk" class="md-nav__link">
+    <span class="md-ellipsis">
+      7) Bayes Risk
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-minimax-decision-rule-frequentist" class="md-nav__link">
+    <span class="md-ellipsis">
+      8) Minimax Decision Rule (Frequentist)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-example-umbrella-decision" class="md-nav__link">
+    <span class="md-ellipsis">
+      9) Example — Umbrella Decision
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      10) Summary
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lec9_computation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    9. Computational methods
     
   </span>
   
@@ -861,12 +1027,35 @@
   
   
     <li class="md-nav__item">
-      <a href="../lec9_computation.md" class="md-nav__link">
+      <a href="../lec10_mcmc/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    9. Computational methods
+    10. MCMC-Update
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lec11_hierarchy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    11. Hierarchical Models
     
   </span>
   
@@ -906,6 +1095,104 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      1) Overview
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-components-of-a-bayesian-decision-problem" class="md-nav__link">
+    <span class="md-ellipsis">
+      2) Components of a Bayesian Decision Problem
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-loss-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      3) Loss Functions
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-frequentist-risk" class="md-nav__link">
+    <span class="md-ellipsis">
+      4) Frequentist Risk
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-posterior-risk-bayesian-perspective" class="md-nav__link">
+    <span class="md-ellipsis">
+      5) Posterior Risk (Bayesian Perspective)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-bayes-estimator" class="md-nav__link">
+    <span class="md-ellipsis">
+      6) Bayes Estimator
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-bayes-risk" class="md-nav__link">
+    <span class="md-ellipsis">
+      7) Bayes Risk
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-minimax-decision-rule-frequentist" class="md-nav__link">
+    <span class="md-ellipsis">
+      8) Minimax Decision Rule (Frequentist)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-example-umbrella-decision" class="md-nav__link">
+    <span class="md-ellipsis">
+      9) Example — Umbrella Decision
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      10) Summary
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -922,8 +1209,168 @@
 
 
 
-<h1 id="page-title">Page Title<a class="headerlink" href="#page-title" title="Permanent link">&para;</a></h1>
-<p><em>Work-in-progress.</em></p>
+<h1 id="8-bayesian-decision-theory"><strong>8. Bayesian Decision Theory</strong><a class="headerlink" href="#8-bayesian-decision-theory" title="Permanent link">&para;</a></h1>
+<hr />
+<h2 id="1-overview"><strong>1) Overview</strong><a class="headerlink" href="#1-overview" title="Permanent link">&para;</a></h2>
+<p>Bayesian Decision Theory provides a framework for making optimal decisions under uncertainty by combining:</p>
+<ul>
+<li><strong>Probability (Bayesian inference)</strong>  </li>
+<li><strong>Consequences (loss function)</strong></li>
+</ul>
+<p>Key idea: Choose the decision that <em>minimizes expected loss</em>.</p>
+<hr />
+<h2 id="2-components-of-a-bayesian-decision-problem"><strong>2) Components of a Bayesian Decision Problem</strong><a class="headerlink" href="#2-components-of-a-bayesian-decision-problem" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Component</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Parameter</strong> <span class="arithmatex">\(\theta\)</span></td>
+<td>Unknown state of nature</td>
+</tr>
+<tr>
+<td><strong>Data</strong> <span class="arithmatex">\(x\)</span></td>
+<td>Observation from distribution <span class="arithmatex">\(p(x \mid \theta)\)</span></td>
+</tr>
+<tr>
+<td><strong>Decision rule</strong> <span class="arithmatex">\(\delta(x)\)</span></td>
+<td>Function mapping data → action</td>
+</tr>
+<tr>
+<td><strong>Loss function</strong> <span class="arithmatex">\(L(\theta, \delta(x))\)</span></td>
+<td>Penalty for choosing decision <span class="arithmatex">\(\delta(x)\)</span> when <span class="arithmatex">\(\theta\)</span> is true</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="3-loss-functions"><strong>3) Loss Functions</strong><a class="headerlink" href="#3-loss-functions" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Loss Type</th>
+<th>Definition</th>
+<th>Use Case</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>0–1 Loss (Classification/Hypothesis Test)</strong></td>
+<td><span class="arithmatex">\(L(\theta, \delta(x)) = \begin{cases} 0, &amp; \theta = \delta(x) \\ 1, &amp; \theta \ne \delta(x) \end{cases}\)</span></td>
+<td>Yes/No decision problems</td>
+</tr>
+<tr>
+<td><strong>Squared Error Loss</strong></td>
+<td><span class="arithmatex">\(L(\theta, \delta(x)) = (\theta - \delta(x))^2\)</span></td>
+<td>Parameter estimation</td>
+</tr>
+<tr>
+<td><strong>Example (Umbrella Problem)</strong></td>
+<td>Decision = bring umbrella or not. Loss = cost of being wet vs inconvenience of carrying umbrella</td>
+<td>Risk comparison</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="4-frequentist-risk"><strong>4) Frequentist Risk</strong><a class="headerlink" href="#4-frequentist-risk" title="Permanent link">&para;</a></h2>
+<p>Expected loss over all possible samples when <span class="arithmatex">\(\theta\)</span> is fixed:</p>
+<div class="arithmatex">\[
+R(\theta, \delta) = \mathbb{E}_\theta \big[ L(\theta, \delta(X)) \big]
+= \int L(\theta, \delta(x)) \, f(x \mid \theta) \, dx
+\]</div>
+<p>Risk = average penalty from repeated sampling under same <span class="arithmatex">\(\theta\)</span>.</p>
+<hr />
+<h2 id="5-posterior-risk-bayesian-perspective"><strong>5) Posterior Risk (Bayesian Perspective)</strong><a class="headerlink" href="#5-posterior-risk-bayesian-perspective" title="Permanent link">&para;</a></h2>
+<p>Given data <span class="arithmatex">\(x\)</span>, posterior expected loss is:</p>
+<div class="arithmatex">\[
+\rho(\delta(x)) = \int_\Theta L(\theta, \delta(x)) \, \pi(\theta \mid x) \, d\theta
+\]</div>
+<p><strong>Bayes Action (Optimal Decision):</strong></p>
+<div class="arithmatex">\[
+\delta^\*(x) = \arg\min_{\delta(x)} \, \rho(\delta(x))
+\]</div>
+<hr />
+<h2 id="6-bayes-estimator"><strong>6) Bayes Estimator</strong><a class="headerlink" href="#6-bayes-estimator" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p>Under squared error loss, the Bayes estimator is the <strong>posterior mean</strong>.</p>
+</blockquote>
+<p><strong>Proof Sketch:</strong></p>
+<p>Minimize</p>
+<div class="arithmatex">\[
+\rho(\delta(x)) = \int (\theta - \delta(x))^2 \, \pi(\theta|x)\, d\theta
+\]</div>
+<p>Differentiate w.r.t. <span class="arithmatex">\(\delta(x)\)</span> and set to 0:</p>
+<div class="arithmatex">\[
+\delta^\*(x) = \mathbb{E}[\theta \mid x]
+\]</div>
+<p>✔ Posterior mean minimizes expected squared error.</p>
+<hr />
+<h2 id="7-bayes-risk"><strong>7) Bayes Risk</strong><a class="headerlink" href="#7-bayes-risk" title="Permanent link">&para;</a></h2>
+<p>Total (overall) expected loss:</p>
+<div class="arithmatex">\[
+r(\pi, \delta) =
+\iint L(\theta, \delta(x)) f(x \mid \theta)\, \pi(\theta) \, dx \, d\theta
+= \int \rho(\delta(x)) \, \pi(x) \, dx
+\]</div>
+<ul>
+<li>Measures performance <strong>averaged over both prior and data</strong>  </li>
+<li><strong>Bayes rule</strong> <span class="arithmatex">\(\delta_B\)</span> minimizes <span class="arithmatex">\(r(\pi, \delta)\)</span></li>
+</ul>
+<hr />
+<h2 id="8-minimax-decision-rule-frequentist"><strong>8) Minimax Decision Rule (Frequentist)</strong><a class="headerlink" href="#8-minimax-decision-rule-frequentist" title="Permanent link">&para;</a></h2>
+<p>When no prior is assumed:</p>
+<div class="arithmatex">\[
+\delta^\*_{\text{minimax}} = \arg\min_\delta \max_{\theta} R(\theta, \delta)
+\]</div>
+<ul>
+<li>Protects against the <strong>worst-case</strong> <span class="arithmatex">\(\theta\)</span>  </li>
+<li>Purely frequentist — no prior involved</li>
+</ul>
+<hr />
+<h2 id="9-example-umbrella-decision"><strong>9) Example — Umbrella Decision</strong><a class="headerlink" href="#9-example-umbrella-decision" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Nature / Decision</th>
+<th>Take Umbrella (T)</th>
+<th>Don’t Take (D)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Rain (R)</strong></td>
+<td>0 (dry)</td>
+<td>10 (wet)</td>
+</tr>
+<tr>
+<td><strong>No Rain (N)</strong></td>
+<td>1 (inconvenience)</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+<p>If rain probability <span class="arithmatex">\(P(R)=p\)</span>:</p>
+<ul>
+<li>Bayes risk of <strong>Take Umbrella</strong>: <span class="arithmatex">\(r(T) = 1 - p\)</span>  </li>
+<li>Bayes risk of <strong>Don’t Take</strong>: <span class="arithmatex">\(r(D) = 10p\)</span>  </li>
+</ul>
+<p>Choose <span class="arithmatex">\(T\)</span> if <span class="arithmatex">\(1 - p &lt; 10p \Rightarrow p &gt; \frac{1}{11} \approx 0.09\)</span></p>
+<p><strong>Decision rule:</strong><br />
+- If <span class="arithmatex">\(P(\text{rain}) &gt; 0.09\)</span> → bring umbrella<br />
+- Else → leave it</p>
+<hr />
+<h2 id="10-summary"><strong>10) Summary</strong><a class="headerlink" href="#10-summary" title="Permanent link">&para;</a></h2>
+<p>✔ Decisions combine <strong>data + prior + loss function</strong><br />
+✔ <strong>Posterior risk</strong> is minimized to choose optimal decision<br />
+✔ <strong>Posterior mean = Bayes estimator</strong> (for squared loss)<br />
+✔ <strong>Bayes risk</strong> evaluates decision rules globally<br />
+✔ <strong>Minimax rule</strong> = safest against worst-case <span class="arithmatex">\(\theta\)</span> (no prior)<br />
+✔ Umbrella example illustrates real-world Bayesian reasoning</p>
+<hr />
+<p><sub>© Jeongsoo Pang — All rights reserved</sub></p>
 
 
 

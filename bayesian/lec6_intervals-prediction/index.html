@@ -1011,7 +1011,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../lec8_loss_decisions.md" class="md-nav__link">
+      <a href="../lec8_loss_decisions/" class="md-nav__link">
         
   
   
@@ -1034,12 +1034,58 @@
   
   
     <li class="md-nav__item">
-      <a href="../lec9_computation.md" class="md-nav__link">
+      <a href="../lec9_computation/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     9. Computational methods
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lec10_mcmc/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    10. MCMC-Update
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lec11_hierarchy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    11. Hierarchical Models
     
   </span>
   
@@ -1300,9 +1346,11 @@ P(\theta \in I \mid X) = 1 - \alpha
 </ul>
 <hr />
 <h2 id="5-beta-binomial-model-example"><strong>5) Beta-Binomial Model Example</strong><a class="headerlink" href="#5-beta-binomial-model-example" title="Permanent link">&para;</a></h2>
-<p>Given:
-- Data: <span class="arithmatex">\(x = 11\)</span> successes out of <span class="arithmatex">\(n = 12\)</span>
-- Prior: <span class="arithmatex">\(\theta \sim \text{Beta}(7, 3)\)</span></p>
+<p>Given:</p>
+<ul>
+<li>Data: <span class="arithmatex">\(x = 11\)</span> successes out of <span class="arithmatex">\(n = 12\)</span></li>
+<li>Prior: <span class="arithmatex">\(\theta \sim \text{Beta}(7, 3)\)</span></li>
+</ul>
 <p>Posterior:</p>
 <div class="arithmatex">\[
 \theta | x \sim \text{Beta}(18, 4)
@@ -1322,9 +1370,11 @@ P(\theta \in I \mid X) = 1 - \alpha
 \]</div>
 <hr />
 <h2 id="6-exponential-with-gamma-prior-example"><strong>6) Exponential with Gamma Prior Example</strong><a class="headerlink" href="#6-exponential-with-gamma-prior-example" title="Permanent link">&para;</a></h2>
-<p>Model:
-- <span class="arithmatex">\(X_i \sim \text{Exponential}(\theta)\)</span> (θ is mean)
-- Prior: <span class="arithmatex">\(\theta \sim \text{Gamma}(r, \lambda)\)</span></p>
+<p>Model:</p>
+<ul>
+<li><span class="arithmatex">\(X_i \sim \text{Exponential}(\theta)\)</span> (θ is mean)</li>
+<li>Prior: <span class="arithmatex">\(\theta \sim \text{Gamma}(r, \lambda)\)</span></li>
+</ul>
 <p>Posterior:</p>
 <div class="arithmatex">\[
 \theta | x \sim \text{Gamma}(r + n, \lambda + \sum x_i)

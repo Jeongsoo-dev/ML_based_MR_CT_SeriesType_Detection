@@ -9,10 +9,10 @@
       
       
       
-        <link rel="prev" href="../lec3_priors_logic/">
+        <link rel="prev" href="../lec9_computation/">
       
       
-        <link rel="next" href="../lec5_posterior-inference/">
+        <link rel="next" href="../lec11_hierarchy/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -20,7 +20,7 @@
     
     
       
-        <title>Advanced Priors and Jeffreys’ Rule - Jeongsoo Pang</title>
+        <title>10. MCMC-Update - Jeongsoo Pang</title>
       
     
     
@@ -74,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#4-prior-distributions-ii-advanced-priors" class="md-skip">
+        <a href="#10-mcmc-update" class="md-skip">
           Skip to content
         </a>
       
@@ -110,7 +110,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Advanced Priors and Jeffreys’ Rule
+              10. MCMC-Update
             
           </span>
         </div>
@@ -261,8 +261,6 @@
         <div class="md-main__inner md-grid">
           
             
-              
-                
               
               <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
                 <div class="md-sidebar__scrollwrap">
@@ -754,32 +752,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    4. Priors Details
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../lec4_priors_types/" class="md-nav__link">
         
   
   
@@ -790,164 +766,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#1-overview" class="md-nav__link">
-    <span class="md-ellipsis">
-      1) Overview
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#2-categories-of-priors" class="md-nav__link">
-    <span class="md-ellipsis">
-      2) Categories of Priors
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#3-proper-vs-improper-priors" class="md-nav__link">
-    <span class="md-ellipsis">
-      3) Proper vs. Improper Priors
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#4-informative-vs-noninformative-priors" class="md-nav__link">
-    <span class="md-ellipsis">
-      4) Informative vs. Noninformative Priors
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#5-parameterization-sensitivity" class="md-nav__link">
-    <span class="md-ellipsis">
-      5) Parameterization Sensitivity
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="5) Parameterization Sensitivity">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#51-ex1-binomial-model" class="md-nav__link">
-    <span class="md-ellipsis">
-      5.1) Ex1. Binomial model
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#52-ex2-odds-transformation" class="md-nav__link">
-    <span class="md-ellipsis">
-      5.2) Ex2. Odds transformation
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#53-ex3-log-odds-reparameterization" class="md-nav__link">
-    <span class="md-ellipsis">
-      5.3) Ex3. Log-odds reparameterization
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#6-jeffreys-prior" class="md-nav__link">
-    <span class="md-ellipsis">
-      6) Jeffreys’ Prior
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="6) Jeffreys’ Prior">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#61-ex1-bernoulli" class="md-nav__link">
-    <span class="md-ellipsis">
-      6.1) Ex1. Bernoulli
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#62-ex2-normal-mean" class="md-nav__link">
-    <span class="md-ellipsis">
-      6.2) Ex2. Normal mean
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#7-weakly-informative-priors" class="md-nav__link">
-    <span class="md-ellipsis">
-      7) Weakly Informative Priors
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#8-reference-priors" class="md-nav__link">
-    <span class="md-ellipsis">
-      8) Reference Priors
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#summary" class="md-nav__link">
-    <span class="md-ellipsis">
-      Summary
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1072,10 +890,32 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../lec10_mcmc/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    10. MCMC-Update
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -1086,6 +926,263 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-motivation" class="md-nav__link">
+    <span class="md-ellipsis">
+      1) Motivation
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-mcmc-basics-review" class="md-nav__link">
+    <span class="md-ellipsis">
+      2) MCMC Basics Review
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-component-wise-updating" class="md-nav__link">
+    <span class="md-ellipsis">
+      3) Component-wise Updating
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3) Component-wise Updating">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-pros" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.1) Pros
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-cons" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.2) Cons
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-block-updating" class="md-nav__link">
+    <span class="md-ellipsis">
+      4) Block Updating
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4) Block Updating">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-advantages" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.1) Advantages
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-trade-off" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.2) Trade-off
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-adaptive-metropolis-algorithm" class="md-nav__link">
+    <span class="md-ellipsis">
+      5) Adaptive Metropolis Algorithm
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5) Adaptive Metropolis Algorithm">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51-idea" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.1) Idea
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#51-properties" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.1) Properties
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-metropolis-adjusted-langevin-algorithm-mala" class="md-nav__link">
+    <span class="md-ellipsis">
+      6) Metropolis-Adjusted Langevin Algorithm (MALA)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6) Metropolis-Adjusted Langevin Algorithm (MALA)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#61-proposal" class="md-nav__link">
+    <span class="md-ellipsis">
+      6.1) Proposal
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#62-acceptance-probability" class="md-nav__link">
+    <span class="md-ellipsis">
+      6.2) Acceptance Probability
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#63-advantages" class="md-nav__link">
+    <span class="md-ellipsis">
+      6.3) Advantages
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#64-notes" class="md-nav__link">
+    <span class="md-ellipsis">
+      6.4) Notes
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-hamiltonian-monte-carlo" class="md-nav__link">
+    <span class="md-ellipsis">
+      7) Hamiltonian Monte Carlo
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-parameter-transformation" class="md-nav__link">
+    <span class="md-ellipsis">
+      8) Parameter Transformation
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-practical-considerations" class="md-nav__link">
+    <span class="md-ellipsis">
+      9) Practical Considerations
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="9) Practical Considerations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#91-burn-in" class="md-nav__link">
+    <span class="md-ellipsis">
+      9.1) Burn-in
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#92-thinning" class="md-nav__link">
+    <span class="md-ellipsis">
+      9.2) Thinning
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#93-convergence-monitoring" class="md-nav__link">
+    <span class="md-ellipsis">
+      9.3) Convergence Monitoring
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#94-posterior-summaries" class="md-nav__link">
+    <span class="md-ellipsis">
+      9.4) Posterior Summaries
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1129,8 +1226,6 @@
             
             
               
-                
-              
               <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
@@ -1150,73 +1245,46 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#1-overview" class="md-nav__link">
+  <a href="#1-motivation" class="md-nav__link">
     <span class="md-ellipsis">
-      1) Overview
+      1) Motivation
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#2-categories-of-priors" class="md-nav__link">
+  <a href="#2-mcmc-basics-review" class="md-nav__link">
     <span class="md-ellipsis">
-      2) Categories of Priors
+      2) MCMC Basics Review
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#3-proper-vs-improper-priors" class="md-nav__link">
+  <a href="#3-component-wise-updating" class="md-nav__link">
     <span class="md-ellipsis">
-      3) Proper vs. Improper Priors
+      3) Component-wise Updating
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#4-informative-vs-noninformative-priors" class="md-nav__link">
-    <span class="md-ellipsis">
-      4) Informative vs. Noninformative Priors
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#5-parameterization-sensitivity" class="md-nav__link">
-    <span class="md-ellipsis">
-      5) Parameterization Sensitivity
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="5) Parameterization Sensitivity">
+    <nav class="md-nav" aria-label="3) Component-wise Updating">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#51-ex1-binomial-model" class="md-nav__link">
+  <a href="#31-pros" class="md-nav__link">
     <span class="md-ellipsis">
-      5.1) Ex1. Binomial model
+      3.1) Pros
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#52-ex2-odds-transformation" class="md-nav__link">
+  <a href="#32-cons" class="md-nav__link">
     <span class="md-ellipsis">
-      5.2) Ex2. Odds transformation
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#53-ex3-log-odds-reparameterization" class="md-nav__link">
-    <span class="md-ellipsis">
-      5.3) Ex3. Log-odds reparameterization
+      3.2) Cons
     </span>
   </a>
   
@@ -1228,28 +1296,28 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#6-jeffreys-prior" class="md-nav__link">
+  <a href="#4-block-updating" class="md-nav__link">
     <span class="md-ellipsis">
-      6) Jeffreys’ Prior
+      4) Block Updating
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="6) Jeffreys’ Prior">
+    <nav class="md-nav" aria-label="4) Block Updating">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#61-ex1-bernoulli" class="md-nav__link">
+  <a href="#41-advantages" class="md-nav__link">
     <span class="md-ellipsis">
-      6.1) Ex1. Bernoulli
+      4.1) Advantages
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#62-ex2-normal-mean" class="md-nav__link">
+  <a href="#42-trade-off" class="md-nav__link">
     <span class="md-ellipsis">
-      6.2) Ex2. Normal mean
+      4.2) Trade-off
     </span>
   </a>
   
@@ -1261,29 +1329,155 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#7-weakly-informative-priors" class="md-nav__link">
+  <a href="#5-adaptive-metropolis-algorithm" class="md-nav__link">
     <span class="md-ellipsis">
-      7) Weakly Informative Priors
+      5) Adaptive Metropolis Algorithm
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5) Adaptive Metropolis Algorithm">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51-idea" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.1) Idea
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#51-properties" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.1) Properties
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-metropolis-adjusted-langevin-algorithm-mala" class="md-nav__link">
+    <span class="md-ellipsis">
+      6) Metropolis-Adjusted Langevin Algorithm (MALA)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6) Metropolis-Adjusted Langevin Algorithm (MALA)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#61-proposal" class="md-nav__link">
+    <span class="md-ellipsis">
+      6.1) Proposal
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#62-acceptance-probability" class="md-nav__link">
+    <span class="md-ellipsis">
+      6.2) Acceptance Probability
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#63-advantages" class="md-nav__link">
+    <span class="md-ellipsis">
+      6.3) Advantages
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#64-notes" class="md-nav__link">
+    <span class="md-ellipsis">
+      6.4) Notes
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-hamiltonian-monte-carlo" class="md-nav__link">
+    <span class="md-ellipsis">
+      7) Hamiltonian Monte Carlo
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#8-reference-priors" class="md-nav__link">
+  <a href="#8-parameter-transformation" class="md-nav__link">
     <span class="md-ellipsis">
-      8) Reference Priors
+      8) Parameter Transformation
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#summary" class="md-nav__link">
+  <a href="#9-practical-considerations" class="md-nav__link">
     <span class="md-ellipsis">
-      Summary
+      9) Practical Considerations
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="9) Practical Considerations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#91-burn-in" class="md-nav__link">
+    <span class="md-ellipsis">
+      9.1) Burn-in
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#92-thinning" class="md-nav__link">
+    <span class="md-ellipsis">
+      9.2) Thinning
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#93-convergence-monitoring" class="md-nav__link">
+    <span class="md-ellipsis">
+      9.3) Convergence Monitoring
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#94-posterior-summaries" class="md-nav__link">
+    <span class="md-ellipsis">
+      9.4) Posterior Summaries
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1300,210 +1494,179 @@
               <article class="md-content__inner md-typeset">
                 
                   
-  
 
 
 
-
-<h1 id="4-prior-distributions-ii-advanced-priors"><strong>4. Prior Distributions II (Advanced Priors)</strong><a class="headerlink" href="#4-prior-distributions-ii-advanced-priors" title="Permanent link">&para;</a></h1>
 <hr />
-<h2 id="1-overview"><strong>1) Overview</strong><a class="headerlink" href="#1-overview" title="Permanent link">&para;</a></h2>
-<p>Extending prior concepts into <strong>improper, noninformative, Jeffreys, weakly informative</strong>, and <strong>reference priors</strong>, exploring how <strong>parameterization</strong> affects prior meaning and inference</p>
+<p>title: MCMC Updates
+hide:
+  - title</p>
 <hr />
-<h2 id="2-categories-of-priors"><strong>2) Categories of Priors</strong><a class="headerlink" href="#2-categories-of-priors" title="Permanent link">&para;</a></h2>
+<h1 id="10-mcmc-update"><strong>10. MCMC Update</strong><a class="headerlink" href="#10-mcmc-update" title="Permanent link">&para;</a></h1>
+<hr />
+<h2 id="1-motivation"><strong>1) Motivation</strong><a class="headerlink" href="#1-motivation" title="Permanent link">&para;</a></h2>
+<p>While basic MCMC methods (Metropolis–Hastings, Gibbs) are widely used, practical issues arise:</p>
+<ul>
+<li>Slow convergence in high dimensions  </li>
+<li>High autocorrelation between samples  </li>
+<li>Poor mixing when parameters are correlated  </li>
+</ul>
+<p>To address these, we study advanced MCMC update strategies:</p>
+<ul>
+<li>Component-wise vs. block updating  </li>
+<li>Adaptive and gradient-based proposals  </li>
+<li>Diagnostics for efficiency</li>
+</ul>
+<hr />
+<h2 id="2-mcmc-basics-review"><strong>2) MCMC Basics Review</strong><a class="headerlink" href="#2-mcmc-basics-review" title="Permanent link">&para;</a></h2>
+<p>A Markov chain <span class="arithmatex">\(\{\theta^{(t)}\}\)</span> targets posterior <span class="arithmatex">\(p(\theta \mid y)\)</span> if it satisfies:</p>
+<ul>
+<li><strong>Detailed balance</strong>:
+  $$
+  p(\theta')\, K(\theta', \theta) = p(\theta)\, K(\theta, \theta')
+  $$</li>
+<li><strong>Ergodicity:</strong> chain explores the whole parameter space  </li>
+<li>After burn-in, draws approximate the true posterior.</li>
+</ul>
+<hr />
+<h2 id="3-component-wise-updating"><strong>3) Component-wise Updating</strong><a class="headerlink" href="#3-component-wise-updating" title="Permanent link">&para;</a></h2>
+<p>Update one parameter at a time:</p>
+<div class="arithmatex">\[
+\theta_j^{(t+1)} \sim p(\theta_j \mid \theta_{-j}^{(t)}, y)
+\]</div>
+<h3 id="31-pros"><strong>3.1) Pros</strong><a class="headerlink" href="#31-pros" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Simple; only need conditional posteriors</li>
+<li>Often analytical in conjugate models</li>
+</ul>
+<h3 id="32-cons"><strong>3.2) Cons</strong><a class="headerlink" href="#32-cons" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Inefficient if variables are highly correlated  </li>
+<li>Requires many updates for independence</li>
+</ul>
+<hr />
+<h2 id="4-block-updating"><strong>4) Block Updating</strong><a class="headerlink" href="#4-block-updating" title="Permanent link">&para;</a></h2>
+<p>Update correlated parameters jointly:</p>
+<div class="arithmatex">\[
+(\theta_1, \theta_2)^{(t+1)} \sim p(\theta_1, \theta_2 \mid \theta_{-(1,2)}^{(t)}, y)
+\]</div>
+<h3 id="41-advantages"><strong>4.1) Advantages</strong><a class="headerlink" href="#41-advantages" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Reduces autocorrelation</li>
+<li>Speeds up convergence</li>
+<li>Better mixing for correlated dimensions</li>
+</ul>
+<h3 id="42-trade-off"><strong>4.2) Trade-off</strong><a class="headerlink" href="#42-trade-off" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Harder to derive joint conditionals</li>
+<li>Requires multivariate proposals</li>
+</ul>
+<hr />
+<h2 id="5-adaptive-metropolis-algorithm"><strong>5) Adaptive Metropolis Algorithm</strong><a class="headerlink" href="#5-adaptive-metropolis-algorithm" title="Permanent link">&para;</a></h2>
+<p>Improves the proposal covariance during sampling.</p>
+<h3 id="51-idea"><strong>5.1) Idea</strong><a class="headerlink" href="#51-idea" title="Permanent link">&para;</a></h3>
+<p>Let proposal:
+$$
+q_t(\theta^* \mid \theta^{(t)}) = N(\theta^{(t)}, \Sigma_t)
+$$</p>
+<p>After <span class="arithmatex">\(t\)</span> iterations, adapt <span class="arithmatex">\(\Sigma_t\)</span> using sample covariance:</p>
+<div class="arithmatex">\[
+\Sigma_t = s_d \, \text{Cov}(\theta^{(1)}, \dots, \theta^{(t)}) + \epsilon I_d
+\]</div>
+<p>where <span class="arithmatex">\(s_d = (2.38)^2/d\)</span>, <span class="arithmatex">\(\epsilon\)</span> small for stability.</p>
+<h3 id="51-properties"><strong>5.1) Properties</strong><a class="headerlink" href="#51-properties" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Learns posterior correlation automatically</li>
+<li>Must satisfy <em>diminishing adaptation</em> (adaptation decreases over time)</li>
+</ul>
+<hr />
+<h2 id="6-metropolis-adjusted-langevin-algorithm-mala"><strong>6) Metropolis-Adjusted Langevin Algorithm (MALA)</strong><a class="headerlink" href="#6-metropolis-adjusted-langevin-algorithm-mala" title="Permanent link">&para;</a></h2>
+<p>Incorporates gradient of log-posterior to guide proposals.</p>
+<h3 id="61-proposal"><strong>6.1) Proposal</strong><a class="headerlink" href="#61-proposal" title="Permanent link">&para;</a></h3>
+<div class="arithmatex">\[
+\theta^\* = \theta^{(t)} + \frac{h^2}{2}\nabla_\theta \log p(\theta^{(t)} \mid y)
++ h\, \eta, \quad \eta \sim N(0, I)
+\]</div>
+<h3 id="62-acceptance-probability"><strong>6.2) Acceptance Probability</strong><a class="headerlink" href="#62-acceptance-probability" title="Permanent link">&para;</a></h3>
+<div class="arithmatex">\[
+\alpha = \min\!\left(1,
+\frac{p(\theta^\* \mid y)\, q(\theta^{(t)} \mid \theta^\*)}
+     {p(\theta^{(t)} \mid y)\, q(\theta^\* \mid \theta^{(t)})}
+\right)
+\]</div>
+<h3 id="63-advantages"><strong>6.3) Advantages</strong><a class="headerlink" href="#63-advantages" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Uses local geometry → higher acceptance  </li>
+<li>Efficient for smooth posteriors  </li>
+</ul>
+<h3 id="64-notes"><strong>6.4) Notes</strong><a class="headerlink" href="#64-notes" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Step size <span class="arithmatex">\(h\)</span> must be tuned (too large → low acceptance)  </li>
+<li>Related to Hamiltonian Monte Carlo (HMC)</li>
+</ul>
+<hr />
+<h2 id="7-hamiltonian-monte-carlo"><strong>7) Hamiltonian Monte Carlo</strong><a class="headerlink" href="#7-hamiltonian-monte-carlo" title="Permanent link">&para;</a></h2>
+<p>Uses <strong>Hamiltonian dynamics</strong> to explore posterior efficiently.</p>
+<p>Define:
+$$
+H(\theta, p) = U(\theta) + K(p)
+$$
+where<br />
+- <span class="arithmatex">\(U(\theta) = -\log p(\theta \mid y)\)</span> (potential energy)<br />
+- <span class="arithmatex">\(K(p) = \frac{1}{2}p^\top M^{-1}p\)</span> (kinetic energy)</p>
+<p>Simulate trajectories using leapfrog steps:
+1. Update momentum <span class="arithmatex">\(p\)</span>
+2. Update position <span class="arithmatex">\(\theta\)</span>
+3. Accept/reject based on energy conservation</p>
+<p>→ Long-distance proposals with high acceptance.</p>
+<hr />
+<h2 id="8-parameter-transformation"><strong>8) Parameter Transformation</strong><a class="headerlink" href="#8-parameter-transformation" title="Permanent link">&para;</a></h2>
+<p>MCMC can struggle if parameters are constrained (e.g. <span class="arithmatex">\(\theta &gt; 0\)</span>).<br />
+Use transformations:</p>
 <table>
 <thead>
 <tr>
-<th><strong>Type of Prior</strong></th>
-<th><strong>Definition / Concept</strong></th>
-<th><strong>Key Properties &amp; Purpose</strong></th>
-<th><strong>Typical Example / Use Case</strong></th>
+<th>Constraint</th>
+<th>Transformation</th>
+<th>Support</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><strong>Conjugate Prior</strong></td>
-<td>Prior family that yields a posterior in the <em>same distributional family</em> as the prior.</td>
-<td>Provides closed-form posterior; simple parameter updates; algebraically convenient.</td>
-<td>Beta–Binomial, Gamma–Poisson, Normal–Normal.</td>
+<td><span class="arithmatex">\(\theta &gt; 0\)</span></td>
+<td><span class="arithmatex">\(\phi = \log \theta\)</span></td>
+<td><span class="arithmatex">\(\phi \in \mathbb{R}\)</span></td>
 </tr>
 <tr>
-<td><strong>Improper Prior</strong></td>
-<td>A prior that does <strong>not integrate to 1</strong>, but can still produce a <em>proper posterior</em>.</td>
-<td>Useful when minimal information is available; must ensure posterior integrates to 1.</td>
-<td>Flat prior <span class="arithmatex">\(\pi(\mu)\propto1\)</span> for Normal mean.</td>
-</tr>
-<tr>
-<td><strong>Informative Prior</strong></td>
-<td>Reflects <em>strong domain knowledge</em> or expert belief.</td>
-<td>Low variance, sharp peak; dominates likelihood when data are scarce.</td>
-<td>Prior on disease rate based on previous clinical data.</td>
-</tr>
-<tr>
-<td><strong>Weakly Informative Prior</strong></td>
-<td>A <em>vague but proper</em> prior that regularizes inference without overwhelming the data.</td>
-<td>Improves stability; balances between noninformative and informative.</td>
-<td><span class="arithmatex">\(\text{Beta}(1,1)\)</span> or <span class="arithmatex">\(\text{Beta}(0.5,0.5)\)</span> for Binomial <span class="arithmatex">\(\theta\)</span>.</td>
-</tr>
-<tr>
-<td><strong>Noninformative Prior</strong></td>
-<td>Attempts to make inference rely almost entirely on the data likelihood.</td>
-<td>No universally correct form; depends on parameterization; often used in objective Bayes.</td>
-<td>Uniform<span class="arithmatex">\((0,1)\)</span> for <span class="arithmatex">\(\theta\)</span> in Binomial<span class="arithmatex">\((n,\theta)\)</span>.</td>
-</tr>
-<tr>
-<td><strong>Reference Prior</strong></td>
-<td>Maximizes <em>mutual information</em> between parameter <span class="arithmatex">\(\theta\)</span> and data.</td>
-<td>Objective choice; designed to maximize expected information gain.</td>
-<td>Used for multidimensional parameters in objective Bayes.</td>
-</tr>
-<tr>
-<td><strong>Jeffreys Prior</strong></td>
-<td>Defined as <span class="arithmatex">\(\pi(\theta)\propto\sqrt{I(\theta)}\)</span>, where <span class="arithmatex">\(I(\theta)\)</span> is Fisher information.</td>
-<td>Invariant under reparameterization; noninformative in an information-theoretic sense.</td>
-<td>For Bernoulli <span class="arithmatex">\(p\)</span>, <span class="arithmatex">\(\pi(p)\propto[p(1-p)]^{-1/2}\)</span> (Beta<span class="arithmatex">\((1/2,1/2)\)</span>).</td>
-</tr>
-<tr>
-<td><strong>Invariant / Nonparametric Prior</strong></td>
-<td>Defined over transformations or infinite-dimensional parameter spaces.</td>
-<td>Used in flexible models (e.g., Gaussian Process, Dirichlet Process).</td>
-<td>Nonparametric Bayes, hierarchical GP models.</td>
+<td><span class="arithmatex">\(0 &lt; \theta &lt; 1\)</span></td>
+<td><span class="arithmatex">\(\phi = \log\frac{\theta}{1-\theta}\)</span></td>
+<td><span class="arithmatex">\(\phi \in \mathbb{R}\)</span></td>
 </tr>
 </tbody>
 </table>
-<hr />
-<h2 id="3-proper-vs-improper-priors"><strong>3) Proper vs. Improper Priors</strong><a class="headerlink" href="#3-proper-vs-improper-priors" title="Permanent link">&para;</a></h2>
-<p>A prior <span class="arithmatex">\(p(\theta)\)</span> is <strong>proper</strong> if it integrates to 1:</p>
-<div class="arithmatex">\[
-\int p(\theta)\,d\theta = 1
+<p>Posterior adjustment (Jacobian):
 $$
-Otherwise, it is **improper**:
-$$
-\int p(\theta)\,d\theta = \infty
-\]</div>
-<ul>
-<li>An improper prior is <strong>acceptable</strong> <em>only if</em> the resulting posterior is proper.  </li>
-<li>If the posterior is also improper, the prior must be discarded.  </li>
-</ul>
-<p><strong>Example:</strong><br />
-For Binomial <span class="arithmatex">\(y\sim Bin(n,\theta)\)</span> and prior <span class="arithmatex">\(\text{Beta}(0,0)\)</span>,  </p>
-<p>the posterior <span class="arithmatex">\(\text{Beta}(y, n-y)\)</span> is proper when <span class="arithmatex">\(y,n-y&gt;0\)</span>.  </p>
-<p><strong>Another example:</strong>  </p>
-<p>For <span class="arithmatex">\(X_i\sim N(\mu,\sigma^2)\)</span> with <span class="arithmatex">\(\pi(\mu)\propto1\)</span>,</p>
-<div class="arithmatex">\[
-\mu|x\sim N(\bar{x},\sigma^2/n)
-\]</div>
-<p>which is proper—so flat prior <span class="arithmatex">\(\pi(\mu)\propto1\)</span> works fine</p>
-<hr />
-<h2 id="4-informative-vs-noninformative-priors"><strong>4) Informative vs. Noninformative Priors</strong><a class="headerlink" href="#4-informative-vs-noninformative-priors" title="Permanent link">&para;</a></h2>
-<ul>
-<li><strong>Informative prior:</strong> Low variance, expresses strong prior knowledge.  </li>
-<li><strong>Vague/diffuse prior:</strong> High variance, weak information.  </li>
-<li><strong>Flat prior:</strong> Constant over parameter space (e.g., <span class="arithmatex">\(\pi(\theta)\propto1\)</span>), fully noninformative.</li>
-</ul>
-<p><strong>Noninformative priors</strong>:</p>
-<ul>
-<li>Aim to let data “speak for itself.”  </li>
-<li>Used in <strong>objective Bayes</strong> when little prior knowledge exists.  </li>
-<li>No universally agreed definition — depends on model parameterization.  </li>
-</ul>
-<hr />
-<h2 id="5-parameterization-sensitivity"><strong>5) Parameterization Sensitivity</strong><a class="headerlink" href="#5-parameterization-sensitivity" title="Permanent link">&para;</a></h2>
-<p>Noninformative priors depend heavily on how parameters are defined.</p>
-<h3 id="51-ex1-binomial-model"><strong>5.1) Ex1. Binomial model</strong><a class="headerlink" href="#51-ex1-binomial-model" title="Permanent link">&para;</a></h3>
-<p>For <span class="arithmatex">\(y\sim Bin(n,\theta)\)</span>:</p>
-<ul>
-<li>Flat prior: <span class="arithmatex">\(\theta\sim Uniform(0,1)\)</span> or <span class="arithmatex">\(\text{Beta}(1,1)\)</span><br />
-  $$
-  \Rightarrow \theta|y\sim Beta(y+1, n-y+1)
-  $$</li>
-</ul>
-<h3 id="52-ex2-odds-transformation"><strong>5.2) Ex2. Odds transformation</strong><a class="headerlink" href="#52-ex2-odds-transformation" title="Permanent link">&para;</a></h3>
-<p>Let <span class="arithmatex">\(o=\frac{\theta}{1-\theta}\)</span> and assume flat prior on <span class="arithmatex">\(o\)</span> (<span class="arithmatex">\(p(o)\propto1\)</span>).<br />
-Then the induced prior on <span class="arithmatex">\(\theta\)</span> is:
-$$
-p(\theta)\propto \frac{1}{(1-\theta)^2}, \quad 0&lt;\theta&lt;1
-$$
-This favors <span class="arithmatex">\(\theta\)</span> near 1 and is <strong>improper</strong> since <span class="arithmatex">\(\int_0^1 (1-\theta)^{-2}d\theta=\infty\)</span>.</p>
-<p>Posterior under Binomial likelihood:
-$$
-p(\theta|y)\propto \theta^y(1-\theta)^{n-y-2} \Rightarrow \theta|y\sim Beta(y+1, n-y-1)
-$$
-Posterior becomes improper when <span class="arithmatex">\(n-y\le1\)</span></p>
-<hr />
-<h3 id="53-ex3-log-odds-reparameterization"><strong>5.3) Ex3. Log-odds reparameterization</strong><a class="headerlink" href="#53-ex3-log-odds-reparameterization" title="Permanent link">&para;</a></h3>
-<p>Let <span class="arithmatex">\(\rho=\log\!\left(\frac{\theta}{1-\theta}\right)\)</span> and assume <span class="arithmatex">\(\rho\sim Uniform(-\infty,\infty)\)</span>.<br />
-Then,
-$$
-p(\theta)\propto \frac{1}{\theta(1-\theta)}
-$$
-Posterior becomes:
-$$
-\theta|y\sim Beta(y, n-y)
-$$
-<strong>Insight:</strong> “Flat” priors depend on the scale; uniform in <span class="arithmatex">\(\theta\)</span>, <span class="arithmatex">\(o\)</span>, or <span class="arithmatex">\(\rho\)</span> lead to very different beliefs</p>
-<hr />
-<h2 id="6-jeffreys-prior"><strong>6) Jeffreys’ Prior</strong><a class="headerlink" href="#6-jeffreys-prior" title="Permanent link">&para;</a></h2>
-<p>Motivation: prior should remain “uninformative” under smooth reparameterization.  </p>
-<p>Jeffreys’ Rule:
-$$
-\pi(\theta)\propto \sqrt{I(\theta)}
-$$
-where <span class="arithmatex">\(I(\theta)\)</span> is the <strong>Fisher information</strong>:
-$$
-I(\theta)=E_\theta!\left[\left(\frac{\partial}{\partial\theta}\log L(\theta;X)\right)^2\right]
+p(\phi \mid y) \propto p(\theta(\phi) \mid y)\,\left|\frac{d\theta}{d\phi}\right|
 $$</p>
-<ul>
-<li>Reflects information content in the data about <span class="arithmatex">\(\theta\)</span>.  </li>
-<li>Gives higher weight where the likelihood is most sensitive to <span class="arithmatex">\(\theta\)</span>.  </li>
-<li>Completely determined by the likelihood (no subjective input).  </li>
-</ul>
 <hr />
-<h3 id="61-ex1-bernoulli"><strong>6.1) Ex1. Bernoulli</strong><a class="headerlink" href="#61-ex1-bernoulli" title="Permanent link">&para;</a></h3>
-<p>For <span class="arithmatex">\(X_i\sim Bern(p)\)</span>,<br />
+<h2 id="9-practical-considerations"><strong>9) Practical Considerations</strong><a class="headerlink" href="#9-practical-considerations" title="Permanent link">&para;</a></h2>
+<h3 id="91-burn-in"><strong>9.1) Burn-in</strong><a class="headerlink" href="#91-burn-in" title="Permanent link">&para;</a></h3>
+<p>Discard early samples before convergence.</p>
+<h3 id="92-thinning"><strong>9.2) Thinning</strong><a class="headerlink" href="#92-thinning" title="Permanent link">&para;</a></h3>
+<p>Save every <span class="arithmatex">\(k\)</span>th sample to reduce storage and correlation (useful but optional).</p>
+<h3 id="93-convergence-monitoring"><strong>9.3) Convergence Monitoring</strong><a class="headerlink" href="#93-convergence-monitoring" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Trace plots</li>
+<li><span class="arithmatex">\(\hat{R}\)</span> (Gelman–Rubin)</li>
+<li>Effective Sample Size (ESS)</li>
+</ul>
+<h3 id="94-posterior-summaries"><strong>9.4) Posterior Summaries</strong><a class="headerlink" href="#94-posterior-summaries" title="Permanent link">&para;</a></h3>
+<p>After convergence, compute:
 $$
-I(p)=\frac{n}{p(1-p)} \Rightarrow \pi(p)\propto [p(1-p)]^{-1/2}
-$$
-Hence, <strong>Jeffreys’ prior</strong>:
-$$
-p(p)\sim Beta!\left(\frac{1}{2},\frac{1}{2}\right)
+E[\theta \mid y],\quad \text{Var}(\theta \mid y),\quad \text{quantiles, HPD intervals.}
 $$</p>
-<h3 id="62-ex2-normal-mean"><strong>6.2) Ex2. Normal mean</strong><a class="headerlink" href="#62-ex2-normal-mean" title="Permanent link">&para;</a></h3>
-<p>For <span class="arithmatex">\(X\sim N(\mu,\sigma^2)\)</span>,</p>
-<p>$$
-I(\mu)=\frac{1}{\sigma^2} \Rightarrow \pi(\mu)\propto1
-$$
-⇒ Jeffreys’ prior is <strong>uniform</strong></p>
 <hr />
-<h2 id="7-weakly-informative-priors"><strong>7) Weakly Informative Priors</strong><a class="headerlink" href="#7-weakly-informative-priors" title="Permanent link">&para;</a></h2>
-<ul>
-<li>Use proper but vague priors to <strong>regularize</strong> estimates and avoid improper posteriors.  </li>
-<li>Example: <span class="arithmatex">\(\text{Beta}(1,1)\)</span> or <span class="arithmatex">\(\text{Beta}(0.5,0.5)\)</span> for Binomial θ.  </li>
-<li>Behaves similarly to <span class="arithmatex">\(\text{Beta}(0,0)\)</span> (improper) but ensures posterior propriety.  </li>
-<li>Common in <strong>modern Bayesian modeling</strong> (e.g., logistic regression, hierarchical models)</li>
-</ul>
-<hr />
-<h2 id="8-reference-priors"><strong>8) Reference Priors</strong><a class="headerlink" href="#8-reference-priors" title="Permanent link">&para;</a></h2>
-<p>A <strong>reference prior</strong> maximizes <em>mutual information</em> between data and parameters.</p>
-<div class="arithmatex">\[
-p^*(\theta) = \arg\max_{p(\theta)} I(\Theta, T)
-\]</div>
-<p>where</p>
-<div class="arithmatex">\[
-I(\Theta, T) = \iint p(\theta, t)\,
-\log\!\frac{p(\theta, t)}{p(\theta)p(t)}\,d\theta\,dt
-\]</div>
-<ul>
-<li><strong>Essentially:</strong> choose the prior that maximizes the <strong>expected information gain</strong> from data.  </li>
-<li>Used in <strong>objective Bayesian analysis</strong>, especially for <strong>multi-parameter models</strong>.</li>
-</ul>
-<hr />
-<h2 id="summary"><strong>Summary</strong><a class="headerlink" href="#summary" title="Permanent link">&para;</a></h2>
-<blockquote>
-<p><em>A prior’s “uninformativeness” depends on the parameter scale. Jeffreys’ rule and weakly informative priors balance mathematical invariance and practical stability which ensures the data, not arbitrary parameterization, drives inference.</em></p>
-</blockquote>
-<hr />
-<p><sub>© Jeongsoo Pang — All rights reserved</p>
+<p><sub>© Jeongsoo Pang — All rights reserved</sub></p>
 
 
 
@@ -1511,13 +1674,8 @@ I(\Theta, T) = \iint p(\theta, t)\,
 
 
 
-  
-  
 
 
-
-
-  
 
 
 

@@ -9,10 +9,10 @@
       
       
       
-        <link rel="prev" href="../lec3_priors_logic/">
+        <link rel="prev" href="../lec8_loss_decisions/">
       
       
-        <link rel="next" href="../lec5_posterior-inference/">
+        <link rel="next" href="../lec10_mcmc/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -20,7 +20,7 @@
     
     
       
-        <title>Advanced Priors and Jeffreys’ Rule - Jeongsoo Pang</title>
+        <title>Bayesian Computation - Jeongsoo Pang</title>
       
     
     
@@ -74,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#4-prior-distributions-ii-advanced-priors" class="md-skip">
+        <a href="#9-bayesian-computation" class="md-skip">
           Skip to content
         </a>
       
@@ -110,7 +110,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Advanced Priors and Jeffreys’ Rule
+              Bayesian Computation
             
           </span>
         </div>
@@ -754,32 +754,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    4. Priors Details
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../lec4_priors_types/" class="md-nav__link">
         
   
   
@@ -790,164 +768,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#1-overview" class="md-nav__link">
-    <span class="md-ellipsis">
-      1) Overview
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#2-categories-of-priors" class="md-nav__link">
-    <span class="md-ellipsis">
-      2) Categories of Priors
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#3-proper-vs-improper-priors" class="md-nav__link">
-    <span class="md-ellipsis">
-      3) Proper vs. Improper Priors
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#4-informative-vs-noninformative-priors" class="md-nav__link">
-    <span class="md-ellipsis">
-      4) Informative vs. Noninformative Priors
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#5-parameterization-sensitivity" class="md-nav__link">
-    <span class="md-ellipsis">
-      5) Parameterization Sensitivity
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="5) Parameterization Sensitivity">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#51-ex1-binomial-model" class="md-nav__link">
-    <span class="md-ellipsis">
-      5.1) Ex1. Binomial model
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#52-ex2-odds-transformation" class="md-nav__link">
-    <span class="md-ellipsis">
-      5.2) Ex2. Odds transformation
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#53-ex3-log-odds-reparameterization" class="md-nav__link">
-    <span class="md-ellipsis">
-      5.3) Ex3. Log-odds reparameterization
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#6-jeffreys-prior" class="md-nav__link">
-    <span class="md-ellipsis">
-      6) Jeffreys’ Prior
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="6) Jeffreys’ Prior">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#61-ex1-bernoulli" class="md-nav__link">
-    <span class="md-ellipsis">
-      6.1) Ex1. Bernoulli
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#62-ex2-normal-mean" class="md-nav__link">
-    <span class="md-ellipsis">
-      6.2) Ex2. Normal mean
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#7-weakly-informative-priors" class="md-nav__link">
-    <span class="md-ellipsis">
-      7) Weakly Informative Priors
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#8-reference-priors" class="md-nav__link">
-    <span class="md-ellipsis">
-      8) Reference Priors
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#summary" class="md-nav__link">
-    <span class="md-ellipsis">
-      Summary
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1049,10 +869,32 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../lec9_computation/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    9. Computational methods
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -1063,6 +905,251 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-why-bayesian-computation" class="md-nav__link">
+    <span class="md-ellipsis">
+      1) Why Bayesian Computation
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-monte-carlo-integration" class="md-nav__link">
+    <span class="md-ellipsis">
+      2) Monte Carlo Integration
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2) Monte Carlo Integration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#monte-carlo-approximation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Monte Carlo approximation:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-direct-sampling-ideal-case" class="md-nav__link">
+    <span class="md-ellipsis">
+      3) Direct Sampling (Ideal Case)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-rejection-sampling" class="md-nav__link">
+    <span class="md-ellipsis">
+      4) Rejection Sampling
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4) Rejection Sampling">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#algorithm" class="md-nav__link">
+    <span class="md-ellipsis">
+      Algorithm
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pros-cons" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pros &amp; Cons
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-importance-sampling" class="md-nav__link">
+    <span class="md-ellipsis">
+      5) Importance Sampling
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5) Importance Sampling">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#key-idea" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key idea:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#normalized-weights" class="md-nav__link">
+    <span class="md-ellipsis">
+      Normalized weights:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#important-requirement" class="md-nav__link">
+    <span class="md-ellipsis">
+      Important requirement:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-markov-chain-monte-carlo-mcmc" class="md-nav__link">
+    <span class="md-ellipsis">
+      6) Markov Chain Monte Carlo (MCMC)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6) Markov Chain Monte Carlo (MCMC)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#key-idea_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key idea:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-metropolis-hastings-mh-algorithm" class="md-nav__link">
+    <span class="md-ellipsis">
+      7) Metropolis-Hastings (MH) Algorithm
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7) Metropolis-Hastings (MH) Algorithm">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#71algorithm" class="md-nav__link">
+    <span class="md-ellipsis">
+      7.1)Algorithm
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#72-special-case-random-walk-metropolis" class="md-nav__link">
+    <span class="md-ellipsis">
+      7.2) Special case: Random Walk Metropolis
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-gibbs-sampling" class="md-nav__link">
+    <span class="md-ellipsis">
+      8) Gibbs Sampling
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8) Gibbs Sampling">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#81-when-to-use" class="md-nav__link">
+    <span class="md-ellipsis">
+      8.1) When to use
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#82-algorithm" class="md-nav__link">
+    <span class="md-ellipsis">
+      8.2) Algorithm
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#83-advantages" class="md-nav__link">
+    <span class="md-ellipsis">
+      8.3) Advantages
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-convergence-diagnostics" class="md-nav__link">
+    <span class="md-ellipsis">
+      9) Convergence Diagnostics
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1150,73 +1237,28 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#1-overview" class="md-nav__link">
+  <a href="#1-why-bayesian-computation" class="md-nav__link">
     <span class="md-ellipsis">
-      1) Overview
+      1) Why Bayesian Computation
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#2-categories-of-priors" class="md-nav__link">
+  <a href="#2-monte-carlo-integration" class="md-nav__link">
     <span class="md-ellipsis">
-      2) Categories of Priors
+      2) Monte Carlo Integration
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#3-proper-vs-improper-priors" class="md-nav__link">
-    <span class="md-ellipsis">
-      3) Proper vs. Improper Priors
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#4-informative-vs-noninformative-priors" class="md-nav__link">
-    <span class="md-ellipsis">
-      4) Informative vs. Noninformative Priors
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#5-parameterization-sensitivity" class="md-nav__link">
-    <span class="md-ellipsis">
-      5) Parameterization Sensitivity
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="5) Parameterization Sensitivity">
+    <nav class="md-nav" aria-label="2) Monte Carlo Integration">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#51-ex1-binomial-model" class="md-nav__link">
+  <a href="#monte-carlo-approximation" class="md-nav__link">
     <span class="md-ellipsis">
-      5.1) Ex1. Binomial model
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#52-ex2-odds-transformation" class="md-nav__link">
-    <span class="md-ellipsis">
-      5.2) Ex2. Odds transformation
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#53-ex3-log-odds-reparameterization" class="md-nav__link">
-    <span class="md-ellipsis">
-      5.3) Ex3. Log-odds reparameterization
+      Monte Carlo approximation:
     </span>
   </a>
   
@@ -1228,28 +1270,37 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#6-jeffreys-prior" class="md-nav__link">
+  <a href="#3-direct-sampling-ideal-case" class="md-nav__link">
     <span class="md-ellipsis">
-      6) Jeffreys’ Prior
+      3) Direct Sampling (Ideal Case)
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="6) Jeffreys’ Prior">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-rejection-sampling" class="md-nav__link">
+    <span class="md-ellipsis">
+      4) Rejection Sampling
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4) Rejection Sampling">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#61-ex1-bernoulli" class="md-nav__link">
+  <a href="#algorithm" class="md-nav__link">
     <span class="md-ellipsis">
-      6.1) Ex1. Bernoulli
+      Algorithm
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#62-ex2-normal-mean" class="md-nav__link">
+  <a href="#pros-cons" class="md-nav__link">
     <span class="md-ellipsis">
-      6.2) Ex2. Normal mean
+      Pros &amp; Cons
     </span>
   </a>
   
@@ -1261,27 +1312,150 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#7-weakly-informative-priors" class="md-nav__link">
+  <a href="#5-importance-sampling" class="md-nav__link">
     <span class="md-ellipsis">
-      7) Weakly Informative Priors
+      5) Importance Sampling
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5) Importance Sampling">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#key-idea" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key idea:
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#8-reference-priors" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#normalized-weights" class="md-nav__link">
     <span class="md-ellipsis">
-      8) Reference Priors
+      Normalized weights:
     </span>
   </a>
   
 </li>
+        
+          <li class="md-nav__item">
+  <a href="#important-requirement" class="md-nav__link">
+    <span class="md-ellipsis">
+      Important requirement:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
       
         <li class="md-nav__item">
-  <a href="#summary" class="md-nav__link">
+  <a href="#6-markov-chain-monte-carlo-mcmc" class="md-nav__link">
     <span class="md-ellipsis">
-      Summary
+      6) Markov Chain Monte Carlo (MCMC)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6) Markov Chain Monte Carlo (MCMC)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#key-idea_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key idea:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-metropolis-hastings-mh-algorithm" class="md-nav__link">
+    <span class="md-ellipsis">
+      7) Metropolis-Hastings (MH) Algorithm
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7) Metropolis-Hastings (MH) Algorithm">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#71algorithm" class="md-nav__link">
+    <span class="md-ellipsis">
+      7.1)Algorithm
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#72-special-case-random-walk-metropolis" class="md-nav__link">
+    <span class="md-ellipsis">
+      7.2) Special case: Random Walk Metropolis
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-gibbs-sampling" class="md-nav__link">
+    <span class="md-ellipsis">
+      8) Gibbs Sampling
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8) Gibbs Sampling">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#81-when-to-use" class="md-nav__link">
+    <span class="md-ellipsis">
+      8.1) When to use
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#82-algorithm" class="md-nav__link">
+    <span class="md-ellipsis">
+      8.2) Algorithm
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#83-advantages" class="md-nav__link">
+    <span class="md-ellipsis">
+      8.3) Advantages
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-convergence-diagnostics" class="md-nav__link">
+    <span class="md-ellipsis">
+      9) Convergence Diagnostics
     </span>
   </a>
   
@@ -1305,205 +1479,186 @@
 
 
 
-<h1 id="4-prior-distributions-ii-advanced-priors"><strong>4. Prior Distributions II (Advanced Priors)</strong><a class="headerlink" href="#4-prior-distributions-ii-advanced-priors" title="Permanent link">&para;</a></h1>
+<h1 id="9-bayesian-computation"><strong>9. Bayesian Computation</strong><a class="headerlink" href="#9-bayesian-computation" title="Permanent link">&para;</a></h1>
 <hr />
-<h2 id="1-overview"><strong>1) Overview</strong><a class="headerlink" href="#1-overview" title="Permanent link">&para;</a></h2>
-<p>Extending prior concepts into <strong>improper, noninformative, Jeffreys, weakly informative</strong>, and <strong>reference priors</strong>, exploring how <strong>parameterization</strong> affects prior meaning and inference</p>
+<h2 id="1-why-bayesian-computation"><strong>1) Why Bayesian Computation</strong><a class="headerlink" href="#1-why-bayesian-computation" title="Permanent link">&para;</a></h2>
+<p>Bayesian inference often requires evaluating posterior distributions:</p>
+<div class="arithmatex">\[
+p(\theta \mid y) = \frac{p(y \mid \theta)\pi(\theta)}{p(y)}
+\]</div>
+<p>But the denominator (marginal likelihood):</p>
+<div class="arithmatex">\[
+p(y) = \int p(y \mid \theta)\pi(\theta)\, d\theta
+\]</div>
+<p>is frequently <strong>intractable</strong>, especially when:</p>
+<ul>
+<li>Parameter space is high-dimensional  </li>
+<li>No conjugacy exists  </li>
+<li>Likelihood is complex  </li>
+</ul>
+<p>So, we use <strong>computational methods</strong>:</p>
+<ul>
+<li>Analytical solutions (rare)</li>
+<li>Numerical integration (low dimension only)</li>
+<li>Simulation methods (Monte Carlo, MCMC)</li>
+</ul>
 <hr />
-<h2 id="2-categories-of-priors"><strong>2) Categories of Priors</strong><a class="headerlink" href="#2-categories-of-priors" title="Permanent link">&para;</a></h2>
+<h2 id="2-monte-carlo-integration"><strong>2) Monte Carlo Integration</strong><a class="headerlink" href="#2-monte-carlo-integration" title="Permanent link">&para;</a></h2>
+<p>Monte Carlo (MC) is used to approximate integrals:</p>
+<div class="arithmatex">\[
+E[g(\theta)] = \int g(\theta) p(\theta \mid y)\, d\theta
+\]</div>
+<h3 id="monte-carlo-approximation"><strong>Monte Carlo approximation:</strong><a class="headerlink" href="#monte-carlo-approximation" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Sample <span class="arithmatex">\(\theta^{(1)}, \dots, \theta^{(N)} \sim p(\theta \mid y)\)</span>  </li>
+<li>Approximate expectation:</li>
+</ol>
+<div class="arithmatex">\[
+\hat{E}[g(\theta)] = \frac{1}{N}\sum_{i=1}^N g(\theta^{(i)})
+\]</div>
+<p>As <span class="arithmatex">\(N \to \infty\)</span>, <span class="arithmatex">\(\hat{E} \to E[g(\theta)]\)</span> (Law of Large Numbers)</p>
+<hr />
+<h2 id="3-direct-sampling-ideal-case"><strong>3) Direct Sampling (Ideal Case)</strong><a class="headerlink" href="#3-direct-sampling-ideal-case" title="Permanent link">&para;</a></h2>
+<p>If we can sample directly from posterior <span class="arithmatex">\(p(\theta|y)\)</span>, we can compute anything.</p>
+<p>Example: Conjugate Normal-Normal model  </p>
+<ul>
+<li>Prior: <span class="arithmatex">\(\theta \sim N(\mu_0, \tau_0^2)\)</span>  </li>
+<li>Likelihood: <span class="arithmatex">\(y|\theta \sim N(\theta, \sigma^2)\)</span>  </li>
+<li>Posterior: <span class="arithmatex">\(N(\mu_n, \tau_n^2)\)</span> → direct sampling possible</li>
+</ul>
+<p><strong>Problem:</strong> Most posteriors are not analytically tractable → need approximate methods.</p>
+<hr />
+<h2 id="4-rejection-sampling"><strong>4) Rejection Sampling</strong><a class="headerlink" href="#4-rejection-sampling" title="Permanent link">&para;</a></h2>
+<p>Goal: Sample from target distribution <span class="arithmatex">\(p(\theta)\)</span> using a simpler proposal <span class="arithmatex">\(q(\theta)\)</span>.</p>
+<h3 id="algorithm"><strong>Algorithm</strong><a class="headerlink" href="#algorithm" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Choose proposal density <span class="arithmatex">\(q(\theta)\)</span> such that<br />
+   $$ p(\theta) \le M q(\theta) \quad \text{for all } \theta $$</li>
+<li>Repeat:</li>
+<li>Sample <span class="arithmatex">\(\theta^* \sim q(\theta)\)</span>  </li>
+<li>Sample <span class="arithmatex">\(u \sim \text{Uniform}(0,1)\)</span>  </li>
+<li>Accept <span class="arithmatex">\(\theta^*\)</span> if:
+     $$
+     u &lt; \frac{p(\theta^<em>)}{M q(\theta^</em>)}
+     $$</li>
+</ol>
+<h3 id="pros-cons"><strong>Pros &amp; Cons</strong><a class="headerlink" href="#pros-cons" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
 <tr>
-<th><strong>Type of Prior</strong></th>
-<th><strong>Definition / Concept</strong></th>
-<th><strong>Key Properties &amp; Purpose</strong></th>
-<th><strong>Typical Example / Use Case</strong></th>
+<th>Pros</th>
+<th>Cons</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><strong>Conjugate Prior</strong></td>
-<td>Prior family that yields a posterior in the <em>same distributional family</em> as the prior.</td>
-<td>Provides closed-form posterior; simple parameter updates; algebraically convenient.</td>
-<td>Beta–Binomial, Gamma–Poisson, Normal–Normal.</td>
+<td>Simple</td>
+<td>Needs <span class="arithmatex">\(M\)</span> bounding constant</td>
 </tr>
 <tr>
-<td><strong>Improper Prior</strong></td>
-<td>A prior that does <strong>not integrate to 1</strong>, but can still produce a <em>proper posterior</em>.</td>
-<td>Useful when minimal information is available; must ensure posterior integrates to 1.</td>
-<td>Flat prior <span class="arithmatex">\(\pi(\mu)\propto1\)</span> for Normal mean.</td>
-</tr>
-<tr>
-<td><strong>Informative Prior</strong></td>
-<td>Reflects <em>strong domain knowledge</em> or expert belief.</td>
-<td>Low variance, sharp peak; dominates likelihood when data are scarce.</td>
-<td>Prior on disease rate based on previous clinical data.</td>
-</tr>
-<tr>
-<td><strong>Weakly Informative Prior</strong></td>
-<td>A <em>vague but proper</em> prior that regularizes inference without overwhelming the data.</td>
-<td>Improves stability; balances between noninformative and informative.</td>
-<td><span class="arithmatex">\(\text{Beta}(1,1)\)</span> or <span class="arithmatex">\(\text{Beta}(0.5,0.5)\)</span> for Binomial <span class="arithmatex">\(\theta\)</span>.</td>
-</tr>
-<tr>
-<td><strong>Noninformative Prior</strong></td>
-<td>Attempts to make inference rely almost entirely on the data likelihood.</td>
-<td>No universally correct form; depends on parameterization; often used in objective Bayes.</td>
-<td>Uniform<span class="arithmatex">\((0,1)\)</span> for <span class="arithmatex">\(\theta\)</span> in Binomial<span class="arithmatex">\((n,\theta)\)</span>.</td>
-</tr>
-<tr>
-<td><strong>Reference Prior</strong></td>
-<td>Maximizes <em>mutual information</em> between parameter <span class="arithmatex">\(\theta\)</span> and data.</td>
-<td>Objective choice; designed to maximize expected information gain.</td>
-<td>Used for multidimensional parameters in objective Bayes.</td>
-</tr>
-<tr>
-<td><strong>Jeffreys Prior</strong></td>
-<td>Defined as <span class="arithmatex">\(\pi(\theta)\propto\sqrt{I(\theta)}\)</span>, where <span class="arithmatex">\(I(\theta)\)</span> is Fisher information.</td>
-<td>Invariant under reparameterization; noninformative in an information-theoretic sense.</td>
-<td>For Bernoulli <span class="arithmatex">\(p\)</span>, <span class="arithmatex">\(\pi(p)\propto[p(1-p)]^{-1/2}\)</span> (Beta<span class="arithmatex">\((1/2,1/2)\)</span>).</td>
-</tr>
-<tr>
-<td><strong>Invariant / Nonparametric Prior</strong></td>
-<td>Defined over transformations or infinite-dimensional parameter spaces.</td>
-<td>Used in flexible models (e.g., Gaussian Process, Dirichlet Process).</td>
-<td>Nonparametric Bayes, hierarchical GP models.</td>
+<td>Exact samples</td>
+<td>Becomes inefficient in high dimensions</td>
 </tr>
 </tbody>
 </table>
 <hr />
-<h2 id="3-proper-vs-improper-priors"><strong>3) Proper vs. Improper Priors</strong><a class="headerlink" href="#3-proper-vs-improper-priors" title="Permanent link">&para;</a></h2>
-<p>A prior <span class="arithmatex">\(p(\theta)\)</span> is <strong>proper</strong> if it integrates to 1:</p>
+<h2 id="5-importance-sampling"><strong>5) Importance Sampling</strong><a class="headerlink" href="#5-importance-sampling" title="Permanent link">&para;</a></h2>
+<p>Approximates expectations under <span class="arithmatex">\(p(\theta)\)</span> using samples from another distribution <span class="arithmatex">\(q(\theta)\)</span>.</p>
+<h3 id="key-idea"><strong>Key idea:</strong><a class="headerlink" href="#key-idea" title="Permanent link">&para;</a></h3>
 <div class="arithmatex">\[
-\int p(\theta)\,d\theta = 1
-$$
-Otherwise, it is **improper**:
-$$
-\int p(\theta)\,d\theta = \infty
+E_p[g(\theta)] = \int g(\theta)\frac{p(\theta)}{q(\theta)}q(\theta)\,d\theta
+≈ \frac{1}{N} \sum_{i=1}^N g(\theta^{(i)}) w(\theta^{(i)})
 \]</div>
-<ul>
-<li>An improper prior is <strong>acceptable</strong> <em>only if</em> the resulting posterior is proper.  </li>
-<li>If the posterior is also improper, the prior must be discarded.  </li>
-</ul>
-<p><strong>Example:</strong><br />
-For Binomial <span class="arithmatex">\(y\sim Bin(n,\theta)\)</span> and prior <span class="arithmatex">\(\text{Beta}(0,0)\)</span>,  </p>
-<p>the posterior <span class="arithmatex">\(\text{Beta}(y, n-y)\)</span> is proper when <span class="arithmatex">\(y,n-y&gt;0\)</span>.  </p>
-<p><strong>Another example:</strong>  </p>
-<p>For <span class="arithmatex">\(X_i\sim N(\mu,\sigma^2)\)</span> with <span class="arithmatex">\(\pi(\mu)\propto1\)</span>,</p>
+<p>Where weights:</p>
 <div class="arithmatex">\[
-\mu|x\sim N(\bar{x},\sigma^2/n)
+w(\theta) = \frac{p(\theta)}{q(\theta)}
 \]</div>
-<p>which is proper—so flat prior <span class="arithmatex">\(\pi(\mu)\propto1\)</span> works fine</p>
+<h3 id="normalized-weights"><strong>Normalized weights:</strong><a class="headerlink" href="#normalized-weights" title="Permanent link">&para;</a></h3>
+<div class="arithmatex">\[
+\tilde{w}_i = \frac{w_i}{\sum_{j=1}^N w_j}
+\]</div>
+<h3 id="important-requirement"><strong>Important requirement:</strong><a class="headerlink" href="#important-requirement" title="Permanent link">&para;</a></h3>
+<p><span class="arithmatex">\(q(\theta) &gt; 0\)</span> wherever <span class="arithmatex">\(p(\theta) &gt; 0\)</span>.</p>
 <hr />
-<h2 id="4-informative-vs-noninformative-priors"><strong>4) Informative vs. Noninformative Priors</strong><a class="headerlink" href="#4-informative-vs-noninformative-priors" title="Permanent link">&para;</a></h2>
+<h2 id="6-markov-chain-monte-carlo-mcmc"><strong>6) Markov Chain Monte Carlo (MCMC)</strong><a class="headerlink" href="#6-markov-chain-monte-carlo-mcmc" title="Permanent link">&para;</a></h2>
+<p>When direct sampling is impossible, we construct a <strong>Markov chain</strong> whose stationary distribution is <span class="arithmatex">\(p(\theta | y)\)</span>.</p>
+<h3 id="key-idea_1"><strong>Key idea:</strong><a class="headerlink" href="#key-idea_1" title="Permanent link">&para;</a></h3>
 <ul>
-<li><strong>Informative prior:</strong> Low variance, expresses strong prior knowledge.  </li>
-<li><strong>Vague/diffuse prior:</strong> High variance, weak information.  </li>
-<li><strong>Flat prior:</strong> Constant over parameter space (e.g., <span class="arithmatex">\(\pi(\theta)\propto1\)</span>), fully noninformative.</li>
-</ul>
-<p><strong>Noninformative priors</strong>:</p>
-<ul>
-<li>Aim to let data “speak for itself.”  </li>
-<li>Used in <strong>objective Bayes</strong> when little prior knowledge exists.  </li>
-<li>No universally agreed definition — depends on model parameterization.  </li>
-</ul>
-<hr />
-<h2 id="5-parameterization-sensitivity"><strong>5) Parameterization Sensitivity</strong><a class="headerlink" href="#5-parameterization-sensitivity" title="Permanent link">&para;</a></h2>
-<p>Noninformative priors depend heavily on how parameters are defined.</p>
-<h3 id="51-ex1-binomial-model"><strong>5.1) Ex1. Binomial model</strong><a class="headerlink" href="#51-ex1-binomial-model" title="Permanent link">&para;</a></h3>
-<p>For <span class="arithmatex">\(y\sim Bin(n,\theta)\)</span>:</p>
-<ul>
-<li>Flat prior: <span class="arithmatex">\(\theta\sim Uniform(0,1)\)</span> or <span class="arithmatex">\(\text{Beta}(1,1)\)</span><br />
-  $$
-  \Rightarrow \theta|y\sim Beta(y+1, n-y+1)
-  $$</li>
-</ul>
-<h3 id="52-ex2-odds-transformation"><strong>5.2) Ex2. Odds transformation</strong><a class="headerlink" href="#52-ex2-odds-transformation" title="Permanent link">&para;</a></h3>
-<p>Let <span class="arithmatex">\(o=\frac{\theta}{1-\theta}\)</span> and assume flat prior on <span class="arithmatex">\(o\)</span> (<span class="arithmatex">\(p(o)\propto1\)</span>).<br />
-Then the induced prior on <span class="arithmatex">\(\theta\)</span> is:
-$$
-p(\theta)\propto \frac{1}{(1-\theta)^2}, \quad 0&lt;\theta&lt;1
-$$
-This favors <span class="arithmatex">\(\theta\)</span> near 1 and is <strong>improper</strong> since <span class="arithmatex">\(\int_0^1 (1-\theta)^{-2}d\theta=\infty\)</span>.</p>
-<p>Posterior under Binomial likelihood:
-$$
-p(\theta|y)\propto \theta^y(1-\theta)^{n-y-2} \Rightarrow \theta|y\sim Beta(y+1, n-y-1)
-$$
-Posterior becomes improper when <span class="arithmatex">\(n-y\le1\)</span></p>
-<hr />
-<h3 id="53-ex3-log-odds-reparameterization"><strong>5.3) Ex3. Log-odds reparameterization</strong><a class="headerlink" href="#53-ex3-log-odds-reparameterization" title="Permanent link">&para;</a></h3>
-<p>Let <span class="arithmatex">\(\rho=\log\!\left(\frac{\theta}{1-\theta}\right)\)</span> and assume <span class="arithmatex">\(\rho\sim Uniform(-\infty,\infty)\)</span>.<br />
-Then,
-$$
-p(\theta)\propto \frac{1}{\theta(1-\theta)}
-$$
-Posterior becomes:
-$$
-\theta|y\sim Beta(y, n-y)
-$$
-<strong>Insight:</strong> “Flat” priors depend on the scale; uniform in <span class="arithmatex">\(\theta\)</span>, <span class="arithmatex">\(o\)</span>, or <span class="arithmatex">\(\rho\)</span> lead to very different beliefs</p>
-<hr />
-<h2 id="6-jeffreys-prior"><strong>6) Jeffreys’ Prior</strong><a class="headerlink" href="#6-jeffreys-prior" title="Permanent link">&para;</a></h2>
-<p>Motivation: prior should remain “uninformative” under smooth reparameterization.  </p>
-<p>Jeffreys’ Rule:
-$$
-\pi(\theta)\propto \sqrt{I(\theta)}
-$$
-where <span class="arithmatex">\(I(\theta)\)</span> is the <strong>Fisher information</strong>:
-$$
-I(\theta)=E_\theta!\left[\left(\frac{\partial}{\partial\theta}\log L(\theta;X)\right)^2\right]
-$$</p>
-<ul>
-<li>Reflects information content in the data about <span class="arithmatex">\(\theta\)</span>.  </li>
-<li>Gives higher weight where the likelihood is most sensitive to <span class="arithmatex">\(\theta\)</span>.  </li>
-<li>Completely determined by the likelihood (no subjective input).  </li>
+<li>Generate dependent samples <span class="arithmatex">\(\theta^{(1)}, \theta^{(2)}, \dots\)</span>  </li>
+<li>After burn-in, the chain approximates <span class="arithmatex">\(p(\theta|y)\)</span></li>
 </ul>
 <hr />
-<h3 id="61-ex1-bernoulli"><strong>6.1) Ex1. Bernoulli</strong><a class="headerlink" href="#61-ex1-bernoulli" title="Permanent link">&para;</a></h3>
-<p>For <span class="arithmatex">\(X_i\sim Bern(p)\)</span>,<br />
-$$
-I(p)=\frac{n}{p(1-p)} \Rightarrow \pi(p)\propto [p(1-p)]^{-1/2}
-$$
-Hence, <strong>Jeffreys’ prior</strong>:
-$$
-p(p)\sim Beta!\left(\frac{1}{2},\frac{1}{2}\right)
-$$</p>
-<h3 id="62-ex2-normal-mean"><strong>6.2) Ex2. Normal mean</strong><a class="headerlink" href="#62-ex2-normal-mean" title="Permanent link">&para;</a></h3>
-<p>For <span class="arithmatex">\(X\sim N(\mu,\sigma^2)\)</span>,</p>
+<h2 id="7-metropolis-hastings-mh-algorithm"><strong>7) Metropolis-Hastings (MH) Algorithm</strong><a class="headerlink" href="#7-metropolis-hastings-mh-algorithm" title="Permanent link">&para;</a></h2>
+<h3 id="71algorithm"><strong>7.1)Algorithm</strong><a class="headerlink" href="#71algorithm" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Start at <span class="arithmatex">\(\theta^{(0)}\)</span></li>
+<li>At step <span class="arithmatex">\(t\)</span>:</li>
+<li>Propose <span class="arithmatex">\(\theta^* \sim q(\theta^* \mid \theta^{(t)})\)</span></li>
+<li>
+<p>Compute acceptance ratio:</p>
 <p>$$
-I(\mu)=\frac{1}{\sigma^2} \Rightarrow \pi(\mu)\propto1
-$$
-⇒ Jeffreys’ prior is <strong>uniform</strong></p>
+ \alpha = \min \left(1, \frac{p(\theta^<em>) q(\theta^{(t)} \mid \theta^</em>)}
+                              {p(\theta^{(t)}) q(\theta^* \mid \theta^{(t)})} \right)
+ $$</p>
+</li>
+<li>
+<p>Accept <span class="arithmatex">\(\theta^{(t+1)} = \theta^*\)</span> with probability <span class="arithmatex">\(\alpha\)</span>  </p>
+</li>
+<li>Otherwise set <span class="arithmatex">\(\theta^{(t+1)} = \theta^{(t)}\)</span></li>
+</ol>
+<h3 id="72-special-case-random-walk-metropolis"><strong>7.2) Special case: Random Walk Metropolis</strong><a class="headerlink" href="#72-special-case-random-walk-metropolis" title="Permanent link">&para;</a></h3>
+<div class="arithmatex">\[
+q(\theta^* \mid \theta^{(t)}) = N(\theta^{(t)}, \sigma^2)
+\]</div>
 <hr />
-<h2 id="7-weakly-informative-priors"><strong>7) Weakly Informative Priors</strong><a class="headerlink" href="#7-weakly-informative-priors" title="Permanent link">&para;</a></h2>
+<h2 id="8-gibbs-sampling"><strong>8) Gibbs Sampling</strong><a class="headerlink" href="#8-gibbs-sampling" title="Permanent link">&para;</a></h2>
+<p>A special case of MCMC where we sample <strong>from full conditional distributions.</strong></p>
+<h3 id="81-when-to-use"><strong>8.1) When to use</strong><a class="headerlink" href="#81-when-to-use" title="Permanent link">&para;</a></h3>
+<p>Parameter <span class="arithmatex">\(\theta = (\theta_1, \theta_2, \dots, \theta_k)\)</span> is multi-dimensional and conditionals are tractable.</p>
+<h3 id="82-algorithm"><strong>8.2) Algorithm</strong><a class="headerlink" href="#82-algorithm" title="Permanent link">&para;</a></h3>
+<p>At each step <span class="arithmatex">\(t\)</span>:</p>
+<ol>
+<li>Sample <span class="arithmatex">\(\theta_1^{(t+1)} \sim p(\theta_1 \mid \theta_2^{(t)}, \dots, \theta_k^{(t)})\)</span></li>
+<li>Sample <span class="arithmatex">\(\theta_2^{(t+1)} \sim p(\theta_2 \mid \theta_1^{(t+1)}, \theta_3^{(t)}, \dots)\)</span><br />
+...
+k. Sample <span class="arithmatex">\(\theta_k^{(t+1)} \sim p(\theta_k \mid \theta_1^{(t+1)}, \dots)\)</span></li>
+</ol>
+<h3 id="83-advantages"><strong>8.3) Advantages</strong><a class="headerlink" href="#83-advantages" title="Permanent link">&para;</a></h3>
 <ul>
-<li>Use proper but vague priors to <strong>regularize</strong> estimates and avoid improper posteriors.  </li>
-<li>Example: <span class="arithmatex">\(\text{Beta}(1,1)\)</span> or <span class="arithmatex">\(\text{Beta}(0.5,0.5)\)</span> for Binomial θ.  </li>
-<li>Behaves similarly to <span class="arithmatex">\(\text{Beta}(0,0)\)</span> (improper) but ensures posterior propriety.  </li>
-<li>Common in <strong>modern Bayesian modeling</strong> (e.g., logistic regression, hierarchical models)</li>
+<li>No rejection step (always accepted)</li>
+<li>Works well with conjugate models</li>
 </ul>
 <hr />
-<h2 id="8-reference-priors"><strong>8) Reference Priors</strong><a class="headerlink" href="#8-reference-priors" title="Permanent link">&para;</a></h2>
-<p>A <strong>reference prior</strong> maximizes <em>mutual information</em> between data and parameters.</p>
-<div class="arithmatex">\[
-p^*(\theta) = \arg\max_{p(\theta)} I(\Theta, T)
-\]</div>
-<p>where</p>
-<div class="arithmatex">\[
-I(\Theta, T) = \iint p(\theta, t)\,
-\log\!\frac{p(\theta, t)}{p(\theta)p(t)}\,d\theta\,dt
-\]</div>
-<ul>
-<li><strong>Essentially:</strong> choose the prior that maximizes the <strong>expected information gain</strong> from data.  </li>
-<li>Used in <strong>objective Bayesian analysis</strong>, especially for <strong>multi-parameter models</strong>.</li>
-</ul>
+<h2 id="9-convergence-diagnostics"><strong>9) Convergence Diagnostics</strong><a class="headerlink" href="#9-convergence-diagnostics" title="Permanent link">&para;</a></h2>
+<p>How do we know if MCMC is reliable</p>
+<table>
+<thead>
+<tr>
+<th>Diagnostic</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Trace plot</td>
+<td>Visual mixing + stationarity</td>
+</tr>
+<tr>
+<td>Autocorrelation</td>
+<td>Check independence of samples</td>
+</tr>
+<tr>
+<td>Effective Sample Size (ESS)</td>
+<td>Measures actual number of independent draws</td>
+</tr>
+<tr>
+<td>Gelman-Rubin <span class="arithmatex">\(\hat{R}\)</span></td>
+<td>Compare multiple chains for convergence</td>
+</tr>
+</tbody>
+</table>
 <hr />
-<h2 id="summary"><strong>Summary</strong><a class="headerlink" href="#summary" title="Permanent link">&para;</a></h2>
-<blockquote>
-<p><em>A prior’s “uninformativeness” depends on the parameter scale. Jeffreys’ rule and weakly informative priors balance mathematical invariance and practical stability which ensures the data, not arbitrary parameterization, drives inference.</em></p>
-</blockquote>
-<hr />
-<p><sub>© Jeongsoo Pang — All rights reserved</p>
+<p><sub>© Jeongsoo Pang — All rights reserved</sub></p>
 
 
 

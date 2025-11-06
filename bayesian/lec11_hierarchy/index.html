@@ -9,6 +9,8 @@
       
       
       
+        <link rel="prev" href="../lec10_mcmc/">
+      
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -16,7 +18,7 @@
     
     
       
-        <title>Page Title - Jeongsoo Pang</title>
+        <title>Hierarchical Bayesian Models - Jeongsoo Pang</title>
       
     
     
@@ -70,7 +72,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#page-title" class="md-skip">
+        <a href="#12-hierarchical-bayesian-models" class="md-skip">
           Skip to content
         </a>
       
@@ -106,7 +108,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Page Title
+              Hierarchical Bayesian Models
             
           </span>
         </div>
@@ -223,10 +225,12 @@
   
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
+      <li class="md-tabs__item md-tabs__item--active">
         <a href="../" class="md-tabs__link">
           
   
@@ -610,24 +614,29 @@
       
   
   
+    
   
   
+  
     
     
     
     
-      
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
         
           
-          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
             
   
   
@@ -640,7 +649,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             Bayesian
@@ -838,7 +847,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../lec8_loss_decisions.md" class="md-nav__link">
+      <a href="../lec8_loss_decisions/" class="md-nav__link">
         
   
   
@@ -861,7 +870,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../lec9_computation.md" class="md-nav__link">
+      <a href="../lec9_computation/" class="md-nav__link">
         
   
   
@@ -872,6 +881,175 @@
   
 
       </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lec10_mcmc/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    10. MCMC-Update
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    11. Hierarchical Models
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    11. Hierarchical Models
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-why-hierarchical-models" class="md-nav__link">
+    <span class="md-ellipsis">
+      1) Why Hierarchical Models
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-two-level-hierarchical-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      2) Two-Level Hierarchical Structure
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-motivating-example-binomial-beta-hierarchical-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      3) Motivating Example: Binomial-Beta Hierarchical Model
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-posterior-for-each-group-parameter-i" class="md-nav__link">
+    <span class="md-ellipsis">
+      4) Posterior for Each Group Parameter θᵢ
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-full-bayesian-inference" class="md-nav__link">
+    <span class="md-ellipsis">
+      5) Full Bayesian Inference
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-example-71-rats-tumor-experiment" class="md-nav__link">
+    <span class="md-ellipsis">
+      6) Example: 71 Rats Tumor Experiment
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-priors-for-hyperparameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      7) Priors for Hyperparameters (α, β)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-why-hierarchical-models-work-so-well" class="md-nav__link">
+    <span class="md-ellipsis">
+      8) Why Hierarchical Models Work So Well
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      9) Summary
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -906,6 +1084,95 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-why-hierarchical-models" class="md-nav__link">
+    <span class="md-ellipsis">
+      1) Why Hierarchical Models
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-two-level-hierarchical-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      2) Two-Level Hierarchical Structure
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-motivating-example-binomial-beta-hierarchical-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      3) Motivating Example: Binomial-Beta Hierarchical Model
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-posterior-for-each-group-parameter-i" class="md-nav__link">
+    <span class="md-ellipsis">
+      4) Posterior for Each Group Parameter θᵢ
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-full-bayesian-inference" class="md-nav__link">
+    <span class="md-ellipsis">
+      5) Full Bayesian Inference
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-example-71-rats-tumor-experiment" class="md-nav__link">
+    <span class="md-ellipsis">
+      6) Example: 71 Rats Tumor Experiment
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-priors-for-hyperparameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      7) Priors for Hyperparameters (α, β)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-why-hierarchical-models-work-so-well" class="md-nav__link">
+    <span class="md-ellipsis">
+      8) Why Hierarchical Models Work So Well
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      9) Summary
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -922,8 +1189,192 @@
 
 
 
-<h1 id="page-title">Page Title<a class="headerlink" href="#page-title" title="Permanent link">&para;</a></h1>
-<p><em>Work-in-progress.</em></p>
+<h1 id="12-hierarchical-bayesian-models"><strong>12. Hierarchical Bayesian Models</strong><a class="headerlink" href="#12-hierarchical-bayesian-models" title="Permanent link">&para;</a></h1>
+<hr />
+<h2 id="1-why-hierarchical-models"><strong>1) Why Hierarchical Models</strong><a class="headerlink" href="#1-why-hierarchical-models" title="Permanent link">&para;</a></h2>
+<p>Hierarchical models are used when data are grouped or come from multiple related populations:</p>
+<ul>
+<li>Clinical trials across hospitals  </li>
+<li>Student test scores across schools  </li>
+<li>Manufacturing defects from multiple factories  </li>
+</ul>
+<p>They allow us to <strong>share information across groups</strong>, balancing:</p>
+<table>
+<thead>
+<tr>
+<th>Model Type</th>
+<th>Description</th>
+<th>Drawback</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Complete pooling</strong></td>
+<td>Combine all data as if from one group</td>
+<td>Ignores group differences</td>
+</tr>
+<tr>
+<td><strong>No pooling (separate models)</strong></td>
+<td>Fit each group independently</td>
+<td>Unstable if group size is small</td>
+</tr>
+<tr>
+<td><strong>Hierarchical / Partial pooling</strong></td>
+<td>Groups share a common prior/hyperparameters</td>
+<td>Best compromise</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="2-two-level-hierarchical-structure"><strong>2) Two-Level Hierarchical Structure</strong><a class="headerlink" href="#2-two-level-hierarchical-structure" title="Permanent link">&para;</a></h2>
+<p>Typical model structure:</p>
+<ul>
+<li>
+<p><strong>Level 1 (Observation level):</strong><br />
+  $$
+  y_j \mid \theta_j \sim p(y_j \mid \theta_j)
+  $$</p>
+</li>
+<li>
+<p><strong>Level 2 (Group-level parameters):</strong><br />
+  $$
+  \theta_j \mid \alpha, \beta \sim p(\theta_j \mid \alpha, \beta)
+  $$</p>
+</li>
+<li>
+<p><strong>Level 3 (Hyperpriors):</strong><br />
+  $$
+  \alpha, \beta \sim p(\alpha, \beta)
+  $$</p>
+</li>
+</ul>
+<p>Posterior factorization:</p>
+<div class="arithmatex">\[
+p(\theta, \alpha, \beta \mid y) \propto
+\left[ \prod_{j=1}^J p(y_j \mid \theta_j) \right]
+\left[ \prod_{j=1}^J p(\theta_j \mid \alpha, \beta) \right]
+p(\alpha, \beta)
+\]</div>
+<hr />
+<h2 id="3-motivating-example-binomial-beta-hierarchical-model"><strong>3) Motivating Example: Binomial-Beta Hierarchical Model</strong><a class="headerlink" href="#3-motivating-example-binomial-beta-hierarchical-model" title="Permanent link">&para;</a></h2>
+<p>Suppose we have <span class="arithmatex">\(J\)</span> experiments/groups:</p>
+<ul>
+<li>Data: <span class="arithmatex">\(y_j \sim \text{Binomial}(n_j, \theta_j)\)</span>  </li>
+<li>Group-level parameters: <span class="arithmatex">\(\theta_j \sim \text{Beta}(\alpha, \beta)\)</span>  </li>
+<li>Hyperparameters <span class="arithmatex">\((\alpha, \beta)\)</span> unknown</li>
+</ul>
+<p>Posterior for all parameters:</p>
+<div class="arithmatex">\[
+p(\theta_1,\dots,\theta_J,\alpha,\beta \mid y) \propto
+\left[\prod_{j=1}^J \theta_j^{y_j}(1-\theta_j)^{n_j-y_j} \right]
+\left[\prod_{j=1}^J \theta_j^{\alpha-1}(1-\theta_j)^{\beta-1} \right]
+p(\alpha,\beta)
+\]</div>
+<hr />
+<h2 id="4-posterior-for-each-group-parameter-i"><strong>4) Posterior for Each Group Parameter θᵢ</strong><a class="headerlink" href="#4-posterior-for-each-group-parameter-i" title="Permanent link">&para;</a></h2>
+<p>Given hyperparameters <span class="arithmatex">\((\alpha, \beta)\)</span>:</p>
+<div class="arithmatex">\[
+\theta_j \mid y_j, \alpha, \beta \sim
+\text{Beta}(y_j + \alpha,\; n_j - y_j + \beta)
+\]</div>
+<p>Posterior mean:</p>
+<div class="arithmatex">\[
+E[\theta_j \mid y_j, \alpha, \beta] =
+\frac{y_j + \alpha}{n_j + \alpha + \beta}
+\]</div>
+<p>This can be rewritten as a <strong>shrinkage form</strong>:</p>
+<div class="arithmatex">\[
+E[\theta_j \mid y_j] =
+w_j \cdot \frac{y_j}{n_j} + (1 - w_j) \cdot \frac{\alpha}{\alpha + \beta}
+\]</div>
+<p>where the shrinkage weight is:</p>
+<div class="arithmatex">\[
+w_j = \frac{n_j}{n_j + \alpha + \beta}
+\]</div>
+<p>✔ If <span class="arithmatex">\(n_j\)</span> is small → more shrinkage toward the population mean<br />
+✔ If <span class="arithmatex">\(n_j\)</span> is large → θ_j relies mostly on its data</p>
+<hr />
+<h2 id="5-full-bayesian-inference"><strong>5) Full Bayesian Inference</strong><a class="headerlink" href="#5-full-bayesian-inference" title="Permanent link">&para;</a></h2>
+<p>We often want the posterior of <span class="arithmatex">\((\alpha, \beta)\)</span>:</p>
+<div class="arithmatex">\[
+p(\alpha, \beta \mid y) \propto
+p(\alpha, \beta) \prod_{j=1}^J
+\frac{B(y_j + \alpha, n_j - y_j + \beta)}{B(\alpha, \beta)}
+\]</div>
+<p>Then <strong>θᵢ is averaged over hyperparameters</strong>:</p>
+<div class="arithmatex">\[
+p(\theta_j \mid y) =
+\int p(\theta_j \mid \alpha, \beta, y_j)
+\; p(\alpha, \beta \mid y) \; d\alpha \, d\beta
+\]</div>
+<p>This accounts for <strong>uncertainty in α and β</strong>.</p>
+<hr />
+<h2 id="6-example-71-rats-tumor-experiment"><strong>6) Example: 71 Rats Tumor Experiment</strong><a class="headerlink" href="#6-example-71-rats-tumor-experiment" title="Permanent link">&para;</a></h2>
+<ul>
+<li>71 laboratories  </li>
+<li>Each records number of tumors <span class="arithmatex">\(y_j\)</span> out of <span class="arithmatex">\(n_j\)</span> rats  </li>
+<li>Data is highly variable; some labs have small <span class="arithmatex">\(n_j\)</span>  </li>
+</ul>
+<p>Model:</p>
+<div class="arithmatex">\[
+y_j \sim \text{Bin}(n_j, \theta_j),
+\quad
+\theta_j \sim \text{Beta}(\alpha, \beta)
+\]</div>
+<p>Goal: Estimate each lab’s tumor rate <span class="arithmatex">\(\theta_j\)</span> while <strong>sharing information across labs</strong>.</p>
+<hr />
+<h2 id="7-priors-for-hyperparameters"><strong>7) Priors for Hyperparameters (α, β)</strong><a class="headerlink" href="#7-priors-for-hyperparameters" title="Permanent link">&para;</a></h2>
+<p>Common weakly-informative prior:</p>
+<div class="arithmatex">\[
+p(\alpha, \beta) \propto (\alpha + \beta)^{-5/2}
+\]</div>
+<p>Or in mean–precision form:</p>
+<ul>
+<li>Let <span class="arithmatex">\(\mu = \frac{\alpha}{\alpha + \beta}\)</span>  </li>
+<li>Let <span class="arithmatex">\(\kappa = \alpha + \beta\)</span>  </li>
+<li>Then <span class="arithmatex">\(\alpha = \mu\kappa,\ \beta = (1 - \mu)\kappa\)</span></li>
+</ul>
+<p>Place priors on <span class="arithmatex">\((\mu, \kappa)\)</span> instead for better interpretability.</p>
+<hr />
+<h2 id="8-why-hierarchical-models-work-so-well"><strong>8) Why Hierarchical Models Work So Well</strong><a class="headerlink" href="#8-why-hierarchical-models-work-so-well" title="Permanent link">&para;</a></h2>
+<p>✔ They <strong>borrow strength</strong> across groups<br />
+✔ They produce <strong>partial pooling (shrinkage)</strong><br />
+✔ Reduce overfitting in small datasets<br />
+✔ Provide more realistic uncertainty quantification</p>
+<hr />
+<h2 id="9-summary"><strong>9) Summary</strong><a class="headerlink" href="#9-summary" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Benefit</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Group-specific θⱼ</td>
+<td>Allows variation across groups</td>
+</tr>
+<tr>
+<td>Hyperparameters (α, β)</td>
+<td>Capture population-wide behavior</td>
+</tr>
+<tr>
+<td>Partial pooling</td>
+<td>Balances group data with overall mean</td>
+</tr>
+<tr>
+<td>Posterior shrinkage</td>
+<td>Small samples are stabilized</td>
+</tr>
+<tr>
+<td>Fully Bayesian</td>
+<td>Accounts for all uncertainty</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p><sub>Content based on <em>Lecture 12 – Hierarchical Models.pdf</em>. All math and explanations rewritten in original form.</sub></p>
 
 
 
