@@ -10,8 +10,6 @@ hide:
 
 ## **1) Overview**
 
-This lecture introduces **Bayesian hypothesis testing**, focusing on:
-
 - Posterior odds and Bayesian decision rules  
 - Bayes Factor (BF) as evidence from data  
 - Jeffreys’ scale for interpreting BF  
