@@ -149,11 +149,11 @@ The Metropolis–Hastings algorithm is a Markov Chain Monte Carlo method for sam
 
 1. **Initialize:** Choose a starting value $\theta^{(0)}$.
 2. **At iteration $t$ (for $t = 0,1,2,\dots$):**
-   - **(a) Propose a candidate**  
+**(a) Propose a candidate**  
      $$
      \theta^\* \sim q(\theta^\* \mid \theta^{(t)})
      $$
-   - **(b) Compute the acceptance probability**
+**(b) Compute the acceptance probability**
      $$
      \alpha(\theta^{(t)}, \theta^\*) = 
      \min \left[
@@ -162,9 +162,10 @@ The Metropolis–Hastings algorithm is a Markov Chain Monte Carlo method for sam
           {p(\theta^{(t)}) \; q(\theta^\* \mid \theta^{(t)})}
      \right]
      $$
-   - **(c) Accept or reject**
-     - With probability $\alpha$, set $\theta^{(t+1)} = \theta^\*$  
-     - Otherwise, keep previous value: $\theta^{(t+1)} = \theta^{(t)}$
+**(c) Accept or reject**
+
+- With probability $\alpha$, set $\theta^{(t+1)} = \theta^\*$  
+- Otherwise, keep previous value: $\theta^{(t+1)} = \theta^{(t)}$
 
 ### **7.2 Special Case: Random Walk Metropolis**
 
