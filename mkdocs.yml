@@ -6,7 +6,8 @@ theme:
     - navigation.tabs           # top tabs in the blue bar
     - navigation.tabs.sticky    # keep tabs visible on scroll
     - navigation.instant
-   
+    - navigation.instant.progress
+    - toc.integrate
     - toc.follow                # highlight active section in the right ToC
   palette:
     - scheme: default
