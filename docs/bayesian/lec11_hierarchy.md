@@ -4,7 +4,7 @@ hide:
   - title
 ---
 
-# **12. Hierarchical Bayesian Models**
+# **11. Hierarchical Bayesian Models**
 
 ---
 
@@ -16,7 +16,7 @@ Hierarchical models are used when data are grouped or come from multiple related
 - Student test scores across schools  
 - Manufacturing defects from multiple factories  
 
-They allow us to **share information across groups**, balancing:
+They allow us to share information across groups, balancing:
 
 | Model Type | Description | Drawback |
 |------------|-------------|----------|
@@ -91,7 +91,7 @@ E[\theta_j \mid y_j, \alpha, \beta] =
 \frac{y_j + \alpha}{n_j + \alpha + \beta}
 $$
 
-This can be rewritten as a **shrinkage form**:
+This can be rewritten as a shrinkage form:
 
 $$
 E[\theta_j \mid y_j] =
@@ -127,11 +127,11 @@ p(\theta_j \mid y) =
 \; p(\alpha, \beta \mid y) \; d\alpha \, d\beta
 $$
 
-This accounts for **uncertainty in α and β**.
+This accounts for uncertainty in α and β.
 
 ---
 
-## **6) Example: 71 Rats Tumor Experiment**
+## **6) 71 Rats Tumor Experiment**
 
 - 71 laboratories  
 - Each records number of tumors $y_j$ out of $n_j$ rats  
@@ -169,8 +169,8 @@ Place priors on $(\mu, \kappa)$ instead for better interpretability.
 
 ## **8) Why Hierarchical Models Work So Well**
 
-✔ They **borrow strength** across groups  
-✔ They produce **partial pooling (shrinkage)**  
+✔ They borrow strength across groups  
+✔ They produce partial pooling (shrinkage)  
 ✔ Reduce overfitting in small datasets  
 ✔ Provide more realistic uncertainty quantification
 
@@ -188,4 +188,4 @@ Place priors on $(\mu, \kappa)$ instead for better interpretability.
 
 ---
 
-<sub>Content based on *Lecture 12 – Hierarchical Models.pdf*. All math and explanations rewritten in original form.</sub>
+<sub>© Jeongsoo Pang — All rights reserved
