@@ -134,27 +134,57 @@ When direct sampling is impossible, we construct a **Markov chain** whose statio
 
 ---
 
-## **7) Metropolis-Hastings (MH) Algorithm**
+## **7) Metropolis–Hastings (MH) Algorithm**
 
-### **7.1)Algorithm**
+The Metropolis–Hastings algorithm is a Markov Chain Monte Carlo method for sampling from a target distribution  
+(e.g., posterior $p(\theta \mid y)$) when direct sampling is difficult.
 
-1. Start at $\theta^{(0)}$
-2. At step $t$:
-   - Propose $\theta^* \sim q(\theta^* \mid \theta^{(t)})$
-   - Compute acceptance ratio:
+---
 
+### **7.1 Algorithm (Step-by-step)**
+
+**Goal:** Construct a Markov chain $\{\theta^{(t)}\}$ whose stationary distribution is $p(\theta \mid y)$.
+
+**Procedure:**
+
+1. **Initialize:** Choose a starting value $\theta^{(0)}$.
+2. **At iteration $t$ (for $t = 0,1,2,\dots$):**
+   - **(a) Propose a candidate**  
      $$
-     \alpha = \min \left(1, \frac{p(\theta^*) q(\theta^{(t)} \mid \theta^*)}
-                                  {p(\theta^{(t)}) q(\theta^* \mid \theta^{(t)})} \right)
+     \theta^\* \sim q(\theta^\* \mid \theta^{(t)})
      $$
+   - **(b) Compute the acceptance probability**
+     $$
+     \alpha(\theta^{(t)}, \theta^\*) = 
+     \min \left[
+     1,\;
+     \frac{p(\theta^\*) \; q(\theta^{(t)} \mid \theta^\*)}
+          {p(\theta^{(t)}) \; q(\theta^\* \mid \theta^{(t)})}
+     \right]
+     $$
+   - **(c) Accept or reject**
+     - With probability $\alpha$, set $\theta^{(t+1)} = \theta^\*$  
+     - Otherwise, keep previous value: $\theta^{(t+1)} = \theta^{(t)}$
 
-   - Accept $\theta^{(t+1)} = \theta^*$ with probability $\alpha$  
-   - Otherwise set $\theta^{(t+1)} = \theta^{(t)}$
+### **7.2 Special Case: Random Walk Metropolis**
 
-### **7.2) Special case: Random Walk Metropolis**
+A common and simple choice of proposal is a symmetric random walk:
 
 $$
-q(\theta^* \mid \theta^{(t)}) = N(\theta^{(t)}, \sigma^2)
+q(\theta^\* \mid \theta^{(t)}) = \mathcal{N}(\theta^{(t)}, \sigma^2)
+$$
+
+Since this proposal is **symmetric**:
+$$
+q(\theta^\* \mid \theta^{(t)}) = q(\theta^{(t)} \mid \theta^\*)
+$$
+
+The acceptance probability simplifies to:
+
+$$
+\alpha = \min \left( 1,\;
+\frac{p(\theta^\*)}{p(\theta^{(t)})}
+\right)
 $$
 
 ---
