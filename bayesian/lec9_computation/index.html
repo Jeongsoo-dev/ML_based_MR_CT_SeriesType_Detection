@@ -945,9 +945,9 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#monte-carlo-approximation" class="md-nav__link">
+  <a href="#21-monte-carlo-approximation" class="md-nav__link">
     <span class="md-ellipsis">
-      Monte Carlo approximation:
+      2.1) Monte Carlo approximation:
     </span>
   </a>
   
@@ -978,18 +978,18 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#algorithm" class="md-nav__link">
+  <a href="#41-algorithm" class="md-nav__link">
     <span class="md-ellipsis">
-      Algorithm
+      4.1) Algorithm
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#pros-cons" class="md-nav__link">
+  <a href="#42-pros-cons" class="md-nav__link">
     <span class="md-ellipsis">
-      Pros &amp; Cons
+      4.2) Pros &amp; Cons
     </span>
   </a>
   
@@ -1007,39 +1007,6 @@
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="5) Importance Sampling">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#key-idea" class="md-nav__link">
-    <span class="md-ellipsis">
-      Key idea:
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#normalized-weights" class="md-nav__link">
-    <span class="md-ellipsis">
-      Normalized weights:
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#important-requirement" class="md-nav__link">
-    <span class="md-ellipsis">
-      Important requirement:
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
 </li>
       
         <li class="md-nav__item">
@@ -1048,21 +1015,6 @@
       6) Markov Chain Monte Carlo (MCMC)
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="6) Markov Chain Monte Carlo (MCMC)">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#key-idea_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      Key idea:
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -1259,7 +1211,7 @@ p(y) = \int p(y \mid \theta)\pi(\theta)\, d\theta
 <div class="arithmatex">\[
 E[g(\theta)] = \int g(\theta) p(\theta \mid y)\, d\theta
 \]</div>
-<h3 id="monte-carlo-approximation"><strong>Monte Carlo approximation:</strong><a class="headerlink" href="#monte-carlo-approximation" title="Permanent link">&para;</a></h3>
+<h3 id="21-monte-carlo-approximation"><strong>2.1) Monte Carlo approximation:</strong><a class="headerlink" href="#21-monte-carlo-approximation" title="Permanent link">&para;</a></h3>
 <ol>
 <li>Sample <span class="arithmatex">\(\theta^{(1)}, \dots, \theta^{(N)} \sim p(\theta \mid y)\)</span>  </li>
 <li>Approximate expectation:</li>
@@ -1281,7 +1233,7 @@ E[g(\theta)] = \int g(\theta) p(\theta \mid y)\, d\theta
 <hr />
 <h2 id="4-rejection-sampling"><strong>4) Rejection Sampling</strong><a class="headerlink" href="#4-rejection-sampling" title="Permanent link">&para;</a></h2>
 <p>Goal: Sample from target distribution <span class="arithmatex">\(p(\theta)\)</span> using a simpler proposal <span class="arithmatex">\(q(\theta)\)</span>.</p>
-<h3 id="algorithm"><strong>Algorithm</strong><a class="headerlink" href="#algorithm" title="Permanent link">&para;</a></h3>
+<h3 id="41-algorithm"><strong>4.1) Algorithm</strong><a class="headerlink" href="#41-algorithm" title="Permanent link">&para;</a></h3>
 <ol>
 <li>Choose proposal density <span class="arithmatex">\(q(\theta)\)</span> such that<br />
    $$ p(\theta) \le M q(\theta) \quad \text{for all } \theta $$</li>
@@ -1293,7 +1245,7 @@ E[g(\theta)] = \int g(\theta) p(\theta \mid y)\, d\theta
      u &lt; \frac{p(\theta^<em>)}{M q(\theta^</em>)}
      $$</li>
 </ol>
-<h3 id="pros-cons"><strong>Pros &amp; Cons</strong><a class="headerlink" href="#pros-cons" title="Permanent link">&para;</a></h3>
+<h3 id="42-pros-cons"><strong>4.2) Pros &amp; Cons</strong><a class="headerlink" href="#42-pros-cons" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
 <tr>
@@ -1315,7 +1267,7 @@ E[g(\theta)] = \int g(\theta) p(\theta \mid y)\, d\theta
 <hr />
 <h2 id="5-importance-sampling"><strong>5) Importance Sampling</strong><a class="headerlink" href="#5-importance-sampling" title="Permanent link">&para;</a></h2>
 <p>Approximates expectations under <span class="arithmatex">\(p(\theta)\)</span> using samples from another distribution <span class="arithmatex">\(q(\theta)\)</span>.</p>
-<h3 id="key-idea"><strong>Key idea:</strong><a class="headerlink" href="#key-idea" title="Permanent link">&para;</a></h3>
+<p><strong>Key idea:</strong></p>
 <div class="arithmatex">\[
 E_p[g(\theta)] = \int g(\theta)\frac{p(\theta)}{q(\theta)}q(\theta)\,d\theta
 ≈ \frac{1}{N} \sum_{i=1}^N g(\theta^{(i)}) w(\theta^{(i)})
@@ -1324,16 +1276,16 @@ E_p[g(\theta)] = \int g(\theta)\frac{p(\theta)}{q(\theta)}q(\theta)\,d\theta
 <div class="arithmatex">\[
 w(\theta) = \frac{p(\theta)}{q(\theta)}
 \]</div>
-<h3 id="normalized-weights"><strong>Normalized weights:</strong><a class="headerlink" href="#normalized-weights" title="Permanent link">&para;</a></h3>
+<p><strong>Normalized weights:</strong></p>
 <div class="arithmatex">\[
 \tilde{w}_i = \frac{w_i}{\sum_{j=1}^N w_j}
 \]</div>
-<h3 id="important-requirement"><strong>Important requirement:</strong><a class="headerlink" href="#important-requirement" title="Permanent link">&para;</a></h3>
+<p><strong>Important requirement:</strong> </p>
 <p><span class="arithmatex">\(q(\theta) &gt; 0\)</span> wherever <span class="arithmatex">\(p(\theta) &gt; 0\)</span>.</p>
 <hr />
 <h2 id="6-markov-chain-monte-carlo-mcmc"><strong>6) Markov Chain Monte Carlo (MCMC)</strong><a class="headerlink" href="#6-markov-chain-monte-carlo-mcmc" title="Permanent link">&para;</a></h2>
 <p>When direct sampling is impossible, we construct a <strong>Markov chain</strong> whose stationary distribution is <span class="arithmatex">\(p(\theta | y)\)</span>.</p>
-<h3 id="key-idea_1"><strong>Key idea:</strong><a class="headerlink" href="#key-idea_1" title="Permanent link">&para;</a></h3>
+<p><strong>Key idea:</strong></p>
 <ul>
 <li>Generate dependent samples <span class="arithmatex">\(\theta^{(1)}, \theta^{(2)}, \dots\)</span>  </li>
 <li>After burn-in, the chain approximates <span class="arithmatex">\(p(\theta|y)\)</span></li>

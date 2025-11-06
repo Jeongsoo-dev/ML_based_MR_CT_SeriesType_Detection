@@ -20,7 +20,7 @@
     
     
       
-        <title>10. MCMC-Update - Jeongsoo Pang</title>
+        <title>MCMC Updates - Jeongsoo Pang</title>
       
     
     
@@ -112,7 +112,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              10. MCMC-Update
+              MCMC Updates
             
           </span>
         </div>
@@ -263,6 +263,8 @@
         <div class="md-main__inner md-grid">
           
             
+              
+                
               
               <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
                 <div class="md-sidebar__scrollwrap">
@@ -1235,28 +1237,25 @@
               <article class="md-content__inner md-typeset">
                 
                   
+  
 
 
 
-<hr />
-<p>title: MCMC Updates
-hide:
-  - title</p>
-<hr />
+
 <h1 id="10-mcmc-update"><strong>10. MCMC Update</strong><a class="headerlink" href="#10-mcmc-update" title="Permanent link">&para;</a></h1>
 <hr />
 <h2 id="1-motivation"><strong>1) Motivation</strong><a class="headerlink" href="#1-motivation" title="Permanent link">&para;</a></h2>
 <p>While basic MCMC methods (Metropolis–Hastings, Gibbs) are widely used, practical issues arise:</p>
 <ul>
-<li>Slow convergence in high dimensions  </li>
-<li>High autocorrelation between samples  </li>
-<li>Poor mixing when parameters are correlated  </li>
+<li><strong>Slow convergence in high dimensions</strong></li>
+<li><strong>High autocorrelation between samples</strong></li>
+<li><strong>Poor mixing when parameters are correlated</strong></li>
 </ul>
 <p>To address these, we study advanced MCMC update strategies:</p>
 <ul>
-<li>Component-wise vs. block updating  </li>
-<li>Adaptive and gradient-based proposals  </li>
-<li>Diagnostics for efficiency</li>
+<li><strong>Component-wise vs. block updating</strong></li>
+<li><strong>Adaptive and gradient-based proposals</strong>  </li>
+<li><strong>Diagnostics for efficiency</strong></li>
 </ul>
 <hr />
 <h2 id="2-mcmc-basics-review"><strong>2) MCMC Basics Review</strong><a class="headerlink" href="#2-mcmc-basics-review" title="Permanent link">&para;</a></h2>
@@ -1355,10 +1354,12 @@ $$
 where<br />
 - <span class="arithmatex">\(U(\theta) = -\log p(\theta \mid y)\)</span> (potential energy)<br />
 - <span class="arithmatex">\(K(p) = \frac{1}{2}p^\top M^{-1}p\)</span> (kinetic energy)</p>
-<p>Simulate trajectories using leapfrog steps:
-1. Update momentum <span class="arithmatex">\(p\)</span>
-2. Update position <span class="arithmatex">\(\theta\)</span>
-3. Accept/reject based on energy conservation</p>
+<p>Simulate trajectories using leapfrog steps:</p>
+<ol>
+<li>Update momentum <span class="arithmatex">\(p\)</span></li>
+<li>Update position <span class="arithmatex">\(\theta\)</span></li>
+<li>Accept/reject based on energy conservation</li>
+</ol>
 <p>→ Long-distance proposals with high acceptance.</p>
 <hr />
 <h2 id="8-parameter-transformation"><strong>8) Parameter Transformation</strong><a class="headerlink" href="#8-parameter-transformation" title="Permanent link">&para;</a></h2>
@@ -1407,7 +1408,7 @@ $$
 E[\theta \mid y],\quad \text{Var}(\theta \mid y),\quad \text{quantiles, HPD intervals.}
 $$</p>
 <hr />
-<p><sub>© Jeongsoo Pang — All rights reserved</sub></p>
+<p><sub>© Jeongsoo Pang — All rights reserved</p>
 
 
 
@@ -1415,8 +1416,13 @@ $$</p>
 
 
 
+  
+  
 
 
+
+
+  
 
 
 
