@@ -44,7 +44,7 @@ $$
 E[g(\theta)] = \int g(\theta) p(\theta \mid y)\, d\theta
 $$
 
-### **Monte Carlo approximation:**
+### **2.1) Monte Carlo approximation:**
 
 1. Sample $\theta^{(1)}, \dots, \theta^{(N)} \sim p(\theta \mid y)$  
 2. Approximate expectation:
@@ -75,7 +75,7 @@ Example: Conjugate Normal-Normal model
 
 Goal: Sample from target distribution $p(\theta)$ using a simpler proposal $q(\theta)$.
 
-### **Algorithm**
+### **4.1) Algorithm**
 1. Choose proposal density $q(\theta)$ such that  
    $$ p(\theta) \le M q(\theta) \quad \text{for all } \theta $$
 2. Repeat:
@@ -86,7 +86,7 @@ Goal: Sample from target distribution $p(\theta)$ using a simpler proposal $q(\t
      u < \frac{p(\theta^*)}{M q(\theta^*)}
      $$
 
-### **Pros & Cons**
+### **4.2) Pros & Cons**
 | Pros | Cons |
 |------|------|
 | Simple | Needs $M$ bounding constant |
@@ -98,7 +98,7 @@ Goal: Sample from target distribution $p(\theta)$ using a simpler proposal $q(\t
 
 Approximates expectations under $p(\theta)$ using samples from another distribution $q(\theta)$.
 
-### **Key idea:**
+**Key idea:**
 
 $$
 E_p[g(\theta)] = \int g(\theta)\frac{p(\theta)}{q(\theta)}q(\theta)\,d\theta
@@ -111,13 +111,14 @@ $$
 w(\theta) = \frac{p(\theta)}{q(\theta)}
 $$
 
-### **Normalized weights:**
+**Normalized weights:**
 
 $$
 \tilde{w}_i = \frac{w_i}{\sum_{j=1}^N w_j}
 $$
 
-### **Important requirement:**  
+**Important requirement:** 
+
 $q(\theta) > 0$ wherever $p(\theta) > 0$.
 
 ---
@@ -126,7 +127,8 @@ $q(\theta) > 0$ wherever $p(\theta) > 0$.
 
 When direct sampling is impossible, we construct a **Markov chain** whose stationary distribution is $p(\theta | y)$.
 
-### **Key idea:**
+**Key idea:**
+
 - Generate dependent samples $\theta^{(1)}, \theta^{(2)}, \dots$  
 - After burn-in, the chain approximates $p(\theta|y)$
 
