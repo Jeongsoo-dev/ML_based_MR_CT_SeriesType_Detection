@@ -48,6 +48,8 @@
     
       <link rel="stylesheet" href="../../stylesheets/extra.css">
     
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+    
     <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
@@ -273,7 +275,9 @@
   
 
 
-<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
     <a href="../.." title="Jeongsoo Pang" class="md-nav__button md-logo" aria-label="Jeongsoo Pang" data-md-component="logo">
       
@@ -1206,250 +1210,6 @@
               </div>
             
             
-              
-                
-              
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
-                <div class="md-sidebar__scrollwrap">
-                  <div class="md-sidebar__inner">
-                    
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#1-schedulers-role" class="md-nav__link">
-    <span class="md-ellipsis">
-      1. Scheduler’s Role
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#2-context-switch-overhead" class="md-nav__link">
-    <span class="md-ellipsis">
-      2. Context Switch Overhead
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#3-process-cpu-behavior" class="md-nav__link">
-    <span class="md-ellipsis">
-      3. Process CPU Behavior
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#4-preemptive-vs-non-preemptive-scheduling" class="md-nav__link">
-    <span class="md-ellipsis">
-      4. Preemptive vs Non-Preemptive Scheduling
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#5-scheduling-goals" class="md-nav__link">
-    <span class="md-ellipsis">
-      5. Scheduling Goals
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#6-common-scheduling-algorithms" class="md-nav__link">
-    <span class="md-ellipsis">
-      6. Common Scheduling Algorithms
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="6. Common Scheduling Algorithms">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#61-first-come-first-served" class="md-nav__link">
-    <span class="md-ellipsis">
-      6.1 First-Come First-Served
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#62-shortest-job-first" class="md-nav__link">
-    <span class="md-ellipsis">
-      6.2 Shortest Job First
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#63-round-robin" class="md-nav__link">
-    <span class="md-ellipsis">
-      6.3 Round Robin
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#64-priority-scheduling" class="md-nav__link">
-    <span class="md-ellipsis">
-      6.4 Priority Scheduling
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#65-lottery-scheduling" class="md-nav__link">
-    <span class="md-ellipsis">
-      6.5 Lottery Scheduling
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#66-earliest-deadline-first-edf" class="md-nav__link">
-    <span class="md-ellipsis">
-      6.6 Earliest Deadline First (EDF)
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#7-policy-vs-mechanism" class="md-nav__link">
-    <span class="md-ellipsis">
-      7. Policy vs. Mechanism
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#8-scheduling-threads" class="md-nav__link">
-    <span class="md-ellipsis">
-      8. Scheduling Threads
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#9-dining-philosophers" class="md-nav__link">
-    <span class="md-ellipsis">
-      9. Dining Philosophers
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="9. Dining Philosophers">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#91-problem-recap" class="md-nav__link">
-    <span class="md-ellipsis">
-      9.1 Problem Recap
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#92-key-ideas" class="md-nav__link">
-    <span class="md-ellipsis">
-      9.2 Key Ideas
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#93-execution-flow" class="md-nav__link">
-    <span class="md-ellipsis">
-      9.3 Execution Flow
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="9.3 Execution Flow">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#931-when-philosopher-gets-hungry-take_csi" class="md-nav__link">
-    <span class="md-ellipsis">
-      9.3.1 When Philosopher Gets Hungry → take_cs(i)
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#932-after-eating-put_csi" class="md-nav__link">
-    <span class="md-ellipsis">
-      9.3.2 After Eating → put_cs(i)
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#94-solution-testi" class="md-nav__link">
-    <span class="md-ellipsis">
-      9.4 Solution: test(i)
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#95-how-it-solves-the-classical-issues" class="md-nav__link">
-    <span class="md-ellipsis">
-      9.5 How It Solves the Classical Issues
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-                  </div>
-                </div>
-              </div>
-            
           
           
             <div class="md-content" data-md-component="content">
@@ -1783,10 +1543,12 @@ Hard requirement: process must announce deadline</li>
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
+      <div class="md-progress" data-md-component="progress" role="progressbar"></div>
+    
     
     
       
-      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.instant", "toc.follow"], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.instant", "navigation.instant.progress", "toc.integrate", "toc.follow"], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
       <script src="../../assets/javascripts/bundle.f55a23d4.min.js"></script>
@@ -1798,6 +1560,12 @@ Hard requirement: process must announce deadline</li>
         <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       
         <script src="../../javascripts/refresh-mathjax.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
+      
+        <script src="../../javascripts/katex-render.js"></script>
       
     
   </body>

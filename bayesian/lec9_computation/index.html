@@ -48,6 +48,8 @@
     
       <link rel="stylesheet" href="../../stylesheets/extra.css">
     
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+    
     <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
@@ -273,7 +275,9 @@
   
 
 
-<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
     <a href="../.." title="Jeongsoo Pang" class="md-nav__button md-logo" aria-label="Jeongsoo Pang" data-md-component="logo">
       
@@ -1215,259 +1219,6 @@
               </div>
             
             
-              
-                
-              
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
-                <div class="md-sidebar__scrollwrap">
-                  <div class="md-sidebar__inner">
-                    
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#1-why-bayesian-computation" class="md-nav__link">
-    <span class="md-ellipsis">
-      1) Why Bayesian Computation
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#2-monte-carlo-integration" class="md-nav__link">
-    <span class="md-ellipsis">
-      2) Monte Carlo Integration
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="2) Monte Carlo Integration">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#monte-carlo-approximation" class="md-nav__link">
-    <span class="md-ellipsis">
-      Monte Carlo approximation:
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#3-direct-sampling-ideal-case" class="md-nav__link">
-    <span class="md-ellipsis">
-      3) Direct Sampling (Ideal Case)
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#4-rejection-sampling" class="md-nav__link">
-    <span class="md-ellipsis">
-      4) Rejection Sampling
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="4) Rejection Sampling">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#algorithm" class="md-nav__link">
-    <span class="md-ellipsis">
-      Algorithm
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#pros-cons" class="md-nav__link">
-    <span class="md-ellipsis">
-      Pros &amp; Cons
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#5-importance-sampling" class="md-nav__link">
-    <span class="md-ellipsis">
-      5) Importance Sampling
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="5) Importance Sampling">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#key-idea" class="md-nav__link">
-    <span class="md-ellipsis">
-      Key idea:
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#normalized-weights" class="md-nav__link">
-    <span class="md-ellipsis">
-      Normalized weights:
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#important-requirement" class="md-nav__link">
-    <span class="md-ellipsis">
-      Important requirement:
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#6-markov-chain-monte-carlo-mcmc" class="md-nav__link">
-    <span class="md-ellipsis">
-      6) Markov Chain Monte Carlo (MCMC)
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="6) Markov Chain Monte Carlo (MCMC)">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#key-idea_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      Key idea:
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#7-metropolis-hastings-mh-algorithm" class="md-nav__link">
-    <span class="md-ellipsis">
-      7) Metropolis-Hastings (MH) Algorithm
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="7) Metropolis-Hastings (MH) Algorithm">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#71algorithm" class="md-nav__link">
-    <span class="md-ellipsis">
-      7.1)Algorithm
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#72-special-case-random-walk-metropolis" class="md-nav__link">
-    <span class="md-ellipsis">
-      7.2) Special case: Random Walk Metropolis
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#8-gibbs-sampling" class="md-nav__link">
-    <span class="md-ellipsis">
-      8) Gibbs Sampling
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="8) Gibbs Sampling">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#81-when-to-use" class="md-nav__link">
-    <span class="md-ellipsis">
-      8.1) When to use
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#82-algorithm" class="md-nav__link">
-    <span class="md-ellipsis">
-      8.2) Algorithm
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#83-advantages" class="md-nav__link">
-    <span class="md-ellipsis">
-      8.3) Advantages
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#9-convergence-diagnostics" class="md-nav__link">
-    <span class="md-ellipsis">
-      9) Convergence Diagnostics
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-                  </div>
-                </div>
-              </div>
-            
           
           
             <div class="md-content" data-md-component="content">
@@ -1709,10 +1460,12 @@ k. Sample <span class="arithmatex">\(\theta_k^{(t+1)} \sim p(\theta_k \mid \thet
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
+      <div class="md-progress" data-md-component="progress" role="progressbar"></div>
+    
     
     
       
-      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.instant", "toc.follow"], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.instant", "navigation.instant.progress", "toc.integrate", "toc.follow"], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
       <script src="../../assets/javascripts/bundle.f55a23d4.min.js"></script>
@@ -1724,6 +1477,12 @@ k. Sample <span class="arithmatex">\(\theta_k^{(t+1)} \sim p(\theta_k \mid \thet
         <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       
         <script src="../../javascripts/refresh-mathjax.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
+      
+        <script src="../../javascripts/katex-render.js"></script>
       
     
   </body>
