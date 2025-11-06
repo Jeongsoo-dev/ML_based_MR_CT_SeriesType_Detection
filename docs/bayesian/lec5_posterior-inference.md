@@ -1,10 +1,10 @@
 ---
-title: Bayesian Inference
+title: Bayesian Inference I
 hide:
   - title
 ---
 
-# **5. Bayesian Inference**
+# **5. Bayesian Inference I**
 
 ---
 
