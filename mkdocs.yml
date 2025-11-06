@@ -55,3 +55,5 @@ nav:
       - "7. Hypothesis models": bayesian/lec7_hypothesis_models.md
       - "8. Loss functions": bayesian/lec8_loss_decisions.md
       - "9. Computational methods": bayesian/lec9_computation.md
+      - "10. MCMC-Update": bayesian/lec10_mcmc.md
+      - "11. Hierarchical Models": bayesian/lec11_hierarchy.md
