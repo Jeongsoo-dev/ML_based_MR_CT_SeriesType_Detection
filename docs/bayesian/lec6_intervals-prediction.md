@@ -78,6 +78,7 @@ $$
 ## **5) Beta-Binomial Model Example**
 
 Given:
+
 - Data: $x = 11$ successes out of $n = 12$
 - Prior: $\theta \sim \text{Beta}(7, 3)$
 
@@ -111,6 +112,7 @@ $$
 ## **6) Exponential with Gamma Prior Example**
 
 Model:
+
 - $X_i \sim \text{Exponential}(\theta)$ (θ is mean)
 - Prior: $\theta \sim \text{Gamma}(r, \lambda)$
 
