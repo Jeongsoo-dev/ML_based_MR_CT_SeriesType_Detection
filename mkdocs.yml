@@ -7,6 +7,8 @@ theme:
     - navigation.tabs.sticky    # keep tabs visible on scroll
     - navigation.instant
     - navigation.instant.progress
+    - navigation.sections        # shows each top group as its own block in the sidebar
+    - navigation.path
     - toc.integrate
     - toc.follow                # highlight active section in the right ToC
   palette:
