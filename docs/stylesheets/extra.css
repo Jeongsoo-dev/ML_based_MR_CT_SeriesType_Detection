@@ -1,76 +1,44 @@
+/* ========== Global layout tweaks ========== */
+
 /* Wider canvas */
 .md-grid { max-width: 1440px; }
 
-/* stylesheets/extra.css */
+/* Slightly bolder top tabs */
 .md-tabs__link { font-weight: 600; }
 
-/* Two-column section for the Chair page */
-.two-col {
-  display: flex;
-  gap: 2rem;
-  align-items: flex-start;     /* top-align text and image */
-  margin: 1.25rem 0 2rem;
+/* Optional: underline H1 to echo section grouping */
+.md-typeset h1 {
+  border-bottom: 2px solid var(--md-accent-fg-color);
+  padding-bottom: .25rem;
+  margin-bottom: 1rem;
 }
 
-.two-col .col {               /* text column */
-  flex: 1 1 0;
-  min-width: 0;
-}
+/* ========== Sidebar grouping & highlight (site-wide) ========== */
 
-/* Two-column layout – image about half the previous width */
-.two-col { gap: 1.25rem; }                  /* optional: slightly tighter gap */
-.two-col .col-media {
-  flex: 0 0 clamp(240px, 24vw, 320px);
-  max-width: clamp(240px, 24vw, 320px);
-}
-.media-fit { width: 100%; height: auto; }   /* keep image responsive inside column */
-
-
-
-.media-fit {
-  display: block;
-  width: 100%;
-  height: auto;
-  border-radius: 10px;
-  box-shadow: 0 2px 10px rgba(0,0,0,.06);
-}
-
-/* Stack vertically on narrow screens */
-@media (max-width: 900px) {
-  .two-col { flex-direction: column; }
-  .two-col .col-media { flex-basis: auto; max-width: 100%; }
-}
-
-/* Centered + smaller image for the Expo photo on the Chair page */
-.img-center-half {
-  /* pick one sizing approach you like, both keep it small */
-  max-width: 420px;          /* hard cap */
-  width: min(28vw, 360px);   /* responsive, ~one-third of viewport up to 420px */
-  height: auto;
-
-  display: block;            /* so margins work */
-  margin: 0.75rem auto;      /* centers horizontally */
-  border-radius: 8px;        /* optional */
-}
-
-
-.md-nav__link[href$="/"],              /* root: Cercare-Medical ML Project (index.md) */
-.md-nav__link[href$="/anti_drone/"],  /* anti_drone.md */
-.md-nav__link[href$="/remote_chair/"] /* remote_chair.md */
-{
+/* Make the current top-level section title (e.g., Projects / OS / Bayesian)
+   a distinct, sticky block under the blue header */
+.md-sidebar--primary .md-nav__title {
   font-weight: 700;
-  font-size: 0.92rem;  /* smaller than before, still prominent */
-  line-height: 1.1;
+  text-transform: none;
+  background: var(--md-primary-fg-color--transparent);
+  color: var(--md-primary-fg-color);
+  padding: .55rem .8rem;
+  border-radius: .5rem;
+  margin: .5rem .6rem 1rem .6rem;
+  position: sticky;
+  top: 3.6rem;                 /* sit below the top bar */
+  z-index: 2;
+  box-shadow: 0 1px 3px rgba(0,0,0,.08) inset;
+  border: 1px solid rgba(0,0,0,.06);
 }
 
-/* Optional: tighten line height a touch so it still looks neat */
-.md-nav__link[href$="/"],
-.md-nav__link[href$="/anti_drone/"],
-.md-nav__link[href$="/remote_chair/"] {
-  line-height: 1.1;
+/* Slight breathing room between section groups */
+.md-sidebar--primary nav.md-nav > ul.md-nav__list > li.md-nav__item {
+  margin-bottom: .35rem;
 }
 
-/* Float the headshot on the left */
+/* ========== Hero / headshot row (Cercare page) ========== */
+
 .md-typeset .headshot {
   float: left;
   width: 150px;                   /* adjust 140–170 if you want */
@@ -79,7 +47,6 @@
   box-shadow: 0 1px 3px rgba(0,0,0,.15);
 }
 
-/* Title + headshot inline row */
 .md-typeset .hero {
   display: flex;
   align-items: center;
@@ -87,19 +54,14 @@
   margin: 8px 0 16px;
 }
 
-/* Photo in the hero row */
 .md-typeset .headshot-hero {
-  width: 150px;                  /* tweak 140–170 if you want */
+  width: 150px;                  /* tweak 140–170 if desired */
   border-radius: 10px;
   box-shadow: 0 1px 3px rgba(0,0,0,.15);
 }
 
-/* Tighten the title spacing when inside hero */
-.md-typeset .hero-text h1 {
-  margin: 0 0 6px 0;
-}
+.md-typeset .hero-text h1 { margin: 0 0 6px 0; }
 
-/* Make the name pop a bit */
 .md-typeset .bio-name {
   display: inline-block;
   font-size: 1.2rem;
@@ -108,52 +70,36 @@
   margin-bottom: 2px;
 }
 
-/* Mobile: stack vertically */
 @media (max-width: 900px) {
-  .md-typeset .hero {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-}
-
-/* utility */
-.md-typeset .clear { clear: both; }
-
-
-.md-typeset .bio-name {
-  font-size: 1.2rem;     /* tweak: 1.1–1.25rem to taste */
-  font-weight: 700;
-  letter-spacing: 0.1px;
-  display: inline-block;
-  margin-bottom: 2px;
-}
-
-/* Ensure paragraphs clear properly on small screens */
-@media (max-width: 900px) {
+  .md-typeset .hero { flex-direction: column; align-items: flex-start; }
   .md-typeset .headshot { float: none; display: block; margin: 0 auto 12px; }
 }
 
 .md-typeset .clear { clear: both; }
 
-/* ===== Two-column section for the Chair page ===== */
+/* ========== Two-column section (Remote Chair page) ========== */
+
+/* Parent row */
 .two-col {
   display: flex;
-  gap: 2rem;
-  align-items: flex-start;     /* keep tops aligned */
+  gap: 1.25rem;                  /* slightly tighter gap */
+  align-items: flex-start;       /* top-align text and image */
   margin: 1.25rem 0 2rem;
 }
 
+/* Text column */
 .two-col .col {
-  flex: 1 1 0;                 /* responsive text column */
-  min-width: 0;                /* allow wrapping */
+  flex: 1 1 0;
+  min-width: 0;                  /* allow wrapping */
 }
 
-/* media column (image) – give it a fixed-ish basis */
+/* Image column — responsive fixed-ish basis */
 .two-col .col-media {
-  flex: 0 0 420px;             /* ~420px wide image column */
-  max-width: 480px;
+  flex: 0 0 clamp(240px, 24vw, 320px);
+  max-width: clamp(240px, 24vw, 320px);
 }
 
+/* Image styling */
 .media-fit {
   display: block;
   width: 100%;
@@ -168,3 +114,22 @@
   .two-col .col-media { flex-basis: auto; max-width: 100%; }
 }
 
+/* Standalone centered image (used earlier for Expo photo) */
+.img-center-half {
+  max-width: 420px;              /* hard cap */
+  width: min(28vw, 360px);       /* responsive up to cap */
+  height: auto;
+  display: block;
+  margin: 0.75rem auto;          /* centers horizontally */
+  border-radius: 8px;
+}
+
+/* ========== Left nav emphasis for your three project pages ========== */
+
+.md-nav__link[href$="/"],              /* root: Cercare ML Project (index.md) */
+.md-nav__link[href$="/anti_drone/"],  /* anti_drone.md */
+.md-nav__link[href$="/remote_chair/"] /* remote_chair.md */ {
+  font-weight: 700;
+  font-size: 0.92rem;
+  line-height: 1.1;
+}
