@@ -20,4 +20,6 @@ hide:
 7. Hypothesis testing and model comparison
 8. Loss functions and optimal decisions
 9. Computational methods for Bayes
+10. MCMC-Update
+11. Hierarchical Method
 
