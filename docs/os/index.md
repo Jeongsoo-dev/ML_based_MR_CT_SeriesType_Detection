@@ -11,5 +11,8 @@ hide:
 - ECE4820 Introduction to Operation Systems
   
 ## Table of Contents
-### 1. Critical Section
-
+1. OS Overview
+2. Process and Threads
+3. IPC
+4. Scheduling
+5. Deadlocks
