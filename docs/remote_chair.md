@@ -9,7 +9,8 @@ hide:
     <h1>Remote Feeling Mimicking Chair — Low-Latency Dual-Chair Haptic Teleoperation</h1>
     <strong class="bio-name">Jeongsoo Pang</strong><br>
     UM–SJTU Joint Institute & BuilderX (sponsor)<br>
-    2025 Design Expo
+    2025 Design Expo<br>
+    Instructor : Professor Chengbin Ma
   </div>
 </div>
 
