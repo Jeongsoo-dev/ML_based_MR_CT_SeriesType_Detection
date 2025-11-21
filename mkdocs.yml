@@ -44,12 +44,13 @@ nav:
       - "1. Cercare-Medical": index.md
       - "2. Anti-Drone": anti_drone.md
       - "3. Remote Feeling Mimicking Chair": remote_chair.md
+  - CV: cv.md
   - OS:
       - "0. Overview": os/index.md
       - "1. OS Overview": os/os_overview.md
       - "2. Process and Threads": os/lec2_process_thread.md
       - "3. IPC": os/lec3_ipc_synchronization.md
-      - "4. Scheduling": os/lec4_scheduling.md     # ✅ spelling fixed
+      - "4. Scheduling": os/lec4_scheduling.md  
       - "5. Deadlocks": os/lec5_deadlocks.md
   - Bayesian:
       - "0. Overview": bayesian/index.md
