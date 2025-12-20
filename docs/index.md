@@ -1,5 +1,5 @@
 ---
-title: "Cercare-Medical ML Project"
+title: "Cercare Medical — ML Project"
 hide:
   - title
 ---
@@ -8,12 +8,12 @@ hide:
   <img src="images/profile.jpg" alt="Jeongsoo Pang" class="headshot-hero">
 
   <div class="hero-text">
-    <h1>Machine Learning Based Advanced MR and CT Series Type Detection</h1>
+    <h1>ML-Based MR/CT Series Type Detection from DICOM Headers</h1>
 
     <strong class="bio-name">Jeongsoo Pang</strong><br>
-    Cercare-Medical R&D<br>
-    ML-Specialist<br>
-    2024.06.01 - 2024.12.01
+    Cercare Medical (Denmark) — R&D<br>
+    ML Specialist<br>
+    2024.06.01 – 2024.12.01
   </div>
 </div>
 
@@ -21,32 +21,42 @@ hide:
 
 ---
 
-## Abstract
-Radiology workflows depend on correctly identifying **series types** (e.g., MR: DWI, SWI, T1, T2 FLAIR; CT: Angio/Perfusion/Noncontrast) before reconstruction, analysis, or visualization. Vendor-specific DICOM conventions, private tags, nested data, multilingual fields, and missing metadata make rule-based detectors unreliable. This project delivers a **production-ready ML pipeline** that automatically classifies **8 MR** and **3 CT** series using only DICOM header metadata. 
+## Overview
 
-It features:  
-1. A robust **feature-extraction module** handling private/nested tags and multilingual headers.  
-2. Two **HistGradientBoosting (HGBC)** models—trained **with** and **without** `SeriesDescription`—to remain robust when textual labels are missing or inconsistent.  
-3. A **self-inspection mechanism** that flags low-confidence predictions to radiologists for review.
+Radiology pipelines rely on correctly identifying the **series type** (MR: DWI, SWI, T1, T2, FLAIR, etc.; CT: angiography, perfusion, non-contrast) before reconstruction, post-processing, and downstream analytics. In practice, rule-based detectors fail because DICOM metadata is inconsistent across vendors and sites: private tags, nested sequences, multilingual / abbreviated fields, and missing or misleading `SeriesDescription`.
 
-Externally validated on partner-hospital datasets, the model achieved **96.69% MR** and **99.25% CT** accuracy, replacing the legacy C++ detector in production. The design emphasizes **maintainability**, **future retraining**, and **clinical safety**.
+This project delivers a production-ready ML pipeline that classifies **8 MR** and **3 CT** series types using **DICOM header metadata only**, and includes a conservative **selective-prediction (self-inspection)** policy to defer uncertain cases to human review.
 
----
-## Project Goal
-- Build an ML model to classify **8 MR** and **3 CT** series, replacing the company’s rule-based detector.  
-- Ensure the model is **easy to retrain** for new series and **safe to deploy** through confidence-based self-inspection.  
+**External validation (partner hospitals):**
+- MR accuracy: **96.69%**
+- CT accuracy: **99.25%**
+
+The system replaced a legacy rule-based detector in production and was designed for maintainability, safe operation, and future retraining.
 
 ---
+
+## Project Goals
+
+- Replace a brittle rule-based detector with a robust ML solution for **8 MR** and **3 CT** series types.
+- Maintain utility when textual fields are missing or unreliable (notably `SeriesDescription`).
+- Provide a safety mechanism that flags low-confidence predictions for radiologist review.
+- Make the pipeline easy to retrain and deploy with consistent preprocessing and schema checks.
+
+---
+
 ## My Contributions
-- **Engineered DICOM Header Extractor**
-- **Data De-biasing**: one representative DICOM per 3D study.  
-- **Feature Preprocessing** for numeric + categorical + missing/string values.  
-- **Dual-Model Training**: HGBC with/without `SeriesDescription`.  
-- **Self-Inspection Gate** with confidence thresholds and top-2 margin.  
-- **External Validation & Deployment** with hospitals; production replacement.  
-- **Explainability** with SHAP; reproducible JSON/serialized pipelines.
+
+- Implemented a **DICOM header extraction** workflow designed to tolerate missing fields and vendor variability.
+- Built feature preprocessing for mixed types (numeric, categorical, missing / unknown-safe one-hot).
+- Trained and validated **two HistGradientBoosting (HGBC) models** per modality:
+  - With `SeriesDescription`
+  - Without `SeriesDescription` (robust fallback)
+- Designed a **selective-prediction gate** based on confidence and top-2 margin to abstain on ambiguous cases.
+- Added explainability with **SHAP** to support QA and deployment readiness.
+- Supported external validation runs and production replacement with serialized artifacts.
 
 ---
+
 ## Dataset Summary
 
 | Modality | Train | Test |
@@ -54,134 +64,134 @@ Externally validated on partner-hospital datasets, the model achieved **96.69% M
 | MR       | 171   | 185  |
 | CT       | 271   | 407  |
 
-**MR (8):** `pwi_dsc`, `pwi_dce`, `swi`, `dwi`, `t2`, `t2_flair`, `t1`, `t1_contrast`  
-**CT (3):** `ct_angiography`, `ct_perfusion`, `ct_noncontrast`
+**MR labels (8):** `pwi_dsc`, `pwi_dce`, `swi`, `dwi`, `t2`, `t2_flair`, `t1`, `t1_contrast`  
+**CT labels (3):** `ct_angiography`, `ct_perfusion`, `ct_noncontrast`
 
 ---
-## Feature Overview
 
-**MR:** `NumberTemporalPositions`, `PhaseEncodingDirection`, `RepetitionTime`, `FlipAngle`, `InversionTime`, `EchoTrainLength`, `MagneticFieldStrength`, `EchoSpacing`, `PulseSequenceName`, `SequenceVariant`, `Bvalue`, `ScanOptions`  
+## Feature Set
 
-**CT:** `ContrastBolusAgent`, `ExposureTime`, `KVP`, `ScanOptions`, `ReconstructionDiameter`, `ConvolutionKernel`, `TableSpeed`, `SeriesTime`, `Modality`
+The model uses header-derived metadata only (no pixel data). Features are intentionally pragmatic: stable across sites when possible, and useful for discriminating protocol families.
+
+**MR examples**
+- Timing / sequence: `RepetitionTime`, `InversionTime`, `EchoTrainLength`, `EchoSpacing`, `FlipAngle`
+- Acquisition / encoding: `PhaseEncodingDirection`, `ScanOptions`
+- System-level: `MagneticFieldStrength`
+- Sequence identifiers when available: `PulseSequenceName`, `SequenceVariant`
+- Diffusion hints when present: `Bvalue`
+
+**CT examples**
+- Contrast / acquisition: `ContrastBolusAgent`, `ExposureTime`, `KVP`
+- Reconstruction: `ConvolutionKernel`, `ReconstructionDiameter`
+- Table / timing: `TableSpeed`, `SeriesTime`
+- Other: `ScanOptions`, `Modality`
 
 ---
-## Pipeline Overview
-1. **Ingestion**: select one DICOM per 3D series from Blackbox server.  
-2. **Feature Extraction** → normalized, grouped JSON.  
-3. **Preprocessing**: imputation + one-hot (unknown-safe).  
-4. **Training** (HGBC): tuned `max_iter=100`, `lr=0.1`, `max_leaf_nodes=31`, `early_stopping='auto'`, `validation_fraction=0.1`.  
-5. **Selective Prediction**: abstain on low confidence or tight top-2.  
-6. **Validation/Deployment**: external datasets; production replacement.
+
+## System Architecture
+
+### 1) Ingestion
+- Input: a multi-series study folder
+- Select one representative DICOM per 3D series (reduces redundancy and avoids over-counting near-duplicate slices)
+
+### 2) Header extraction → normalized feature dict
+- Extract relevant tags with defensive parsing (missing values, private/nested structures)
+- Normalize into a stable schema so training and inference share the exact same feature contract
+
+### 3) Preprocessing
+- Numeric: imputation
+- Categorical: unknown-safe one-hot encoding
+- Output: model-ready tabular feature matrix
+
+### 4) Modeling (HGBC)
+- HistGradientBoostingClassifier is a strong fit for sparse, heterogeneous tabular metadata:
+  - handles missingness reliably
+  - trains efficiently
+  - good generalization under regularization
+- Two-model strategy:
+  - primary model includes `SeriesDescription` if present
+  - fallback model excludes it to remain robust when text is missing or inconsistent
+
+### 5) Selective prediction (self-inspection)
+Rather than forcing a label for every case, the system abstains when confidence is insufficient.
+
+A typical policy:
+- abstain if `max_prob < τ₁`, or
+- abstain if `(top1_prob − top2_prob) < τ₂`
+
+Abstentions are routed to human review, and logs support later retraining.
 
 ![Pipeline workflow](images/workflow.png){ width="900" }
 
 ---
-## Training & Hyperparameter Tuning
 
-I treated tuning as an engineering task, not guesswork.
+## Training & Tuning
 
-**Search space (HGBC):**
+Hyperparameter tuning was treated as an engineering process: consistent splits, leakage prevention, and reproducibility first.
+
+**Search space (HGBC)**
 - `learning_rate ∈ {0.03, 0.05, 0.07, 0.1}`
 - `max_iter ∈ {200, 400, 800}` (with early stopping)
 - `max_leaf_nodes ∈ {15, 31, 63}`
 - `min_samples_leaf ∈ {10, 20, 40}`
 - `l2_regularization ∈ {0.0, 0.01, 0.05, 0.1}`
-- `early_stopping='auto'`, `validation_fraction=0.1`, `n_iter_no_change=20`
+- `validation_fraction=0.1`, `n_iter_no_change=20`, early stopping enabled
 
-**Protocol:**
-1. **Stratified 5-fold CV** on training (patient-level split) to avoid leakage.
-2. **Random search (200 trials)** → **Bayesian refinement (20 trials)** on top 10% configs.
-3. **Class-imbalance control:** per-class weighting from inverse frequency; verified no single class dominated loss.
-4. **Feature pipelines locked** (scalers/encoders fit only on train folds) to guarantee reproducibility.
-5. **Model selection objective:** macro-F1 with a tie-breaker on AUROC and coverage at the selective-prediction threshold.
-
-**Best config (typical):**
-HGBC(
-learning_rate=0.07,
-max_iter=400,
-max_leaf_nodes=31,
-min_samples_leaf=20,
-l2_regularization=0.05,
-early_stopping='auto',
-validation_fraction=0.1
-)
-
-**Why not plain GBC?**  
-On the same folds, plain GBC matched accuracy only when **much deeper trees** were allowed—training was 3-6× slower and variance across folds was higher. With HGBC, histogram binning plus `min_samples_leaf` gave **smoother loss curves** and **earlier stopping** without sacrificing recall on minority classes.
+**Protocol**
+1. Stratified cross-validation with patient-level separation to avoid leakage.
+2. Random search to explore broadly, then refine around top configurations.
+3. Prioritized macro-F1 and per-class recall; monitored coverage under selective prediction.
 
 ---
-## Model Choice & Rationale — HistGradientBoosting (HGBC)
 
-I compared tree-based learners (RandomForest, GradientBoostingClassifier), linear baselines, and HGBC. HGBC won for this use-case:
+## Explainability & QA
 
-| Criterion | HGBC (Chosen) | Plain GBC | Why it matters for DICOM-header metadata |
-|---|---|---|---|
-| Training speed on medium/large tabular data | **Histogram binning** (fast) | Exact splits (slow) | Faster iteration for tuning/validation on hospital-scale datasets |
-| Native handling of missing values | **Yes** | Partial/No | Robust to sparsity and vendor-specific header gaps |
-| Early stopping & validation split | **Built-in** | Manual | Safe convergence + automatic regularization |
-| Regularization knobs | **`l2_regularization`, `min_samples_leaf`, `max_leaf_nodes`** | Fewer stable knobs | Tighter control → less overfit on small classes |
-| Interpretability | **Tree-based; SHAP works well** | Same | Feature attributions for clinical QA |
-
-
----
-## Explainability, Robustness & Model Safety
-
-- **SHAP-based attributions** shipped with predictions for audit-readiness; top contributors were TR/TE/FA and sequence-family tags, matching domain intuition.
-- **Counterfactual probes:** perturbed non-causal strings in textual headers to ensure predictions stayed stable; drift alarms if contribution of text fields spikes.
-- **Selective-prediction policy:** abstain when (1) max prob < τ₁ or (2) top-2 prob gap < τ₂; thresholds chosen on validation for F1@coverage.
-- **Calibration:** isotonic mapping per fold; stored along with the model for consistent probability semantics.
-- **Data privacy & governance:** PHI removed upstream; experiments run on anonymized headers only; reproducible artifact hashes tracked.
+- SHAP summaries were used to verify that the model relied on clinically sensible drivers (e.g., MR sequence timing parameters).
+- Audited failure cases by reviewing mismatches and low-margin predictions.
+- Used ablation checks (remove top features, remove `SeriesDescription`) to ensure the model’s behavior remained stable under expected metadata disruptions.
 
 ![Test map](images/test_map.png){ width="900" }
 
-
 ---
-## Deployment & Reproducibility
 
-- **Single Sklearn Pipeline**: `preprocess → model → calibration → selective gate`; versioned with semantic tags.
-- **Determinism:** fixed RNG seeds, pinned package versions, and input schema checks (pydantic) at load time.
-- **Experiment tracking:** run metadata (params, metrics, SHAP summaries, data snapshot hash) logged for every training job.
-- **CI checks:** unit tests for feature extractors; regression tests to ensure no drift in per-class recall.
-- **Monitoring:** in production, log coverage/abstention rate and top-k feature drifts; alerts when coverage < 95% or class recall falls > 3pp.
+## Evaluation
 
-
----
-## Evaluation Protocol & Metrics
-
-- **Splits:** patient-level train/val/test; external partner hospitals held-out for final reporting.
-- **Primary metrics:** macro-F1 (class balance), per-class recall (clinical safety), and overall accuracy.
-- **Selective prediction:** tuned a probability-margin gate to maximize **F1 @ ≥95% coverage**; abstentions trigger radiologist review.
-- **Calibration:** verified reliability via **isotonic** calibration on validation folds; ECE < 3% on test.
-- **Ablations:**  
-  - **Text present vs missing `SeriesDescription`** (two-model strategy)  
-  - **Remove top-k features** (stability check)  
-  - **Swap HGBC→GBC/RandomForest** (model choice justification)
+- Patient-level splits for internal evaluation.
+- External partner-hospital datasets used for final reporting to reflect real deployment conditions.
+- Metrics tracked:
+  - accuracy (headline)
+  - macro-F1 and per-class recall (safety)
+  - coverage / abstention rate under selective prediction
 
  ![ROC_curve](images/ROC_curve.png){ width="900" }
 
 ---
-## Results Summary
-External partner-hospital validation: **MR 96.69%**, **CT 99.25%**.  
-Deployed to production; supports safe retraining and human-in-the-loop.
+
+## Results
+
+External validation on partner-hospital datasets:
+- MR: **96.69%** accuracy
+- CT: **99.25%** accuracy
+
+The pipeline replaced the legacy detector in production and supports safe iteration via selective prediction and retraining-ready artifacts.
 
 ---
+
 ## Limitations & Next Steps
-- **Cross-vendor generalization:** performance is strong but varies on rare protocol variants; plan targeted augmentation and vendor-specific priors.
-- **Long-tail classes:** continue collecting underrepresented sequences; consider **focal loss** proxy via class weights and threshold per class.
-- **Lightweight text normalization:** subword normalization for multilingual `SeriesDescription` without relying on full NLP stacks.
-- **Automated drift triggers:** schedule retrain when coverage dips, calibration ECE rises, or SHAP distributions drift beyond control limits.
+
+- Cross-vendor generalization is strong overall, but rare protocol variants remain the main source of errors.
+- Long-tail classes benefit from continued data collection and targeted sampling.
+- Lightweight, multilingual normalization for `SeriesDescription` can improve robustness without adopting heavy NLP stacks.
+- Extend drift monitoring (coverage drop, feature distribution shift, calibration shift) to trigger retraining automatically.
 
 ---
-## Acknowledgment
-This project was conducted under **Cercare-Medical, Denmark (2024)** with direct collaboration with the **Lead AI Developer**, **Senior Software Developers**, and **Operation Team**, resulting in a successful production deployment and recommendation Letter from the **CTO**.
 
-<!-- 두 이미지를 가로로 -->
+## Acknowledgment
+
+This project was conducted at **Cercare Medical (Denmark, 2024)** in collaboration with the **Lead AI Developer**, **Senior Software Developers**, and the **Operations team**, culminating in a successful production deployment and a recommendation letter from the CTO.
+
+<!-- two images side-by-side -->
 <div style="display:flex;justify-content:space-between;align-items:center;gap:2%;margin-top:12px;">
   <img src="images/cercare_1.jpg" alt="Cercare Image 1" style="width:49%;border-radius:8px;">
   <img src="images/cercare_2.jpg" alt="Cercare Image 2" style="width:49%;border-radius:8px;">
-</div>
-
----
-
-  </section>
 </div>
