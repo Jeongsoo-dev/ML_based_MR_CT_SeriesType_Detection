@@ -1224,16 +1224,17 @@
 
 <hr />
 <h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
-<p>Radiology pipelines rely on correctly identifying the <strong>series type</strong> (MR: DWI, SWI, T1, T2, FLAIR, etc.; CT: angiography, perfusion, non-contrast) before reconstruction, post-processing, and downstream analytics. In practice, rule-based detectors fail because DICOM metadata is inconsistent across vendors and sites: private tags, nested sequences, multilingual / abbreviated fields, and missing or misleading <code>SeriesDescription</code>.</p>
-<p>This project delivers a production-ready ML pipeline that classifies <strong>8 MR</strong> and <strong>3 CT</strong> series types using <strong>DICOM header metadata only</strong>, and includes a conservative <strong>selective-prediction (self-inspection)</strong> policy to defer uncertain cases to human review.</p>
-<p><strong>External validation (partner hospitals):</strong>
-- MR accuracy: <strong>96.69%</strong>
-- CT accuracy: <strong>99.25%</strong></p>
+<p>Radiology pipelines rely on correctly identifying the series type (MR: DWI, SWI, T1, T2, FLAIR, etc.; CT: angiography, perfusion, non-contrast) before reconstruction, post-processing, and downstream analytics. </p>
+<p>In practice, rule-based detectors fail because DICOM metadata is inconsistent across vendors and sites: private tags, nested sequences, multilingual / abbreviated fields, and missing or misleading <code>SeriesDescription</code>.</p>
+<p>This project delivers a production-ready ML pipeline that classifies 8 MR and 3 CT series types using DICOM header metadata only and includes a conservative selective-prediction (self-inspection policy to defer uncertain cases to human review.</p>
+<p>External validation (partner hospitals)
+- MR accuracy: 96.69
+- CT accuracy: 99.25</p>
 <p>The system replaced a legacy rule-based detector in production and was designed for maintainability, safe operation, and future retraining.</p>
 <hr />
 <h2 id="project-goals">Project Goals<a class="headerlink" href="#project-goals" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Replace a brittle rule-based detector with a robust ML solution for <strong>8 MR</strong> and <strong>3 CT</strong> series types.</li>
+<li>Replace a brittle rule-based detector with a robust ML solution for 8 MR and 3 CT series types.</li>
 <li>Maintain utility when textual fields are missing or unreliable (notably <code>SeriesDescription</code>).</li>
 <li>Provide a safety mechanism that flags low-confidence predictions for radiologist review.</li>
 <li>Make the pipeline easy to retrain and deploy with consistent preprocessing and schema checks.</li>
@@ -1241,12 +1242,10 @@
 <hr />
 <h2 id="my-contributions">My Contributions<a class="headerlink" href="#my-contributions" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Implemented a <strong>DICOM header extraction</strong> workflow designed to tolerate missing fields and vendor variability.</li>
+<li>Implemented a <strong>DICOM Header Extraction</strong> workflow designed to tolerate missing fields and vendor variability.</li>
 <li>Built feature preprocessing for mixed types (numeric, categorical, missing / unknown-safe one-hot).</li>
-<li>Trained and validated <strong>two HistGradientBoosting (HGBC) models</strong> per modality:</li>
-<li>With <code>SeriesDescription</code></li>
-<li>Without <code>SeriesDescription</code> (robust fallback)</li>
-<li>Designed a <strong>selective-prediction gate</strong> based on confidence and top-2 margin to abstain on ambiguous cases.</li>
+<li>Trained and validated <strong>two HistGradientBoosting (HGBC) models</strong> per modality With <code>SeriesDescription</code> and Without <code>SeriesDescription</code> (robust fallback)</li>
+<li>Designed a selective-prediction gate based on confidence and top-2 margin to abstain on ambiguous cases.</li>
 <li>Added explainability with <strong>SHAP</strong> to support QA and deployment readiness.</li>
 <li>Supported external validation runs and production replacement with serialized artifacts.</li>
 </ul>
@@ -1278,17 +1277,21 @@
 <hr />
 <h2 id="feature-set">Feature Set<a class="headerlink" href="#feature-set" title="Permanent link">&para;</a></h2>
 <p>The model uses header-derived metadata only (no pixel data). Features are intentionally pragmatic: stable across sites when possible, and useful for discriminating protocol families.</p>
-<p><strong>MR examples</strong>
-- Timing / sequence: <code>RepetitionTime</code>, <code>InversionTime</code>, <code>EchoTrainLength</code>, <code>EchoSpacing</code>, <code>FlipAngle</code>
-- Acquisition / encoding: <code>PhaseEncodingDirection</code>, <code>ScanOptions</code>
-- System-level: <code>MagneticFieldStrength</code>
-- Sequence identifiers when available: <code>PulseSequenceName</code>, <code>SequenceVariant</code>
-- Diffusion hints when present: <code>Bvalue</code></p>
-<p><strong>CT examples</strong>
-- Contrast / acquisition: <code>ContrastBolusAgent</code>, <code>ExposureTime</code>, <code>KVP</code>
-- Reconstruction: <code>ConvolutionKernel</code>, <code>ReconstructionDiameter</code>
-- Table / timing: <code>TableSpeed</code>, <code>SeriesTime</code>
-- Other: <code>ScanOptions</code>, <code>Modality</code></p>
+<p><strong>MR examples</strong></p>
+<ul>
+<li>Timing / sequence: <code>RepetitionTime</code>, <code>InversionTime</code>, <code>EchoTrainLength</code>, <code>EchoSpacing</code>, <code>FlipAngle</code></li>
+<li>Acquisition / encoding: <code>PhaseEncodingDirection</code>, <code>ScanOptions</code></li>
+<li>System-level: <code>MagneticFieldStrength</code></li>
+<li>Sequence identifiers when available: <code>PulseSequenceName</code>, <code>SequenceVariant</code></li>
+<li>Diffusion hints when present: <code>Bvalue</code></li>
+</ul>
+<p><strong>CT examples</strong></p>
+<ul>
+<li>Contrast / acquisition: <code>ContrastBolusAgent</code>, <code>ExposureTime</code>, <code>KVP</code></li>
+<li>Reconstruction: <code>ConvolutionKernel</code>, <code>ReconstructionDiameter</code></li>
+<li>Table / timing: <code>TableSpeed</code>, <code>SeriesTime</code></li>
+<li>Other: <code>ScanOptions</code>, <code>Modality</code></li>
+</ul>
 <hr />
 <h2 id="system-architecture">System Architecture<a class="headerlink" href="#system-architecture" title="Permanent link">&para;</a></h2>
 <h3 id="1-ingestion">1) Ingestion<a class="headerlink" href="#1-ingestion" title="Permanent link">&para;</a></h3>
@@ -1309,31 +1312,35 @@
 </ul>
 <h3 id="4-modeling-hgbc">4) Modeling (HGBC)<a class="headerlink" href="#4-modeling-hgbc" title="Permanent link">&para;</a></h3>
 <ul>
-<li>HistGradientBoostingClassifier is a strong fit for sparse, heterogeneous tabular metadata:</li>
-<li>handles missingness reliably</li>
-<li>trains efficiently</li>
-<li>good generalization under regularization</li>
-<li>Two-model strategy:</li>
-<li>primary model includes <code>SeriesDescription</code> if present</li>
-<li>fallback model excludes it to remain robust when text is missing or inconsistent</li>
+<li>HistGradientBoostingClassifier is a strong fit for sparse, heterogeneous tabular metadata:
+i) handles missingness reliably
+ii) trains efficiently
+iii) good generalization under regularization</li>
+<li>Two-model strategy:
+i) primary model includes <code>SeriesDescription</code> if present2.
+ii) fallback model excludes it to remain robust when text is missing or inconsistent</li>
 </ul>
 <h3 id="5-selective-prediction-self-inspection">5) Selective prediction (self-inspection)<a class="headerlink" href="#5-selective-prediction-self-inspection" title="Permanent link">&para;</a></h3>
 <p>Rather than forcing a label for every case, the system abstains when confidence is insufficient.</p>
-<p>A typical policy:
-- abstain if <code>max_prob &lt; τ₁</code>, or
-- abstain if <code>(top1_prob − top2_prob) &lt; τ₂</code></p>
+<p>A typical policy:</p>
+<ul>
+<li>abstain if <code>max_prob &lt; τ₁</code>, or</li>
+<li>abstain if <code>(top1_prob − top2_prob) &lt; τ₂</code></li>
+</ul>
 <p>Abstentions are routed to human review, and logs support later retraining.</p>
 <p><img alt="Pipeline workflow" src="images/workflow.png" width="900" /></p>
 <hr />
 <h2 id="training-tuning">Training &amp; Tuning<a class="headerlink" href="#training-tuning" title="Permanent link">&para;</a></h2>
 <p>Hyperparameter tuning was treated as an engineering process: consistent splits, leakage prevention, and reproducibility first.</p>
-<p><strong>Search space (HGBC)</strong>
-- <code>learning_rate ∈ {0.03, 0.05, 0.07, 0.1}</code>
-- <code>max_iter ∈ {200, 400, 800}</code> (with early stopping)
-- <code>max_leaf_nodes ∈ {15, 31, 63}</code>
-- <code>min_samples_leaf ∈ {10, 20, 40}</code>
-- <code>l2_regularization ∈ {0.0, 0.01, 0.05, 0.1}</code>
-- <code>validation_fraction=0.1</code>, <code>n_iter_no_change=20</code>, early stopping enabled</p>
+<p><strong>Search space (HGBC)</strong></p>
+<ul>
+<li><code>learning_rate ∈ {0.03, 0.05, 0.07, 0.1}</code></li>
+<li><code>max_iter ∈ {200, 400, 800}</code> (with early stopping)</li>
+<li><code>max_leaf_nodes ∈ {15, 31, 63}</code></li>
+<li><code>min_samples_leaf ∈ {10, 20, 40}</code></li>
+<li><code>l2_regularization ∈ {0.0, 0.01, 0.05, 0.1}</code></li>
+<li><code>validation_fraction=0.1</code>, <code>n_iter_no_change=20</code>, early stopping enabled</li>
+</ul>
 <p><strong>Protocol</strong>
 1. Stratified cross-validation with patient-level separation to avoid leakage.
 2. Random search to explore broadly, then refine around top configurations.
@@ -1348,20 +1355,22 @@
 <p><img alt="Test map" src="images/test_map.png" width="900" /></p>
 <hr />
 <h2 id="evaluation">Evaluation<a class="headerlink" href="#evaluation" title="Permanent link">&para;</a></h2>
-<ul>
+<ol>
 <li>Patient-level splits for internal evaluation.</li>
 <li>External partner-hospital datasets used for final reporting to reflect real deployment conditions.</li>
 <li>Metrics tracked:</li>
 <li>accuracy (headline)</li>
 <li>macro-F1 and per-class recall (safety)</li>
 <li>coverage / abstention rate under selective prediction</li>
-</ul>
+</ol>
 <p><img alt="ROC_curve" src="images/ROC_curve.png" width="900" /></p>
 <hr />
 <h2 id="results">Results<a class="headerlink" href="#results" title="Permanent link">&para;</a></h2>
-<p>External validation on partner-hospital datasets:
-- MR: <strong>96.69%</strong> accuracy
-- CT: <strong>99.25%</strong> accuracy</p>
+<p>External validation on partner-hospital datasets:</p>
+<ul>
+<li>MR: <strong>96.69%</strong> accuracy</li>
+<li>CT: <strong>99.25%</strong> accuracy</li>
+</ul>
 <p>The pipeline replaced the legacy detector in production and supports safe iteration via selective prediction and retraining-ready artifacts.</p>
 <hr />
 <h2 id="limitations-next-steps">Limitations &amp; Next Steps<a class="headerlink" href="#limitations-next-steps" title="Permanent link">&para;</a></h2>
