@@ -1294,7 +1294,7 @@ updated at <strong>200 Hz</strong>. This ensures real-time motion synchronizatio
 <hr />
 <h2 id="control-and-electronics">Control and Electronics<a class="headerlink" href="#control-and-electronics" title="Permanent link">&para;</a></h2>
 <h3 id="sensor-sampling">Sensor &amp; Sampling<a class="headerlink" href="#sensor-sampling" title="Permanent link">&para;</a></h3>
-<p>The <strong>ICM-45686 IMU</strong> is configured for <strong>1 kHz raw sampling</strong>, averaged to 100 Hz for transmission stability.
+<p>The <strong>ICM-45686 IMU</strong> is configured for 1 kHz raw sampling averaged to 100 Hz for transmission stability.
 Its digital motion processor (DMP) reduces noise and bias drift using a <strong>complementary Kalman filter</strong>.</p>
 <h3 id="communication-timing">Communication &amp; Timing<a class="headerlink" href="#communication-timing" title="Permanent link">&para;</a></h3>
 <p>BLE is configured with:
@@ -1310,9 +1310,9 @@ Latency tests show mean <strong>7.3 ms delay</strong>, 99th percentile &lt; 9.4 
 <li><strong>Vibration Actuator:</strong> Driven by PWM (0–255) mapped to vibration intensity, frequency 5–10 Hz (engine resonance band).</li>
 </ul>
 <h3 id="power-management">Power Management<a class="headerlink" href="#power-management" title="Permanent link">&para;</a></h3>
-<p>All systems share a regulated <strong>24 V 10 A DC bus</strong> with reverse-polarity protection and EMI filter.
-Measured steady-state power draw: <strong>~110 W</strong>, peak startup: <strong>&lt; 160 W</strong>.<br />
-Thermal analysis confirmed continuous operation below <strong>55°C</strong> at full duty.</p>
+<p>All systems share a regulated <strong>24 V 10 A DC bus</strong> with reverse-polarity protection and EMI filter.</p>
+<p>Measured steady-state power draw: ~110 W peak startup: &lt; 160 W  </p>
+<p>Thermal analysis confirmed continuous operation below <strong>55°C</strong> at full duty.</p>
 <hr />
 <h2 id="firmware-and-software">Firmware and Software<a class="headerlink" href="#firmware-and-software" title="Permanent link">&para;</a></h2>
 <p>ESP32’s <strong>dual-core FreeRTOS</strong> design enables fully asynchronous operation:</p>
@@ -1407,10 +1407,9 @@ BLE retransmission queue ensures <strong>0.00 % packet loss</strong> at up to 2.
 source and replica chairs with <strong>correlation coefficient r = 0.984</strong> (5 Hz motion cycles).</p>
 <hr />
 <h2 id="results-discussion">Results Discussion<a class="headerlink" href="#results-discussion" title="Permanent link">&para;</a></h2>
-<p>The RFMC system achieved <strong>human-perceptible realism</strong> with negligible delay and noise-induced jitter.
-Subjective trials rated feedback realism at <strong>4.6 / 5.0</strong> for tilt response and <strong>4.4 / 5.0</strong> for vibration clarity.<br />
-Unlike high-cost 6-DOF Stewart platforms (typically &gt; 10 000 USD), the proposed 3-actuator variant
-achieved equivalent dynamic response using hardware totaling <strong>&lt; 400 USD</strong>.</p>
+<p>The RFMC system achieved <strong>human-perceptible realism</strong> with negligible delay and noise-induced jitter.</p>
+<p>Subjective trials rated feedback realism at <strong>4.6 / 5.0</strong> for tilt response and <strong>4.4 / 5.0</strong> for vibration clarity.  </p>
+<p>Unlike high-cost 6-DOF Stewart platforms (typically &gt; 10 000 USD), the proposed 3-actuator variant achieved equivalent dynamic response using hardware totaling <strong>&lt; 400 USD</strong>.</p>
 <p>Comparative benchmarks vs. commercial systems:</p>
 <table>
 <thead>
@@ -1448,16 +1447,20 @@ achieved equivalent dynamic response using hardware totaling <strong>&lt; 400 US
 </table>
 <hr />
 <h2 id="applications-and-future-work">Applications and Future Work<a class="headerlink" href="#applications-and-future-work" title="Permanent link">&para;</a></h2>
-<p><strong>Applications</strong>
-- Remote machinery operation (crane, excavator)
-- Training simulators for heavy-vehicle operators
-- Rehabilitation chairs for vestibular therapy
-- Remote telepresence in hazardous environments</p>
-<p><strong>Future Enhancements</strong>
-1. Integrate <strong>force sensors</strong> on actuators for closed-loop bidirectional feedback.<br />
-2. Expand motion to <strong>6-DOF</strong> by adding heave, surge, yaw axes.<br />
-3. Replace BLE with <strong>Wi-Fi 6E or private 5G</strong> for long-distance telepresence (&gt; 500 m).<br />
-4. Incorporate <strong>AI-based adaptive control</strong> for motion prediction and compensation.  </p>
+<p><strong>Applications</strong></p>
+<ul>
+<li>Remote machinery operation (crane, excavator)</li>
+<li>Training simulators for heavy-vehicle operators</li>
+<li>Rehabilitation chairs for vestibular therapy</li>
+<li>Remote telepresence in hazardous environments</li>
+</ul>
+<p><strong>Future Enhancements</strong></p>
+<ol>
+<li>Integrate <strong>force sensors</strong> on actuators for closed-loop bidirectional feedback.  </li>
+<li>Expand motion to <strong>6-DOF</strong> by adding heave, surge, yaw axes.  </li>
+<li>Replace BLE with <strong>Wi-Fi 6E or private 5G</strong> for long-distance telepresence (&gt; 500 m).  </li>
+<li>Incorporate <strong>AI-based adaptive control</strong> for motion prediction and compensation.  </li>
+</ol>
 <hr />
 <h2 id="acknowledgment">Acknowledgment<a class="headerlink" href="#acknowledgment" title="Permanent link">&para;</a></h2>
 <p>Developed by <strong>Team 1 (Jeongsoo Pang et al.)</strong><br />
