@@ -23,13 +23,15 @@ hide:
 
 ## Overview
 
-Radiology pipelines rely on correctly identifying the **series type** (MR: DWI, SWI, T1, T2, FLAIR, etc.; CT: angiography, perfusion, non-contrast) before reconstruction, post-processing, and downstream analytics. In practice, rule-based detectors fail because DICOM metadata is inconsistent across vendors and sites: private tags, nested sequences, multilingual / abbreviated fields, and missing or misleading `SeriesDescription`.
+Radiology pipelines rely on correctly identifying the series type (MR: DWI, SWI, T1, T2, FLAIR, etc.; CT: angiography, perfusion, non-contrast) before reconstruction, post-processing, and downstream analytics. 
 
-This project delivers a production-ready ML pipeline that classifies **8 MR** and **3 CT** series types using **DICOM header metadata only**, and includes a conservative **selective-prediction (self-inspection)** policy to defer uncertain cases to human review.
+In practice, rule-based detectors fail because DICOM metadata is inconsistent across vendors and sites: private tags, nested sequences, multilingual / abbreviated fields, and missing or misleading `SeriesDescription`.
 
-**External validation (partner hospitals):**
-- MR accuracy: **96.69%**
-- CT accuracy: **99.25%**
+This project delivers a production-ready ML pipeline that classifies 8 MR and 3 CT series types using DICOM header metadata only and includes a conservative selective-prediction (self-inspection policy to defer uncertain cases to human review.
+
+External validation (partner hospitals)
+- MR accuracy: 96.69
+- CT accuracy: 99.25
 
 The system replaced a legacy rule-based detector in production and was designed for maintainability, safe operation, and future retraining.
 
@@ -37,7 +39,7 @@ The system replaced a legacy rule-based detector in production and was designed 
 
 ## Project Goals
 
-- Replace a brittle rule-based detector with a robust ML solution for **8 MR** and **3 CT** series types.
+- Replace a brittle rule-based detector with a robust ML solution for 8 MR and 3 CT series types.
 - Maintain utility when textual fields are missing or unreliable (notably `SeriesDescription`).
 - Provide a safety mechanism that flags low-confidence predictions for radiologist review.
 - Make the pipeline easy to retrain and deploy with consistent preprocessing and schema checks.
@@ -46,12 +48,10 @@ The system replaced a legacy rule-based detector in production and was designed 
 
 ## My Contributions
 
-- Implemented a **DICOM header extraction** workflow designed to tolerate missing fields and vendor variability.
+- Implemented a **DICOM Header Extraction** workflow designed to tolerate missing fields and vendor variability.
 - Built feature preprocessing for mixed types (numeric, categorical, missing / unknown-safe one-hot).
-- Trained and validated **two HistGradientBoosting (HGBC) models** per modality:
-  - With `SeriesDescription`
-  - Without `SeriesDescription` (robust fallback)
-- Designed a **selective-prediction gate** based on confidence and top-2 margin to abstain on ambiguous cases.
+- Trained and validated **two HistGradientBoosting (HGBC) models** per modality With `SeriesDescription` and Without `SeriesDescription` (robust fallback)
+- Designed a selective-prediction gate based on confidence and top-2 margin to abstain on ambiguous cases.
 - Added explainability with **SHAP** to support QA and deployment readiness.
 - Supported external validation runs and production replacement with serialized artifacts.
 
@@ -74,6 +74,7 @@ The system replaced a legacy rule-based detector in production and was designed 
 The model uses header-derived metadata only (no pixel data). Features are intentionally pragmatic: stable across sites when possible, and useful for discriminating protocol families.
 
 **MR examples**
+
 - Timing / sequence: `RepetitionTime`, `InversionTime`, `EchoTrainLength`, `EchoSpacing`, `FlipAngle`
 - Acquisition / encoding: `PhaseEncodingDirection`, `ScanOptions`
 - System-level: `MagneticFieldStrength`
@@ -81,6 +82,7 @@ The model uses header-derived metadata only (no pixel data). Features are intent
 - Diffusion hints when present: `Bvalue`
 
 **CT examples**
+
 - Contrast / acquisition: `ContrastBolusAgent`, `ExposureTime`, `KVP`
 - Reconstruction: `ConvolutionKernel`, `ReconstructionDiameter`
 - Table / timing: `TableSpeed`, `SeriesTime`
@@ -105,17 +107,18 @@ The model uses header-derived metadata only (no pixel data). Features are intent
 
 ### 4) Modeling (HGBC)
 - HistGradientBoostingClassifier is a strong fit for sparse, heterogeneous tabular metadata:
-  - handles missingness reliably
-  - trains efficiently
-  - good generalization under regularization
+i) handles missingness reliably
+ii) trains efficiently
+iii) good generalization under regularization
 - Two-model strategy:
-  - primary model includes `SeriesDescription` if present
-  - fallback model excludes it to remain robust when text is missing or inconsistent
+i) primary model includes `SeriesDescription` if present2.
+ii) fallback model excludes it to remain robust when text is missing or inconsistent
 
 ### 5) Selective prediction (self-inspection)
 Rather than forcing a label for every case, the system abstains when confidence is insufficient.
 
 A typical policy:
+
 - abstain if `max_prob < τ₁`, or
 - abstain if `(top1_prob − top2_prob) < τ₂`
 
@@ -130,6 +133,7 @@ Abstentions are routed to human review, and logs support later retraining.
 Hyperparameter tuning was treated as an engineering process: consistent splits, leakage prevention, and reproducibility first.
 
 **Search space (HGBC)**
+
 - `learning_rate ∈ {0.03, 0.05, 0.07, 0.1}`
 - `max_iter ∈ {200, 400, 800}` (with early stopping)
 - `max_leaf_nodes ∈ {15, 31, 63}`
@@ -156,9 +160,9 @@ Hyperparameter tuning was treated as an engineering process: consistent splits, 
 
 ## Evaluation
 
-- Patient-level splits for internal evaluation.
-- External partner-hospital datasets used for final reporting to reflect real deployment conditions.
-- Metrics tracked:
+1. Patient-level splits for internal evaluation.
+2. External partner-hospital datasets used for final reporting to reflect real deployment conditions.
+3. Metrics tracked:
   - accuracy (headline)
   - macro-F1 and per-class recall (safety)
   - coverage / abstention rate under selective prediction
@@ -170,6 +174,7 @@ Hyperparameter tuning was treated as an engineering process: consistent splits, 
 ## Results
 
 External validation on partner-hospital datasets:
+
 - MR: **96.69%** accuracy
 - CT: **99.25%** accuracy
 
