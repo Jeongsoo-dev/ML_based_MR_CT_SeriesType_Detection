@@ -65,6 +65,7 @@ This configuration balances torque loads, minimizes moment coupling, and reduces
 from six (in full Stewart systems) to three, maintaining **2-DOF control (pitch, roll)** while preserving realism.
 
 ### Key Structural Highlights
+
 - **Actuator Thrust:** 980 N (100 kgf per unit)  
 - **Effective Torque:** ~12.8 N·m per actuator at ±15° tilt  
 - **Frame Material:** 6061-T6 aluminum profile with 9 mm plywood seat  
@@ -84,7 +85,7 @@ updated at **200 Hz**. This ensures real-time motion synchronization with minima
 ## Control and Electronics
 
 ### Sensor & Sampling
-The **ICM-45686 IMU** is configured for **1 kHz raw sampling**, averaged to 100 Hz for transmission stability.
+The **ICM-45686 IMU** is configured for 1 kHz raw sampling averaged to 100 Hz for transmission stability.
 Its digital motion processor (DMP) reduces noise and bias drift using a **complementary Kalman filter**.
 
 ### Communication & Timing
@@ -102,7 +103,9 @@ Latency tests show mean **7.3 ms delay**, 99th percentile < 9.4 ms, even under h
 
 ### Power Management
 All systems share a regulated **24 V 10 A DC bus** with reverse-polarity protection and EMI filter.
-Measured steady-state power draw: **~110 W**, peak startup: **< 160 W**.  
+
+Measured steady-state power draw: ~110 W peak startup: < 160 W  
+
 Thermal analysis confirmed continuous operation below **55°C** at full duty.
 
 ---
@@ -149,9 +152,10 @@ source and replica chairs with **correlation coefficient r = 0.984** (5 Hz motio
 ## Results Discussion
 
 The RFMC system achieved **human-perceptible realism** with negligible delay and noise-induced jitter.
+
 Subjective trials rated feedback realism at **4.6 / 5.0** for tilt response and **4.4 / 5.0** for vibration clarity.  
-Unlike high-cost 6-DOF Stewart platforms (typically > 10 000 USD), the proposed 3-actuator variant
-achieved equivalent dynamic response using hardware totaling **< 400 USD**.
+
+Unlike high-cost 6-DOF Stewart platforms (typically > 10 000 USD), the proposed 3-actuator variant achieved equivalent dynamic response using hardware totaling **< 400 USD**.
 
 Comparative benchmarks vs. commercial systems:
 
@@ -166,12 +170,14 @@ Comparative benchmarks vs. commercial systems:
 ## Applications and Future Work
 
 **Applications**
+
 - Remote machinery operation (crane, excavator)
 - Training simulators for heavy-vehicle operators
 - Rehabilitation chairs for vestibular therapy
 - Remote telepresence in hazardous environments
 
 **Future Enhancements**
+
 1. Integrate **force sensors** on actuators for closed-loop bidirectional feedback.  
 2. Expand motion to **6-DOF** by adding heave, surge, yaw axes.  
 3. Replace BLE with **Wi-Fi 6E or private 5G** for long-distance telepresence (> 500 m).  
