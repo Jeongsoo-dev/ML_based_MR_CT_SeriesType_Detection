@@ -22,7 +22,7 @@
   }).addTo(map);
 
   const places = [
-    { name: "Copenhagen", lat: 55.6761, lon: 12.5683, href: base("history/denmark/posts/copenhagen/") },
+    { name: "Copenhagen", lat: 55.6761, lon: 12.5683, href: base("history/denmark/copenhagen/") },
     { name: "Odense",     lat: 55.4038, lon: 10.4024, href: base("history/denmark/posts/odense/") },
     { name: "Aarhus",     lat: 56.1629, lon: 10.2039, href: base("history/denmark/posts/aarhus/") },
     { name: "Samsø",      lat: 55.8660, lon: 10.6050, href: base("history/denmark/posts/samso/") },
