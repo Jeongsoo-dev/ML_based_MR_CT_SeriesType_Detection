@@ -16,12 +16,15 @@
 
   // Country → your blog page mapping
   // Use ISO_A2 or ISO_A3 depending on your GeoJSON properties.
+  const visited = new Set(["DK", "KR", "CN", "JP"]); // add ISO_A2 codes you visited
+
   const countryLinks = {
-    "JP": "/history/japan/",
-    "DK": "/history/denmark/",
-    "CN": "/history/china/",
-    "KR": "/history/korea/"
+    "DK": "/ML_based_MR_CT_SeriesType_Detection/history/denmark/",
+    "JP": "/ML_based_MR_CT_SeriesType_Detection/history/japan/",
+    "CN": "/ML_based_MR_CT_SeriesType_Detection/history/china/",
+    "KR": "/ML_based_MR_CT_SeriesType_Detection/history/korea/",
   };
+
 
   // Load your GeoJSON (place it at docs/assets/countries.geojson)
   fetch(new URL("../assets/countries.geojson", window.location.href))
