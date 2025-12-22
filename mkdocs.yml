@@ -41,6 +41,7 @@ extra_javascript:
   - javascripts/katex-render.js
   - https://unpkg.com/leaflet@1.9.4/dist/leaflet.js
   - javascripts/history-map.js
+  - javascripts/denmark-map.js
 
 nav:
   - Projects:
