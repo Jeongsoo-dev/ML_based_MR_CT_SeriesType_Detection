@@ -24,7 +24,7 @@
   };
 
   // Load your GeoJSON (place it at docs/assets/countries.geojson)
-  fetch("/assets/countries.geojson")
+  fetch(new URL("../assets/countries.geojson", window.location.href))
     .then(r => r.json())
     .then(geo => {
       L.geoJSON(geo, {
