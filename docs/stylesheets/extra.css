@@ -166,3 +166,82 @@
 .md-tabs__list > li {
   margin-bottom: 2px;
 }
+
+/* ===== Denmark page layout: feed left, map right ===== */
+.dk-layout {
+  display: grid;
+  grid-template-columns: 1fr 420px;
+  gap: 1.2rem;
+  align-items: start;
+  margin-top: 1rem;
+}
+
+@media (max-width: 1100px) {
+  .dk-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+.country-map {
+  height: 520px;
+  width: 100%;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid rgba(0,0,0,.08);
+}
+
+/* Your global img style adds margin/shadow; neutralize inside cards */
+.ig-card img,
+.pswp-gallery a img {
+  margin: 0 !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+}
+
+/* ===== Instagram-like grid feed ===== */
+.ig-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: .9rem;
+}
+
+@media (max-width: 900px) {
+  .ig-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+.ig-card {
+  display: block;
+  border-radius: 12px;
+  overflow: hidden;
+  text-decoration: none;
+  border: 1px solid rgba(0,0,0,.08);
+  box-shadow: 0 2px 10px rgba(0,0,0,.05);
+}
+
+.ig-card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+
+.ig-meta {
+  padding: .7rem .8rem;
+}
+
+.ig-title {
+  font-weight: 700;
+  color: inherit;
+}
+
+.ig-sub {
+  font-size: .88rem;
+  opacity: .75;
+  margin-top: .15rem;
+}
+
+.map-note {
+  margin-top: .5rem;
+  font-size: .9rem;
+  opacity: .8;
+}
+
