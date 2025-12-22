@@ -2,16 +2,16 @@
 
 <div class="pswp-gallery" id="odense-gallery">
 
-  <a href="../../../../images/history/denmark/copenhagen/1.jpg" data-pswp-width="1920" data-pswp-height="1280" target="_blank">
-    <img src="../../../../images/history/denmark/copenhagen/1.jpg" alt="copenhagen 1">
+  <a href="../../../../images/history/denmark/copenhagen/1.JPG" data-pswp-width="1920" data-pswp-height="1280" target="_blank">
+    <img src="../../../../images/history/denmark/copenhagen/1.JPG" alt="copenhagen 1">
   </a>
 
   <a href="../../../../images/history/denmark/copenhagen/2.jpg" data-pswp-width="1920" data-pswp-height="1280" target="_blank">
     <img src="../../../../images/history/denmark/copenhagen/2.jpg" alt="copenhagen 2">
   </a>
 
-  <a href="../../../../images/history/denmark/copenhagen/3.jpg" data-pswp-width="1920" data-pswp-height="1280" target="_blank">
-    <img src="../../../../images/history/denmark/copenhagen/3.jpg" alt="copenhagen 3">
+  <a href="../../../../images/history/denmark/copenhagen/3.JPG" data-pswp-width="1920" data-pswp-height="1280" target="_blank">
+    <img src="../../../../images/history/denmark/copenhagen/3.JPG" alt="copenhagen 3">
   </a>
 
 </div>
