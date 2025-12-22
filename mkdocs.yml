@@ -19,6 +19,7 @@ theme:
 extra_css:
   - stylesheets/extra.css
   - https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css
+  - stylesheets/extra.css
 
 markdown_extensions:
   - tables
@@ -37,6 +38,7 @@ extra_javascript:
   - https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js
   - https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js
   - javascripts/katex-render.js
+  - javascripts/history-map.js
 
 nav:
   - Projects:
@@ -65,3 +67,4 @@ nav:
       - "9. Computational methods": bayesian/lec9_computation.md
       - "10. MCMC-Update": bayesian/lec10_mcmc.md
       - "11. Hierarchical Models": bayesian/lec11_hierarchy.md
+  - History: history/index.md
