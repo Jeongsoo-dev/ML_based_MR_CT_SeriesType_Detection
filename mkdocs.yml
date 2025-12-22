@@ -43,6 +43,8 @@ extra_javascript:
   - https://unpkg.com/leaflet@1.9.4/dist/leaflet.js
   - javascripts/history-map.js
   - javascripts/denmark-map.js
+  - https://unpkg.com/photoswipe@5.4.4/dist/photoswipe.umd.min.js
+  - https://unpkg.com/photoswipe@5.4.4/dist/photoswipe-lightbox.umd.min.js
 
 nav:
   - Projects:
