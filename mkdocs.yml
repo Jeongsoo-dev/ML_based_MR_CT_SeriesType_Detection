@@ -73,5 +73,6 @@ nav:
       - "9. Computational methods": bayesian/lec9_computation.md
       - "10. MCMC-Update": bayesian/lec10_mcmc.md
       - "11. Hierarchical Models": bayesian/lec11_hierarchy.md
-  - History:
-      - "0. Overview": history/index.md
+- History:
+    - "0. Overview": history/index.md
+    - "1. Denmark": history/denmark/index.md
