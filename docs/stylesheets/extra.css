@@ -140,3 +140,29 @@
   font-size: 0.92rem;
   line-height: 1.1;
 }
+
+/* ========================================================= */
+/* ========== TOP TAB OVERFLOW FIX (History tab) ========== */
+/* ========================================================= */
+
+/* Allow top navigation tabs to wrap instead of overflowing off-screen */
+.md-tabs__list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+/* Prevent tabs from stretching weirdly */
+.md-tabs__item {
+  flex: 0 0 auto;
+}
+
+/* Let the tabs container grow vertically when wrapped */
+.md-tabs {
+  height: auto;
+}
+
+/* Slight spacing between wrapped rows */
+.md-tabs__list > li {
+  margin-bottom: 2px;
+}
