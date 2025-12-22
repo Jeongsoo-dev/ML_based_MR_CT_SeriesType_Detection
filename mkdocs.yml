@@ -19,6 +19,7 @@ theme:
 extra_css:
   - stylesheets/extra.css
   - https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css
+  - https://unpkg.com/leaflet@1.9.4/dist/leaflet.css
   - stylesheets/extra.css
 
 markdown_extensions:
@@ -38,6 +39,7 @@ extra_javascript:
   - https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js
   - https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js
   - javascripts/katex-render.js
+  - https://unpkg.com/leaflet@1.9.4/dist/leaflet.js
   - javascripts/history-map.js
 
 nav:
