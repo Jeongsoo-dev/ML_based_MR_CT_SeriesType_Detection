@@ -1678,21 +1678,21 @@ R_B^G
 <h2 id="4-rotational-dynamics-body-frame">4. Rotational Dynamics (Body Frame)<a class="headerlink" href="#4-rotational-dynamics-body-frame" title="Permanent link">&para;</a></h2>
 <h3 id="variables_2">Variables<a class="headerlink" href="#variables_2" title="Permanent link">&para;</a></h3>
 <ul>
-<li><span class="arithmatex">\( \boldsymbol{\omega} = [p, q, r]^T \)</span> : body angular velocity  </li>
-<li><span class="arithmatex">\( J_b \)</span> : body inertia matrix  </li>
-<li><span class="arithmatex">\( \boldsymbol{\tau}_m \)</span> : motor-generated torques  </li>
-<li><span class="arithmatex">\( \boldsymbol{\tau}_g \)</span> : gyroscopic torques  </li>
+<li><span class="arithmatex">\( \mathbf{\omega} = [p, q, r]^T \)</span> : body angular velocity  </li>
+<li><span class="arithmatex">\( \mathbf{J}_b \)</span> : body inertia matrix  </li>
+<li><span class="arithmatex">\( \mathbf{\tau}_m \)</span> : motor-generated torques  </li>
+<li><span class="arithmatex">\( \mathbf{\tau}_g \)</span> : gyroscopic torques  </li>
 </ul>
 <h3 id="rigid-body-equation">Rigid Body Equation<a class="headerlink" href="#rigid-body-equation" title="Permanent link">&para;</a></h3>
 <div class="arithmatex">\[
 \boxed{
-J_b \dot{\boldsymbol{\omega}}
+\mathbf{J}_b \dot{\mathbf{\omega}}
 =
-\boldsymbol{\tau}_m
+\mathbf{\tau}_m
 -
-\boldsymbol{\tau}_g
+\mathbf{\tau}_g
 -
-(\boldsymbol{\omega} \times J_b \boldsymbol{\omega})
+\left(\mathbf{\omega} \times \mathbf{J}_b \mathbf{\omega}\right)
 }
 \]</div>
 <hr />
