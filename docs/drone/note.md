@@ -1,6 +1,8 @@
 # Quadrotor System Modeling — Core Equations Reference
 
-> Reference summary based on classical quadrotor modeling
+> Reference summary based on classical quadrotor modeling  
+> (e.g., Wil Selby, ArduCopter Modeling)  
+>  
 
 ---
 
