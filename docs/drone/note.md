@@ -141,23 +141,24 @@ R_B^G
 ## 4. Rotational Dynamics (Body Frame)
 
 ### Variables
-- \( \boldsymbol{\omega} = [p, q, r]^T \) : body angular velocity  
-- \( J_b \) : body inertia matrix  
-- \( \boldsymbol{\tau}_m \) : motor-generated torques  
-- \( \boldsymbol{\tau}_g \) : gyroscopic torques  
+- \( \mathbf{\omega} = [p, q, r]^T \) : body angular velocity  
+- \( \mathbf{J}_b \) : body inertia matrix  
+- \( \mathbf{\tau}_m \) : motor-generated torques  
+- \( \mathbf{\tau}_g \) : gyroscopic torques  
 
 ### Rigid Body Equation
 \[
 \boxed{
-J_b \dot{\boldsymbol{\omega}}
+\mathbf{J}_b \dot{\mathbf{\omega}}
 =
-\boldsymbol{\tau}_m
+\mathbf{\tau}_m
 -
-\boldsymbol{\tau}_g
+\mathbf{\tau}_g
 -
-(\boldsymbol{\omega} \times J_b \boldsymbol{\omega})
+\left(\mathbf{\omega} \times \mathbf{J}_b \mathbf{\omega}\right)
 }
 \]
+
 
 ---
 
