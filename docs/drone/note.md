@@ -180,7 +180,7 @@ R_B^G
 
 ### Torque Vector
 \[
-\boldsymbol{\tau}_m =
+\mathbf{\tau}_m =
 \begin{bmatrix}
 \tau_\phi\\
 \tau_\theta\\
